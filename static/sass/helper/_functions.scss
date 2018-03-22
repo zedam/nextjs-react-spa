@@ -1,0 +1,21 @@
+/*/////////////////////////////////
+
+    Functions
+
+//////////////////////////////////*/
+
+@function image_path($device, $file) {
+    @return $root + 'assets/images/' + $device + '/' + $file;
+}
+
+@function image_path_extend($device, $file) {
+    @return $root + 'extend/assets/images/' + $device + '/' + $file;
+}
+
+@function theme-get($key, $theme: $current-theme) {
+    $ret: map-get($theme, $key);
+    @if not $ret {
+        @error 'Your theme doesn\'t have a value for `#{$key}`.';
+    }
+    @return $ret;
+}

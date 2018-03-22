@@ -1,0 +1,107 @@
+.header-2__container {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+
+	@include respond-to(tablet) {
+		min-height: 0;
+	}
+
+	&.studio {
+		background: #ccc;
+	}
+}
+
+.header-2__video-container {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+
+	video {
+		height: auto;
+		left: 50%;
+		min-height: 100%;
+		min-width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		width: auto;
+		z-index: 71;
+	}
+}
+
+.header-2__container-content {
+	box-sizing: border-box;
+	left: 0;
+	position: relative;
+	right: 0;
+	text-align: left;
+	padding: 100px 20px 0;
+	width: 100%;
+	z-index: 1;
+
+	p {
+		margin: 0;
+	}
+
+	@include respond-to(tablet) {
+		padding: 140px $margin-tablet;
+	}
+
+	@include respond-to(desktop) {
+		padding: 140px $margin-desktop;
+		max-width: 960px;
+	}
+
+	@include respond-to(desktop_big) {
+		max-width: 800px;
+		margin: auto;
+		padding: 140px 0;
+	}
+}
+
+.header-2__container-content-title {
+	font-size: 30px;
+	font-weight: normal;
+	line-height: 37px;
+
+	@include respond-to (tablet){
+		font-size: 38px;
+		line-height: 44px;
+	}
+
+	@include respond-to (desktop){
+		font-size: 38px;
+		line-height: 44px;
+	}
+
+	.about & {
+		font-size: 38px;
+		font-weight: normal;
+	}
+}
+
+.header-2_container-content-description {
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 29px;
+	margin-top: 30px;
+
+	@include respond-to (tablet){
+		font-size: 20px;
+		line-height: 29px;
+	}
+}
+
+.rh5v-Overlay_component,
+.rh5v-DefaultPlayer_controls {
+	display: none;
+}
+
+.header-2__container-content {
+
+}

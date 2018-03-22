@@ -1,0 +1,13 @@
+.block-content__container {
+	padding: 0 20px;
+	margin-top: $margin-mobile;
+	position: relative;
+
+	@include respond-to(tablet) {
+		padding: 50px;
+	}
+
+	@include respond-to(desktop) {
+		padding: 60px;
+	}
+}

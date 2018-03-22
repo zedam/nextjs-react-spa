@@ -1,0 +1,21 @@
+.link-directors__container {
+	font-size: 30px;
+
+	@include respond-to(tablet) {
+		font-size: 36px;
+	}
+
+	@include respond-to(desktop) {
+		font-size: 40px;
+	}
+}
+
+.link-directors {
+	@include animate-link-underline-left($black, true);
+	float: left;
+}
+
+.link-directors__separator {
+	float: left;
+	margin: 0 5px;
+}

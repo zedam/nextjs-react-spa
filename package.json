@@ -1,0 +1,54 @@
+{
+    "name": "next-motion",
+    "version": "1.0.0-beta",
+    "author": "toinelin <contact@antoinelin.fr>",
+    "license": "MIT",
+    "dependencies": {
+        "@zeit/next-sass": "0.0.9",
+        "express": "^4.16.2",
+        "isomorphic-unfetch": "^2.0.0",
+        "next": "latest",
+        "node-sass": "4.5.3",
+        "react": "^16.0.0",
+        "react-burger-menu": "^2.3.0",
+        "react-dom": "^16.0.0",
+        "react-html5video": "^2.5.1",
+        "react-lazyload": "^2.3.0",
+        "react-responsive": "^4.0.4",
+        "react-transition-group": "^2.2.1",
+        "react-vimeo": "^2.0.0",
+        "styled-jsx-plugin-sass": "0.2.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/toinelin/next-motion"
+    },
+    "devDependencies": {
+        "babel-eslint": "7.0.0",
+        "eslint": "^3.12.2",
+        "eslint-config-airbnb": "^13.0.0",
+        "eslint-friendly-formatter": "^2.0.6",
+        "eslint-loader": "^1.6.1",
+        "eslint-plugin-babel": "^4.0.0",
+        "eslint-plugin-flowtype": "^2.29.1",
+        "eslint-plugin-import": "^2.0.1",
+        "eslint-plugin-jsx-a11y": "^2.2.3",
+        "eslint-plugin-react": "^6.8.0",
+        "jest": "^19.0.2",
+        "jest-css-modules": "^1.1.0",
+        "react-dom": "^15.4.2",
+        "react-motion": "^0.4.7",
+        "react-motion-ui-pack": "^0.10.3",
+        "standard": "8.4.0"
+    },
+    "standard": {
+        "parser": "babel-eslint"
+    },
+    "scripts": {
+        "server": "node server.js",
+        "dev": "next",
+        "build": "next build",
+        "start": "NODE_ENV=production next start",
+        "lint": "standard"
+    }
+}

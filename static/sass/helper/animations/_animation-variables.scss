@@ -1,0 +1,224 @@
+/*/////////////////////////////////
+
+    Animation variables
+
+//////////////////////////////////*/
+
+// Base animation types
+// The icon will be moving to this direction when hovering.
+$animate-icon-direction: 'right';
+
+// The underline will move from this direction when hovering.
+$animate-link-type: 'left';
+
+// The background color will move from this direction when hovering.
+$animate-button-type: 'left';
+
+// The image will move in a specific direction when hovering.
+$animate-image-type: 'zoom';
+
+// Variables
+$animate-base-speed: .6s;
+$animate-delay: .2s;
+$animate-initial-delay: 0s;
+
+$animate-base-speed-images: 2s;
+$animate-base-border-size: 2px;
+
+/*/////////////////////////////////
+
+    Variables
+
+//////////////////////////////////*/
+
+
+//
+// General settings
+// --------------------------------------------------
+$root: '/';
+$images: '#{$root}images/';
+$images_c: '#{$root}images/component/';
+$images_m: '#{$root}images/misc/';
+
+/*
+//
+// Fonts
+// --------------------------------------------------
+$ionicons-font-path: '/extend/assets/fonts' !default;
+@import '../../extend/bower/bower_components/Ionicons/scss/ionicons';*/
+
+
+//
+// Colors
+// --------------------------------------------------
+
+$white: #ffffff;
+$black: #000000;
+$grey: #373e37;
+$dark-grey: #212721;
+$light-grey: #9b9b9b;
+
+$base-color-1: #212721;
+$base-color-2: #f25200;
+$base-color-3: #f0dd46;
+$base-color-4: #bebebe;
+$base-color-5: #e8e8e8;
+$base-color-6: #373e37;
+$base-color-7: #212721;
+$base-color-8: #fefefe;
+$base-color-9: #969696;
+
+$background-color: $white;
+
+$selection-color: $base-color-3;
+$selection-text-color: $black;
+
+
+//
+// Theme colors
+// --------------------------------------------------
+$theme-default-1: $white;           // use for: backgrounds
+$theme-default-2: $black;           // use for: text color
+$theme-default-3: $dark-grey;    // use for: other
+$theme-default-4: $grey;    // use for: other
+
+$theme-dark-1: $black;              // use for: backgrounds
+$theme-dark-2: $white;              // use for: text color
+$theme-dark-3: $base-color-6;       // use for: border color
+$theme-dark-4: $base-color-4;       // use for: other
+
+
+//
+// Themes
+// --------------------------------------------------
+
+$themes: (
+        default: ( // default theme
+                theme-color-1: $theme-default-1,
+                theme-color-2: $theme-default-2,
+                theme-color-3: $theme-default-3,
+                theme-color-4: $theme-default-4,
+        ),
+        dark: (
+                theme-color-1: $theme-dark-1,
+                theme-color-2: $theme-dark-2,
+                theme-color-3: $theme-dark-3,
+                theme-color-4: $theme-dark-4,
+        ),
+);
+
+
+//
+// Animations
+// --------------------------------------------------
+$animation: .2s;
+
+$animationEffect: cubic-bezier(.19, 1, .22, 1);
+$easeInCubic: cubic-bezier(.550, .055, .675, .190);
+$easeOutCubic: cubic-bezier(.215, .610, .355, 1);
+$easeInOutCubic: cubic-bezier(.645, .045, .355, 1);
+$easeInCirc: cubic-bezier(.600, .040, .980, .335);
+$easeOutCirc: cubic-bezier(.075, .820, .165, 1);
+$easeInOutCirc: cubic-bezier(.785, .135, .150, .860);
+$easeInExpo: cubic-bezier(.950, .050, .795, .035);
+$easeOutExpo: cubic-bezier(.190, 1, .220, 1);
+$easeInOutExpo: cubic-bezier(1, .000, .000, 1);
+$easeInQuad: cubic-bezier(.550, .085, .680, .530);
+$easeOutQuad: cubic-bezier(.250, .460, .450, .940);
+$easeInOutQuad: cubic-bezier(.455, .030, .515, .955);
+$easeInQuart: cubic-bezier(.895, .030, .685, .220);
+$easeOutQuart: cubic-bezier(.165, .840, .440, 1);
+$easeInOutQuart: cubic-bezier(.770, .000, .175, 1);
+$easeInQuint: cubic-bezier(.755, .050, .855, .060);
+$easeOutQuint: cubic-bezier(.230, 1, .320, 1);
+$easeInOutQuint: cubic-bezier(.860, .000, .070, 1);
+$easeInSine: cubic-bezier(.470, .000, .745, .715);
+$easeOutSine: cubic-bezier(.390, .575, .565, 1);
+$easeInOutSine: cubic-bezier(.445, .050, .550, .950);
+$easeInBack: cubic-bezier(.600, -.280, .735, .045);
+$easeOutBack: cubic-bezier(.175, .885, .320, 1.275);
+$easeInOutBack: cubic-bezier(.680, -.550, .265, 1.550);
+
+
+//
+// Breakpoints
+// --------------------------------------------------
+
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-larger: 1400px;
+
+
+//
+// Font sizes
+// --------------------------------------------------
+
+// TITLE BIG
+$title_big-size-small: 38px;
+$title_big-size-medium: 48px;
+$title_big-size-large: 55px;
+
+// Title big: line height
+$title_big-line-small: 42px;
+$title_big-line-medium: 53px;
+$title_big-line-large: 60px;
+
+// Subtitle: font size
+$title-size-small: 28px;
+$title-size-medium: 34px;
+$title-size-large: 40px;
+
+// Subtitle: line height
+$title-line-small: 36px;
+$title-line-medium: 40px;
+$title-line-large: 48px;
+
+// Subtitle: font size
+$subtitle-size-small: 22px;
+$subtitle-size-medium: 25px;
+$subtitle-size-large: 25px;
+
+// Subtitle: line height
+$subtitle-line-small: 28px;
+$subtitle-line-medium: 32px;
+$subtitle-line-large: 34px;
+
+// Intro: font size
+$intro-size-small: 20px;
+$intro-size-medium: 22px;
+$intro-size-large: 25px;
+
+// Intro: line height
+$intro-line-small: 26px;
+$intro-line-medium: 28px;
+$intro-line-large: 30px;
+
+// Text: font size
+$text-size-small: 16px;
+$text-size-medium: 17px;
+$text-size-large: 18px;
+
+// Text: line height
+$text-line-small: 24px;
+$text-line-medium: 26px;
+$text-line-large: 30px;
+
+
+//
+// Block margins
+// --------------------------------------------------
+$block-margin-mobile: 40px;
+$block-margin-tablet: 50px;
+$block-margin-desktop: 50px;
+$block-margin-desktop-big: 50px;
+
+$block-margin-next-mobile: 20px;
+$block-margin-next-tablet: 20px;
+$block-margin-next-desktop: 20px;
+$block-margin-next-desktop-big: 20px;
+
+// Overriding variables from extend
+
+@import 'animation-base';
+//@import '../../../../extend/assets/scss/animations/animation-base';

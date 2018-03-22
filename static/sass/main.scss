@@ -1,0 +1,41 @@
+$green: green;
+
+@import 'helper/variables';
+@import 'helper/mixins';
+@import 'helper/reset';
+@import 'pages/about';
+@import 'helper/animations/animation-variables';
+@import 'helper/animations/animation-buttons';
+@import 'helper/animations/animation-links';
+
+@import 'components/general';
+@import 'components/menu';
+@import 'components/header/header_1';
+@import 'components/header/header_2';
+@import 'components/header/header_3';
+@import 'components/blocks/block-content';
+@import 'components/blocks/block-image';
+@import 'components/blocks/block-list-projects';
+@import 'components/blocks/block-news-item';
+@import 'components/blocks/block-news-item-small';
+@import 'components/blocks/block-project-item';
+@import 'pages/directors/directors';
+
+.sass-example {
+  color: $green;
+}
+
+.menu__container {
+  background: white;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  transition: all 0.6s 0s;
+
+  .open-menu & {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,12 @@
+.general__container {
+  list-style: none;
+  padding: 20px 0;
+
+  @include respond-to(tablet) {
+    padding: 50px;
+  }
+}
+
+.about__title {
+  font-size: 40px;
+}

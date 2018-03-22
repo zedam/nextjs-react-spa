@@ -1,0 +1,208 @@
+
+.bm-menu {
+	background-image: url('/static/images/desktop/menu/background.jpg');
+	background-color: #d9d9cf;
+	background-size: 100% auto;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	padding: 2.5em 1.5em 0;
+	font-size: 1.15em;
+}
+
+.menu-item {
+	@include animate-link-underline-left($black);
+	color: $black;
+	clear: both;
+	display: inline-block;
+	float: left;
+	text-decoration: none;
+}
+
+.bm-burger-button {
+	.black & {
+		z-index: 1200!important;
+
+		.bm-burger-bars {
+			top: 50%!important;
+			display: none;
+
+			&:first-child {
+				display: block;
+				@include transform(rotate(45deg));
+			}
+
+			&:last-child {
+				display: block;
+				@include transform(rotate(-45deg));
+			}
+		}
+
+		&:hover {
+
+			.bm-burger-bars {
+
+				&:first-child {
+					opacity: 1!important;
+					@include transform(rotate(42deg));
+				}
+
+				&:last-child {
+					opacity: 1!important;
+					@include transform(rotate(-42deg));
+				}
+			}
+
+		}
+	}
+}
+
+.bm-burger-bars {
+	@include transition(all, 0.3s, 0s, $animationEffect);
+}
+
+.bm-burger-button {
+	&:hover {
+		.bm-burger-bars {
+			opacity: 1!important;
+
+			&:first-child {
+				@include transform(translateY(-2px));
+				opacity: 1!important;
+			}
+
+			&:last-child {
+				@include transform(translateY(2px));
+				opacity: 1!important;
+			}
+		}
+	}
+}
+
+.menu__home-logo {
+	background-image: url('/static/images/mobile/logo.png');
+	background-size: cover;
+	height: 50px;
+	position: fixed;
+	right: 20px;
+	top: 20px;
+	width: 70px;
+	z-index: 1;
+
+	@include respond-to(tablet) {
+		right: 36px;
+		top: 36px;
+	}
+
+	@include respond-to(desktop) {
+		height: 66px;
+		width: 90px;
+	}
+}
+
+.bm-burger-button {
+	height: 28px;
+	left: 20px;
+	position: fixed;
+	top: 20px;
+	width: 40px;
+
+	span {
+		border-radius: 1px;
+	}
+
+	@include respond-to(tablet) {
+
+		left: 36px;
+		top: 36px;
+	}
+}
+
+
+
+/* Color/shape of burger icon bars */
+/*.bm-burger-bars {
+	background: #373a47;
+}*/
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+	display: none;
+	height: 24px;
+	width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+	background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+	padding: 2.5em 1.5em 0;
+	font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+/*.bm-morph-shape {
+	fill: #373a47;
+}*/
+
+/* Wrapper for item list */
+/*.bm-item-list {
+	color: #b8b7ad;
+	padding: 0.8em;
+}*/
+
+/* Styling of overlay */
+.bm-overlay {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+
+
+.menu-item {
+	color: #282828;
+	font-size: 2.15em;
+}
+
+.bm-menu-wrap {
+}
+
+.bm-burger-bars {
+	background: $black;
+	border-radius: 1px;
+}
+
+.bm-cross-button {
+	height: 24px;
+	width: 24px;
+}
+
+.bm-cross {
+	border-radius: 4px;
+	height: 30px;
+	width: 4px;
+	background: #CCCCCC;
+}
+
+.bm-morph-shape {
+	fill: #373a47;
+}
+
+.bm-item-list {
+	color: #FFFFFF;
+	padding: 0.8em;
+
+	@include respond-to(tablet) {
+		padding: 60px;
+	}
+
+	@include respond-to(dsktop) {
+		padding: 60px;
+	}
+}
+
+.bm-overlay {
+	background: rgba(0, 0, 0, 0.9);
+}
+

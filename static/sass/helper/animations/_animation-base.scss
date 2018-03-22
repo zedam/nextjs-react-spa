@@ -1,0 +1,150 @@
+/*/////////////////////////////////
+
+    Animation elements
+
+//////////////////////////////////*/
+
+
+//
+// General
+// --------------------------------------------------
+/*.animate-skew-forward {
+    @include animate-skew-forward();
+}*/
+
+
+//
+// Icons
+// --------------------------------------------------
+
+// Basic icon animation
+/*.animate-icon-direction {
+    @if $animate-icon-direction == 'left' {
+
+        @include animate-icon-direction('left');
+
+    } @else if $animate-icon-direction == 'top' {
+
+        @include animate-icon-direction('top');
+
+    } @else if $animate-icon-direction == 'right' {
+
+        @include animate-icon-direction('right');
+
+    } @else if $animate-icon-direction == 'bottom' {
+
+        @include animate-icon-direction('bottom');
+
+    }
+}*/
+
+
+//
+// Links
+// --------------------------------------------------
+/*
+// Basic link animation
+.animate-link-underline {
+    @if $animate-link-type == 'left' {
+
+        @include animate-link-underline-left();
+
+    } @else if $animate-link-type == 'right' {
+
+        @include animate-link-underline-right();
+
+    } @else if $animate-link-type == 'bottom' {
+
+        @include animate-link-underline-bottom();
+
+    } @else if $animate-link-type == 'double-left' {
+
+        @include animate-link-underline-double-left();
+
+    } @else if $animate-link-type == 'double-right' {
+
+        @include animate-link-underline-double-right();
+
+    }
+}
+
+// Custom link animation overrides
+.animate-link-underline-left {
+    @include animate-link-underline-left();
+}
+
+.animate-link-underline-right {
+    @include animate-link-underline-right();
+}
+
+.animate-link-underline-bottom {
+    @include animate-link-underline-bottom();
+}
+
+.animate-link-underline-double-left {
+    @include animate-link-underline-double-left();
+}
+
+.animate-link-underline-double-right {
+    @include animate-link-underline-double-right();
+}*/
+
+
+//
+// Buttons
+// --------------------------------------------------
+/*
+
+.button {
+    // Basic button animation
+    &.animate-button-fill {
+        @if $animate-button-type == 'left' {
+
+            @include animate-button-fill('left');
+
+        } @else if $animate-button-type == 'top' {
+
+            @include animate-button-fill('top');
+
+        } @else if $animate-button-type == 'right' {
+
+            @include animate-button-fill('right');
+
+        } @else if $animate-button-type == 'bottom' {
+
+            @include animate-button-fill('bottom');
+
+        }
+    }
+}
+
+
+//
+// Images
+// --------------------------------------------------
+
+// Basic image animation
+&.animate-image-position {
+    @if $animate-image-type == 'zoom' {
+
+        @include animate-image-position('zoom');
+
+    } @else if $animate-image-type == 'top' {
+
+        @include animate-image-position('top');
+
+    } @else if $animate-image-type == 'right' {
+
+        @include animate-image-position('right');
+
+    } @else if $animate-image-type == 'bottom' {
+
+        @include animate-image-position('bottom');
+
+    } @else if $animate-image-type == 'left' {
+
+        @include animate-image-position('left');
+
+    }
+}
+*/

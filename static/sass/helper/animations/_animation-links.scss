@@ -1,0 +1,364 @@
+/*/////////////////////////////////
+
+    Animations
+
+    Structure explanation (Always start with 'animate-'):
+    animate-{element-name}-{animation-type}-{animation-type-modifier}
+
+    Example:
+    animate-button-outline-double
+
+//////////////////////////////////*/
+
+//
+// Link Animations
+// --------------------------------------------------
+$base-color-1: #000000;
+
+// Animate link underline left
+// 1) Options: color / inverse * / border-size / is-theme /
+// --------------------------------------------------
+// * inverse - the animation is with full visible underline and on hover it disappears to left
+
+@mixin animate-link-underline-left($color: $base-color-1, $inverse: false, $border-size: $animate-base-border-size) {
+    color: $color;
+    display: block;
+    position: relative;
+
+    @include respond-to(tablet) {
+        display: inline-block;
+    }
+
+    // Underline hover
+    &:after {
+        @include transition(all, $animate-base-speed, 0s, $animationEffect);
+        background-color: $color;
+        bottom: 0;
+        content: '';
+        height: $border-size;
+        left: 0;
+        position: absolute;
+        top: auto;
+
+        @if $inverse {
+            width: 100%;
+        } @else {
+            width: 0;
+        }
+    }
+
+    &:after {
+        background-color: $color;
+    }
+
+    &:hover,
+    &.hover {
+        text-decoration: none;
+
+        &:after {
+            @if $inverse {
+                width: 0;
+            } @else {
+                width: 100%;
+            }
+        }
+    }
+
+    &:hover,
+    &.hover {
+        color: $color;
+    }
+}
+
+
+// Animate link underline right
+// 1) Options: color / inverse * / border-size / is-theme
+// --------------------------------------------------
+
+// * inverse - the animation is with full visible underline and on hover it disappears to right
+
+@mixin animate-link-underline-right($color: $base-color-1, $inverse: false, $border-size: $animate-base-border-size, $is_theme: false) {
+    display: block;
+    position: relative;
+
+    @if $is_theme {
+        @include themify() {
+            color: theme-get($color);
+        }
+    } @else {
+        color: $color;
+    }
+
+    @include respond-to(tablet) {
+        display: inline-block;
+    }
+
+    // Underline hover
+    &:after {
+        @include transition(all, $animate-base-speed, 0s, $animationEffect);
+        background-color: $color;
+        bottom: -2px - $border-size;
+        content: '';
+        height: $border-size;
+        position: absolute;
+        right: 0;
+
+        @if $inverse {
+            width: 100%;
+        } @else {
+            width: 0;
+        }
+    }
+
+    @if $is_theme {
+        @include themify() {
+            &:after {
+                background-color: theme-get($color);
+            }
+        }
+    } @else {
+        &:after {
+            background-color: $color;
+        }
+    }
+
+    &:hover,
+    &.hover {
+        text-decoration: none;
+
+        &:after {
+            @if $inverse {
+                width: 0;
+            } @else {
+                width: 100%;
+            }
+        }
+    }
+
+    @if $is_theme {
+        @include themify() {
+            &:hover,
+            &.hover {
+                color: theme-get($color);
+            }
+        }
+    } @else {
+        &:hover,
+        &.hover {
+            color: $color;
+        }
+    }
+}
+
+
+// Animate link underline bottom
+// 1) Options: color / border-size / is-theme
+// --------------------------------------------------
+
+@mixin animate-link-underline-bottom($color: $base-color-1, $border-size: $animate-base-border-size, $is_theme: false) {
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    @if $is_theme {
+        @include themify() {
+            color: theme-get($color);
+        }
+    } @else {
+        color: $color;
+    }
+
+    @include respond-to(tablet) {
+        display: table-caption;
+    }
+
+    // Underline hover
+    &:after {
+        @include transition(all, $animate-base-speed, 0s, $animationEffect);
+        background-color: $color;
+        bottom: -2px - $border-size;
+        content: '';
+        height: $border-size;
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
+
+    @if $is_theme {
+        @include themify() {
+            &:after {
+                background-color: theme-get($color);
+            }
+        }
+    } @else {
+        &:after {
+            background-color: $color;
+        }
+    }
+
+    &:hover,
+    &.hover {
+        text-decoration: none;
+
+        &:after {
+            bottom: 0;
+        }
+    }
+
+    @if $is_theme {
+        @include themify() {
+            &:hover,
+            &.hover {
+                color: theme-get($color);
+            }
+        }
+    } @else {
+        &:hover,
+        &.hover {
+            color: $color;
+        }
+    }
+}
+
+
+// Animate link underline double left
+// 1) Options: color / border-size / is-theme
+// --------------------------------------------------
+
+@mixin animate-link-underline-double-left($color: $base-color-1, $border-size: $animate-base-border-size, $is_theme: false) {
+    @include transition(all, $animate-base-speed, 0s, $animationEffect);
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    @if $is_theme {
+        @include themify() {
+            color: theme-get($color);
+        }
+    } @else {
+        color: $color;
+    }
+
+    &:before,
+    &:after {
+        bottom: 0;
+        content: '';
+        height: $border-size;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    @if $is_theme {
+        @include themify() {
+            &:before,
+            &:after {
+                background-color: theme-get($color);
+            }
+        }
+    } @else {
+        &:before,
+        &:after {
+            background-color: $color;
+        }
+    }
+
+    &:hover,
+    &.hover {
+        text-decoration: none;
+
+        &:before {
+            @include transform(translate3d(-100%, 0, 0));
+            @include transition(all, $animate-base-speed, 0s, $animationEffect);
+        }
+
+        &:after {
+            @include transform(translate3d(0, 0, 0));
+            @include transition(all, $animate-base-speed, .2s, $animationEffect);
+        }
+    }
+
+    // Underline normal
+    &:before {
+        @include transform(translate3d(0, 0, 0));
+        @include transition(all, $animate-base-speed, .2s, $animationEffect);
+    }
+
+    // Underline hover
+    &:after {
+        @include transform(translate3d(100%, 0, 0));
+        @include transition(all, $animate-base-speed, 0s, $animationEffect);
+    }
+}
+
+
+// Animate link underline double right
+// 1) Options: color / border-size / is-theme
+// --------------------------------------------------
+
+@mixin animate-link-underline-double-right($color: $base-color-1, $border-size: $animate-base-border-size, $is_theme: false) {
+    @include transition(all, $animate-base-speed, 0s, $animationEffect);
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    @if $is_theme {
+        @include themify() {
+            color: theme-get($color);
+        }
+    } @else {
+        color: $color;
+    }
+
+    &:before,
+    &:after {
+        bottom: 0;
+        content: '';
+        height: $border-size;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    @if $is_theme {
+        @include themify() {
+            &:before,
+            &:after {
+                background-color: theme-get($color);
+            }
+        }
+    } @else {
+        &:before,
+        &:after {
+            background-color: $color;
+        }
+    }
+
+    &:hover,
+    &.hover {
+        text-decoration: none;
+
+        &:before {
+            @include transform(translate3d(100%, 0, 0));
+            @include transition(all, $animate-base-speed, 0s, $animationEffect);
+        }
+
+        &:after {
+            @include transform(translate3d(0, 0, 0));
+            @include transition(all, $animate-base-speed, .2s, $animationEffect);
+        }
+    }
+
+    // Underline normal
+    &:before {
+        @include transform(translate3d(0, 0, 0));
+        @include transition(all, $animate-base-speed, .2s, $animationEffect);
+    }
+
+    // Underline hover
+    &:after {
+        @include transform(translate3d(-100%, 0, 0));
+        @include transition(all, $animate-base-speed, 0s, $animationEffect);
+    }
+}
+

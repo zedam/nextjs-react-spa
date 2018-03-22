@@ -1,0 +1,186 @@
+/*/////////////////////////////////
+
+    Animations
+
+    Structure explanation (Always start with 'animate-'):
+    animate-{element-name}-{animation-type}-{animation-type-modifier}
+
+    Example:
+    animate-button-outline-double
+
+//////////////////////////////////*/
+
+//
+// Button Animations
+// --------------------------------------------------
+
+
+// Animate button fill
+// 1) Options: color / hover-color / position / is-theme
+// --------------------------------------------------
+
+@mixin animate-button-fill($position: 'left', $bg-color: $base-color-1, $bg-color-hover: $base-color-2, $color: $base-color-1, $color-hover: $white, $is_theme: false, $ghost-hover: false) {
+    background-color: transparent;
+
+    @if $ghost-hover == true  {
+        $temp-bg-color: $bg-color;
+        $bg-color: $bg-color-hover;
+        $bg-color-hover: $temp-bg-color;
+
+        background-color: $bg-color;
+        color: $bg-color-hover;
+
+        &:hover,
+        &.hover {
+            color: $bg-color;
+        }
+
+        // Base background
+        &:after {
+            background-color: $bg-color;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -2;
+        }
+    } @else {
+        color: $color;
+
+        &:hover,
+        &.hover {
+            color: $color-hover;
+        }
+    }
+
+    &.button-rounded {
+        // TODO CHECK PROPER WAY TO ANIMATE FILL animate-button-fill
+        @if $ghost-hover == false {
+            &:not(&.button-ghost) {
+                //border: 0;
+            }
+        } @else  {
+            //border: $animate-base-border-size solid $bg-color;
+        }
+
+
+        // TODO CHECK PROPER WAY TO ANIMATE FILL animate-button-fill
+        &:after {
+            border-radius: 100px;
+            border: $animate-base-border-size solid $bg-color;
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        &:hover,
+        &.hover {
+            background-color: transparent;
+        }
+    }
+
+
+    // TODO CHECK PROPER WAY TO ANIMATE FILL animate-button-fill
+    &.button-ghost {
+        //border: $animate-base-border-size solid $bg-color;
+    }
+
+    // Hover
+    &:before {
+        @include transition(transform, $animate-base-speed, $animate-initial-delay, $animationEffect);
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    @if $is_theme {
+        @include themify() {
+            &:before {
+                background-color: theme-get($bg-color-hover);
+            }
+
+            &.button-ghost {
+                &:before {
+                    background-color: theme-get($bg-color);
+                }
+            }
+        }
+    } @else {
+        &:before {
+            background-color: $bg-color-hover;
+        }
+
+        &.button-ghost {
+            &:before {
+                background-color: $bg-color;
+            }
+        }
+    }
+
+    @if $position == 'left' {
+        &:before {
+            @include transform(scale(0, 1));
+            transform-origin: right center;
+        }
+
+        &:hover,
+        &.hover {
+            &:before {
+                @include transition(transform, $animate-base-speed, $animate-delay, $animationEffect);
+                @include transform(scale(1, 1));
+                transform-origin: left center;
+            }
+        }
+    } @else if $position == 'top' {
+        &:before {
+            @include transform(scale(1, 0));
+            transform-origin: bottom center;
+        }
+
+        &:hover,
+        &.hover {
+            &:before {
+                @include transition(transform, $animate-base-speed, $animate-delay, $animationEffect);
+                @include transform(scale(1, 1));
+                transform-origin: top center;
+            }
+        }
+    } @else if $position == 'right' {
+        &:before {
+            @include transform(scale(0, 1));
+            transform-origin: left center;
+        }
+
+        &:hover,
+        &.hover {
+            &:before {
+                @include transition(transform, $animate-base-speed, $animate-delay, $animationEffect);
+                @include transform(scale(1, 1));
+                transform-origin: right center;
+            }
+        }
+    } @else if $position == 'bottom' {
+        &:before {
+            @include transform(scale(1, 0));
+            transform-origin: top center;
+        }
+
+        &:hover,
+        &.hover {
+            &:before {
+                @include transition(transform, $animate-base-speed, $animate-delay, $animationEffect);
+                @include transform(scale(1, 1));
+                transform-origin: bottom center;
+            }
+        }
+    }
+}
