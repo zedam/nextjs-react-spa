@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Link from './link'
+//import Link from './link'
+import Link from 'next/link'
 import Menu from 'react-burger-menu/lib/menus/slide'
 //import { slide as Menu } from 'react-burger-menu'
 
@@ -102,11 +103,42 @@ export default class extends Component {
 					  className={ "my-menu " }
 					  isOpen={this.state.menuOpen}
 					  onStateChange={(state) => this.handleStateChange(state)}>
-					<a id="home" onClick={() => this.closeMenu()} className="menu-item" href="/">Home</a>
-					<a id="about" onClick={() => this.closeMenu()} className="menu-item" href="/about">About</a>
-					<a id="studio" className="menu-item" href="/studio">Studio</a>
-					<a id="directors" className="menu-item" href="/directors">Directors</a>
-					<a id="contact" className="menu-item" href="/contact">Contact</a>
+
+					<Link prefetch href="/" >
+						<a className="menu-item">
+							<span onClick={() => this.closeMenu()} >
+							Home
+							</span>
+						</a>
+					</Link>
+					<Link prefetch href="/about" >
+						<a className="menu-item">
+							<span onClick={() => this.closeMenu()} >
+							About
+							</span>
+						</a>
+					</Link>
+					<Link prefetch href="/studio" >
+						<a className="menu-item">
+							<span onClick={() => this.closeMenu()} >
+							Studio
+							</span>
+						</a>
+					</Link>
+					<Link prefetch href="/directors" >
+						<a className="menu-item">
+							<span onClick={() => this.closeMenu()} >
+							Directors
+							</span>
+						</a>
+					</Link>
+					<Link prefetch href="/contact" >
+						<a className="menu-item">
+							<span onClick={() => this.closeMenu()} >
+							Contact
+							</span>
+						</a>
+					</Link>
 					{/*<a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>*/}
 				</Menu>
 
