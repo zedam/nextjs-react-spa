@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-unfetch'
+import Constant from '../components/Constant'
 import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
@@ -73,14 +74,14 @@ Directors.getInitialProps = async (context) => {
 	const { id } = context.query;
 	let response
 	if (id == undefined) {
-		const directors = await fetch('http://craft3/api/pages/directors_page.json')
+		const directors = await fetch(Constant.api_url + 'api/pages/directors_page.json')
 		const directorsData = await directors.json()
 
 		response = {
 			directors: directorsData
 		}
 	} else {
-		const directors = await fetch(`http://craft3/api/directors/${id}.json`)
+		const directors = await fetch(Constant.api_url + `api/directors/${id}.json`)
 		const directorsData = await directors.json()
 
 		response = {

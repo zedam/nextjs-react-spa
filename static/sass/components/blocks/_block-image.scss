@@ -1,6 +1,17 @@
 .block-image__container {
 
 }
+.animated.fadeIn {
+	@include transition(all, .6s, 0s);
+}
+
+.animated {
+	@include transform(translateY(100px));
+	opacity: 0;
+}
+.fadeIn {
+	@include transform(translateY(0));
+}
 
 .block-image__item {
 	float: left;
@@ -14,3 +25,11 @@
 		float: left;
 	}
 }
+
+.block-image__title {
+	font-size: 21px;
+	margin-bottom: 30px;
+	position: relative;
+	text-decoration: underline;
+}
+

@@ -1,8 +1,8 @@
 const Tags = (props) => (
-    <div>
+    <div className="tags__container">
         {props.content.map((tag, i) => (
-            <div key={i}>
-                {tag.title}
+            <div key={i} className="tags__item">
+				#{tag.title}
             </div>
         ))}
     </div>

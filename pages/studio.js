@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-unfetch'
+import Constant from '../components/Constant'
 import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
@@ -56,7 +57,7 @@ export default class Studio extends Component {
 						// If state = true, display content
 						this.state.isReady &&
 						<div key="title" className="template-1">
-							<div className="header-2__container studio">
+							<div className="header-2__container" style={{ backgroundColor: this.props.studio.data[0].color.color }}>
 
 								{this.props.studio.data[0].image &&
 								<Image content={this.props.studio.data[0].image} width="100%" ></Image>
@@ -92,7 +93,7 @@ export default class Studio extends Component {
 }
 
 Studio.getInitialProps = async () => {
-	const studio = await fetch('http://craft3/api/pages/studio.json')
+	const studio = await fetch(Constant.api_url + 'api/pages/studio.json')
 	const studioData = await studio.json()
 
 	return {

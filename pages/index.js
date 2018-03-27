@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch'
 import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
+import Constant from '../components/Constant'
 
 import { DefaultPlayer as Video } from 'react-html5video';
 //import 'react-html5video/dist/styles.css';
@@ -106,8 +107,9 @@ export default class Homepage extends Component {
 	}
 }
 
+
 Homepage.getInitialProps = async () => {
-	const homepage = await fetch('http://craft3/api/pages/homepage.json')
+	const homepage = await fetch(Constant.api_url + 'api/pages/homepage.json')
 	const homepageData = await homepage.json()
 
 	return {

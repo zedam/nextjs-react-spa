@@ -79,18 +79,19 @@
 }
 
 .menu__home-logo {
-	background-image: url('/static/images/mobile/logo.png');
+	background-image: url('/static/images/mobile/bandera_4web.gif');
+	background-image: url('/static/images/mobile/bandera_signature_2colors.gif');
 	background-size: cover;
-	height: 50px;
+	height: 60px;
 	position: fixed;
-	right: 20px;
-	top: 20px;
-	width: 70px;
+	right: 0;
+	top: 0;
+	width: 80px;
 	z-index: 1;
 
 	@include respond-to(tablet) {
-		right: 36px;
-		top: 36px;
+		right: 10px;
+		top: 10px;
 	}
 
 	@include respond-to(desktop) {

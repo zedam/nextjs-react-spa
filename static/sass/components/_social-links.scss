@@ -1,0 +1,19 @@
+.social-links__container {
+	margin-top: 30px;
+}
+
+.social-links__title {
+	color: $black;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.social-links__item {
+	@include animate-link-underline-left($black);
+	color: $black;
+	font-size: 20px;
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+	text-decoration: none;
+}

@@ -10,6 +10,9 @@ $green: green;
 
 @import 'components/general';
 @import 'components/menu';
+@import 'components/social-links';
+@import 'components/tables';
+@import 'components/tags';
 @import 'components/header/header_1';
 @import 'components/header/header_2';
 @import 'components/header/header_3';
@@ -20,6 +23,7 @@ $green: green;
 @import 'components/blocks/block-news-item-small';
 @import 'components/blocks/block-project-item';
 @import 'pages/directors/directors';
+@import 'pages/contact';
 
 .sass-example {
   color: $green;
@@ -38,4 +42,12 @@ $green: green;
   .open-menu & {
     transform: translateX(0);
   }
+}
+
+body {
+	color: $black;
+}
+
+.footer__container {
+	margin-top: 80px;
 }

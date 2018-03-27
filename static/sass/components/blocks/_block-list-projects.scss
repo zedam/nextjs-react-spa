@@ -1,12 +1,13 @@
 
 .block-list-projects__item {
 	float: left;
-	padding-bottom: 25%;
+	padding-bottom: 46%;
 	position: relative;
 	width: 100%;
 
 	@include respond-to(tablet) {
 		width: 50%;
+		padding-bottom: 25%;
 	}
 
 	img {

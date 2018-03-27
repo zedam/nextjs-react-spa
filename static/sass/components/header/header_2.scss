@@ -7,8 +7,10 @@
 		min-height: 0;
 	}
 
-	&.studio {
-		background: #ccc;
+	&.full {
+		@include respond-to(tablet) {
+			min-height: 100vh;
+		}
 	}
 }
 

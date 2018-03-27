@@ -1,5 +1,6 @@
 import Header from './Header'
 import Head from 'next/head'
+import Footer from './Footer'
 
 
 const Layout = (props) => (
@@ -13,6 +14,8 @@ const Layout = (props) => (
 		</Head>
 		<Header title={props.title} pathname={props.pathname}/>
 		{props.children}
+
+		<Footer></Footer>
     </div>
 
 );

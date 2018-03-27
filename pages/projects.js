@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-unfetch'
+import Constant from '../components/Constant'
 import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
-import Image from '../components/Image'
+import Tables from '../components/Tables'
 import Vimeo from 'react-vimeo';
+import SocialShare from '../components/SocialShare'
+import Constant from '../components/Constant'
 
 export default class Projects extends Component {
 	state = {
@@ -39,7 +42,7 @@ export default class Projects extends Component {
 	isLeaving = () => {
 		return {
 			opacity: 0,
-			translateY: 50,
+			translateY: 50
 		}
 	}
 	render = () => {
@@ -86,10 +89,28 @@ export default class Projects extends Component {
 							<div className="fade-up header-3__container-content-description"
 							   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
 							}
+
+							{(this.props.project.facebookLink ||
+								this.props.project.instagramLink ||
+								this.props.project.linkedinLink ||
+								this.props.project.behanceLink ||
+								this.props.project.vimeoLink) &&
+								<SocialShare content={this.props.project}/>
+							}
+
+							{this.props.project.tables &&
+								<Tables content={this.props.project.tables} />
+							}
 						</div>
+						{/*{this.props.project.tables.map((table, i) => (
+							<div key={i} className="tags__item">
+								#{table.heading}<br/>
+								#{table.custom}
+							</div>
+						))}*/}
 
 						{this.props.project.blocks &&
-						<Blocks content={this.props.project.blocks}/>
+						<Blocks content={this.props.project.blocks} />
 						}
 
 
@@ -103,7 +124,7 @@ export default class Projects extends Component {
 
 Projects.getInitialProps = async (context) => {
 	const { id } = context.query;
-	const project = await fetch(`http://craft3/api/projects/${id}.json`)
+	const project = await fetch(Constant.api_url + `api/projects/${id}.json`)
 	const projectData = await project.json()
 
 	return {

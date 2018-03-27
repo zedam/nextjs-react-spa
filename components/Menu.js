@@ -106,6 +106,7 @@ export default class extends Component {
 					<a id="about" onClick={() => this.closeMenu()} className="menu-item" href="/about">About</a>
 					<a id="studio" className="menu-item" href="/studio">Studio</a>
 					<a id="directors" className="menu-item" href="/directors">Directors</a>
+					<a id="contact" className="menu-item" href="/contact">Contact</a>
 					{/*<a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>*/}
 				</Menu>
 

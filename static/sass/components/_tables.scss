@@ -1,0 +1,20 @@
+.tables__container {
+	margin-top: 20px;
+}
+
+.tables__item {
+	display: block;
+
+	+ .tables__item {
+		margin-top: 5px;
+	}
+}
+
+.tables__heading {
+	display: inline-block;
+	width: 200px;
+}
+
+.tables__custom {
+	display: inline-block;
+}

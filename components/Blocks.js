@@ -2,6 +2,7 @@ import BlockContent from './blocks/BlockContent'
 import BlockImage from './blocks/BlockImage'
 import BlockVideo from './blocks/BlockVideo'
 import BlockList from './blocks/BlockList'
+import BlockTables from './blocks/BlockTables'
 import BlockOneItem from './blocks/BlockOneItem'
 import BlockListDirectors from './blocks/BlockListDirectors'
 import BlockListProjects from './blocks/BlockListProjects'
@@ -36,6 +37,10 @@ const Blocks = (props) => (
 
 				{block.type == 'blockListProjects' &&
 				<BlockListProjects content={block}></BlockListProjects>
+				}
+
+				{block.type == 'blockTables' &&
+				<BlockTables content={block}></BlockTables>
 				}
 			</div>
 		))}
