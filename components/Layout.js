@@ -6,7 +6,7 @@ import Footer from './Footer'
 const Layout = (props) => (
 	<div>
 		<Head>
-			<title>The Brut</title>
+			<title>The Brut Films</title>
 
 			<link type="text/css" rel="stylesheet" href="/static/style.css"></link>
 
