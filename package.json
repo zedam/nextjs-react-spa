@@ -4,11 +4,12 @@
     "author": "toinelin <contact@antoinelin.fr>",
     "license": "MIT",
     "dependencies": {
+        "@zeit/next-css": "^0.1.5",
         "@zeit/next-sass": "0.0.9",
         "express": "^4.16.2",
         "isomorphic-unfetch": "^2.0.0",
         "next": "^5.1.0",
-        "node-sass": "4.5.3",
+        "node-sass": "^4.7.2",
         "react": "^16.0.0",
         "react-animate-on-scroll": "^2.1.2",
         "react-burger-menu": "^2.3.0",
@@ -49,7 +50,7 @@
         "server": "node server.js",
         "dev": "next",
         "build": "next build",
-        "start": "NODE_ENV=production node server.js",
+        "start": "NODE_ENV=production next start",
         "lint": "standard"
     }
 }

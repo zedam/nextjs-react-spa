@@ -9,7 +9,8 @@ const Layout = (props) => (
 			<title>The Brut Films</title>
 
 			<link type="text/css" rel="stylesheet" href="/static/style.css"></link>
-
+			<link type="text/css" rel='stylesheet' href='/_next/static/style.css'
+			/>
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		</Head>
 		<Header title={props.title} pathname={props.pathname}/>
