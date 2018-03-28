@@ -7,7 +7,7 @@
         "@zeit/next-sass": "0.0.9",
         "express": "^4.16.2",
         "isomorphic-unfetch": "^2.0.0",
-        "next": "latest",
+        "next": "^5.1.0",
         "node-sass": "4.5.3",
         "react": "^16.0.0",
         "react-animate-on-scroll": "^2.1.2",

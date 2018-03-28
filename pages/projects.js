@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-unfetch'
-import Constant from '../components/Constant'
 import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
