@@ -42,7 +42,7 @@
 
 .block-news-item-small__content-container {
 	display: inline-block;
-	padding: 20px 20px 0;
+	padding: 20px 0 0;
 
 	@include respond-to(tablet) {
 		display: table-cell;
@@ -62,7 +62,8 @@
 		@include animate-link-underline-left($black);
 		color: $black;
 		display: inline-block;
-		font-size: 30px;
+		font-size: 28px;
+		font-weight: normal;
 		text-decoration: none;
 
 		@include respond-to(tablet) {
@@ -73,7 +74,8 @@
 }
 
 .block-news-item-small__subtitle {
-	font-size: 20px;
+	font-size: 21px;
+	line-height: 26px;
 	margin-top: 20px;
 
 	@include respond-to (tablet) {

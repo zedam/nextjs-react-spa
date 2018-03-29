@@ -8,7 +8,7 @@ import BlockListDirectors from './blocks/BlockListDirectors'
 import BlockListProjects from './blocks/BlockListProjects'
 
 const Blocks = (props) => (
-	<div>
+	<React.Fragment>
 		{props.content.map((block, i) => (
 			<div key={i}>
 				{block.type == 'blockContent' &&
@@ -45,7 +45,7 @@ const Blocks = (props) => (
 			</div>
 		))}
 
-	</div>
+	</React.Fragment>
 )
 
 export default Blocks

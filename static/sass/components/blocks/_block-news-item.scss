@@ -57,7 +57,7 @@
 		@include animate-link-underline-left($black);
 		color: $black;
 		display: inline-block;
-		font-size: 30px;
+		font-size: 28px;
 		font-weight: normal;
 		text-decoration: none;
 
@@ -69,8 +69,8 @@
 }
 
 .block-news-item__subtitle {
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 21px;
+	line-height: 26px;
 	margin-top: 20px;
 
 	@include respond-to(tablet) {

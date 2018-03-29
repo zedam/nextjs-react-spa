@@ -8,9 +8,7 @@ import BlockFullItem  from '../blocks/BlockFullItem.js'
 import BlockNewsItemSmall from '../news/BlockNewsItemSmall.js';
 
 const BlockOneItem = (props) => (
-    <div>
-        <h2>{props.content.mainTitle}</h2>
-        <div dangerouslySetInnerHTML={{__html: props.content.description }} ></div>
+	<React.Fragment>
 
         {props.content.typeElement.map((comp, i) => (
             /*Load each component in the config file in order.
@@ -20,10 +18,6 @@ const BlockOneItem = (props) => (
             */
 
             <div key={i}>
-				{/*{comp.handle == 'projects' &&
-					<BlockProjectItem content={comp}></BlockProjectItem>
-				}*/}
-
 
 				{props.content.size.value == 'full' &&
 				<BlockFullItem content={comp}></BlockFullItem>
@@ -35,29 +29,12 @@ const BlockOneItem = (props) => (
 				<BlockSmallItem content={comp}></BlockSmallItem>
 				}
 
-				{/*{comp.handle == 'directors' &&
-					<BlockDirectorsItem  content={comp}></BlockDirectorsItem>
-				}*/}
-
-				{/*{comp.handle == 'news' &&
-
-					<div>
-						{props.content.size.value == 'big' &&
-							<BlockNewsItem content={comp}></BlockNewsItem>
-						}
-
-						{props.content.size.value == 'small' &&
-							<BlockNewsItemSmall content={comp}></BlockNewsItemSmall>
-						}
-					</div>
-				}*/}
-
             </div>
 
 
         ))}
 
-    </div>
+    </React.Fragment>
 );
 
 export default BlockOneItem;
