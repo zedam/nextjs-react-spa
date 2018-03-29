@@ -1,6 +1,9 @@
 const express = require('express')
 const next = require('next')
 const { parse } = require('url')
+const { join } = require('path')
+const fs = require('fs')
+const morgan = require('morgan')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
@@ -10,27 +13,17 @@ const handle = app.getRequestHandler()
 app.prepare()
 	.then(() => {
 
-
-
 		const server = express()
 
+
+
+		// create a write stream (in append mode)
+		const accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'})
+
+		// setup the logger
+		server.use(morgan('combined', {stream: accessLogStream}))
+
 		server.get('/projects/:slug/:id', (req, res) => {
-
-
-			const parsedUrl = parse(req.url, true)
-			const rootStaticFiles = [
-				'/robots.txt',
-				'/sitemap.xml',
-				'/favicon.ico'
-			]
-			if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
-				const path = join(__dirname, 'static', parsedUrl.pathname)
-				app.serveStatic(req, res, path)
-			} else {
-				handle(req, res, parsedUrl)
-			}
-
-
 			const actualPage = '/projects'
 			const queryParams = { id: req.params.id, slug: req.params.slug }
 			app.render(req, res, actualPage, queryParams)
@@ -49,7 +42,20 @@ app.prepare()
 		});
 
 		server.get('*', (req, res) => {
-			return handle(req, res)
+
+			const parsedUrl = parse(req.url, true)
+			const rootStaticFiles = [
+				'/robots.txt',
+				'/sitemap.xml',
+				'/favicon.ico'
+			]
+			if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
+				const path = join(__dirname, 'static', parsedUrl.pathname)
+				return app.serveStatic(req, res, path)
+			} else {
+				return handle(req, res)
+			}
+
 		});
 
 		server.listen(port, (err) => {
