@@ -48,7 +48,7 @@ export default class Homepage extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout>
+			<Layout content={this.props.homepage.data[0]}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}

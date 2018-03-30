@@ -6,7 +6,17 @@ import Footer from './Footer'
 const Layout = (props) => (
 	<React.Fragment>
 		<Head>
-			<title>The Brut Films</title>
+			<title>{props.content.metaTitle}</title>
+			<meta name="description" content={props.content.metaDescription} />
+
+			<meta property="og:type" content="website" />
+			<meta property="og:locale" content="en" />
+			<meta property="og:title" content={props.content.metaTitle} />
+			<meta property="og:description" content={props.content.metaDescription} />
+			<meta property="og:image" content={props.content.metaDescription} />
+			<meta property="og:image:width" content="1200" />
+			<meta property="og:image:height" content="630" />
+			<meta property="og:url" content={props.content.image[0].desktop} />
 
 			<link type="text/css" rel="stylesheet" href="/static/style.css"></link>
 			<link type="text/css" rel='stylesheet' href='/_next/static/style.css'
