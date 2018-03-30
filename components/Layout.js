@@ -8,6 +8,7 @@ const Layout = (props) => (
 		<Head>
 			<title>{props.content.metaTitle}</title>
 			<meta name="description" content={props.content.metaDescription} />
+			<meta name="google-site-verification" content="NB3rWMsDMvEkMA7JPbQL4BUU11m_h5GdVDyziSZYvRM" />
 
 			<meta property="og:type" content="website" />
 			<meta property="og:locale" content="en" />
