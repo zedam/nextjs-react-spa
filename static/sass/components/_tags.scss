@@ -4,11 +4,11 @@
 
 .tags__item {
 	display: inline-block;
-	font-size: 24px;
+	font-size: 21px;
 	padding: 0 15px 0 0;
 
 	@include respond-to(tablet) {
 		font-size: 42px;
-		padding: 5px 15px 5px 0;
+		padding: 5px 15px 0 0;
 	}
 }

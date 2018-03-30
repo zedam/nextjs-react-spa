@@ -56,7 +56,7 @@ export default class About extends Component {
 						// If state = true, display content
 						this.state.isReady &&
 						<div key="title" className="template-1">
-							<div className="header-2__container" style={{ backgroundColor: this.props.about.data[0].color.color }}>
+							<div className="header-2__container fullScreen" style={{ backgroundColor: this.props.about.data[0].color.color }}>
 
 								{this.props.about.data[0].image &&
 								<Image content={this.props.about.data[0].image} width="100%" ></Image>

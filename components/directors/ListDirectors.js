@@ -4,13 +4,12 @@ import ScrollAnimation from 'react-animate-on-scroll';
 //import "animate.css/animate.min.css";
 
 const ListDirectors = (props) => (
-    <div>
+    <React.Fragment>
         <ul>
             {props.content.data.map((director, i) => (
                 <li className="fade-up" data-aos-anchor-placement="top-center" key={director.id}>
                     <LinkDirectors content={director}>
 						{director.title}
-
                     </LinkDirectors>
                 </li>
             ))}
@@ -21,7 +20,7 @@ const ListDirectors = (props) => (
                width: 100%;
             }
         `}</style>
-    </div>
+    </React.Fragment>
 );
 
 export default ListDirectors;

@@ -12,6 +12,12 @@
 			min-height: 100vh;
 		}
 	}
+
+	&.fullScreen {
+		@include respond-to(tablet) {
+			min-height: 100vh;
+		}
+	}
 }
 
 .header-2__video-container {
@@ -42,7 +48,7 @@
 	position: relative;
 	right: 0;
 	text-align: left;
-	padding: 100px 20px 0;
+	padding: 100px 20px 50px;
 	width: 100%;
 	z-index: 1;
 
@@ -67,18 +73,33 @@
 }
 
 .header-2__container-content-title {
-	font-size: 30px;
+	font-size: 42px;
 	font-weight: normal;
 	line-height: 37px;
 
+	.studio & {
+		font-size: 35px;
+		line-height: 42px;
+
+		@include respond-to (tablet){
+			font-size: 49px;
+			line-height: 54px;
+		}
+
+		@include respond-to (desktop){
+			font-size: 49px;
+			line-height: 54px;
+		}
+	}
+
 	@include respond-to (tablet){
-		font-size: 38px;
+		font-size: 49px;
 		line-height: 44px;
 	}
 
 	@include respond-to (desktop){
-		font-size: 38px;
-		line-height: 44px;
+		font-size: 63px;
+		line-height: 65px;
 	}
 
 	.about & {
@@ -88,13 +109,13 @@
 }
 
 .header-2_container-content-description {
-	font-size: 20px;
+	font-size: 21px;
 	font-weight: normal;
-	line-height: 29px;
+	line-height: 28px;
 	margin-top: 30px;
 
 	@include respond-to (tablet){
-		font-size: 20px;
+		font-size: 21px;
 		line-height: 29px;
 	}
 }
@@ -102,8 +123,4 @@
 .rh5v-Overlay_component,
 .rh5v-DefaultPlayer_controls {
 	display: none;
-}
-
-.header-2__container-content {
-
 }

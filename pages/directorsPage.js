@@ -7,13 +7,11 @@ export default class DirectorsPage extends Component {
 		return (
 
 			<div className="template-1">
-				<div className="header-2__container">
+				<div className="header-2__container fullScreen" style={{ backgroundColor: this.props.content.data[0].color.color }}>
 
-					<div className="header-2__container-content">
-						{this.props.content.data[0].blocks &&
-						<Blocks content={this.props.content.data[0].blocks}/>
-						}
-					</div>
+					{this.props.content.data[0].blocks &&
+					<Blocks content={this.props.content.data[0].blocks}/>
+					}
 				</div>
 			</div>
 		)

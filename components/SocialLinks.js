@@ -14,7 +14,7 @@ const SocialLinks = (props) => (
 		}
 		{props.content.instagramLink &&
 		<Link href={props.content.instagramLink}>
-			<a className="social-links__item">Instagram.</a>
+			<a className="social-links__item">Ins.</a>
 		</Link>
 		}
 		{props.content.vimeoLink &&

@@ -1,21 +1,43 @@
 .link-directors__container {
-	font-size: 30px;
+	max-width: 1000px;
+	padding: 100px 20px 50px;
 
 	@include respond-to(tablet) {
-		font-size: 36px;
+		padding: 140px $margin-tablet;
 	}
 
 	@include respond-to(desktop) {
-		font-size: 40px;
+		padding: 140px $margin-desktop;
+		max-width: 960px;
+	}
+
+	@include respond-to(desktop_big) {
+		max-width: 1400px;
+		margin: auto;
+		padding: 140px 100px;
+	}
+}
+
+.link-directors__item-container {
+
+	font-size: 35px;
+
+	@include respond-to(tablet) {
+		font-size: 49px;
+	}
+
+	@include respond-to(desktop) {
+		font-size: 63px;
 	}
 }
 
 .link-directors {
-	@include animate-link-underline-left($black, true);
+	@include animate-link-underline-left($black);
 	float: left;
 }
 
 .link-directors__separator {
+	color: $black;
 	float: left;
 	margin: 0 5px;
 }

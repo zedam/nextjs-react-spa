@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 
 const Layout = (props) => (
-	<div>
+	<React.Fragment>
 		<Head>
 			<title>The Brut Films</title>
 
@@ -16,8 +16,8 @@ const Layout = (props) => (
 		<Header title={props.title} pathname={props.pathname}/>
 		{props.children}
 
-		<Footer></Footer>
-    </div>
+		{/*<Footer></Footer>*/}
+    </React.Fragment>
 
 );
 
