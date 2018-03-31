@@ -15,13 +15,11 @@ app.prepare()
 
 		const server = express()
 
-
-
 		// create a write stream (in append mode)
 		const accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'})
 
 		// setup the logger
-		server.use(morgan('combined', {stream: accessLogStream}))
+//		server.use(morgan('combined', {stream: accessLogStream}))
 
 		server.get('/projects/:slug/:id', (req, res) => {
 			const actualPage = '/projects'
@@ -43,7 +41,7 @@ app.prepare()
 
 		server.get('*', (req, res) => {
 
-			const parsedUrl = parse(req.url, true)
+			/*const parsedUrl = parse(req.url, true)
 			const rootStaticFiles = [
 				'/robots.txt',
 				'/sitemap.xml',
@@ -54,8 +52,9 @@ app.prepare()
 				return app.serveStatic(req, res, path)
 			} else {
 				return handle(req, res)
-			}
+			}*/
 
+			return handle(req, res)
 		});
 
 		server.listen(port, (err) => {

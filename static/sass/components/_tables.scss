@@ -3,18 +3,25 @@
 }
 
 .tables__item {
-	display: block;
+	display: table;
+	width: 100%;
 
 	+ .tables__item {
-		margin-top: 5px;
+		margin-top: 10px;
 	}
 }
 
 .tables__heading {
-	display: inline-block;
-	width: 200px;
+	display: table-cell;
+	max-width: 200px;
+	width: 50%;
 }
 
 .tables__custom {
-	display: inline-block;
+	display: table-cell;
+	padding-left: 10px;
+
+	@include respond-to(tablet) {
+		display: inline-block;
+	}
 }

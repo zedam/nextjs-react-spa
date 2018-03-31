@@ -46,7 +46,7 @@ export default class Contact extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout>
+			<Layout content={this.props.contact.data[0]}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}

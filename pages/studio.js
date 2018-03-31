@@ -47,7 +47,7 @@ export default class Studio extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout>
+			<Layout content={this.props.studio.data[0]}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}

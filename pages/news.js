@@ -46,7 +46,7 @@ export default class News extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout>
+			<Layout content={this.props.news}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}
@@ -69,7 +69,6 @@ export default class News extends Component {
 							{this.props.news.headline &&
 							<h1 className="header-3__container-content-title">{this.props.news.headline}</h1>
 							}
-
 
 							<ScrollAnimation animateIn="fadeIn">
 

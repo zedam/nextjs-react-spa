@@ -46,7 +46,7 @@ export default class Directors extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout>
+			<Layout content={this.props.directors}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}

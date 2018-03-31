@@ -46,12 +46,11 @@ export default class About extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout>
+			<Layout content={this.props.about.data[0]}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}
-					leave={this.isLeaving()}
-				>
+					leave={this.isLeaving()} >
 					{
 						// If state = true, display content
 						this.state.isReady &&

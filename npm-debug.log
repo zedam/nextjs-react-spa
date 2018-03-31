@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/zedam/.nvm/versions/node/v6.13.1/bin/node',
+1 verbose cli   '/Users/zedam/.nvm/versions/node/v6.13.1/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'build' ]
+2 info using npm@3.10.10
+3 info using node@v6.13.1
+4 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
+5 info lifecycle next-motion@1.0.0-beta~prebuild: next-motion@1.0.0-beta
+6 silly lifecycle next-motion@1.0.0-beta~prebuild: no script for prebuild, continuing
+7 info lifecycle next-motion@1.0.0-beta~build: next-motion@1.0.0-beta
+8 verbose lifecycle next-motion@1.0.0-beta~build: unsafe-perm in lifecycle true
+9 verbose lifecycle next-motion@1.0.0-beta~build: PATH: /Users/zedam/.nvm/versions/node/v6.13.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/zedam/Sites/next-motion/node_modules/.bin:/Users/zedam/.nvm/versions/node/v6.13.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle next-motion@1.0.0-beta~build: CWD: /Users/zedam/Sites/next-motion
+11 silly lifecycle next-motion@1.0.0-beta~build: Args: [ '-c', 'next build' ]
+12 silly lifecycle next-motion@1.0.0-beta~build: Returned: code: 1  signal: null
+13 info lifecycle next-motion@1.0.0-beta~build: Failed to exec build script
+14 verbose stack Error: next-motion@1.0.0-beta build: `next build`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/Users/zedam/.nvm/versions/node/v6.13.1/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:191:7)
+14 verbose stack     at ChildProcess.<anonymous> (/Users/zedam/.nvm/versions/node/v6.13.1/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:191:7)
+14 verbose stack     at maybeClose (internal/child_process.js:920:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
+15 verbose pkgid next-motion@1.0.0-beta
+16 verbose cwd /Users/zedam/Sites/next-motion
+17 error Darwin 17.2.0
+18 error argv "/Users/zedam/.nvm/versions/node/v6.13.1/bin/node" "/Users/zedam/.nvm/versions/node/v6.13.1/bin/npm" "run" "build"
+19 error node v6.13.1
+20 error npm  v3.10.10
+21 error code ELIFECYCLE
+22 error next-motion@1.0.0-beta build: `next build`
+22 error Exit status 1
+23 error Failed at the next-motion@1.0.0-beta build script 'next build'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the next-motion package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     next build
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs next-motion
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls next-motion
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

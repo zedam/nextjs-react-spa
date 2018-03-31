@@ -5,6 +5,8 @@ import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import Tables from '../components/Tables'
+import Image from '../components/Image'
+import BackgroundImage from '../components/BackgroundImage'
 import Vimeo from 'react-vimeo';
 import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
@@ -47,7 +49,7 @@ export default class Projects extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout>
+			<Layout content={this.props.project}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}
@@ -58,31 +60,27 @@ export default class Projects extends Component {
 					<div key="title" className="template-1">
 
 						<div className="header-3__video-container">
-
 							{/*{this.props.project.image &&
-							<Image content={this.props.project.image} width="100%" ></Image>
+							<BackgroundImage content={this.props.project.image[0]} width="100%" ></BackgroundImage>
+							}
+							{this.props.project.image &&
+								<Image content={this.props.project.image[0]} width="100%"></Image>
 							}*/}
 
-							<Vimeo videoId="52964094" autoplay={false} />
-							{/*<div className="header-1__video-container">
-							</div>*/}
+							{this.props.project.vimeoId &&
+							<Vimeo videoId={this.props.project.vimeoId} autoplay={false} />
+							}
 
 						</div>
 
 
 						<div className="header-1__container-content">
 
-
 							{this.props.project.title &&
-							<h1 className="header-3__container-content-title">{this.props.project.title}</h1>
+							<h1 className="header-3__container-content-title">
+								{this.props.project.title}
+							</h1>
 							}
-							{/*{this.props.project.title &&
-							<h1>{this.props.project.title}</h1>
-							}*/}
-							{/*{this.props.project.subtitle &&
-							<h2 className="header-3__container-content-subtitle">{this.props.project.subtitle}</h2>
-							}*/}
-
 
 							{this.props.project.description &&
 							<div className="fade-up header-3__container-content-description"
@@ -94,7 +92,7 @@ export default class Projects extends Component {
 								this.props.project.linkedinLink ||
 								this.props.project.behanceLink ||
 								this.props.project.vimeoLink) &&
-								<SocialShare content={this.props.project}/>
+								<SocialShare content={this.props.project} />
 							}
 
 							{this.props.project.tables &&
