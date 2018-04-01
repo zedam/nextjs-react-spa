@@ -6,11 +6,12 @@
 }
 
 .animated {
-	@include transform(translateY(100px));
+	@include transform(translateY(30px));
 	opacity: 0;
 }
 .fadeIn {
 	@include transform(translateY(0));
+	opacity: 1;
 }
 
 .block-image__item {

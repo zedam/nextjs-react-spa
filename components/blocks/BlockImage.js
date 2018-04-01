@@ -13,7 +13,7 @@ const BlockImage = (props) => (
 			<div className="block-image__image-container">
 				{props.content.image.map((image,i) => (
 
-				<ScrollAnimation animateIn="fadeIn">
+				<ScrollAnimation animateIn="fadeIn" animateOnce="true">
 					<Image key={i} class="block-image__item" content={image} width="100%" ></Image>
 				</ScrollAnimation>
 

@@ -10,6 +10,7 @@ import BackgroundImage from '../components/BackgroundImage'
 import Vimeo from 'react-vimeo';
 import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 export default class Projects extends Component {
 	state = {
@@ -77,14 +78,18 @@ export default class Projects extends Component {
 						<div className="header-1__container-content">
 
 							{this.props.project.title &&
-							<h1 className="header-3__container-content-title">
-								{this.props.project.title}
-							</h1>
+							<ScrollAnimation animateIn="fadeIn" animateOnce="true">
+								<h1 className="header-3__container-content-title">
+									{this.props.project.title}
+								</h1>
+							</ScrollAnimation>
 							}
 
 							{this.props.project.description &&
-							<div className="fade-up header-3__container-content-description"
-							   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
+							<ScrollAnimation animateIn="fadeIn" animateOnce="true">
+								<div className="fade-up header-3__container-content-description"
+								   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
+							</ScrollAnimation>
 							}
 
 							{(this.props.project.facebookLink ||
@@ -92,19 +97,12 @@ export default class Projects extends Component {
 								this.props.project.linkedinLink ||
 								this.props.project.behanceLink ||
 								this.props.project.vimeoLink) &&
-								<SocialShare content={this.props.project} />
+								<ScrollAnimation animateIn="fadeIn" animateOnce="true">
+									<SocialShare content={this.props.project} />
+								</ScrollAnimation>
 							}
 
-							{this.props.project.tables &&
-								<Tables content={this.props.project.tables} />
-							}
 						</div>
-						{/*{this.props.project.tables.map((table, i) => (
-							<div key={i} className="tags__item">
-								#{table.heading}<br/>
-								#{table.custom}
-							</div>
-						))}*/}
 
 						{this.props.project.blocks &&
 						<Blocks content={this.props.project.blocks} />
