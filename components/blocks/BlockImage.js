@@ -9,7 +9,6 @@ const BlockImage = (props) => (
 		</div>
 
 
-
 			<div className="block-image__image-container">
 				{props.content.image.map((image,i) => (
 

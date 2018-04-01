@@ -4,6 +4,7 @@ import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Constant from '../components/Constant'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 import { DefaultPlayer as Video } from 'react-html5video'
 //import 'react-html5video/dist/styles.css';
@@ -82,10 +83,10 @@ export default class Homepage extends Component {
 
 						{this.props.homepage.data[0].headline &&
 						<div className="header-1__container-content">
-
-							<h1 className="fade-up header-1__container-content-title"
-							   dangerouslySetInnerHTML={{__html: this.props.homepage.data[0].headline}}></h1>
-
+							<ScrollAnimation animateIn="fadeIn" animateOnce="true">
+								<h1 className="fade-up header-1__container-content-title"
+								   dangerouslySetInnerHTML={{__html: this.props.homepage.data[0].headline}}></h1>
+							</ScrollAnimation>
 						</div>
 						}
 

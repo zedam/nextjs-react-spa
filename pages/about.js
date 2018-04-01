@@ -6,6 +6,7 @@ import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import Image from '../components/Image'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 export default class About extends Component {
 	state = {
@@ -63,14 +64,17 @@ export default class About extends Component {
 
 								<div className="header-2__container-content">
 
+
 									{this.props.about.data[0].headline &&
 									<h1 className="fade-up header-2__container-content-title"
 										dangerouslySetInnerHTML={{__html: this.props.about.data[0].headline}}></h1>
 									}
 
 									{this.props.about.data[0].description &&
-									<div className="fade-up header-2_container-content-description"
+									<ScrollAnimation animateIn="fadeIn" animateOnce="true" delay="200">
+										<div className="fade-up header-2_container-content-description"
 										 dangerouslySetInnerHTML={{__html: this.props.about.data[0].description}}></div>
+									</ScrollAnimation>
 									}
 
 								</div>

@@ -8,7 +8,7 @@ const SocialLinks = (props) => (
 		</div>
 
 		{props.content.facebookLink &&
-		<Link href={props.content.facebookLink}>
+		<Link href={'https://www.facebook.com/sharer.php?p[url]=' + window.location.href}>
 			<a className="social-links__item">Fb.</a>
 		</Link>
 		}
