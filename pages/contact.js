@@ -6,6 +6,7 @@ import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import Image from '../components/Image'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 export default class Contact extends Component {
 	state = {
@@ -69,15 +70,20 @@ export default class Contact extends Component {
 										dangerouslySetInnerHTML={{__html: this.props.contact.data[0].headline}}></h1>
 									}
 
-
 									{this.props.contact.data[0].description &&
-									<div className="fade-up contact__description"
-										 dangerouslySetInnerHTML={{__html: this.props.contact.data[0].description}}></div>
+									<div className="fade-up contact__description">
+										<ScrollAnimation animateIn="fadeIn" animateOnce="true"  delay="300">
+											<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].description}}></div>
+										</ScrollAnimation>
+									</div>
 									}
 
 									{this.props.contact.data[0].descriptionExtra &&
-									<div className="fade-up contact__description"
-										 dangerouslySetInnerHTML={{__html: this.props.contact.data[0].descriptionExtra}}></div>
+									<div className="fade-up contact__description">
+										<ScrollAnimation animateIn="fadeIn" animateOnce="true"  delay="600">
+											<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].descriptionExtra}}></div>
+										</ScrollAnimation>
+									</div>
 									}
 
 								</div>
