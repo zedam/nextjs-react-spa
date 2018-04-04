@@ -19,7 +19,6 @@
 }
 
 .link-directors__item-container {
-
 	font-size: 35px;
 
 	@include respond-to(tablet) {
@@ -28,6 +27,10 @@
 
 	@include respond-to(desktop) {
 		font-size: 63px;
+	}
+
+	@include respond-to(desktop_big) {
+		font-size: 84px;
 	}
 }
 
