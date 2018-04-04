@@ -18,13 +18,15 @@ const BlockListProjects = (props) => (
 										<h3 className="block-list-projects__title">
 											{comp.title}
 										</h3>
-										<h3 className="block-list-projects__subtitle">
+										<h4 className="block-list-projects__subtitle">
 											{comp.director}
-										</h3>
+										</h4>
 									</div>
 								</div>
 							</div>
+							{comp.image[0] &&
 								<BackgroundImage content={comp.image[0]} class="block-list-projects__image"></BackgroundImage>
+							}
 								{/*<Image content={comp.image[0]} class="block-list-projects__image"></Image>*/}
 						</a>
 

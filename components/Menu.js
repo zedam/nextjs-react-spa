@@ -104,13 +104,6 @@ export default class extends Component {
 					  isOpen={this.state.menuOpen}
 					  onStateChange={(state) => this.handleStateChange(state)}>
 
-					<Link prefetch href="/" >
-						<a className="menu-item">
-							<span onClick={() => this.closeMenu()} >
-							Home
-							</span>
-						</a>
-					</Link>
 					<Link prefetch href="/about" >
 						<a className="menu-item">
 							<span onClick={() => this.closeMenu()} >
