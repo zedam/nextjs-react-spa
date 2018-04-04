@@ -22,6 +22,7 @@ $green: green;
 @import 'components/blocks/block-news-item';
 @import 'components/blocks/block-news-item-small';
 @import 'components/blocks/block-project-item';
+@import 'components/blocks/block-video';
 @import 'pages/directors/directors';
 @import 'pages/contact';
 
@@ -50,4 +51,18 @@ body {
 
 .footer__container {
 	margin-top: 80px;
+}
+
+.template-1 {
+	padding-bottom: $margin-mobile;
+
+	@include respond-to(tablet) {
+		padding-bottom: $margin-tablet;
+	}
+	@include respond-to(desktop) {
+		padding-bottom: $margin-desktop;
+	}
+	@include respond-to(desktop_big) {
+		padding-bottom: $margin-desktop-big;
+	}
 }

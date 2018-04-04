@@ -10,7 +10,7 @@ export default class DirectorsItem extends Component {
 
 			<div key="title" className="template-1">
 
-				<div className="header-3__container directors" style={{backgroundColor: this.props.content.color.color }}>
+				<div className="header-3__container" style={{backgroundColor: this.props.content.color.color }}>
 					<div className="header-3__container-content">
 
 						{this.props.content.title &&

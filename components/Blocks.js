@@ -10,7 +10,7 @@ import BlockListProjects from './blocks/BlockListProjects'
 const Blocks = (props) => (
 	<React.Fragment>
 		{props.content.map((block, i) => (
-			<div key={i}>
+			<React.Fragment key={i}>
 				{block.type == 'blockContent' &&
 				<BlockContent content={block}></BlockContent>
 				}
@@ -42,7 +42,7 @@ const Blocks = (props) => (
 				{block.type == 'blockTables' &&
 				<BlockTables content={block}></BlockTables>
 				}
-			</div>
+			</React.Fragment>
 		))}
 
 	</React.Fragment>

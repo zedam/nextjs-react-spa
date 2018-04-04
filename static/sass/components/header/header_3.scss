@@ -6,14 +6,6 @@
 	@include respond-to(tablet) {
 		min-height: 0;
 	}
-
-	&.studio {
-		background: #E2E2E2;
-	}
-
-	&.directors {
-		background: #CEB3B2;
-	}
 }
 
 
