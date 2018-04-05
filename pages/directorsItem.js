@@ -31,7 +31,11 @@ export default class DirectorsItem extends Component {
 						   dangerouslySetInnerHTML={{__html: this.props.content.description}}></div>
 						}
 
-						{this.props.content.facebookLink &&
+						{(this.props.content.facebookLink ||
+						this.props.content.instagramLink ||
+						this.props.content.behanceLink ||
+						this.props.content.vimeoLink ||
+						this.props.content.linkedinLink) &&
 						<SocialLinks content={this.props.content}></SocialLinks>
 						}
 					</div>
