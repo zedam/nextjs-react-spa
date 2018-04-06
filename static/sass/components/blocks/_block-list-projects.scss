@@ -1,13 +1,13 @@
 
 .block-list-projects__item {
 	float: left;
-	padding-bottom: 46%;
+	padding-bottom: 61%;
 	position: relative;
 	width: 100%;
 
 	@include respond-to(tablet) {
+		padding-bottom: 28%;
 		width: 50%;
-		padding-bottom: 25%;
 	}
 
 	img {
@@ -17,19 +17,19 @@
 }
 
 .block-list-projects__title {
-	@include animate-link-underline-left($white, true);
-	@include transition(all, 0.9s, 0s, $animationEffect);
 	color: $white;
 	cursor: pointer;
 	font-size: 30px;
 	opacity: 0;
 
 	@include respond-to(tablet) {
+		@include animate-link-underline-left($white, true);
+		@include transition(all, 0.9s, 0s, $animationEffect);
 		font-size: 32px;
 	}
 
-	@include respond-to(desktop) {
-	/*	font-size: 42px;*/
+	p {
+		margin: 0;
 	}
 }
 

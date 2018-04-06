@@ -9,6 +9,7 @@ import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
 import ScrollAnimation from 'react-animate-on-scroll'
 
+import Fade from 'react-reveal/Fade'
 export default class Projects extends Component {
 	state = {
 		isReady: false
@@ -74,31 +75,31 @@ export default class Projects extends Component {
 
 						<div className="header-1__container-content">
 
-							{this.props.project.title &&
-							<ScrollAnimation animateIn="fadeIn" animateOnce="true">
-								<h1 className="header-3__container-content-title">
-									{this.props.project.title}
-								</h1>
-							</ScrollAnimation>
-							}
+							<Fade bottom cascade>
+								<div>
 
-							{this.props.project.description &&
-							<ScrollAnimation animateIn="fadeIn" animateOnce="true">
-								<div className="fade-up header-3__container-content-description"
-								   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
-							</ScrollAnimation>
-							}
+								{this.props.project.title &&
+									<h1 className="header-3__container-content-title">
+										{this.props.project.title}
+									</h1>
+								}
 
-							{(this.props.project.facebookLink ||
-								this.props.project.instagramLink ||
-								this.props.project.linkedinLink ||
-								this.props.project.behanceLink ||
-								this.props.project.vimeoLink) &&
-								<ScrollAnimation animateIn="fadeIn" animateOnce="true">
-									<SocialShare content={this.props.project} />
-								</ScrollAnimation>
-							}
+								{this.props.project.description &&
+									<div className="fade-up header-3__container-content-description"
+									   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
+								}
 
+								{(this.props.project.facebookLink ||
+									this.props.project.instagramLink ||
+									this.props.project.linkedinLink ||
+									this.props.project.behanceLink ||
+									this.props.project.vimeoLink) &&
+
+										<SocialShare content={this.props.project} />
+								}
+
+								</div>
+							</Fade>
 						</div>
 
 						{this.props.project.blocks &&

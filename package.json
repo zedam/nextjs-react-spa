@@ -18,6 +18,7 @@
         "react-html5video": "^2.5.1",
         "react-lazyload": "^2.3.0",
         "react-responsive": "^4.0.4",
+        "react-reveal": "^1.2.1",
         "react-transition-group": "^2.2.1",
         "react-vimeo": "^2.0.0",
         "styled-jsx-plugin-sass": "0.2.0"

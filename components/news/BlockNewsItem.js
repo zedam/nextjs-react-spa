@@ -10,7 +10,7 @@ const BlockNewsItem = (props) => (
             <h3 className="block-news-item__title">
                 <LinkNews content={props.content}>
                     <a>
-                        {props.content.title}
+                        {props.content.headline}
                     </a>
                 </LinkNews>
             </h3>

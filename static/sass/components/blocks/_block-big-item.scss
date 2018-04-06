@@ -1,4 +1,4 @@
-.block-news-item-small__container {
+.block-big-item__container {
 	margin-top: $margin-mobile;
 	padding: 0 20px;
 
@@ -14,50 +14,45 @@
 
 	@include respond-to(desktop_big) {
 		margin-top: $margin-desktop-big;
-		padding: $margin-desktop-big $margin-desktop-big 0;
-	}
-
-	@include respond-to(desktop_big) {
-		margin-top: $margin-desktop-big;
 		padding: 0 $margin-desktop-big;
 	}
 }
 
-.block-news-item-small__image-container {
-	display: inline-block;
+.block-big-item__image-container {
+	display: block;
+	padding: 20px 0 0;
+	vertical-align: top;
 
 	@include respond-to(tablet) {
 		display: table-cell;
-		width: 50%;
+		padding: 0;
+		width: 60%;
 	}
 
 	@include respond-to(desktop) {
-		width: 34%;
-	}
-
-	img {
-		display: block;
+		width: 64%;
 	}
 }
 
-.block-news-item-small__content-container {
-	display: inline-block;
-	padding: 20px 0 0;
+.block-big-item__content-container {
+	display: block;
+	padding: 0;
+	vertical-align: top;
 
 	@include respond-to(tablet) {
 		display: table-cell;
 		box-sizing: border-box;
-		padding: 0 0 0 60px;
-		vertical-align: top;
-		width: 50%;
+		padding: 0 50px 0 0;
+		width: 40%;
 	}
 
 	@include respond-to(desktop) {
-		width: 66%;
+		width: 36%;
+		padding: 0 60px 0 0;
 	}
 }
 
-.block-news-item-small__title {
+.block-big-item__title {
 	a {
 		@include animate-link-underline-left($black);
 		color: $black;
@@ -70,15 +65,18 @@
 			font-size: 42px;
 		}
 
+		p {
+			margin: 0;
+		}
 	}
 }
 
-.block-news-item-small__subtitle {
+.block-big-item__subtitle {
 	font-size: 21px;
 	line-height: 26px;
 	margin-top: 20px;
 
-	@include respond-to (tablet) {
+	@include respond-to(tablet) {
 		font-size: 20px;
 		line-height: 26px;
 	}

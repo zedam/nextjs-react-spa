@@ -99,6 +99,11 @@ export default class extends Component {
 			<div>
 				<a id="home" className="menu__home-logo" href="/"></a>
 
+				{/*{this.props.location.indexOf('projects/') != -1 &&
+
+				<div className="menu__home-logo">Back</div>
+				}*/}
+
 				<Menu  width="100%" bodyClassName="black"
 					  className={ "my-menu " }
 					  isOpen={this.state.menuOpen}

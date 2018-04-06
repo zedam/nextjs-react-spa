@@ -16,6 +16,8 @@
 
 .block-image__item {
 	float: left;
+	padding-bottom: 61%;
+	position: relative;
 	width: 100%;
 
 	@include respond-to(tablet) {

@@ -97,6 +97,11 @@
 		height: 66px;
 		width: 90px;
 	}
+
+	@include respond-to(desktop_big) {
+		height: 96px;
+		width: 130px;
+	}
 }
 
 .bm-burger-button {

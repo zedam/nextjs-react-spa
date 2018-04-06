@@ -20,11 +20,9 @@ export default class DirectorsItem extends Component {
 						<h2 className="header-2__container-content-title">{this.props.content.subtitle}</h2>
 						}
 
-
 						{this.props.content.tags &&
 						<Tags content={this.props.content.tags} />
 						}
-
 
 						{this.props.content.description &&
 						<div className="fade-up header-3__container-content-description"
