@@ -116,17 +116,17 @@ export default class extends Component {
 							</span>
 						</a>
 					</Link>
-					<Link prefetch href="/studio" >
-						<a className="menu-item">
-							<span onClick={() => this.closeMenu()} >
-							Studio
-							</span>
-						</a>
-					</Link>
 					<Link prefetch href="/directors" >
 						<a className="menu-item">
 							<span onClick={() => this.closeMenu()} >
 							Directors
+							</span>
+						</a>
+					</Link>
+					<Link prefetch href="/studio" >
+						<a className="menu-item">
+							<span onClick={() => this.closeMenu()} >
+							Studio
 							</span>
 						</a>
 					</Link>

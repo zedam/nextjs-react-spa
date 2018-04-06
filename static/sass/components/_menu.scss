@@ -143,8 +143,13 @@
 
 /* General sidebar styles */
 .bm-menu {
-	padding: 2.5em 1.5em 0;
-	font-size: 1.15em;
+	padding: 80px 40px 0;
+	font-size: 21px;
+
+	@include respond-to(tablet) {
+		font-size: 42px;
+		padding: 80px 25px 0;
+	}
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -166,8 +171,12 @@
 
 
 .menu-item {
-	color: #282828;
-	font-size: 2.15em;
+	color: $black;
+	font-size: 56px;
+
+	@include respond-to(tablet) {
+		font-size: 56px;
+	}
 }
 
 .bm-menu-wrap {

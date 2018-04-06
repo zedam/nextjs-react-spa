@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Reveal from 'react-reveal/Reveal'
 
 const SocialLinks = (props) => (
     <div className="social-links__container">
