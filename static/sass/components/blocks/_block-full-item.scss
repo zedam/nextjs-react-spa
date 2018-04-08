@@ -1,4 +1,4 @@
-.block-project-item__container {
+.block-full-item__container {
 	margin-top: $margin-mobile;
 	padding: 0;
 	position: relative;
@@ -19,7 +19,7 @@
 	}
 }
 
-.block-project-item__content-container {
+.block-full-item__content-container {
 	bottom: 0;
 	color: $white;
 	left: 0;
@@ -29,7 +29,7 @@
 	width: 100%;
 }
 
-.block-project-item__content-container-table {
+.block-full-item__content-container-table {
 	display: table;
 	height: 100%;	
 	position: relative;
@@ -39,7 +39,7 @@
 }
 
 
-.block-project-item__content-container-cell {
+.block-full-item__content-container-cell {
 	display: table-cell;	
 	text-align: center;
 	vertical-align: middle;
@@ -53,11 +53,11 @@
 
 }
 
-.block-project-item__content-container-director {
+.block-full-item__content-container-director {
 	margin-top: 10px;
 }
 
-.block-project-item__content-container-title {
+.block-full-item__content-container-title {
 	font-size: 28px;
 	font-weight: normal;
 
@@ -67,7 +67,7 @@
 	}
 }
 
-.block-project-item__image-container {
+.block-full-item__image-container {
 	position: relative;
 	z-index: 0;
 

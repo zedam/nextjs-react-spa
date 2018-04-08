@@ -8,6 +8,7 @@ $green: green;
 @import 'helper/animations/animation-buttons';
 @import 'helper/animations/animation-links';
 
+
 @import 'components/general';
 @import 'components/menu';
 @import 'components/social-links';
@@ -21,7 +22,7 @@ $green: green;
 @import 'components/blocks/block-list-projects';
 @import 'components/blocks/block-big-item';
 @import 'components/blocks/block-small-item';
-@import 'components/blocks/block-project-item';
+@import 'components/blocks/block-full-item';
 @import 'components/blocks/block-video';
 @import 'pages/directors/directors';
 @import 'pages/contact';

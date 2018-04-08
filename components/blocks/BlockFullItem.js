@@ -27,7 +27,7 @@ const BlockFullItem = (props) => (
 				</div>
 			</div>
         </div>
-		
+
         <div className="block-full-item__image-container">
             <LinkItem content={props.content}>
                 <a>

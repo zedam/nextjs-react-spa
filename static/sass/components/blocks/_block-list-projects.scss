@@ -1,5 +1,5 @@
 
-.block-full-item__item {
+.block-list-projects__item {
 	float: left;
 	padding-bottom: 61%;
 	position: relative;
@@ -16,7 +16,7 @@
 	}
 }
 
-.block-full-item__title {
+.block-list-projects__title {
 	color: $white;
 	cursor: pointer;
 	font-size: 30px;
@@ -34,7 +34,7 @@
 }
 
 
-.block-full-item__subtitle {
+.block-list-projects__subtitle {
 	@include transform(translateY(10px));
 	@include transition(all, 0.9s, 0s, $animationEffect);
 	color: $white;
@@ -44,19 +44,19 @@
 	margin-top: 10px;
 }
 
-.block-full-item__item {
+.block-list-projects__item {
 	position: relative;
 
 	&:hover {
-		.block-full-item__info {
+		.block-list-projects__info {
 			opacity: 1;
 		}
 
-		.block-full-item__title {
+		.block-list-projects__title {
 			opacity: 1;
 		}
 
-		.block-full-item__subtitle {
+		.block-list-projects__subtitle {
 			@include transform(translateY(0));
 			opacity: 1;
 		}
@@ -79,7 +79,7 @@
 	width: 100%;
 }
 
-.block-full-item__info {
+.block-list-projects__info {
 	@include transition(all, 0.6s, 0s, $animationEffect);
 	background: rgba(0,0,0,.4);
 	bottom: 0;
@@ -91,20 +91,20 @@
 	z-index: 10;
 }
 
-.block-full-item__table {
+.block-list-projects__table {
 	display: table;
 	height: 100%;
 	text-align: center;
 	width: 100%;
 }
 
-.block-full-item__cell {
+.block-list-projects__cell {
 	display: table-cell;
 	width: 100%;
 	vertical-align: middle;
 }
 
-.block-full-item__image {
+.block-list-projects__image {
 	bottom: 0;
 	left: 0;
 	overflow: hidden;
