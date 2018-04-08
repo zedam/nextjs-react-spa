@@ -3,8 +3,13 @@
 	height: 500px;
 	overflow: hidden;
 
-	@include respond-to(desktop) {
+	@include respond-to(tablet) {
 		height: 100vh;
+	}
+
+	@include respond-to(desktop) {
+		height: auto;
+		padding-bottom: 56.25%;
 	}
 }
 

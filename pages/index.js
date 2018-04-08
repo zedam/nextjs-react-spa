@@ -43,7 +43,7 @@ export default class Homepage extends Component {
 	isLeaving = () => {
 		return {
 			opacity: 0,
-			translateY: 50,
+			translateY: 50
 		}
 	}
 	render = () => {
@@ -72,7 +72,7 @@ export default class Homepage extends Component {
 									   onCanPlayThrough={() => {
 										   // Do stuff
 									   }}>
-									<source src="static/videos/homepage/thebrut_reel.mp4" type="video/mp4" />
+									<source src="static/videos/homepage/WEB_VIDEO_1920.mp4" type="video/mp4" />
 									<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />
 									{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
 								</Video>
