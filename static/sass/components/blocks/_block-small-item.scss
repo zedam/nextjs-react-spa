@@ -14,7 +14,10 @@
 
 	@include respond-to(desktop_big) {
 		margin-top: $margin-desktop-big;
+		margin-left: auto;
+		margin-right: auto;
 		padding: $margin-desktop-big $margin-desktop-big 0;
+		max-width: 1200px;
 	}
 
 	@include respond-to(desktop_big) {

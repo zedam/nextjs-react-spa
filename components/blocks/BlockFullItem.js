@@ -4,12 +4,12 @@ import ScrollAnimation from 'react-animate-on-scroll'
 
 const BlockFullItem = (props) => (
 
-    <div className="block-project-item__container">
-        <div className="block-project-item__content-container">
-			<div className="block-project-item__content-container-table">
-				<div className="block-project-item__content-container-cell">
+    <div className="block-full-item__container">
+        <div className="block-full-item__content-container">
+			<div className="block-full-item__content-container-table">
+				<div className="block-full-item__content-container-cell">
 					<ScrollAnimation animateIn="fadeIn" animateOnce="true">
-						<h3 className="block-project-item__content-container-title">
+						<h3 className="block-full-item__content-container-title">
 							<LinkItem content={props.content}>
 								<a>
 									{props.content.title}
@@ -19,7 +19,7 @@ const BlockFullItem = (props) => (
 					</ScrollAnimation>
 					{props.content.director &&
 					<ScrollAnimation animateIn="fadeIn" animateOnce="true">
-						<div className="block-project-item__content-container-director">
+						<div className="block-full-item__content-container-director">
 							{props.content.director}
 						</div>
 					</ScrollAnimation>
@@ -28,7 +28,7 @@ const BlockFullItem = (props) => (
 			</div>
         </div>
 		
-        <div className="block-project-item__image-container">
+        <div className="block-full-item__image-container">
             <LinkItem content={props.content}>
                 <a>
 					<ScrollAnimation animateIn="fadeIn" animateOnce="true">
