@@ -50,6 +50,10 @@
 		font-size: 42px;
 		@include animate-link-underline-left($white, true);
 	}
+
+	p {
+		margin: 0;
+	}
 }
 
 .block-full-item__image-container {

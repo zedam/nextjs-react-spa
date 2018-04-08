@@ -74,22 +74,22 @@ export default class Homepage extends Component {
 										onCanPlayThrough={() => {
 										   // Do stuff
    									}}>
-									<source src="static/videos/homepage/WEB_VIDEO_1920.mp4" type="video/mp4" />
-									<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />
-									{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
-								</Video>
+										<source src="static/videos/homepage/WEB_VIDEO_1920.mp4" type="video/mp4" />
+										<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />
+										{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
+									</Video>
 								</MediaQuery>
 								<MediaQuery query="(min-width: 768px)" >
-								<Video autoPlay loop muted playsInline
-									   controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-									   poster="http://sourceposter.jpg"
-									   onCanPlayThrough={() => {
-										   // Do stuff
-									   }}>
-									<source src="static/videos/homepage/WEB_VIDEO_1920.mp4" type="video/mp4" />
-									<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />
-									{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
-								</Video>
+									<Video autoPlay loop muted playsInline
+										   controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+										   poster="http://sourceposter.jpg"
+										   onCanPlayThrough={() => {
+											   // Do stuff
+										   }}>
+										<source src="static/videos/homepage/WEB_VIDEO_1920.mp4" type="video/mp4" />
+										<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />
+										{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
+									</Video>
 								</MediaQuery>
 
 							</div>
