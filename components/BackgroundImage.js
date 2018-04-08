@@ -1,9 +1,8 @@
 /*import { Picture } from 'react-responsive-picture';*/
 import MediaQuery from 'react-responsive'
 import LazyLoad from 'react-lazyload'
-import { Transition, ReactCSSTransitionGroup } from 'react-transition-group'
+/*import { Transition, ReactCSSTransitionGroup } from 'react-transition-group'
 
-const duration = 1300
 
 const defaultStyle = {
   transition: `opacity ${duration}ms ease-in-out`,
@@ -13,7 +12,8 @@ const defaultStyle = {
 const transitionStyles = {
   entering: {opacity: 0},
   entered: {opacity: 1}
-}
+}*/
+const duration = 1300
 
 const Image = (props) => (
   <div content={props.content.handle} className={props.class}>
@@ -33,12 +33,7 @@ const Image = (props) => (
     <MediaQuery query="(min-width: 1601px)">
       <div className="background-image" style={ { backgroundImage: `url(${props.content.desktop_extra_big})` } } />
     </MediaQuery>
-    {
-      /*
-      <MediaQuery query="(min-device-width: 0px)">
 
-      </MediaQuery>*/
-    }
     <style global jsx>{`
         .image {
             transition: opacity ${duration}ms ease-in-out;

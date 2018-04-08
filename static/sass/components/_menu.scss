@@ -104,6 +104,31 @@
 	}
 }
 
+.videoFloag {
+	position: fixed;
+	right: 0;
+	z-index: 1111;
+
+}
+
+.menu__back {
+	color: $black;
+	left: 78px;
+	font-size: 35px;
+	position: fixed;
+	top: 13px;
+	text-decoration: none;
+
+	@include respond-to(tablet) {
+		@include animate-link-underline-left($black);
+		font-size: 35px;
+		left: 100px;
+		position: fixed;
+		top: 30px;
+	}
+
+}
+
 .bm-burger-button {
 	height: 28px;
 	left: 20px;

@@ -6,11 +6,11 @@ import Layout from '../components/Layout'
 import Constant from '../components/Constant'
 import ScrollAnimation from 'react-animate-on-scroll'
 import MediaQuery from 'react-responsive'
-
-import { DefaultPlayer as Video } from 'react-html5video'
-//import 'react-html5video/dist/styles.css';
 import Blocks from '../components/Blocks'
 import Image from '../components/Image'
+import { DefaultPlayer as Video } from 'react-html5video'
+
+//import 'react-html5video/dist/styles.css';
 
 export default class Homepage extends Component {
 	state = {

@@ -1,9 +1,10 @@
 .general__container {
-	display: inline-block;
 	box-sizing: border-box;
+	display: table;
 	list-style: none;
 	padding: 40px 20px 0;
 	width: 100%;
+
 
 	@include respond-to(tablet) {
 		padding: $margin-tablet $margin-tablet 0;

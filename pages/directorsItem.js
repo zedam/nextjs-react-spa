@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Blocks from '../components/Blocks'
 import Tags from '../components/Tags'
 import SocialLinks from '../components/SocialLinks'
+import Extend from '../components/Extend'
 
 import Reveal from 'react-reveal/Reveal'
 
@@ -14,6 +15,11 @@ export default class DirectorsItem extends Component {
 
 				<div className="header-3__container" style={{backgroundColor: this.props.content.color.color }}>
 					<div className="header-3__container-content">
+
+						<Extend>
+
+							<a href="/directors" className="menu__back">Back</a>
+						</Extend>
 
 						{this.props.content.title &&
 						<Reveal effect="fadeInUp" >
@@ -53,7 +59,6 @@ export default class DirectorsItem extends Component {
 				{this.props.content.blocks &&
 				<Blocks content={this.props.content.blocks}/>
 				}
-
 
 			</div>
 		)

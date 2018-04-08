@@ -6,6 +6,8 @@ import Menu from 'react-burger-menu/lib/menus/slide'
 
 import '../static/sass/main.scss'
 
+import Extend from './Extend'
+
 var isMenuOpen = function (state) {
 	return state.isOpen
 }
@@ -98,6 +100,7 @@ export default class extends Component {
 
 			<div>
 				<a id="home" className="menu__home-logo" href="/"></a>
+				<Extend></Extend>
 
 				{/*{this.props.location.indexOf('projects/') != -1 &&
 
