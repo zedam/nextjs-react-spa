@@ -1,23 +1,10 @@
 .block-big-item__container {
-	margin-top: $margin-mobile;
-	padding: 0 20px;
-
-	@include respond-to(tablet) {
-		margin-top: $margin-tablet;
-		padding: 0 $margin-tablet;
-	}
-
-	@include respond-to(desktop) {
-		margin-top: $margin-desktop;
-		padding: 0 $margin-desktop;
-	}
+	@include default_margins();
 
 	@include respond-to(desktop_big) {
-		margin-top: $margin-desktop-big;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 1200px;
-		padding: 0 $margin-desktop-big;
 	}
 }
 

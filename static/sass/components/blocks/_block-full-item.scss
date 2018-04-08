@@ -1,22 +1,7 @@
 .block-full-item__container {
-	margin-top: $margin-mobile;
+	@include default_margins();
 	padding: 0;
 	position: relative;
-
-	@include respond-to(tablet) {
-		margin-top: $margin-tablet;
-		padding: 0 $margin-tablet;
-	}
-
-	@include respond-to(desktop) {
-		margin-top: $margin-desktop;
-		padding: 0 $margin-desktop;
-	}
-
-	@include respond-to(desktop_big) {
-		margin-top: $margin-desktop-big;
-		padding: 0 $margin-desktop-big;
-	}
 }
 
 .block-full-item__content-container {
