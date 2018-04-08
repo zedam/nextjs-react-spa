@@ -67,14 +67,12 @@ export default class News extends Component {
 
 						<div className="header-1__container-content">
 							{this.props.news.headline &&
-							<h1 className="header-3__container-content-title">{this.props.news.headline}</h1>
+							<h1 className="header-3__container-content-title"
+								dangerouslySetInnerHTML={{__html: this.props.news.headline}}>
+							</h1>
 							}
 
 							<ScrollAnimation animateIn="fadeIn">
-
-								{this.props.news.title &&
-								<h1 className="header-3__container-content-title">{this.props.news.title}</h1>
-								}
 
 								{this.props.news.description &&
 								<div className="fade-up header-3__container-content-description"

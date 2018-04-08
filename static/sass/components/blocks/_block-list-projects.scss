@@ -6,7 +6,7 @@
 	width: 100%;
 
 	@include respond-to(tablet) {
-		padding-bottom: 28%;
+		padding-bottom: 33.25%;
 		width: 50%;
 	}
 
@@ -23,9 +23,13 @@
 	opacity: 0;
 
 	@include respond-to(tablet) {
-		@include animate-link-underline-left($white, true);
 		@include transition(all, 0.9s, 0s, $animationEffect);
 		font-size: 32px;
+
+	}
+
+	@include respond-to(desktop) {
+		@include animate-link-underline-left($white, true);
 	}
 
 	p {
