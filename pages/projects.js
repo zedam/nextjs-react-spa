@@ -4,6 +4,7 @@ import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
+import BackgroundImage from '../components/BackgroundImage'
 import Vimeo from 'react-vimeo';
 import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
@@ -59,15 +60,18 @@ export default class Projects extends Component {
 					<div key="title" className="template-1">
 
 						<div className="header-3__video-container">
-							{/*{this.props.project.image &&
+							{this.props.project.image &&
 							<BackgroundImage content={this.props.project.image[0]} width="100%" ></BackgroundImage>
 							}
+							{/*
 							{this.props.project.image &&
 								<Image content={this.props.project.image[0]} width="100%"></Image>
 							}*/}
 
 							{this.props.project.vimeoId &&
-							<Vimeo videoId={this.props.project.vimeoId} autoplay={false} />
+							<Vimeo videoId={this.props.project.vimeoId}  background={false}
+								   autoplay={false}
+							/>
 							}
 
 						</div>
@@ -78,9 +82,9 @@ export default class Projects extends Component {
 							<Fade bottom cascade>
 								<div>
 
-								{this.props.project.title &&
-									<h1 className="header-3__container-content-title">
-										{this.props.project.title}
+								{this.props.project.headline &&
+									<h1 className="header-3__container-content-title"
+										dangerouslySetInnerHTML={{__html: this.props.project.headline}}>
 									</h1>
 								}
 

@@ -58,19 +58,33 @@
 
 .vimeo-image {
 	background-size: cover;
+	background-image: none!important;
 }
+
 .vimeo-play-button {
+	@include transition(all, 0.3s, 0s, $animationEffect);
+	background-image: url('/static/images/mobile/play.png');
 	border-color: transparent;
-	background: none;
-	border-left: 60px solid white;
+	background-size: cover;
+	background-color: transparent;
+	//background: none;
+	/*border-left: 60px solid white;
 	border-top: 40px solid transparent;
-	border-bottom: 40px solid transparent;
-	height: 0;
+	border-bottom: 40px solid transparent;*/
+	height: 70px;
 	left: 50%;
-	margin-top: -30px;
+	margin-top: -35px;
+	margin-left: -35px;
 	position: absolute;
 	top: 50%;
-	width: 0;
+	width: 70px;
+	svg {
+		display: none;
+	}
+
+	&:hover {
+		@include transform(scale(1.1,1.1));
+	}
 }
 
 .vimeo-embed {

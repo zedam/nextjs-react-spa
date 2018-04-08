@@ -21,6 +21,7 @@
 	width: 100%;
 
 	@include respond-to(tablet) {
+		padding-bottom: 33%;
 		width: 50%;
 	}
 
