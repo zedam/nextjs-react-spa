@@ -1,6 +1,6 @@
 import BackgroundImage from '../BackgroundImage'
+import Reveal from 'react-reveal/Reveal'
 import ScrollAnimation from 'react-animate-on-scroll'
-import Fade from 'react-reveal/Fade'
 
 const BlockImage = (props) => (
     <div className="block-image__container">
@@ -12,9 +12,9 @@ const BlockImage = (props) => (
 		<div className="block-image__image-container">
 			{props.content.image.map((image,i) => (
 
-			<Fade bottom key={i} delay={100 * i}>
+			<Reveal effect="fadeInUp" key={i} delay={100 * i} >
 				<BackgroundImage class="block-image__item" content={image} width="100%" ></BackgroundImage>
-			</Fade>
+			</Reveal>
 
 			))}
 		</div>

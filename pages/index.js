@@ -5,6 +5,7 @@ import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Constant from '../components/Constant'
 import ScrollAnimation from 'react-animate-on-scroll'
+import MediaQuery from 'react-responsive'
 
 import { DefaultPlayer as Video } from 'react-html5video'
 //import 'react-html5video/dist/styles.css';
@@ -66,6 +67,19 @@ export default class Homepage extends Component {
 							}
 
 							<div className="header-1__video-container">
+								<MediaQuery query="(max-width: 767px)" >
+									<Video autoPlay loop muted playsInline
+										controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+										poster="http://sourceposter.jpg"
+										onCanPlayThrough={() => {
+										   // Do stuff
+   									}}>
+									<source src="static/videos/homepage/WEB_VIDEO_1920.mp4" type="video/mp4" />
+									<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />
+									{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
+								</Video>
+								</MediaQuery>
+								<MediaQuery query="(min-width: 768px)" >
 								<Video autoPlay loop muted playsInline
 									   controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
 									   poster="http://sourceposter.jpg"
@@ -76,6 +90,7 @@ export default class Homepage extends Component {
 									<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />
 									{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
 								</Video>
+								</MediaQuery>
 
 							</div>
 

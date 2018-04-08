@@ -31,7 +31,7 @@ const Image = (props) => (
       <div className="background-image" style={ { backgroundImage: `url(${props.content.desktop_big})` } } />
     </MediaQuery>
     <MediaQuery query="(min-width: 1601px)">
-      <div className="background-image" style={ { backgroundImage: `url(${props.content.desktop_big})` } } />
+      <div className="background-image" style={ { backgroundImage: `url(${props.content.desktop_extra_big})` } } />
     </MediaQuery>
     {
       /*

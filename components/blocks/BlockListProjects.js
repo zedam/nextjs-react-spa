@@ -1,12 +1,13 @@
 import LinkItem from "./LinkItem"
 import BackgroundImage from "../BackgroundImage"
 import Fade from 'react-reveal/Fade'
+import Reveal from 'react-reveal/Reveal'
 
 const BlockListProjects = (props) => (
     <div>
         
         {props.content.typeElement.map((comp, i) => (
-			<Fade bottom>
+			<Reveal effect="fadeInUp" key={i} delay={200 * i} >
 
 				<div className="block-list-projects__item">
 
@@ -33,7 +34,7 @@ const BlockListProjects = (props) => (
 					</LinkItem>
 
 				</div>
-			</Fade>
+			</Reveal>
 
         ))}
 
