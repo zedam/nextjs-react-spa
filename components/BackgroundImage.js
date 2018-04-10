@@ -21,16 +21,16 @@ const Image = (props) => (
     <MediaQuery query="(max-width: 767px)" >
       <div className="background-image" style={ { backgroundImage: `url(${props.content.mobile})` } } />
     </MediaQuery>
-    <MediaQuery query="(min-width: 768px) and (max-width: 1024px)">
+    <MediaQuery query="(min-width: 768px) and (max-width: 1023px)">
       <div className="background-image" style={ { backgroundImage: `url(${props.content.tablet})` } } />
     </MediaQuery>
-    <MediaQuery query="(min-width: 1025px) and (max-width: 1200px)">
+    <MediaQuery query="(min-width: 1024px) and (max-width: 1199px)">
       <div className="background-image" style={ { backgroundImage: `url(${props.content.desktop})` } } />
     </MediaQuery>
-    <MediaQuery query="(min-width: 1201px) and (max-width: 1600px)">
+    <MediaQuery query="(min-width: 1200px) and (max-width: 1599px)">
       <div className="background-image" style={ { backgroundImage: `url(${props.content.desktop_big})` } } />
     </MediaQuery>
-    <MediaQuery query="(min-width: 1601px)">
+    <MediaQuery query="(min-width: 1600px)">
       <div className="background-image" style={ { backgroundImage: `url(${props.content.desktop_extra_big})` } } />
     </MediaQuery>
 
