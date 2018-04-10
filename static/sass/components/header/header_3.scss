@@ -34,11 +34,23 @@
 
 	@include respond-to(desktop_big) {
 		max-width: 800px;
-		margin: auto;
+		margin: 0 105px;
 		padding: 140px 0;
 	}
 }
 
+.header-3__vimeo-container {
+	bottom: 0;
+	left: 0;
+	padding-bottom: 56.25%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.rh5v-DefaultPlayer_video {
+	width: 100%;
+}
 
 .header-3__video-container {
 	position: relative;
@@ -112,12 +124,10 @@
 
 .header-3__container-content-description {
 	font-size: 21px;
-	line-height: 28px;
+	line-height: 33px;
 	margin-top: 20px;
 
 	@include respond-to(tablet) {
-		font-size: 21px;
-		line-height: 28px;
 		margin-top: 30px;
 	}
 

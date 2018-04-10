@@ -27,6 +27,8 @@ $green: green;
 @import 'pages/directors/directors';
 @import 'pages/contact';
 
+@import 'components/vimeoPlayer';
+
 .sass-example {
   color: $green;
 }

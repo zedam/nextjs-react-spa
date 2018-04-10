@@ -5,10 +5,10 @@ import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import BackgroundImage from '../components/BackgroundImage'
-import Vimeo from 'react-vimeo';
+import Vimeo from 'react-vimeo'
 import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
-import ScrollAnimation from 'react-animate-on-scroll'
+import { DefaultPlayer as Video } from 'react-html5video'
 
 import Fade from 'react-reveal/Fade'
 export default class Projects extends Component {
@@ -37,6 +37,35 @@ export default class Projects extends Component {
 			translateY: spring(0, {stiffness: 120, damping: 17}),
 		}
 	}
+
+	renderVideo = () => {
+		return (
+
+			<div>
+				{  this.props.project.vimeoUrl ?
+					<div class="header-3__vimeo-container">
+						<Video loop muted playsInline
+							   controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+
+							   onCanPlayThrough={() => {
+								   // Do stuff
+							   }}>
+							<source src={this.props.project.vimeoUrl} type="video/mp4" />
+							{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
+						</Video>
+					</div>
+					:
+					<div>
+					{this.props.project.vimeoId &&
+					<Vimeo videoId={this.props.project.vimeoId}  background={false}
+						   autoplay={false} />
+					}<div></div>
+					</div>
+				}
+			</div>
+		)
+
+	}
 	/*
     * Transition off
     */
@@ -57,23 +86,14 @@ export default class Projects extends Component {
 					{
 						// If state = true, display content
 						this.state.isReady &&
-					<div key="title" className="template-1">
+					<div key="title" className="template-2">
 
 						<div className="header-3__video-container">
 							{this.props.project.image &&
 							<BackgroundImage content={this.props.project.image[0]} width="100%" ></BackgroundImage>
 							}
-							{/*
-							{this.props.project.image &&
-								<Image content={this.props.project.image[0]} width="100%"></Image>
-							}*/}
 
-
-							{this.props.project.vimeoId &&
-							<Vimeo videoId={this.props.project.vimeoId}  background={false}
-								   autoplay={false}
-							/>
-							}
+							{this.renderVideo()}
 
 						</div>
 

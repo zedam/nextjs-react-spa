@@ -59,7 +59,7 @@ $base-color-1: #000000;
             @if $inverse {
                 width: 0;
             } @else {
-                width: 100%;
+                width: 20px;
             }
         }
     }
@@ -130,7 +130,7 @@ $base-color-1: #000000;
             @if $inverse {
                 width: 0;
             } @else {
-                width: 100%;
+                width: 30px;
             }
         }
     }

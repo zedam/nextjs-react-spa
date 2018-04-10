@@ -67,7 +67,7 @@
 
 	@include respond-to(desktop_big) {
 		max-width: 800px;
-		margin: auto;
+		margin: auto 100px;
 		padding: 140px 0;
 	}
 }

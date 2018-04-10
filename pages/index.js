@@ -7,7 +7,7 @@ import Constant from '../components/Constant'
 import ScrollAnimation from 'react-animate-on-scroll'
 import MediaQuery from 'react-responsive'
 import Blocks from '../components/Blocks'
-import Image from '../components/Image'
+import BackgroundImage from '../components/BackgroundImage'
 import { DefaultPlayer as Video } from 'react-html5video'
 
 //import 'react-html5video/dist/styles.css';
@@ -63,13 +63,13 @@ export default class Homepage extends Component {
 						<div className="header-1__container">
 
 							{this.props.homepage.data[0].image &&
-							<Image content={this.props.homepage.data[0].image[0]} width="100%" ></Image>
+							<BackgroundImage content={this.props.homepage.data[0].image[0]} width="100%" ></BackgroundImage>
 							}
 
 							<div className="header-1__video-container">
 								<MediaQuery query="(max-width: 767px)" >
 									<Video autoPlay loop muted playsInline
-										controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+										controls={[]}
 										poster="http://sourceposter.jpg"
 										onCanPlayThrough={() => {
 										   // Do stuff
@@ -81,8 +81,8 @@ export default class Homepage extends Component {
 								</MediaQuery>
 								<MediaQuery query="(min-width: 768px)" >
 									<Video autoPlay loop muted playsInline
-										   controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-										   poster="http://sourceposter.jpg"
+										   controls={[]}
+
 										   onCanPlayThrough={() => {
 											   // Do stuff
 										   }}>

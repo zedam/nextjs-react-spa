@@ -10,12 +10,12 @@ const SocialLinks = (props) => (
 
 		{props.content.facebookLink &&
 		<Link href={props.content.facebookLink}>
-			<a className="social-links__item">Fb.</a>
+			<a className="social-links__item">Facebook.</a>
 		</Link>
 		}
 		{props.content.instagramLink &&
 		<Link href={props.content.instagramLink}>
-			<a className="social-links__item">Ins.</a>
+			<a className="social-links__item">Instagram.</a>
 		</Link>
 		}
 		{props.content.vimeoLink &&

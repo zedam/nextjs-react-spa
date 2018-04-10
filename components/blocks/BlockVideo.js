@@ -1,10 +1,10 @@
 import Vimeo from 'react-vimeo';
 import BackgroundImage from '../BackgroundImage'
-import Fade from 'react-reveal/Fade'
+import Reveal from 'react-reveal/Reveal'
 
 const BlockVideo = (props) => (
 
-		<Fade bottom>
+		<Reveal effect="fadeInUp">
 			<div className="header-1__container-content">
 				{props.content.vimeoId &&
 				<div className="block-video__container">
@@ -26,7 +26,7 @@ const BlockVideo = (props) => (
 					 dangerouslySetInnerHTML={{__html: props.content.description }} ></div>
 				}
 			</div>
-		</Fade>
+		</Reveal>
 );
 
 export default BlockVideo;

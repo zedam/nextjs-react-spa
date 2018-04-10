@@ -14,42 +14,32 @@
 		float: left;
 		width: 100%;
 	}
-}
 
-.block-list-projects__title {
-	color: $white;
-	cursor: pointer;
-	font-size: 30px;
-	opacity: 0;
+	@include respond-to(mobile) {
 
-	@include respond-to(tablet) {
-		@include transition(all, 0.9s, 0s, $animationEffect);
-		font-size: 32px;
 
+		.block-list-projects__info {
+			background: rgba(211, 210, 199, 0.56);
+			opacity: 1;
+		}
+
+		.block-list-projects__title {
+			padding: 0 20px;
+			opacity: 1;
+		}
+
+		.block-list-projects__subtitle {
+			@include transform(translateY(0));
+			opacity: 1;
+		}
+
+		.background-image {
+			@include transform(scale(1.02,1.02));
+			@include transition(all, 2.9s, 0s, $animationEffect);
+
+		}
 	}
 
-	@include respond-to(desktop) {
-		@include animate-link-underline-left($white, true);
-	}
-
-	p {
-		margin: 0;
-	}
-}
-
-
-.block-list-projects__subtitle {
-	@include transform(translateY(10px));
-	@include transition(all, 0.9s, 0s, $animationEffect);
-	color: $white;
-	cursor: pointer;
-	font-size: 20px;
-	opacity: 0;
-	margin-top: 10px;
-}
-
-.block-list-projects__item {
-	position: relative;
 
 	&:hover {
 		.block-list-projects__info {
@@ -67,12 +57,46 @@
 
 		.background-image {
 			@include transform(scale(1.02,1.02));
+			@include transition(all, 2.9s, 0s, $animationEffect);
+
 		}
 	}
 }
 
+.block-list-projects__title {
+	color: $black;
+	cursor: pointer;
+	font-size: 30px;
+	opacity: 0;
+
+	@include respond-to(tablet) {
+		@include transition(all, 0.9s, 0s, $animationEffect);
+		font-size: 32px;
+
+	}
+
+	/*@include respond-to(desktop) {
+		@include animate-link-underline-left($white, true);
+	}*/
+
+	p {
+		margin: 0;
+	}
+}
+
+
+.block-list-projects__subtitle {
+	@include transform(translateY(10px));
+	@include transition(all, 0.9s, 0s, $animationEffect);
+	color: $white;
+	cursor: pointer;
+	font-size: 20px;
+	opacity: 0;
+	margin-top: 10px;
+}
+
 .background-image {
-	@include transition(all, 2.9s, 0s, $animationEffect);
+	@include transition(all, .6s, 0s, $animationEffect);
 	background-position: center;
 	bottom: 0;
 	background-size: cover;
@@ -85,7 +109,7 @@
 
 .block-list-projects__info {
 	@include transition(all, 0.6s, 0s, $animationEffect);
-	background: rgba(0,0,0,.4);
+	background: rgba(211, 210, 199, 0.8);
 	bottom: 0;
 	left: 0;
 	opacity: 0;
@@ -115,4 +139,12 @@
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+.block-list-projects__anim {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }

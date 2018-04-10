@@ -22,15 +22,15 @@ const Image = (props) => (
       <img width="100%"
            src={(props.content != undefined) ? props.content.mobile : ''}/>
     </MediaQuery>
-    <MediaQuery query="(min-width: 768px) and (max-width: 1024px)">
+    <MediaQuery query="(min-width: 768px) and (max-width: 1023px)">
       <img width="100%"
            src={(props.content != undefined) ? props.content.tablet : ''}/>
     </MediaQuery>
-    <MediaQuery query="(min-width: 1025px) and (max-width: 1200px)">
+    <MediaQuery query="(min-width: 1024px) and (max-width: 1199px)">
       <img width={props.width}
            src={( props.content != undefined) ? props.content.desktop : ''}/>
     </MediaQuery>
-    <MediaQuery query="(min-width: 1201px) and (max-width: 1600px)">
+    <MediaQuery query="(min-width: 1200px) and (max-width: 1600px)">
       <img width={props.width}
            src={(( props.content != undefined) ? props.content.desktop_big : '')}/>
     </MediaQuery>

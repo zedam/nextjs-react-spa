@@ -37,6 +37,20 @@
 .link-directors {
 	@include animate-link-underline-left($black);
 	float: left;
+
+	&:after {
+		height: 4px;
+		left: 3px;
+
+		@include respond-to(tablet) {
+			height: 5px;
+		}
+
+		@include respond-to(desktop) {
+			left: 6px;
+			height: 6px;
+		}
+	}
 }
 
 .link-directors__separator {

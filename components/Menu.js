@@ -107,7 +107,7 @@ export default class extends Component {
 				<div className="menu__home-logo">Back</div>
 				}*/}
 
-				<Menu  width="100%" bodyClassName="black"
+				<Menu burgerButtonClassName={ "my-class" } width="100%" bodyClassName="black"
 					  className={ "my-menu " }
 					  isOpen={this.state.menuOpen}
 					  onStateChange={(state) => this.handleStateChange(state)}>
@@ -140,7 +140,6 @@ export default class extends Component {
 							</span>
 						</a>
 					</Link>
-					{/*<a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>*/}
 				</Menu>
 
 

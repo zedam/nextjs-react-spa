@@ -5,16 +5,14 @@ import ScrollAnimation from 'react-animate-on-scroll'
 const BlockFullItem = (props) => (
 
     <div className="block-full-item__container">
+		<LinkItem content={props.content}>
+		<a>
         <div className="block-full-item__content-container">
 			<div className="block-full-item__content-container-table">
 				<div className="block-full-item__content-container-cell">
 					<h3 className="block-full-item__content-container-title">
-						<LinkItem content={props.content}>
-							<a>
-								<span dangerouslySetInnerHTML={{__html: props.content.headline}}>
-								</span>
-							</a>
-						</LinkItem>
+						<span dangerouslySetInnerHTML={{__html: props.content.headline}}>
+						</span>
 					</h3>
 					{props.content.director &&
 						<div className="block-full-item__content-container-director">
@@ -32,6 +30,8 @@ const BlockFullItem = (props) => (
                 </a>
             </LinkItem>
         </div>
+		</a>
+		</LinkItem>
     </div>
     
 );

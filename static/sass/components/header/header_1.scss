@@ -1,7 +1,11 @@
 .header-1__container {
-	height: 500px;
 	overflow: hidden;
 	position: relative;
+	padding-bottom: 67.5%;
+
+	@include respond-to(tablet) {
+		padding-bottom: 67.5%;
+	}
 
 	@include respond-to(desktop) {
 		height: auto;
@@ -24,12 +28,12 @@
 		left: 50%;
 		min-height: 100%;
 		min-width: 100%;
+		max-width: 120%;
 		position: absolute;
 		top: 50%;
 		transform: translateX(-50%) translateY(-50%);
 		width: auto;
 		z-index: 71;
-		max-width: 120%;
 	}
 }
 
@@ -64,14 +68,18 @@
 }
 
 .header-1__container-content-title {
-	font-size: 28px;
+	font-size: 35px;
 
 	@include respond-to (tablet){
 		font-size: 42px;
 	}
 
 	@include respond-to (desktop){
-		font-size: 49px;
+		font-size: 56px;
+	}
+
+	@include respond-to (desktop_big){
+		font-size: 63px;
 	}
 }
 

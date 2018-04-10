@@ -34,12 +34,6 @@ const Image = (props) => (
       <div className="background-image" style={ { backgroundImage: `url(${props.content.desktop_extra_big})` } } />
     </MediaQuery>
 
-    <style global jsx>{`
-        .image {
-            transition: opacity ${duration}ms ease-in-out;
-            opacity: 0;
-        }
-    `}</style>
   </div>
 )
 

@@ -6,7 +6,7 @@ import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import Image from '../components/Image'
-import ScrollAnimation from 'react-animate-on-scroll'
+import Reveal from 'react-reveal/Reveal'
 
 export default class About extends Component {
 	state = {
@@ -71,10 +71,13 @@ export default class About extends Component {
 									}
 
 									{this.props.about.data[0].description &&
-									<ScrollAnimation animateIn="fadeIn" animateOnce="true" delay="200">
-										<div className="fade-up header-2_container-content-description"
-										 dangerouslySetInnerHTML={{__html: this.props.about.data[0].description}}></div>
-									</ScrollAnimation>
+										<div className="fade-up header-2_container-content-description">
+											<Reveal effect="fadeInUp">
+
+												{/*{this.props.about.data[0].description}*/}
+												<div dangerouslySetInnerHTML={{__html: this.props.about.data[0].description}}></div>
+											</Reveal>
+										</div>
 									}
 
 								</div>

@@ -1,5 +1,7 @@
 .block-big-item__container {
 	@include default_margins();
+	display: table;
+	width: 100%;
 
 	@include respond-to(desktop_big) {
 		margin-left: auto;
@@ -10,69 +12,103 @@
 
 .block-big-item__image-container {
 	display: block;
-	padding: 20px 0 0;
+	overflow: hidden;
+	padding: 0;
 	vertical-align: top;
 
 	@include respond-to(tablet) {
-		display: table-cell;
+		float: right;
 		padding: 0;
 		width: 60%;
 	}
 
 	@include respond-to(desktop) {
+		width: 54%;
+	}
+
+	@include respond-to(desktop_big) {
 		width: 64%;
+	}
+
+	img {
+		@include transition(all, 1.6s, 0s, $animationEffect);
+		display: block;
+	}
+
+	&:hover {
+		img {
+			@include transform(scale(1.02,1.02));
+			opacity: .95;
+		}
 	}
 }
 
 .block-big-item__content-container {
 	display: block;
-	padding: 0;
+	padding: 20px 0 0;
 	vertical-align: top;
 
 	@include respond-to(tablet) {
-		display: table-cell;
 		box-sizing: border-box;
+		float: left;
 		padding: 0 50px 0 0;
 		width: 40%;
 	}
 
 	@include respond-to(desktop) {
-		width: 36%;
 		padding: 0 60px 0 0;
+		width: 46%;
+	}
+
+	@include respond-to(desktop_big) {
+		padding: 0 60px 0 0;
+		width: 36%;
 	}
 }
-
+/*
 .block-big-item__title {
 	a {
 		@include animate-link-underline-left($black);
 		color: $black;
 		display: inline-block;
-		font-size: 28px;
+		font-size: 35px;
 		font-weight: normal;
+		line-height: 35px;
 		text-decoration: none;
 
 		@include respond-to(tablet) {
+			font-size: 35px;
+			line-height: 35px;
+		}
+
+		@include respond-to(desktop) {
 			font-size: 42px;
+			line-height: 42px;
 		}
 
 		p {
 			margin: 0;
+		}
+
+		&:after {
+			bottom: -3px;
+			height: 5px;
 		}
 	}
 }
 
 .block-big-item__subtitle {
 	font-size: 21px;
-	line-height: 26px;
-	margin-top: 20px;
+	line-height: 33px;
+	margin-top: 17px;
 
-	@include respond-to(tablet) {
-		font-size: 20px;
-		line-height: 26px;
+	@include respond-to (tablet) {
+		font-size: 15px;
+		line-height: 25px;
 	}
 
-	@include respond-to(desktop) {
+	@include respond-to (desktop) {
 		font-size: 21px;
-		line-height: 29px;
+		line-height: 33px;
 	}
-}
+}*/
