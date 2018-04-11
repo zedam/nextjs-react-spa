@@ -34,8 +34,8 @@ const Layout = (props) => (
 			<meta property="og:url" content="" />
 
 			<link type="text/css" rel="stylesheet" href="/static/style.css"></link>
-			<link type="text/css" rel='stylesheet' href='/_next/static/style.css'
-			/>
+			<link type="text/css" rel='stylesheet' href='/_next/static/style.css' />
+			<link rel="icon" href='/static/images/mobile/favicon_flag.png' />
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		</Head>
 		<Header title={props.title} pathname={props.pathname} />

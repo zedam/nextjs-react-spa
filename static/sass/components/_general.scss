@@ -106,14 +106,21 @@
 	font-size: 40px;
 }
 
-.fadeInUp {
+.react-reveal {
+	//opacity: 0;
+}
+
+/*.fadeInUp {
 	@include transform(translateY(0));
 	animation-name: fadeInUp;
+	animation-iteration-count: 1;
+	//opacity: 1;
 }
 
 @keyframes fadeInUp {
 	0% {
 		@include transform(translateY(30px));
+		opacity: 0;
 	}
 
 	100% {
@@ -123,4 +130,41 @@
 		animation-iteration-count: 1;
 		opacity: 1;
 	}
+}*/
+
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 50px, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+@keyframes fadeInUpText {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 80px, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.fadeInUpText {
+	-webkit-animation-name: fadeInUpText;
+	animation-name: fadeInUpText;
 }

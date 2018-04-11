@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import Image from '../components/Image'
 import ScrollAnimation from 'react-animate-on-scroll'
+import Reveal from 'react-reveal/Reveal'
 
 export default class Studio extends Component {
 	state = {
@@ -67,15 +68,17 @@ export default class Studio extends Component {
 								<div className="header-2__container-content">
 
 									{this.props.studio.data[0].headline &&
-									<h1 className="fade-up header-2__container-content-title"
-										dangerouslySetInnerHTML={{__html: this.props.studio.data[0].headline}}></h1>
+									<Reveal effect="fadeInUp">
+										<h1 className="header-2__container-content-title"
+											dangerouslySetInnerHTML={{__html: this.props.studio.data[0].headline}}></h1>
+									</Reveal>
 									}
 
 									{this.props.studio.data[0].description &&
-									<ScrollAnimation animateIn="fadeIn" animateOnce="true">
+									<Reveal effect="fadeInUpText" duration={1000}>
 										<div className="fade-up header-2_container-content-description"
 											 dangerouslySetInnerHTML={{__html: this.props.studio.data[0].description}}></div>
-									</ScrollAnimation>
+									</Reveal>
 									}
 
 								</div>

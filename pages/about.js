@@ -66,13 +66,15 @@ export default class About extends Component {
 
 
 									{this.props.about.data[0].headline &&
-									<h1 className="fade-up header-2__container-content-title"
-										dangerouslySetInnerHTML={{__html: this.props.about.data[0].headline}}></h1>
+									<Reveal effect="fadeInUp">
+										<h1 className="header-2__container-content-title"
+											dangerouslySetInnerHTML={{__html: this.props.about.data[0].headline}}></h1>
+									</Reveal>
 									}
 
 									{this.props.about.data[0].description &&
 										<div className="fade-up header-2_container-content-description">
-											<Reveal effect="fadeInUp">
+											<Reveal effect="fadeInUpText" duration={1000}>
 
 												{/*{this.props.about.data[0].description}*/}
 												<div dangerouslySetInnerHTML={{__html: this.props.about.data[0].description}}></div>

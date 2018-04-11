@@ -68,6 +68,7 @@
 }
 
 .header-1__container-content-title {
+	@include transition(all, 0.3s, 0s, $animationEffect);
 	font-size: 35px;
 
 	@include respond-to (tablet){
