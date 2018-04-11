@@ -45,6 +45,10 @@
 	line-height: 35px;
 	padding: 0 10px 0 10px;
 	position: absolute;
+
+	@include respond-to(tablet) {
+		font-size: 16px;
+	}
 }
 
 .rh5v-Time_current {
@@ -69,7 +73,7 @@
 
 	@include respond-to(tablet) {
 		bottom: 18px;
-		left: 106px;
+		left: 114px;
 		position: absolute;
 		right: 73px;
 	}
@@ -89,11 +93,11 @@
 	&:before {
 		background: $white;
 		content: '';
-		height: 10px;
+		height: 18px;
 		right: -2px;
 		position: absolute;
-		top: -4px;
-		width: 2px;
+		top: -8px;
+		width: 3px;
 	}
 }
 
@@ -117,21 +121,21 @@
 		background: $white;
 		border-radius: 10px;
 		content: '';
-		height: 10px;
+		height: 9px;
 		right: -5px;
 		position: absolute;
 		top: -3px;
-		width: 10px;
+		width: 9px;
 	}
 
 	&:before {
 		background: $white;
 		content: '';
-		height: 10px;
-		left: 0;
+		height: 18px;
+		left: -1px;
 		position: absolute;
-		top: -4px;
-		width: 2px;
+		top: -8px;
+		width: 3px;
 	}
 }
 
@@ -164,7 +168,7 @@
 }
 
 .rh5v-Volume_icon {
-	padding: 1px;
+	padding: 0px;
 }
 
 .rh5v-Volume_slider {
@@ -383,7 +387,7 @@
 }
 
 .rh5v-Fullscreen_icon {
-	padding: 2px;
+	padding: 0px;
 }
 
 .rh5v-Overlay_component {

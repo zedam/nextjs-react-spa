@@ -81,10 +81,11 @@
 	background-image: url('/static/images/mobile/bandera_4web.gif');
 	background-image: url('/static/images/mobile/bandera_signature_2colors.gif');
 	background-image: url('/static/images/mobile/bandera_traced.gif');
+	background-image: url('/static/images/mobile/bandera_traced64_33.gif');
 	background-size: cover;
 	height: 70px;
 	position: fixed;
-	right: 0;
+	right: 5px;
 	top: 0;
 	width: 87px;
 	z-index: 1101;
@@ -101,6 +102,8 @@
 
 	@include respond-to(tablet) {
 		height: 96px;
+		right: 10px;
+		top: 5px;
 		width: 130px;
 	}
 }
@@ -200,6 +203,12 @@
 		height: 5px;
 	}
 
+	&:hover {
+		&:after {
+			width: 100%;
+		}
+	}
+
 	@include respond-to(tablet) {
 		font-size: 56px;
 	}
@@ -235,11 +244,15 @@
 	padding: 0.8em;
 
 	@include respond-to(tablet) {
-		padding: 60px;
+		padding: 60px 42px;
 	}
 
-	@include respond-to(dsktop) {
-		padding: 60px;
+	@include respond-to(desktop) {
+		padding: 60px 54px;
+	}
+
+	@include respond-to(desktop_big) {
+		padding: 60px 72px;
 	}
 }
 

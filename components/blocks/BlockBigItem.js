@@ -1,6 +1,5 @@
 import Image from '../Image.js'
 import LinkItem from './LinkItem.js'
-import ScrollAnimation from 'react-animate-on-scroll'
 import Reveal from 'react-reveal/Reveal'
 
 const BlockBigItem = (props) => (
@@ -20,21 +19,21 @@ const BlockBigItem = (props) => (
 			</ScrollAnimation>*/}
 		</div>
         <div className="block-big-item__content-container">
-			<ScrollAnimation animateIn="fadeIn" animateOnce="true">
-            <h3 className="general__link-title">
-                <LinkItem content={props.content}>
-                    <a>
-						<div dangerouslySetInnerHTML={{__html: props.content.headline}}></div>
-                    </a>
-                </LinkItem>
-            </h3>
-			</ScrollAnimation>
+			<Reveal effect="fadeInUp">
+				<h3 className="general__link-title">
+					<LinkItem content={props.content}>
+						<a>
+							<div dangerouslySetInnerHTML={{__html: props.content.headline}}></div>
+						</a>
+					</LinkItem>
+				</h3>
+			</Reveal>
 
-			<ScrollAnimation animateIn="fadeIn" animateOnce="true">
-            <div className="general__text">
-                {props.content.subtitle}
-            </div>
-			</ScrollAnimation>
+			<Reveal effect="fadeInUpText" duration={1000}>
+				<div className="general__text">
+					{props.content.subtitle}
+				</div>
+			</Reveal>
         </div>
 
     </div>

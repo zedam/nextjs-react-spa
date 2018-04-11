@@ -4,7 +4,8 @@ import Reveal from 'react-reveal/Reveal'
 
 const BlockListProjects = (props) => (
     <div>
-        
+		<Reveal effect="fadeInUp">
+
         {props.content.typeElement.map((comp, i) => (
 			<div key={i}  className="block-list-projects__item">
 
@@ -28,16 +29,13 @@ const BlockListProjects = (props) => (
 							{comp.image[0] &&
 								<Image content={comp.image[0]} class="block-list-projects__image"></Image>
 							}
-							{/*<Image content={comp.image[0]} class="block-list-projects__image"></Image>*/}
-
 						</a>
-
 					</LinkItem>
 				</div>
-
 			</div>
-
         ))}
+
+		</Reveal>
 
     </div>
 );

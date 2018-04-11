@@ -9,6 +9,7 @@ import MediaQuery from 'react-responsive'
 import Blocks from '../components/Blocks'
 import BackgroundImage from '../components/BackgroundImage'
 import { DefaultPlayer as Video } from 'react-html5video'
+import Reveal from 'react-reveal/Reveal'
 
 //import 'react-html5video/dist/styles.css';
 
@@ -98,10 +99,11 @@ export default class Homepage extends Component {
 
 						{this.props.homepage.data[0].headline &&
 						<div className="header-1__container-content">
-							<ScrollAnimation animateIn="fadeIn" animateOnce="true">
+							<Reveal effect="fadeInUp">
+
 								<h1 className="fade-up header-1__container-content-title"
 								   dangerouslySetInnerHTML={{__html: this.props.homepage.data[0].headline}}></h1>
-							</ScrollAnimation>
+							</Reveal>
 						</div>
 						}
 

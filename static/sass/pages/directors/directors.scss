@@ -12,8 +12,7 @@
 	}
 
 	@include respond-to(desktop_big) {
-		max-width: 1400px;
-		margin: auto;
+		max-width: 1200px;
 		padding: 140px 100px;
 	}
 }
@@ -49,6 +48,28 @@
 		@include respond-to(desktop) {
 			left: 6px;
 			height: 6px;
+		}
+
+		@include respond-to(desktop_big) {
+			height: 8px;
+		}
+	}
+
+	&:hover {
+		&:after {
+			width: calc(100% - 4px);
+
+			@include respond-to(tablet) {
+				width: calc(100% - 6px);
+			}
+
+			@include respond-to(desktop) {
+				width: calc(100% - 10px);
+			}
+
+			@include respond-to(desktop_big) {
+				width: calc(100% - 10px);
+			}
 		}
 	}
 }

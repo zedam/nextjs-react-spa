@@ -6,7 +6,7 @@ import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import Image from '../components/Image'
-import ScrollAnimation from 'react-animate-on-scroll'
+import Reveal from 'react-reveal/Reveal'
 
 export default class Contact extends Component {
 	state = {
@@ -56,7 +56,7 @@ export default class Contact extends Component {
 					{
 						// If state = true, display content
 						this.state.isReady &&
-						<div key="title" className="template-1">
+						<div key="title" className="template-3">
 							<div className="header-2__container full" style={{ backgroundColor: this.props.contact.data[0].color.color }}>
 
 								{this.props.contact.data[0].image &&
@@ -66,25 +66,28 @@ export default class Contact extends Component {
 								<div className="header-2__container-content">
 
 									{this.props.contact.data[0].headline &&
-									<h1 className="fade-up header-2__container-content-title"
-										dangerouslySetInnerHTML={{__html: this.props.contact.data[0].headline}}></h1>
+									<Reveal effect="fadeInUp">
+										<h1 className="header-2__container-content-title"
+											dangerouslySetInnerHTML={{__html: this.props.contact.data[0].headline}}></h1>
+									</Reveal>
 									}
 
 									{this.props.contact.data[0].description &&
-									<div className="fade-up contact__description">
-										<ScrollAnimation animateIn="fadeIn" animateOnce="true"  delay="300">
+									<div className=" contact__description" >
+
+										<Reveal effect="fadeInUpText" duration={1000}>
 											<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].description}}></div>
-										</ScrollAnimation>
+										</Reveal>
 									</div>
 									}
 
-									{this.props.contact.data[0].descriptionExtra &&
+									{/*{this.props.contact.data[0].descriptionExtra &&
 									<div className="fade-up contact__description">
-										<ScrollAnimation animateIn="fadeIn" animateOnce="true"  delay="600">
+										<Reveal effect="fadeInUp">
 											<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].descriptionExtra}}></div>
-										</ScrollAnimation>
+										</Reveal>
 									</div>
-									}
+									}*/}
 
 								</div>
 							</div>
