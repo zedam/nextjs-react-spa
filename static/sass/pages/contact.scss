@@ -13,6 +13,7 @@
 		@include animate-link-underline-left($black, true);
 		color: $black;
 		display: inline-block;
+		margin-bottom: 5px;
 		text-decoration: none;
 	}
 }
