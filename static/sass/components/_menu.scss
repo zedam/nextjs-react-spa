@@ -9,12 +9,15 @@
 }
 
 .menu-item {
-	@include animate-link-underline-left($black);
 	color: $black;
 	clear: both;
 	display: inline-block;
 	float: left;
 	text-decoration: none;
+
+	@include respond-to(desktop) {
+		@include animate-link-underline-left($black);
+	}
 }
 
 .bm-burger-button {
@@ -170,7 +173,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-	padding: 80px 40px 0;
+	padding: 80px 20px 0;
 	font-size: 21px;
 
 	@include respond-to(tablet) {
@@ -240,19 +243,26 @@
 }
 
 .bm-item-list {
-	color: #FFFFFF;
-	padding: 0.8em;
+	@include transition(all, 1s, 0s, $animationEffect);
+	@include transform(translateX(-100%));
+	color: $white;
+	padding: 0;
 
 	@include respond-to(tablet) {
 		padding: 60px 42px;
 	}
 
 	@include respond-to(desktop) {
+		@include transition(all, 1.6s, 0s, $animationEffect);
 		padding: 60px 54px;
 	}
 
 	@include respond-to(desktop_big) {
 		padding: 60px 72px;
+	}
+
+	.black & {
+		@include transform(translateX(0));
 	}
 }
 
