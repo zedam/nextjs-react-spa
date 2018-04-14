@@ -21,6 +21,9 @@ export default class Projects extends Component {
     * Begin animation when component is mount
     */
 	componentDidMount = () => {
+		const project = fetch(Constant.api_url + `api/directors/${this.props.project.director.contentId}.json`)
+
+		console.log (project);
 		//alert(this.props.project.director.contentId)
 		this.setState({isReady: !this.state.isReady})
 	}
@@ -49,13 +52,18 @@ export default class Projects extends Component {
 	renderVideo = () => {
 		return (
 
-			<div class={'videoPlaying_' + this.state.isPlaying}>
+			<div className={'videoPlaying_' + this.state.isPlaying}>
 				{  this.props.project.vimeoUrl ?
-					<div class="header-3__vimeo-container">
+					<div className="header-3__vimeo-container">
 						<Video loop muted playsInline
 							   controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-
 							   onCanPlayThrough={() => {
+								   // Do stuff
+							   }}
+							   onPlay={() => {
+								   this.setState({isPlaying: true})
+
+								   console.log (this.state);
 								   // Do stuff
 							   }}>
 							<source src={this.props.project.vimeoUrl} type="video/mp4" />

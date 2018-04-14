@@ -48,7 +48,32 @@
 	top: 0;
 }
 
+.videoPlaying_false {
+	.rh5v-Fullscreen_component,
+	.rh5v-Volume_component,
+	.rh5v-Time_component,
+	.rh5v-Seek_component,
+	.rh5v-DefaultPlayer_video {
+		opacity: 0;
+	}
+}
+
+.videoPlaying_true {
+	.rh5v-Fullscreen_component,
+	.rh5v-Volume_component,
+	.rh5v-Time_component,
+	.rh5v-Seek_component,
+	.rh5v-DefaultPlayer_video {
+		opacity: 1;
+	}
+}
+
+.rh5v-Seek_component {
+	@include transition(all, 0.3s, 0s, $animationEffect);
+}
+
 .rh5v-DefaultPlayer_video {
+	@include transition(all, 0.3s, 0s, $animationEffect);
 	width: 100%;
 }
 

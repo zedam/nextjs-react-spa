@@ -5,7 +5,7 @@ const SocialLinks = (props) => (
     <div className="social-links__container">
 
 		<div className="social-links__title">
-			Follow them
+			Follow
 		</div>
 
 		{props.content.facebookLink &&

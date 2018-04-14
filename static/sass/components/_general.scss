@@ -177,7 +177,14 @@
 .back-to {
 	@include animate-link-underline-left($black);
 	color: $black;
+	font-size: 18px;
+	margin-bottom: 30px;
 	text-decoration: none;
+
+	&:after {
+		bottom: -3px;
+		left: 17px;
+	}
 }
 
 .no-blocks {
