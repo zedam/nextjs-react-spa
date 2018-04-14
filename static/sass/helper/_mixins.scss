@@ -293,12 +293,12 @@ $easeInOutBack: cubic-bezier(.680, -.550, .265, 1.550);
 
 	@include respond-to(tablet) {
 		margin-top: $margin-tablet;
-		padding: 0 $margin-tablet;
+		padding: 0 100px;
 	}
 
 	@include respond-to(desktop) {
 		margin-top: $margin-desktop;
-		padding: 0 $margin-desktop;
+		padding: 0 100px;
 	}
 
 	@include respond-to(desktop_big) {

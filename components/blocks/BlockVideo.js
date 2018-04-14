@@ -12,14 +12,14 @@ const BlockVideo = (props) => (
 				</h2>
 				}
 
-				{props.content.vimeoId &&
 				<div className="block-video__container">
 					{props.content.image[0] &&
 						<BackgroundImage content={props.content.image[0]} ></BackgroundImage>
 					}
-					<Vimeo videoId={props.content.vimeoId} autoplay={false} />
+					{props.content.vimeoId &&
+						<Vimeo videoId={props.content.vimeoId} autoplay={false} />
+					}
 				</div>
-				}
 
 				{props.content.description &&
 				<div className="block-video__description"

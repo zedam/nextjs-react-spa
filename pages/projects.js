@@ -21,9 +21,10 @@ export default class Projects extends Component {
     * Begin animation when component is mount
     */
 	componentDidMount = () => {
-		const project = fetch(Constant.api_url + `api/directors/${this.props.project.director.contentId}.json`)
-
-		console.log (project);
+		console.log (this.props.project.director);
+		const projects = fetch(Constant.api_url + `api/directors/${this.props.project.director.id}.json`)
+		//const directorProjects = projects.json()
+		console.log (projects);
 		//alert(this.props.project.director.contentId)
 		this.setState({isReady: !this.state.isReady})
 	}
@@ -132,7 +133,7 @@ export default class Projects extends Component {
 									{this.props.project.director.title == 'Studio' ?
 										<a href="/studio" className="back-to">&lt; Back to Studio</a>
 										:
-										<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.contentId} className="back-to">&lt; Back to {this.props.project.director.title}</a>
+										<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.id} className="back-to">&lt; Back to {this.props.project.director.title}</a>
 									}
 
 									{this.props.project.headline &&

@@ -88,7 +88,7 @@ export default class Homepage extends Component {
 											   // Do stuff
 										   }}>
 										<source src="static/videos/homepage/DESKTOP_thebrut_reel.mp4" type="video/mp4" />
-										<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />
+										{/*<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />*/}
 										{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
 									</Video>
 								</MediaQuery>
