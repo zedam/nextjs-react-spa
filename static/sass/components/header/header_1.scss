@@ -14,7 +14,15 @@
 
 	.rh5v-DefaultPlayer_component {
 		position: relative;
-		padding-bottom: 127%;
+
+		@include respond-to(mobile) {
+			padding-bottom: 127%;
+		}
+		@include respond-to(tablet) {
+			.rh5v-DefaultPlayer_video {
+				position: relative
+			}
+		}
 	}
 
 	.rh5v-DefaultPlayer_video {
