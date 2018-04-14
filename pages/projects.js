@@ -13,14 +13,15 @@ import Reveal from 'react-reveal/Reveal'
 
 export default class Projects extends Component {
 	state = {
-		isReady: false
+		isReady: false,
+		isPlaying: false
 	}
 
 	/*
     * Begin animation when component is mount
     */
 	componentDidMount = () => {
-		alert(this.props.project.director.contentId)
+		//alert(this.props.project.director.contentId)
 		this.setState({isReady: !this.state.isReady})
 	}
 	/*
@@ -28,6 +29,12 @@ export default class Projects extends Component {
     */
 	onClickDo = () => {
 		this.setState({isReady: !this.state.isReady})
+	}
+	/*
+    * Transition off trigered by Link component
+    */
+	onPlaying = () => {
+		this.setState({isPLaying: true})
 	}
 	/*
     * Transition on
@@ -42,7 +49,7 @@ export default class Projects extends Component {
 	renderVideo = () => {
 		return (
 
-			<div>
+			<div class={'videoPlaying_' + this.state.isPlaying}>
 				{  this.props.project.vimeoUrl ?
 					<div class="header-3__vimeo-container">
 						<Video loop muted playsInline
@@ -115,9 +122,9 @@ export default class Projects extends Component {
 									</video>*/}
 
 									{this.props.project.director.title == 'Studio' ?
-										<a href="/studio">Back to Studio</a>
+										<a href="/studio" className="back-to">&lt; Back to Studio</a>
 										:
-										<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.contentId}>Back to {this.props.project.director.title}</a>
+										<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.contentId} className="back-to">&lt; Back to {this.props.project.director.title}</a>
 									}
 
 									{this.props.project.headline &&
@@ -144,8 +151,10 @@ export default class Projects extends Component {
 							</Reveal>
 						</div>
 
-						{this.props.project.blocks &&
+						{this.props.project.blocks ?
 						<Blocks content={this.props.project.blocks} />
+							:
+							<div className="no-blocks"></div>
 						}
 
 

@@ -173,3 +173,13 @@
 	-webkit-animation-name: fadeInUpText;
 	animation-name: fadeInUpText;
 }
+
+.back-to {
+	@include animate-link-underline-left($black);
+	color: $black;
+	text-decoration: none;
+}
+
+.no-blocks {
+	padding-bottom: 50px;
+}
