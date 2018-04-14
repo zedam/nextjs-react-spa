@@ -6,6 +6,12 @@ const BlockVideo = (props) => (
 
 		<Reveal effect="fadeInUp">
 			<div className="header-1__container-content">
+				{props.content.mainTitle &&
+				<h2 className="general__title block-video__title">
+					{props.content.mainTitle}
+				</h2>
+				}
+
 				{props.content.vimeoId &&
 				<div className="block-video__container">
 					{props.content.image[0] &&
@@ -13,12 +19,6 @@ const BlockVideo = (props) => (
 					}
 					<Vimeo videoId={props.content.vimeoId} autoplay={false} />
 				</div>
-				}
-
-				{props.content.mainTitle &&
-				<h2 className="block-video__title">
-					{props.content.mainTitle}
-				</h2>
 				}
 
 				{props.content.description &&

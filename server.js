@@ -41,7 +41,7 @@ app.prepare()
 
 		server.get('*', (req, res) => {
 
-			/*const parsedUrl = parse(req.url, true)
+			const parsedUrl = parse(req.url, true)
 			const rootStaticFiles = [
 				'/robots.txt',
 				'/sitemap.xml',
@@ -52,7 +52,7 @@ app.prepare()
 				return app.serveStatic(req, res, path)
 			} else {
 				return handle(req, res)
-			}*/
+			}
 
 			return handle(req, res)
 		});

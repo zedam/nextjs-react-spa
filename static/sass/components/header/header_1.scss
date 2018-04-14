@@ -1,26 +1,42 @@
 .header-1__container {
 	overflow: hidden;
 	position: relative;
-	padding-bottom: 67.5%;
+	//padding-bottom: 67.5%;
 
-	@include respond-to(tablet) {
+	/*@include respond-to(tablet) {
 		padding-bottom: 67.5%;
 	}
 
 	@include respond-to(desktop) {
 		height: auto;
 		padding-bottom: 56.25%;
+	}*/
+
+	.rh5v-DefaultPlayer_component {
+		position: relative;
+		padding-bottom: 127%;
+	}
+
+	.rh5v-DefaultPlayer_video {
+		@include transform(translateX(0));
+		left: 0;
+		float: left;
+		min-width: 0;
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
 	}
 }
 
 .header-1__video-container {
-	bottom: 0;
+	/*bottom: 0;
 	left: 0;
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: 0;*/
 	width: 100%;
-	z-index: 0;
+	//z-index: 0;
 
 	video,
 	.vimeo {

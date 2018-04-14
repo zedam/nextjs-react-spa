@@ -9,8 +9,8 @@ import Vimeo from 'react-vimeo'
 import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
 import { DefaultPlayer as Video } from 'react-html5video'
+import Reveal from 'react-reveal/Reveal'
 
-import Fade from 'react-reveal/Fade'
 export default class Projects extends Component {
 	state = {
 		isReady: false
@@ -20,6 +20,7 @@ export default class Projects extends Component {
     * Begin animation when component is mount
     */
 	componentDidMount = () => {
+		alert(this.props.project.director.contentId)
 		this.setState({isReady: !this.state.isReady})
 	}
 	/*
@@ -100,7 +101,7 @@ export default class Projects extends Component {
 
 						<div className="header-1__container-content">
 
-							<Fade bottom cascade>
+							<Reveal effect="fadeInUp">
 								<div>
 
 									{/*<video id="video-player_html5_api" className="vjs-tech" preload="auto" autoPlay="">
@@ -112,6 +113,12 @@ export default class Projects extends Component {
 										</source>
 										<p className="vjs-no-js"></p>
 									</video>*/}
+
+									{this.props.project.director.title == 'Studio' ?
+										<a href="/studio">Back to Studio</a>
+										:
+										<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.contentId}>Back to {this.props.project.director.title}</a>
+									}
 
 									{this.props.project.headline &&
 										<h1 className="header-3__container-content-title"
@@ -134,7 +141,7 @@ export default class Projects extends Component {
 									}
 
 								</div>
-							</Fade>
+							</Reveal>
 						</div>
 
 						{this.props.project.blocks &&

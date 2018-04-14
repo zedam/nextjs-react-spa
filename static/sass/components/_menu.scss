@@ -104,9 +104,13 @@
 	}*/
 
 	@include respond-to(tablet) {
-		height: 96px;
+		height: 96px;/*
 		right: 10px;
-		top: 5px;
+		top: 5px;*/
+
+		right: 15px;
+		top: 10px;
+
 		width: 130px;
 	}
 }
