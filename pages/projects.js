@@ -151,10 +151,12 @@ export default class Projects extends Component {
 							</Reveal>
 						</div>
 
-						{this.props.project.blocks ?
+						{this.props.project.blocks &&
 						<Blocks content={this.props.project.blocks} />
-							:
-							<div className="no-blocks"></div>
+						}
+
+						{!this.props.project.blocks &&
+						<div className="no-blocks"></div>
 						}
 
 
