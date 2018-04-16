@@ -81,11 +81,12 @@
 }
 
 .header-3__video-container {
-	position: relative;
-	top: 0;
-	padding-bottom: 56.25%;
 	left: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
 	right: 0;
+	top: 0;
 
 	.vimeo {
 		position: absolute;
@@ -93,6 +94,12 @@
 		right: 0;
 		left: 0;
 		bottom: 0;
+	}
+
+	&:hover {
+		.background-image {
+			@include transform(scale(1.02,1.02));
+		}
 	}
 }
 

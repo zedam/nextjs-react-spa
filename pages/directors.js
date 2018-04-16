@@ -40,7 +40,7 @@ export default class Directors extends Component {
 	isLeaving = () => {
 		return {
 			opacity: 0,
-			translateY: 50,
+			translateY: 50
 		}
 	}
 	render = () => {

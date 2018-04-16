@@ -57,11 +57,11 @@
 	}
 
 	@include respond-to(tablet) {
-		padding: 140px $margin-tablet;
+		padding: 140px 100px;
 	}
 
 	@include respond-to(desktop) {
-		padding: 140px $margin-desktop;
+		padding: 140px 100px;
 		max-width: 960px;
 	}
 

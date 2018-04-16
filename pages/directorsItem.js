@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Blocks from '../components/Blocks'
 import Tags from '../components/Tags'
 import SocialLinks from '../components/SocialLinks'
-import Extend from '../components/Extend'
+import NextDirectorLink from '../components/blocks/NextDirectorLink'
 
 import Reveal from 'react-reveal/Reveal'
 
@@ -16,16 +16,19 @@ export default class DirectorsItem extends Component {
 				<div className="header-3__container" style={{backgroundColor: this.props.content.color.color }}>
 					<div className="header-3__container-content">
 
-						<Extend>
+						<div className="links-navigation">
 
-							<a href="/directors" className="menu__back">Back</a>
-						</Extend>
+							<a href="/directors" className="back-to">&lt; Back to Directors</a>
+
+							<NextDirectorLink content={this.props.content.id}></NextDirectorLink>
+						</div>
 
 						{this.props.content.title &&
 						<Reveal effect="fadeInUp" >
 							<h1 className="header-3__container-content-title">{this.props.content.title}</h1>
 						</Reveal>
 						}
+
 						{this.props.content.subtitle &&
 						<Reveal effect="fadeInUp" >
 							<h2 className="header-2__container-content-title">{this.props.content.subtitle}</h2>

@@ -54,7 +54,7 @@ body {
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat Regular', sans-serif;
 }
 
 .footer__container {
@@ -76,7 +76,7 @@ body {
 }
 
 @font-face {
-	font-family: 'Montserrat';
+	font-family: 'Montserrat Regular';
 	src: url('/static/fonts/Monserrat/montserrat-regular-webfont.eot');
 	src: url('/static/fonts/Monserrat/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
 	url('/static/fonts/Monserrat/montserrat-regular-webfont.woff2') format('woff2'),
@@ -85,4 +85,18 @@ body {
 	url('/static/fonts/Monserrat/montserrat-regular-webfont.svg#montserratregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Montserrat Medium';
+	src: url('/static/fonts/Monserrat/montserrat-medium-webfont.eot');
+	src: url('/static/fonts/Monserrat/montserrat-medium-webfont.eot?#iefix') format('embedded-opentype'),
+	url('/static/fonts/Monserrat/montserrat-medium-webfont.woff2') format('woff2'),
+	url('/static/fonts/Monserrat/montserrat-medium-webfont.woff') format('woff'),
+	url('/static/fonts/Monserrat/montserrat-medium-webfont.ttf') format('truetype'),
+	url('/static/fonts/Monserrat/montserrat-medium-webfont.svg#montserratmedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
 }

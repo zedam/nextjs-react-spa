@@ -10,21 +10,50 @@ import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
 import { DefaultPlayer as Video } from 'react-html5video'
 import Reveal from 'react-reveal/Reveal'
+import NextLink from '../components/blocks/NextLink'
 
 export default class Projects extends Component {
-	state = {
-		isReady: false,
-		isPlaying: false
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			isReady: false,
+			isPlaying: false
+		}
 	}
 
 	/*
     * Begin animation when component is mount
     */
 	componentDidMount = () => {
-		console.log (this.props.project.director);
-		const projects = fetch(Constant.api_url + `api/directors/${this.props.project.director.id}.json`)
-		//const directorProjects = projects.json()
-		console.log (projects);
+
+		/*fetch(Constant.api_url + `api/directors/${this.props.project.director.id}.json`).then((response) => {
+
+			console.log (response);
+			this.state.blocks = response;
+		})*/
+
+		if (this.props.project.director != undefined) {
+
+			/*this.fetchFirst().then( (response) => {
+				console.log (response);
+				this.state.blocks = response;
+			})*/
+
+			/*const fetch('https://www.reddit.com/r/' + url + '.json').then(function (response) {
+				return response.json();
+			}).then(function (result) {
+				console.log(result.data.children);
+			});*/
+			/*const $this = this
+
+			const blocks = fetch(Constant.api_url + `api/directors/${this.props.project.director.id}.json`)
+				.then(function (response) {
+					console.log (response);
+					$this.setState({blocks: response})
+					return response;
+				});*/
+		}
 		//alert(this.props.project.director.contentId)
 		this.setState({isReady: !this.state.isReady})
 	}
@@ -130,11 +159,20 @@ export default class Projects extends Component {
 										<p className="vjs-no-js"></p>
 									</video>*/}
 
-									{this.props.project.director.title == 'Studio' ?
-										<a href="/studio" className="back-to">&lt; Back to Studio</a>
-										:
-										<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.id} className="back-to">&lt; Back to {this.props.project.director.title}</a>
+									{this.props.project.director != undefined &&
+										<div className="links-navigation">
+
+											{this.props.project.director.title == 'Studio' ?
+												<a href="/studio" className="back-to">&lt; Back to Studio</a>
+												:
+												<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.id} className="back-to">&lt; Back to {this.props.project.director.title}</a>
+											}
+
+											<NextLink director={this.props.project.director.id} projectId={this.props.project.id}></NextLink>
+										</div>
 									}
+
+
 
 									{this.props.project.headline &&
 										<h1 className="header-3__container-content-title"
@@ -165,7 +203,6 @@ export default class Projects extends Component {
 						<Blocks content={this.props.project.blocks} />
 						</div>
 						}
-
 
 					</div>
 					}

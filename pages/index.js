@@ -43,6 +43,7 @@ export default class Homepage extends Component {
     * Transition off
     */
 	isLeaving = () => {
+		console.log ('leaving');
 		return {
 			opacity: 0,
 			translateY: 50

@@ -3,10 +3,7 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 import Menu from 'react-burger-menu/lib/menus/slide'
 //import { slide as Menu } from 'react-burger-menu'
-
 import '../static/sass/main.scss'
-
-import Extend from './Extend'
 
 var isMenuOpen = function (state) {
 	return state.isOpen
@@ -100,33 +97,27 @@ export default class extends Component {
 
 			<div>
 				<a id="home" className="menu__home-logo" href="/"></a>
-				<Extend></Extend>
-
-				{/*{this.props.location.indexOf('projects/') != -1 &&
-
-				<div className="menu__home-logo">Back</div>
-				}*/}
 
 				<Menu burgerButtonClassName={ "my-class" } width="100%" bodyClassName="black"
 					  className={ "my-menu " }
 					  isOpen={this.state.menuOpen}
 					  onStateChange={(state) => this.handleStateChange(state)}>
 
-					<Link prefetch href="/about" >
+					<Link  href="/about" >
 						<a className="menu-item">
 							<span onClick={() => this.closeMenu()} >
 							About
 							</span>
 						</a>
 					</Link>
-					<Link prefetch href="/directors" >
+					<Link  href="/directors" >
 						<a className="menu-item">
 							<span onClick={() => this.closeMenu()} >
 							Directors
 							</span>
 						</a>
 					</Link>
-					<Link prefetch href="/studio" >
+					<Link  href="/studio" >
 						<a className="menu-item">
 							<span onClick={() => this.closeMenu()} >
 							Studio
