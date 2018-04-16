@@ -42,16 +42,17 @@
 		left: 3px;
 
 		@include respond-to(tablet) {
-			height: 5px;
+			height: 4px;
 		}
 
 		@include respond-to(desktop) {
+			height: 4px;
 			left: 6px;
-			height: 6px;
 		}
 
 		@include respond-to(desktop_big) {
-			height: 8px;
+			height: 6px;
+			left: 9px;
 		}
 	}
 
@@ -68,7 +69,7 @@
 			}
 
 			@include respond-to(desktop_big) {
-				width: calc(100% - 10px);
+				width: calc(100% - 13px);
 			}
 		}
 	}
