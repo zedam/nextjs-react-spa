@@ -16,7 +16,6 @@ const Layout = (props) => (
 			<meta property="og:type" content="website" />
 			<meta property="og:locale" content="en" />
 
-			<link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet" />
 
 			{props.content.metaTitle &&
 			<meta property="og:title" content={props.content.metaTitle} />

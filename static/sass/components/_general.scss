@@ -7,11 +7,11 @@
 
 
 	@include respond-to(tablet) {
-		padding: $margin-tablet $margin-tablet 0;
+		padding: $margin-tablet 100px 0;
 	}
 
 	@include respond-to(desktop) {
-		padding: $margin-desktop $margin-desktop 0;
+		padding: $margin-desktop 100px 0;
 	}
 
 	@include respond-to(desktop_big) {
