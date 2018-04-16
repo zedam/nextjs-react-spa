@@ -253,12 +253,12 @@
 	padding: 0;
 
 	@include respond-to(tablet) {
-		padding: 60px 42px;
+		padding: 60px 75px;
 	}
 
 	@include respond-to(desktop) {
 		@include transition(all, 1.6s, 0s, $animationEffect);
-		padding: 60px 54px;
+		padding: 60px 75px;
 	}
 
 	@include respond-to(desktop_big) {
