@@ -67,7 +67,7 @@
 		opacity: 1;
 	}
 	.rh5v-DefaultPlayer_video {
-		background-color: #f3f3f3;
+		background-color: $background-color;
 	}
 }
 
@@ -81,7 +81,7 @@
 }
 
 .header-3__video-container {
-	background: #f3f3f3;
+	background: $background-color;
 	left: 0;
 	overflow: hidden;
 	padding-bottom: 56.25%;
@@ -137,7 +137,7 @@
 
 .vimeo-embed {
 	iframe {
-		background-color: #F3F3F3;
+		background-color: $background-color;
 		bottom: 0;
 		left: 0;
 		position: absolute;
