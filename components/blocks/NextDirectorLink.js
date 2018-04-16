@@ -19,7 +19,11 @@ class NextDirectorLink extends React.Component {
 		let count = 0
 		let initiaItem = ''
 
-		axios.get(Constant.api_url + `api/pages/directors_page.json`)
+		axios.get(Constant.api_url + `api/pages/directors_page.json`, {
+			headers: {
+				'Cache-Control': 'no-cache'
+			}
+		})
 			.then((response) => {
 
 				for (var key of response.data.data[0].blocks) {
@@ -35,9 +39,9 @@ class NextDirectorLink extends React.Component {
 
 							if (showNext) {
 								this.setState({linkUrl: '/directors/'  + item.slug + '/' + item.id});
-								this.setState({linkText: item.headline + ' >'});
+								this.setState({linkText: item.title + ' >'});
 								showNext = false
-								$this.state.showLink = true
+								this.state.showLink = true
 							}
 
 							if (item.id == this.props.content){
@@ -45,7 +49,7 @@ class NextDirectorLink extends React.Component {
 
 								if (count == key.typeElement.length) {
 									this.setState({linkUrl: '/directors/'  + initiaItem.slug + '/' + initiaItem.id})
-									this.setState({linkText: initiaItem.headline + ' >'})
+									this.setState({linkText: initiaItem.title + ' >'})
 									this.state.showLink = true
 								}
 							}
@@ -65,7 +69,7 @@ class NextDirectorLink extends React.Component {
 			<React.Fragment>
 				{this.state.linkUrl &&
 					<Fade bottom>
-						<a href={this.state.linkUrl} className="next-to">Next Director &gt;</a>
+						<a href={this.state.linkUrl} className="next-to">{this.state.linkText}</a>
 					</Fade>
 				}
 				{!this.state.linkUrl &&

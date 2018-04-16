@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import BackgroundImage from '../components/BackgroundImage'
 import Vimeo from 'react-vimeo'
+import SocialLinks from '../components/SocialLinks'
 import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
 import { DefaultPlayer as Video } from 'react-html5video'
@@ -185,14 +186,16 @@ export default class Projects extends Component {
 										   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
 									}
 
-									{(this.props.project.facebookLink ||
+									{/*{(this.props.project.facebookLink ||
 										this.props.project.instagramLink ||
 										this.props.project.linkedinLink ||
 										this.props.project.behanceLink ||
 										this.props.project.vimeoLink) &&
 
-										<SocialShare content={this.props.project} />
-									}
+									<SocialLinks content={this.props.project} />
+									}*/}
+
+									<SocialShare content={this.props.project} />
 
 								</div>
 							</Reveal>

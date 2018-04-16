@@ -81,6 +81,16 @@ export default class Studio extends Component {
 									</Reveal>
 									}
 
+									{(this.props.studio.data[0].facebookLink ||
+										this.props.studio.data[0].instagramLink ||
+										this.props.studio.data[0].behanceLink ||
+										this.props.studio.data[0].vimeoLink ||
+										this.props.studio.data[0].linkedinLink) &&
+										<Reveal effect="fadeInUpText" duration={1000}>
+											<SocialLinks content={this.props.content}></SocialLinks>
+										</Reveal>
+									}
+
 								</div>
 							</div>
 

@@ -7,31 +7,17 @@ const SocialLinks = (props) => (
 			Share them
 		</div>
 
-		{props.content.facebookLink &&
-		<Link href={'https://www.facebook.com/sharer.php?p[url]=' + window.location.href}>
-			<a className="social-links__item">Fb.</a>
+		<Link href={'https://www.facebook.com/sharer/sharer.php?u=' + window.location.href}>
+			<a className="social-links__item" target="_blank">Facebook.</a>
 		</Link>
-		}
-		{props.content.instagramLink &&
-		<Link href={props.content.instagramLink}>
-			<a className="social-links__item">Instagram.</a>
+
+		<Link href={'https://twitter.com/home?status=' + window.location.href}>
+			<a className="social-links__item" target="_blank">Twitter.</a>
 		</Link>
-		}
-		{props.content.vimeoLink &&
-		<Link href={props.content.vimeoLink}>
-			<a className="social-links__item">Vimeo.</a>
+
+		<Link href={'https://plus.google.com/share?url=' + window.location.href}>
+			<a className="social-links__item" target="_blank">Google+.</a>
 		</Link>
-		}
-		{props.content.linkedinLink &&
-		<Link href={props.content.linkedinLink}>
-			<a className="social-links__item">Linkedin.</a>
-		</Link>
-		}
-		{props.content.behanceLink &&
-		<Link href={props.content.behanceLink}>
-			<a className="social-links__item">Behance.</a>
-		</Link>
-		}
     </div>
 );
 

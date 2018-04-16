@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Blocks from '../components/Blocks'
 import Tags from '../components/Tags'
 import SocialLinks from '../components/SocialLinks'
+import SocialShare from '../components/SocialShare'
 import NextDirectorLink from '../components/blocks/NextDirectorLink'
 
 import Reveal from 'react-reveal/Reveal'
@@ -53,8 +54,11 @@ export default class DirectorsItem extends Component {
 						this.props.content.behanceLink ||
 						this.props.content.vimeoLink ||
 						this.props.content.linkedinLink) &&
-						<SocialLinks content={this.props.content}></SocialLinks>
+						<Reveal effect="fadeInUp" >
+							<SocialLinks content={this.props.content}></SocialLinks>
+						</Reveal>
 						}
+
 					</div>
 
 				</div>
