@@ -11,6 +11,7 @@ import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
 import { DefaultPlayer as Video } from 'react-html5video'
 import Reveal from 'react-reveal/Reveal'
+import axios from 'axios'
 import NextLink from '../components/blocks/NextLink'
 
 export default class Projects extends Component {
@@ -69,6 +70,11 @@ export default class Projects extends Component {
     */
 	onPlaying = () => {
 		this.setState({isPLaying: true})
+	}
+
+	fetchDirector = (id) => {
+		console.log (id)
+		axios.get(Constant.api_url + `api/directors/${id}.json`)
 	}
 	/*
     * Transition on
@@ -164,9 +170,11 @@ export default class Projects extends Component {
 										<div className="links-navigation">
 
 											{this.props.project.director.title == 'Studio' ?
-												<a href="/studio" className="back-to">&lt; Back to Studio</a>
+												<a href="/studio" className="back-to" onMouseOver={() => (this.fetchDirector(this.props.project.director.id))}>&lt; Back to Studio</a>
 												:
-												<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.id} className="back-to">&lt; Back to {this.props.project.director.title}</a>
+												<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.id}
+												   onMouseOver={() => (this.fetchDirector(this.props.project.director.id))}
+												   className="back-to">&lt; Back to {this.props.project.director.title}</a>
 											}
 
 											<NextLink director={this.props.project.director.id} projectId={this.props.project.id}></NextLink>

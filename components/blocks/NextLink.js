@@ -1,6 +1,7 @@
 
 import axios from 'axios'
 import Constant from '../Constant'
+import Image from '../Image'
 import React, { Component } from 'react'
 
 class NextLink extends React.Component {
@@ -9,6 +10,10 @@ class NextLink extends React.Component {
 		this.state = {
 			showLink: false
 		}
+	}
+
+	fetchNext = (id) => {
+		axios.get(Constant.api_url + `api/projects/${id}.json`)
 	}
 
 	componentDidMount = () => {
@@ -34,7 +39,10 @@ class NextLink extends React.Component {
 								let $this = this;
 
 								if (showNext) {
+									console.log (item.image);
 									this.setState({linkUrl: '/projects/'  + item.slug + '/' + item.id});
+									this.setState({nextImage: item.image});
+									this.setState({linkId: item.id})
 									this.setState({linkText: item.headline + ' >'});
 									showNext = false
 									$this.state.showLink = true
@@ -45,8 +53,11 @@ class NextLink extends React.Component {
 
 									if (count == key.typeElement.length) {
 										console.log (initiaItem);
+										console.log (initiaItem.image);
 										this.setState({linkUrl: '/projects/'  + initiaItem.slug + '/' + initiaItem.id})
+										this.setState({linkId: initiaItem.id})
 										this.setState({linkText: initiaItem.headline + ' >'})
+										this.setState({nextImage: initiaItem.image});
 										$this.state.showLink = true
 									}
 								}
@@ -63,8 +74,14 @@ class NextLink extends React.Component {
 	render() {
 		return (
 
-		<React.Fragment>
-			<a href={this.state.linkUrl} className="next-to">Next Project &gt;</a>
+		<React.Fragment >
+
+			<a href={this.state.linkUrl}  className="next-to"onMouseOver={() => this.fetchNext(this.state.linkId)} >
+				Next Project &gt;
+			</a>
+			{this.state.nextImage &&
+				<Image content={this.state.nextImage[0]} class="hidden" ></Image>
+			}
 		</React.Fragment>
 			)
 	}

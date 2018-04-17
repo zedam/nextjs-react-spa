@@ -19,11 +19,7 @@ class NextDirectorLink extends React.Component {
 		let count = 0
 		let initiaItem = ''
 
-		axios.get(Constant.api_url + `api/pages/directors_page.json`, {
-			headers: {
-				'Cache-Control': 'no-cache'
-			}
-		})
+		axios.get(Constant.api_url + `api/pages/directors_page.json`)
 			.then((response) => {
 
 				for (var key of response.data.data[0].blocks) {

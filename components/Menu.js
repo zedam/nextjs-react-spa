@@ -80,6 +80,8 @@ export default class extends Component {
 	// This keeps your state in sync with the opening/closing of the menu
 	// via the default means, e.g. clicking the X, pressing the ESC key etc.
 	handleStateChange = (state) => {
+		fetch(Constant.api_url + 'api/' + 'pages/studio' + '.json')
+		fetch(Constant.api_url + 'api/' + 'pages/directors' + '.json')
 		this.setState({menuOpen: state.isOpen})
 	}
 
@@ -106,6 +108,7 @@ export default class extends Component {
 				<Menu burgerButtonClassName={ "my-class" } width="100%" bodyClassName="black"
 					  className={ "my-menu " }
 					  isOpen={this.state.menuOpen}
+					  onMouseOver={() => this.hoverFetch('pages/directors_page')}
 					  onStateChange={(state) => this.handleStateChange(state)}>
 
 					<Link  href="/about">
