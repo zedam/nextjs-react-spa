@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 //import Link from './link'
 import Link from 'next/link'
 import Menu from 'react-burger-menu/lib/menus/slide'
+import Constant from './Constant'
 //import { slide as Menu } from 'react-burger-menu'
 import '../static/sass/main.scss'
 
@@ -82,6 +83,10 @@ export default class extends Component {
 		this.setState({menuOpen: state.isOpen})
 	}
 
+	hoverFetch = (url) => {
+		console.log (url);
+		fetch(Constant.api_url + 'api/' + url + '.json')
+	}
 	/*
     * Transition off trigered by Link component
     */
@@ -103,30 +108,30 @@ export default class extends Component {
 					  isOpen={this.state.menuOpen}
 					  onStateChange={(state) => this.handleStateChange(state)}>
 
-					<Link  href="/about" >
+					<Link  href="/about">
 						<a className="menu-item">
-							<span onClick={() => this.closeMenu()} >
+							<span onClick={() => this.closeMenu()}  onMouseOver={() => this.hoverFetch('pages/about')}>
 							About
 							</span>
 						</a>
 					</Link>
 					<Link  href="/directors" >
 						<a className="menu-item">
-							<span onClick={() => this.closeMenu()} >
+							<span onClick={() => this.closeMenu()}  onMouseOver={() => this.hoverFetch('pages/directors_page')} >
 							Directors
 							</span>
 						</a>
 					</Link>
 					<Link  href="/studio" >
 						<a className="menu-item">
-							<span onClick={() => this.closeMenu()} >
+							<span onClick={() => this.closeMenu()}   onMouseOver={() => this.hoverFetch('pages/studio')}>
 							Studio
 							</span>
 						</a>
 					</Link>
 					<Link prefetch href="/contact" >
 						<a className="menu-item">
-							<span onClick={() => this.closeMenu()} >
+							<span onClick={() => this.closeMenu()}  onMouseOver={() => this.hoverFetch('pages/contact')} >
 							Contact
 							</span>
 						</a>

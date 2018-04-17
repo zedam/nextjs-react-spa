@@ -1,6 +1,7 @@
 /*import { Picture } from 'react-responsive-picture';*/
 import MediaQuery from 'react-responsive'
 import LazyLoad from 'react-lazyload'
+
 /*import { Transition, ReactCSSTransitionGroup } from 'react-transition-group'
 
 
@@ -13,6 +14,7 @@ const transitionStyles = {
   entering: {opacity: 0},
   entered: {opacity: 1}
 }*/
+
 const duration = 1300
 
 const Image = (props) => (
