@@ -4,7 +4,7 @@ import ScrollAnimation from 'react-animate-on-scroll'
 
 const BlockImage = (props) => (
     <div className="block-image__container">
-		<Reveal effect="fadeInUp" delay={100 * i} >
+		<Reveal effect="fadeInUp">
 			<div className="header-1__container-content">
 				<h4 className="block-image__title">{props.content.mainTitle}</h4>
 			</div>
