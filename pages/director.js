@@ -25,12 +25,9 @@ export default class Director extends Component {
 	* Begin animation when component is mount
 	*/
 	componentDidMount = () => {
-		console.log ('componentDidMount');
 		this.setState({isReady: !this.state.isReady})
 	}
-	componentWillMount = () => {
-		console.log ('componentWillMount');
-	}
+
 	/*
 	* Transition off trigered by Link component
 	*/
@@ -49,6 +46,19 @@ export default class Director extends Component {
 	/*
 	* Transition off
 	*/
+	isLeaving = () => {
+		return {
+			opacity: 0,
+			translateY: 30,
+		}
+	}
+
+	callbackFunction = (a) => {
+		//this.setState({isReady: false})
+
+		console.log (a);
+
+	}
 	isLeaving = () => {
 		return {
 			opacity: 0,
@@ -72,53 +82,55 @@ export default class Director extends Component {
 								this.props.director.color.color &&
 								{backgroundColor: this.props.director.color.color }
 							}>
-								<div className="header-3__container-content">
+								<Reveal effect="fadeInUp">
+									<div className="header-3__container-content">
 
-									<div className="links-navigation">
+										<div className="links-navigation">
 
-										<a href="/directors" className="back-to">&lt; Back to Directors</a>
+											<a href="/directors" className="back-to">&lt; Back to Directors</a>
 
-										<NextDirectorLink content={this.props.director.id}></NextDirectorLink>
+											<NextDirectorLink content={this.props.director.id} callbackFunction={this.callbackFunction()}></NextDirectorLink>
+										</div>
+
+										{this.props.director.title &&
+										<Reveal effect="fadeInUp" >
+											<h1 className="header-3__container-content-title">{this.props.director.title}</h1>
+										</Reveal>
+										}
+
+										{this.props.director.subtitle &&
+										<Reveal effect="fadeInUp" >
+											<h2 className="header-2__container-content-title">{this.props.director.subtitle}</h2>
+										</Reveal>
+										}
+
+										{this.props.director.tags &&
+										<Reveal effect="fadeInUp" >
+											<Tags content={this.props.director.tags} />
+										</Reveal>
+										}
+
+										{this.props.director.description &&
+										<Reveal effect="fadeInUp" >
+											<div className="fade-up header-3__container-content-description"
+												 dangerouslySetInnerHTML={{__html: this.props.director.description}}></div>
+										</Reveal>
+										}
+
+										{(this.props.director.facebookLink ||
+											this.props.director.instagramLink ||
+											this.props.director.behanceLink ||
+											this.props.director.vimeoLink ||
+											this.props.director.linkedinLink) &&
+										<Reveal effect="fadeInUp" >
+											<SocialLinks content={this.props.director}></SocialLinks>
+										</Reveal>
+										}
+
 									</div>
-
-									{this.props.director.title &&
-									<Reveal effect="fadeInUp" >
-										<h1 className="header-3__container-content-title">{this.props.director.title}</h1>
-									</Reveal>
-									}
-
-									{this.props.director.subtitle &&
-									<Reveal effect="fadeInUp" >
-										<h2 className="header-2__container-content-title">{this.props.director.subtitle}</h2>
-									</Reveal>
-									}
-
-									{this.props.director.tags &&
-									<Reveal effect="fadeInUp" >
-										<Tags content={this.props.director.tags} />
-									</Reveal>
-									}
-
-									{this.props.director.description &&
-									<Reveal effect="fadeInUp" >
-										<div className="fade-up header-3__container-content-description"
-											 dangerouslySetInnerHTML={{__html: this.props.director.description}}></div>
-									</Reveal>
-									}
-
-									{(this.props.director.facebookLink ||
-										this.props.director.instagramLink ||
-										this.props.director.behanceLink ||
-										this.props.director.vimeoLink ||
-										this.props.director.linkedinLink) &&
-									<Reveal effect="fadeInUp" >
-										<SocialLinks content={this.props.director}></SocialLinks>
-									</Reveal>
-									}
+							</Reveal>
 
 								</div>
-
-							</div>
 
 							{this.props.director.blocks &&
 							<Blocks content={this.props.director.blocks}/>
@@ -140,11 +152,9 @@ Director.getInitialProps = async (context) => {
 
 	const director = await fetch(Constant.api_url + `api/directors/${id}.json`)
 	const directorData = await director.json()
-	const meta = directorData
 
 	const response = {
-		director: directorData,
-		meta: meta
+		director: directorData
 	}
 
 	return response

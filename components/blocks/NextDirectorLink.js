@@ -9,16 +9,23 @@ class NextDirectorLink extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			isReady: false,
 			showLink: false
 		}
 	}
 
 	updateLink = () => {
+		this.setState({
+			isReady: false})
 		this.updateDirector();
+
 	}
 
 	fetchNext = (id) => {
-		axios.get(Constant.api_url + `api/directors/${id}.json`)
+		if (this.state.nextLink == undefined) {
+			axios.get(Constant.api_url + `api/directors/${id}.json`)
+			this.state.nextLink = true;
+		}
 	}
 
 	updateDirector = () => {
@@ -49,6 +56,8 @@ class NextDirectorLink extends React.Component {
 								showNext = false
 								this.state.isReady = true
 								this.state.showLink = true
+								this.setState({
+									isReady: true})
 							}
 
 							if (item.id == this.props.content){
@@ -62,12 +71,10 @@ class NextDirectorLink extends React.Component {
 									}})
 									this.state.showLink = true
 
-									this.state.isReady = true
+									this.setState({
+										isReady: true})
 								}
 							}
-
-							this.setState({showLink: true});
-							this.setState({showNext: showNext});
 
 						}
 					}
@@ -78,8 +85,6 @@ class NextDirectorLink extends React.Component {
 	componentDidMount = () => {
 
 		this.setState({isReady: !this.state.isReady})
-
-		console.log ('componentWillMount');
 
 		this.updateDirector()
 	}
@@ -93,14 +98,19 @@ class NextDirectorLink extends React.Component {
 						<div
 							onClick={() => this.updateLink()}>
 
-						<Link as={`/directors/${this.state.linkDirector.slug}/${this.state.linkDirector.id}`}
-							  href={`/director?id=${this.state.linkDirector.id}`}
-						>
 							<a className="next-to"
+							   href={'/directors/' + this.state.linkDirector.slug + '/' + this.state.linkDirector.id}
 							   onMouseOver={() => this.fetchNext(this.state.linkDirector.id)}>
 								{this.state.linkDirector.title}
 							</a>
-						</Link>
+						{/*<Link as={`/directors/${this.state.linkDirector.slug}/${this.state.linkDirector.id}`}
+							  href={`/director?id=${this.state.linkDirector.id}`}
+						>
+						<a className="next-to"
+							   onMouseOver={() => this.fetchNext(this.state.linkDirector.id)}>
+								{this.state.linkDirector.title}
+							</a>
+						</Link>*/}
 						</div>
 					</Fade>
 				}

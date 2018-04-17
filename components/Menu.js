@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-//import Link from './link'
 import Link from 'next/link'
 import Menu from 'react-burger-menu/lib/menus/slide'
 import Constant from './Constant'
-//import { slide as Menu } from 'react-burger-menu'
 import '../static/sass/main.scss'
 
 var isMenuOpen = function (state) {
@@ -86,7 +84,6 @@ export default class extends Component {
 	}
 
 	hoverFetch = (url) => {
-		console.log (url);
 		fetch(Constant.api_url + 'api/' + url + '.json')
 	}
 	/*

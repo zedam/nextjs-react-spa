@@ -6,7 +6,6 @@ import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import BackgroundImage from '../components/BackgroundImage'
 import Vimeo from 'react-vimeo'
-import SocialLinks from '../components/SocialLinks'
 import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
 import { DefaultPlayer as Video } from 'react-html5video'
@@ -28,6 +27,7 @@ export default class Projects extends Component {
     * Begin animation when component is mount
     */
 	componentDidMount = () => {
+		console.log ('componentDidMount');
 		//alert(this.props.project.director.contentId)
 		this.setState({isReady: !this.state.isReady})
 	}
@@ -57,6 +57,15 @@ export default class Projects extends Component {
 		return {
 			opacity: 1,
 			translateY: spring(0, {stiffness: 120, damping: 17}),
+		}
+	}
+	/*
+	* Transition off
+	*/
+	isLeaving = () => {
+		return {
+			opacity: 0,
+			translateY: 30,
 		}
 	}
 
@@ -113,83 +122,84 @@ export default class Projects extends Component {
 					{
 						// If state = true, display content
 						this.state.isReady &&
-					<div key="title" className="template-2">
 
-						<div className="header-3__video-container">
-							{this.props.project.image &&
-							<BackgroundImage content={this.props.project.image[0]} width="100%" ></BackgroundImage>
+						<div key="title" className="template-2">
+
+							<div className="header-3__video-container">
+								{this.props.project.image &&
+								<BackgroundImage content={this.props.project.image[0]} width="100%" ></BackgroundImage>
+								}
+
+								{this.renderVideo()}
+
+							</div>
+
+
+							<div className="header-1__container-content">
+
+								<Reveal effect="fadeInUp">
+									<div>
+
+										{/*<video id="video-player_html5_api" className="vjs-tech" preload="auto" autoPlay="">
+											<source src="https://player.vimeo.com/external/204993557.hd.mp4?s=50f996f537eeb601bce5674e1726e9bb2ac501da&profile_id=119"
+													type="video/mp4">
+											</source>
+											<source src="http://player.vimeo.com/video/240758622/config"
+													type="video/mp4">
+											</source>
+											<p className="vjs-no-js"></p>
+										</video>*/}
+
+										{this.props.project.director != undefined &&
+											<div className="links-navigation">
+
+												{this.props.project.director.title == 'Studio' ?
+													<a href="/studio" className="back-to" onMouseOver={() => (this.fetchDirector(this.props.project.director.id))}>&lt; Back to Studio</a>
+													:
+													<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.id}
+													   onMouseOver={() => (this.fetchDirector(this.props.project.director.id))}
+													   className="back-to">&lt; Back to {this.props.project.director.title}</a>
+												}
+
+												<NextLink director={this.props.project.director.id} projectId={this.props.project.id}></NextLink>
+											</div>
+										}
+
+
+
+										{this.props.project.headline &&
+											<h1 className="header-3__container-content-title"
+												dangerouslySetInnerHTML={{__html: this.props.project.headline}}>
+											</h1>
+										}
+
+										{this.props.project.description &&
+											<div className="fade-up header-3__container-content-description"
+											   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
+										}
+
+										{/*{(this.props.project.facebookLink ||
+											this.props.project.instagramLink ||
+											this.props.project.linkedinLink ||
+											this.props.project.behanceLink ||
+											this.props.project.vimeoLink) &&
+
+										<SocialLinks content={this.props.project} />
+										}*/}
+
+										<SocialShare content={this.props.project} />
+
+									</div>
+								</Reveal>
+							</div>
+
+							{this.props.project.blocks &&
+							<div className="no-blocks">
+							<Blocks content={this.props.project.blocks} />
+							</div>
 							}
 
-							{this.renderVideo()}
-
 						</div>
-
-
-						<div className="header-1__container-content">
-
-							<Reveal effect="fadeInUp">
-								<div>
-
-									{/*<video id="video-player_html5_api" className="vjs-tech" preload="auto" autoPlay="">
-										<source src="https://player.vimeo.com/external/204993557.hd.mp4?s=50f996f537eeb601bce5674e1726e9bb2ac501da&profile_id=119"
-												type="video/mp4">
-										</source>
-										<source src="http://player.vimeo.com/video/240758622/config"
-												type="video/mp4">
-										</source>
-										<p className="vjs-no-js"></p>
-									</video>*/}
-
-									{this.props.project.director != undefined &&
-										<div className="links-navigation">
-
-											{this.props.project.director.title == 'Studio' ?
-												<a href="/studio" className="back-to" onMouseOver={() => (this.fetchDirector(this.props.project.director.id))}>&lt; Back to Studio</a>
-												:
-												<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.id}
-												   onMouseOver={() => (this.fetchDirector(this.props.project.director.id))}
-												   className="back-to">&lt; Back to {this.props.project.director.title}</a>
-											}
-
-											<NextLink director={this.props.project.director.id} projectId={this.props.project.id}></NextLink>
-										</div>
-									}
-
-
-
-									{this.props.project.headline &&
-										<h1 className="header-3__container-content-title"
-											dangerouslySetInnerHTML={{__html: this.props.project.headline}}>
-										</h1>
-									}
-
-									{this.props.project.description &&
-										<div className="fade-up header-3__container-content-description"
-										   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
-									}
-
-									{/*{(this.props.project.facebookLink ||
-										this.props.project.instagramLink ||
-										this.props.project.linkedinLink ||
-										this.props.project.behanceLink ||
-										this.props.project.vimeoLink) &&
-
-									<SocialLinks content={this.props.project} />
-									}*/}
-
-									<SocialShare content={this.props.project} />
-
-								</div>
-							</Reveal>
-						</div>
-
-						{this.props.project.blocks &&
-						<div className="no-blocks">
-						<Blocks content={this.props.project.blocks} />
-						</div>
-						}
-
-					</div>
 					}
 				</Transition>
 			</Layout>

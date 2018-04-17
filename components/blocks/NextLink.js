@@ -28,6 +28,7 @@ class NextLink extends React.Component {
 
 		axios.get(Constant.api_url + `api/directors/${this.props.director}.json`)
 			.then((response) => {
+
 				for (var key of response.data.blocks) {
 					if (key.type == "blockListProjects") {
 
@@ -88,7 +89,8 @@ class NextLink extends React.Component {
 
 		<React.Fragment >
 
-			<a href={this.state.linkUrl}  className="next-to" onMouseOver={() => this.fetchNext(this.state.linkId)} >
+			<a href={this.state.linkUrl}  className="next-to"
+			   onMouseOver={() => this.fetchNext(this.state.linkId)} >
 				Next Project &gt;
 			</a>
 			{this.state.nextImage &&
@@ -97,41 +99,6 @@ class NextLink extends React.Component {
 		</React.Fragment>
 			)
 	}
-}/*
-
-renderNextLink = (items) => {
-
-	const $this = this
-	let showNext = false
-	const thisId = this.props.project.id
-	let linkUrl = ''
-	let linkText = ''
-
-	items.forEach(function (block) {
-
-		if (showNext) {
-			linkUrl = '/projects/'  + block.slug + '/' + block.id
-			linkText = block.headline + ' >'
-			showNext = false
-			$this.state.showLink = true
-			console.log (linkText);
-		}
-
-		if (block.id == thisId){
-			showNext = true;
-		}
-
-	});
-
-	return (
-		<React.Fragment>
-			{this.state.showLink &&
-			<a href={linkUrl}
-			   dangerouslySetInnerHTML={{__html: linkText}}></a>
-			}
-		</React.Fragment>
-
-	)
-}*/
+}
 
 export default NextLink

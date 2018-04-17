@@ -47,7 +47,7 @@ export default class Directors extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout content={this.props.meta}>
+			<Layout content={this.props.directors.data[0]}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}
@@ -69,11 +69,9 @@ Directors.getInitialProps = async (context) => {
 
 	const directors = await fetch(Constant.api_url + 'api/pages/directors_page.json')
 	const directorsData = await directors.json()
-	const meta = directorsData
 
 	const response = {
-		directors: directorsData,
-		meta: meta
+		directors: directorsData
 	}
 
 	/*if (id == undefined) {
