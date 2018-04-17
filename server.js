@@ -34,7 +34,7 @@ app.prepare()
 		});
 
 		server.get('/directors/:slug/:id', (req, res) => {
-			const actualPage = '/directors'
+			const actualPage = '/director'
 			const queryParams = { id: req.params.id, slug: req.params.slug }
 			app.render(req, res, actualPage, queryParams)
 		});

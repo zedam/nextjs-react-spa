@@ -3,6 +3,7 @@ import axios from 'axios'
 import Constant from '../Constant'
 import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
+import Link from 'next/link'
 
 class NextDirectorLink extends React.Component {
 	constructor(props) {
@@ -12,10 +13,17 @@ class NextDirectorLink extends React.Component {
 		}
 	}
 
-	componentDidMount = () => {
+	updateLink = () => {
+		this.updateDirector();
+	}
+
+	fetchNext = (id) => {
+		axios.get(Constant.api_url + `api/directors/${id}.json`)
+	}
+
+	updateDirector = () => {
+
 		let showNext = false
-		let linkUrl = ''
-		let linkText = ''
 		let count = 0
 		let initiaItem = ''
 
@@ -32,11 +40,14 @@ class NextDirectorLink extends React.Component {
 
 							count ++
 
-
 							if (showNext) {
-								this.setState({linkUrl: '/directors/'  + item.slug + '/' + item.id});
-								this.setState({linkText: item.title + ' >'});
+								this.setState({linkDirector: {
+									id: item.id,
+									slug: item.slug,
+									title: item.title + ' >'
+								} });
 								showNext = false
+								this.state.isReady = true
 								this.state.showLink = true
 							}
 
@@ -44,9 +55,14 @@ class NextDirectorLink extends React.Component {
 								showNext = true;
 
 								if (count == key.typeElement.length) {
-									this.setState({linkUrl: '/directors/'  + initiaItem.slug + '/' + initiaItem.id})
-									this.setState({linkText: initiaItem.title + ' >'})
+									this.setState({linkDirector: {
+										id: initiaItem.id,
+										slug: initiaItem.slug,
+										title: initiaItem.title + ' >'
+									}})
 									this.state.showLink = true
+
+									this.state.isReady = true
 								}
 							}
 
@@ -59,16 +75,36 @@ class NextDirectorLink extends React.Component {
 			})
 	}
 
+	componentDidMount = () => {
+
+		this.setState({isReady: !this.state.isReady})
+
+		console.log ('componentWillMount');
+
+		this.updateDirector()
+	}
+
 	render() {
 		return (
 
 			<React.Fragment>
-				{this.state.linkUrl &&
+				{(this.state.linkDirector && this.state.showLink) &&
 					<Fade bottom>
-						<a href={this.state.linkUrl} className="next-to">{this.state.linkText}</a>
+						<div
+							onClick={() => this.updateLink()}>
+
+						<Link as={`/directors/${this.state.linkDirector.slug}/${this.state.linkDirector.id}`}
+							  href={`/director?id=${this.state.linkDirector.id}`}
+						>
+							<a className="next-to"
+							   onMouseOver={() => this.fetchNext(this.state.linkDirector.id)}>
+								{this.state.linkDirector.title}
+							</a>
+						</Link>
+						</div>
 					</Fade>
 				}
-				{!this.state.linkUrl &&
+				{!this.state.linkDirector &&
 					<div></div>
 				}
 			</React.Fragment>

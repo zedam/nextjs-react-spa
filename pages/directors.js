@@ -4,8 +4,9 @@ import Constant from '../components/Constant'
 import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
-import DirectorsPage from './directorsPage'
-import DirectorsItem from './directorsItem'
+import Blocks from '../components/Blocks'
+/*import DirectorsPage from './directorsPage'
+import DirectorsItem from './directorsItem'*/
 
 
 export default class Directors extends Component {
@@ -51,17 +52,11 @@ export default class Directors extends Component {
 					component={false}
 					enter={this.isEntering()}
 					leave={this.isLeaving()} >
-					{ // If state = true, display content
-						this.state.isReady &&
-
-						<div  key="title">
-							{this.props.directors &&
-							<DirectorsPage content={this.props.directors}></DirectorsPage>
+					{this.state.isReady &&
+						<div key="title" className="header-2__container fullScreen" style={{ backgroundColor: this.props.directors.data[0].color.color }}>
+							{this.props.directors.data[0].blocks &&
+							<Blocks content={this.props.directors.data[0].blocks}/>
 							}
-							{this.props.directorsItem &&
-							<DirectorsItem content={this.props.directorsItem}></DirectorsItem>
-							}
-
 						</div>
 					}
 				</Transition>
@@ -71,17 +66,17 @@ export default class Directors extends Component {
 }
 
 Directors.getInitialProps = async (context) => {
-	const { id } = context.query;
-	let response
-	if (id == undefined) {
-		const directors = await fetch(Constant.api_url + 'api/pages/directors_page.json')
-		const directorsData = await directors.json()
-		const meta = directorsData
 
-		response = {
-			directors: directorsData,
-			meta: meta
-		}
+	const directors = await fetch(Constant.api_url + 'api/pages/directors_page.json')
+	const directorsData = await directors.json()
+	const meta = directorsData
+
+	const response = {
+		directors: directorsData,
+		meta: meta
+	}
+
+	/*if (id == undefined) {
 	} else {
 		const directors = await fetch(Constant.api_url + `api/directors/${id}.json`)
 		const directorsData = await directors.json()
@@ -91,7 +86,7 @@ Directors.getInitialProps = async (context) => {
 			directorsItem: directorsData,
 			meta: meta
 		}
-	}
+	}*/
 
 	return response
 

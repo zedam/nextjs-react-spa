@@ -28,34 +28,6 @@ export default class Projects extends Component {
     * Begin animation when component is mount
     */
 	componentDidMount = () => {
-
-		/*fetch(Constant.api_url + `api/directors/${this.props.project.director.id}.json`).then((response) => {
-
-			console.log (response);
-			this.state.blocks = response;
-		})*/
-
-		if (this.props.project.director != undefined) {
-
-			/*this.fetchFirst().then( (response) => {
-				console.log (response);
-				this.state.blocks = response;
-			})*/
-
-			/*const fetch('https://www.reddit.com/r/' + url + '.json').then(function (response) {
-				return response.json();
-			}).then(function (result) {
-				console.log(result.data.children);
-			});*/
-			/*const $this = this
-
-			const blocks = fetch(Constant.api_url + `api/directors/${this.props.project.director.id}.json`)
-				.then(function (response) {
-					console.log (response);
-					$this.setState({blocks: response})
-					return response;
-				});*/
-		}
 		//alert(this.props.project.director.contentId)
 		this.setState({isReady: !this.state.isReady})
 	}
@@ -73,8 +45,10 @@ export default class Projects extends Component {
 	}
 
 	fetchDirector = (id) => {
-		console.log (id)
-		axios.get(Constant.api_url + `api/directors/${id}.json`)
+		if (this.state.directorLink == undefined) {
+			axios.get(Constant.api_url + `api/directors/${id}.json`)
+			this.state.directorLink = true;
+		}
 	}
 	/*
     * Transition on
@@ -92,7 +66,7 @@ export default class Projects extends Component {
 			<div className={'videoPlaying_' + this.state.isPlaying}>
 				{  this.props.project.vimeoUrl ?
 					<div className="header-3__vimeo-container">
-						<Video loop muted playsInline
+						<Video loop playsInline
 							   controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
 							   onCanPlayThrough={() => {
 								   // Do stuff
