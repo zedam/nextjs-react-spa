@@ -81,7 +81,7 @@ export default class extends Component {
 	// via the default means, e.g. clicking the X, pressing the ESC key etc.
 	handleStateChange = (state) => {
 		fetch(Constant.api_url + 'api/' + 'pages/studio' + '.json')
-		fetch(Constant.api_url + 'api/' + 'pages/directors' + '.json')
+		fetch(Constant.api_url + 'api/' + 'pages/directors_page' + '.json')
 		this.setState({menuOpen: state.isOpen})
 	}
 
