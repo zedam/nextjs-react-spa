@@ -31,6 +31,7 @@
 
 	a {
 		@include animate-link-underline-left($black);
+		@include secondary_font();
 		color: $black;
 		display: inline-block;
 		font-size: 35px;

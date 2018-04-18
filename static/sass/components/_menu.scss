@@ -203,6 +203,7 @@
 }
 
 .menu-item {
+	@include secondary_font();
 	color: $black;
 	font-size: 49px;
 

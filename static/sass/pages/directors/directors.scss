@@ -18,6 +18,7 @@
 }
 
 .link-directors__item-container {
+	@include secondary_font();
 	font-size: 35px;
 
 	@include respond-to(tablet) {

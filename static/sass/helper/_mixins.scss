@@ -6,6 +6,18 @@
 
 @import 'functions';
 
+@mixin ff_monserrat_regular() {
+    font-family: 'Montserrat Regular';
+}
+
+@mixin ff_monserrat_medium() {
+    font-family: 'Montserrat Medium';
+}
+
+@mixin secondary_font () {
+    @include ff_monserrat_medium();
+}
+
 @mixin animation($animate...) {
     $max: length($animate);
     $animations: '';
