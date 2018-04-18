@@ -13,7 +13,10 @@ class NextLink extends React.Component {
 	}
 
 	fetchNext = (id) => {
-		axios.get(Constant.api_url + `api/projects/${id}.json`)
+		if (this.state.nextLink == undefined) {
+			axios.get(Constant.api_url + `api/projects/${id}.json`)
+			this.state.nextLink = true;
+		}
 	}
 
 	componentDidMount = () => {
@@ -25,6 +28,7 @@ class NextLink extends React.Component {
 
 		axios.get(Constant.api_url + `api/directors/${this.props.director}.json`)
 			.then((response) => {
+
 				for (var key of response.data.blocks) {
 					if (key.type == "blockListProjects") {
 
@@ -39,9 +43,15 @@ class NextLink extends React.Component {
 								let $this = this;
 
 								if (showNext) {
-									console.log (item.image);
 									this.setState({linkUrl: '/projects/'  + item.slug + '/' + item.id});
-									this.setState({nextImage: item.image});
+
+									var imageItemObj = {};
+
+									for (var imageItem in item.image[0]) {
+										imageItemObj[imageItem] = item.image[0][imageItem];
+									}
+
+									this.setState({nextImage: imageItemObj});
 									this.setState({linkId: item.id})
 									this.setState({linkText: item.headline + ' >'});
 									showNext = false
@@ -52,12 +62,17 @@ class NextLink extends React.Component {
 									showNext = true;
 
 									if (count == key.typeElement.length) {
-										console.log (initiaItem);
-										console.log (initiaItem.image);
+
+										var imageItemObj = {};
+
+										for (var imageItem in initiaItem.image[0]) {
+											imageItemObj[imageItem] = initiaItem.image[0][imageItem]
+										}
+
+										this.setState({nextImage: imageItemObj});
 										this.setState({linkUrl: '/projects/'  + initiaItem.slug + '/' + initiaItem.id})
 										this.setState({linkId: initiaItem.id})
 										this.setState({linkText: initiaItem.headline + ' >'})
-										this.setState({nextImage: initiaItem.image});
 										$this.state.showLink = true
 									}
 								}
@@ -76,50 +91,16 @@ class NextLink extends React.Component {
 
 		<React.Fragment >
 
-			<a href={this.state.linkUrl}  className="next-to"onMouseOver={() => this.fetchNext(this.state.linkId)} >
+			<a href={this.state.linkUrl}  className="next-to"
+			   onMouseOver={() => this.fetchNext(this.state.linkId)} >
 				Next Project &gt;
 			</a>
 			{this.state.nextImage &&
-				<Image content={this.state.nextImage[0]} class="hidden" ></Image>
+				<Image content={this.state.nextImage} class="hidden" ></Image>
 			}
 		</React.Fragment>
 			)
 	}
-}/*
-
-renderNextLink = (items) => {
-
-	const $this = this
-	let showNext = false
-	const thisId = this.props.project.id
-	let linkUrl = ''
-	let linkText = ''
-
-	items.forEach(function (block) {
-
-		if (showNext) {
-			linkUrl = '/projects/'  + block.slug + '/' + block.id
-			linkText = block.headline + ' >'
-			showNext = false
-			$this.state.showLink = true
-			console.log (linkText);
-		}
-
-		if (block.id == thisId){
-			showNext = true;
-		}
-
-	});
-
-	return (
-		<React.Fragment>
-			{this.state.showLink &&
-			<a href={linkUrl}
-			   dangerouslySetInnerHTML={{__html: linkText}}></a>
-			}
-		</React.Fragment>
-
-	)
-}*/
+}
 
 export default NextLink
