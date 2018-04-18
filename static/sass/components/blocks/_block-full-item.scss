@@ -23,8 +23,6 @@
 		.block-full-item__content-container-cell {
 			opacity: 1;
 
-
-
 			.block-full-item__content-container-title {
 				opacity: 1;
 
@@ -78,7 +76,6 @@
 .block-full-item__content-container-cell {
 	@include transition(all, .6s, 0s, $animationEffect);
 	display: table-cell;	
-	opacity: 0;
 	text-align: center;
 	vertical-align: middle;
 
@@ -87,6 +84,9 @@
 		text-decoration: none;
 	}
 
+	@include respond-to(tablet) {
+		opacity: 0;
+	}
 	&:hover {
 
 	}
@@ -96,21 +96,26 @@
 .block-full-item__content-container-director {
 	@include transition(all, 2.3s, 0s, $animationEffect);
 	font-size: 21px;
-	margin-top: 10px;
-	opacity: 0;
+	margin-top: 20px;
 
 	@include respond-to(tablet) {
-		margin-top: 24px;
 		@include transform(translateY(10px));
+		margin-top: 24px;
+		opacity: 0;
 	}
 }
 
 .block-full-item__content-container-title {
+	@include secondary_font();
 	@include transition(all, 2.3s, 0s, $animationEffect);
 	font-size: 28px;
 	font-weight: normal;
-	opacity: 0;
+	padding: 0 20px;
 	position: relative;
+
+	@include respond-to(tablet) {
+		opacity: 0;
+	}
 
 	@include respond-to(desktop) {
 		font-size: 42px;
@@ -128,18 +133,18 @@
 	&:after {
 		@include transition(all, 1.3s, 0s, $animationEffect);
 		background: $black;
-		bottom: 0;
+		bottom: -12px;
 		content: '';
-		height: 4px;
+		height: 3px;
 		left: 50%;
 		margin-left: -60px;
 		position: absolute;
-		//width: 120px;
-		width: 0;
+		width: 120px;
 
 		@include respond-to(tablet) {
 			bottom: -12px;
 			margin-left: -100px;
+			width: 0;
 			//width: 200px;
 		}
 	}
@@ -152,15 +157,20 @@
 
 	&:after {
 		@include transition(all, 1.6s, 0s, $animationEffect);
+		background: rgba(255,255,255,.5);
 		background: rgba(211,210,199,.8);
 		bottom: 0;
 		content: '';
 		left: 0;
 		position: absolute;
 		right: 0;
-		opacity: 0;
 		top: 0;
 		z-index: 1;
+		opacity: .75;
+
+		@include respond-to(tablet) {
+			opacity: 0;
+		}
 	}
 
 	img {
