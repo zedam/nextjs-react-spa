@@ -182,7 +182,6 @@ export default class Projects extends Component {
 									}
 
 
-
 									{this.props.project.headline &&
 										<h1 className="header-3__container-content-title"
 											dangerouslySetInnerHTML={{__html: this.props.project.headline}}>
@@ -193,15 +192,6 @@ export default class Projects extends Component {
 										<div className="fade-up header-3__container-content-description"
 										   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
 									}
-
-									{/*{(this.props.project.facebookLink ||
-										this.props.project.instagramLink ||
-										this.props.project.linkedinLink ||
-										this.props.project.behanceLink ||
-										this.props.project.vimeoLink) &&
-
-									<SocialLinks content={this.props.project} />
-									}*/}
 
 									<SocialShare content={this.props.project} />
 

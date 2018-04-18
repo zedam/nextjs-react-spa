@@ -48,7 +48,7 @@ class NextLink extends React.Component {
 									var imageItemObj = {};
 
 									for (var imageItem in item.image[0]) {
-										imageItemObj[imageItem] = item.image[0][imageItem];
+										imageItemObj[imageItem] = item.image[0][imageItem].replace('_blockListProjects_', '_projects_')
 									}
 
 									this.setState({nextImage: imageItemObj});
@@ -66,7 +66,7 @@ class NextLink extends React.Component {
 										var imageItemObj = {};
 
 										for (var imageItem in initiaItem.image[0]) {
-											imageItemObj[imageItem] = initiaItem.image[0][imageItem]
+											imageItemObj[imageItem] = initiaItem.image[0][imageItem].replace('_blockListProjects_', '_projects_')
 										}
 
 										this.setState({nextImage: imageItemObj});
