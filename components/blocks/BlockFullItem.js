@@ -46,9 +46,9 @@ class BlockFullItem extends React.Component {
                 </div>
                 }
 
+                        <Reveal effect="fadeInUp">
                 <LinkItem content={this.props.content}>
                     <a onMouseOver={() => (this.fetchItem(this.props.content))}>
-                        <Reveal effect="fadeInUp">
                             <div className="block-full-item__content-container">
                                 <div className="block-full-item__content-container-table">
                                     <div className="block-full-item__content-container-cell">
@@ -68,9 +68,9 @@ class BlockFullItem extends React.Component {
                             <div className="block-full-item__image-container">
                                 <Image content={this.props.content.image[0]} width="100%"/>
                             </div>
-                        </Reveal>
                     </a>
                 </LinkItem>
+                        </Reveal>
             </div>
 
         )
