@@ -1,43 +1,80 @@
 import Image from '../Image.js'
 import LinkItem from './LinkItem'
 import Reveal from 'react-reveal/Reveal'
+import React, { Component } from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
+import Constant from "../Constant";
+import axios from "axios/index";
 
-const BlockFullItem = (props) => (
 
-    <div className="block-full-item__container">
+class BlockFullItem extends React.Component {
 
-		<LinkItem content={props.content}>
-			<a>
-				<Reveal effect="fadeInUp">
-					<div className="block-full-item__content-container">
-						<div className="block-full-item__content-container-table">
-							<div className="block-full-item__content-container-cell">
-								<h3 className="block-full-item__content-container-title">
-									<span dangerouslySetInnerHTML={{__html: props.content.headline}}>
-									</span>
-								</h3>
-								{props.content.director &&
-									<div className="block-full-item__content-container-director">
-										{props.content.director}
-									</div>
-								}
-							</div>
-						</div>
-					</div>
-
-					<div className="block-full-item__image-container">
-						<LinkItem content={props.content}>
-							<a>
-								<Image content={props.content.image[0]} width="100%"/>
-							</a>
-						</LinkItem>
-					</div>
-				</Reveal>
-			</a>
-		</LinkItem>
-    </div>
+    constructor (props) {
+        super (props);
+        this.state = {
+            isReady: false,
+            showLink: false
+        }
+    }
     
-);
+    componentWillMount = () => {
+        let prefetchImage = []
+        let image = this.props.content.image[0]
+        for (var item in image) {
+            prefetchImage[item] = image[item].replace(image['handle'], this.props.content.handle);
+        }
+
+        this.props.content.prefetchImage = prefetchImage
+    }
+
+    fetchItem = (item) => {
+
+        if (this.state.nextLink == undefined) {
+            this.setState({prefetchImage: true})
+            axios.get (Constant.api_url + `api/${item.handle}/${item.id}.json`)
+            this.state.nextLink = true;
+        }
+    }
+
+    render() {
+        return (
+
+            <div className="block-full-item__container">
+                {this.state.prefetchImage &&
+                <div className="hidden">
+                    <Image content={this.props.content.prefetchImage} width="100%"/>
+                </div>
+                }
+
+                <LinkItem content={this.props.content}>
+                    <a onMouseOver={() => (this.fetchItem(this.props.content))}>
+                        <Reveal effect="fadeInUp">
+                            <div className="block-full-item__content-container">
+                                <div className="block-full-item__content-container-table">
+                                    <div className="block-full-item__content-container-cell">
+                                        <h3 className="block-full-item__content-container-title">
+											<span dangerouslySetInnerHTML={{__html: this.props.content.headline}}>
+											</span>
+                                        </h3>
+                                        {this.props.content.director &&
+                                        <div className="block-full-item__content-container-director">
+                                            {this.props.content.director}
+                                        </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="block-full-item__image-container">
+                                <Image content={this.props.content.image[0]} width="100%"/>
+                            </div>
+                        </Reveal>
+                    </a>
+                </LinkItem>
+            </div>
+
+        )
+    }
+};
 
 export default BlockFullItem;

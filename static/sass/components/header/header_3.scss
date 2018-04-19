@@ -46,6 +46,27 @@
 	position: absolute;
 	right: 0;
 	top: 0;
+
+	&:hover {
+		&:after {
+			.videoPlaying_true & {
+				bottom: 0;
+				opacity: .41;
+			}
+		}
+	}
+
+	&:after {
+		@include transition(all, 0.3s, 0s, $animationEffect);
+		background: rgba(0,0,0,.2);
+		bottom: -40px;
+		content: '';
+		height: 37px;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		right: 0;
+	}
 }
 
 .videoPlaying_false {
