@@ -2,17 +2,21 @@ import Header from './Header'
 import Head from 'next/head'
 import Footer from './Footer'
 
-
 const Layout = (props) => (
 	<React.Fragment>
 		<Head>
+{/*
+			<meta name={document} />*/}
 			{props.content.metaTitle &&
 			<title>{props.content.metaTitle}</title>
 			}
 			{props.content.metaDescription &&
 			<meta name="description" content={props.content.metaDescription} />
 			}
+
+            <link rel="alternate" href="http://thebrut.us" hrefLang="en"/>
 			<meta name="google-site-verification" content="NB3rWMsDMvEkMA7JPbQL4BUU11m_h5GdVDyziSZYvRM" />
+            <meta name="google-site-verification" content="qTRD3KySjg_5L5XrKLpt0mBOom_mD_K5ewpDpZ-MSOU" />
 			<meta property="og:type" content="website" />
 			<meta property="og:locale" content="en" />
 
@@ -47,8 +51,5 @@ const Layout = (props) => (
 
 );
 
-Layout.getInitialProps = () => (
-    AOS.init()
-);
 
 export default Layout
