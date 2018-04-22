@@ -15,8 +15,7 @@ const Layout = (props) => (
 			}
 
             <link rel="alternate" href="http://thebrut.us" hrefLang="en"/>
-			<meta name="google-site-verification" content="NB3rWMsDMvEkMA7JPbQL4BUU11m_h5GdVDyziSZYvRM" />
-            <meta name="google-site-verification" content="qTRD3KySjg_5L5XrKLpt0mBOom_mD_K5ewpDpZ-MSOU" />
+			<meta name="google-site-verification" content="qTRD3KySjg_5L5XrKLpt0mBOom_mD_K5ewpDpZ-MSOU" />
 			<meta property="og:type" content="website" />
 			<meta property="og:locale" content="en" />
 
