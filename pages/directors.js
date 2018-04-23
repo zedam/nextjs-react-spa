@@ -80,7 +80,7 @@ Directors.getInitialProps = async (context) => {
 
 		response = {
 			directors: directorsData,
-			meta: meta
+			meta: meta.data[0]
 		}
 	} else {
 		const directors = await fetch(Constant.api_url + `api/directors/${id}.json`)
