@@ -46,15 +46,15 @@ class BlockFullItem extends React.Component {
                 </div>
                 }
 
-                        <Reveal effect="fadeInUp">
-                <LinkItem content={this.props.content}>
-                    <a onMouseOver={() => (this.fetchItem(this.props.content))}>
+                <Reveal effect="fadeInUp">
+                    <LinkItem content={this.props.content}>
+                        <a onMouseOver={() => (this.fetchItem(this.props.content))}>
                             <div className="block-full-item__content-container">
                                 <div className="block-full-item__content-container-table">
                                     <div className="block-full-item__content-container-cell">
                                         <h3 className="block-full-item__content-container-title">
-											<span dangerouslySetInnerHTML={{__html: this.props.content.headline}}>
-											</span>
+                                            <span dangerouslySetInnerHTML={{__html: this.props.content.headline}}>
+                                            </span>
                                         </h3>
                                         {this.props.content.director &&
                                         <div className="block-full-item__content-container-director">
@@ -68,9 +68,9 @@ class BlockFullItem extends React.Component {
                             <div className="block-full-item__image-container">
                                 <Image content={this.props.content.image[0]} width="100%"/>
                             </div>
-                    </a>
-                </LinkItem>
-                        </Reveal>
+                        </a>
+                    </LinkItem>
+                </Reveal>
             </div>
 
         )
