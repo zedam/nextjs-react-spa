@@ -45,8 +45,8 @@ const Layout = (props) => (
 		<Header title={props.title} pathname={props.pathname} />
 		{props.children}
 
-		{/*<Footer></Footer>*/}
-    </React.Fragment>
+
+	</React.Fragment>
 
 );
 
