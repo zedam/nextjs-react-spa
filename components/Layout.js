@@ -1,20 +1,23 @@
 import Header from './Header'
 import Head from 'next/head'
+import Constant from './Constant'
 import React, { Component} from 'react';
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-    gtmId: 'UA-118040139-1'
+    gtmId: Constant.gtm_id
 }
 
-
+import ReactGA from 'react-ga';
 class Layout extends React.Component {
     constructor (props) {
         super(props);
     }
 
     componentDidMount() {
-        TagManager.initialize(tagManagerArgs)
+
+        ReactGA.initialize(Constant.gtm_id);
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
     render () {
