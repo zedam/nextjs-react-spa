@@ -2,13 +2,9 @@ import Header from './Header'
 import Head from 'next/head'
 import Constant from './Constant'
 import React, { Component} from 'react';
-import TagManager from 'react-gtm-module'
-
-const tagManagerArgs = {
-    gtmId: Constant.gtm_id
-}
-
 import ReactGA from 'react-ga';
+
+
 class Layout extends React.Component {
     constructor (props) {
         super(props);
