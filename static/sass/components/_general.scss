@@ -177,6 +177,7 @@
 
 .back-to {
 	@include animate-link-underline-left($black);
+	-webkit-appearance: none;
 	color: $black;
 	float: left;
 	font-size: 16px;
@@ -191,6 +192,7 @@
 
 .next-to {
 	@include animate-link-underline-left($black);
+	-webkit-appearance: none;
 	color: $black;
 	float: right;
 	font-size: 16px;
