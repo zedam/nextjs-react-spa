@@ -77,6 +77,10 @@ export default class Contact extends Component {
 									<Reveal effect="fadeInUpText" duration={1000}>
 										<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].description}}></div>
 									</Reveal>
+
+									<Reveal effect="fadeInUpText" duration={1000}>
+										<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].descriptionExtra}}></div>
+									</Reveal>
 								</div>
 								}
 

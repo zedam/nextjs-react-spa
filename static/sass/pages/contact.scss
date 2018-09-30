@@ -6,7 +6,7 @@
 	@include respond-to(tablet) {
 		display: inline-block;
 		margin-top: 30px;
-		width: 50%;
+		//width: 50%;
 	}
 
 	a {
@@ -15,5 +15,29 @@
 		display: inline-block;
 		margin-bottom: 5px;
 		text-decoration: none;
+	}
+
+	> .react-reveal {
+		display: block;
+
+		@include respond-to(desktop) {
+			display: table-cell;
+			padding-right: 50px;
+			width: 50%;
+		}
+
+		+.react-reveal {
+			border-top: 1px solid $black;
+			margin-top: 50px;
+			padding-top: 30px;
+
+			@include respond-to(desktop) {
+			border-top: 0px solid $black;
+			border-left: 1px solid $black;
+			margin-top: 0;
+				padding-left: 50px;
+				padding-top: 0;
+			}
+		}
 	}
 }
