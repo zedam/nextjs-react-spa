@@ -17,7 +17,7 @@ const BlockVideo = (props) => (
 						<BackgroundImage content={props.content.image[0]} ></BackgroundImage>
 					}
 					{props.content.vimeoId &&
-						<Vimeo videoId={props.content.vimeoId} autoplay={true} />
+						<Vimeo videoId={props.content.vimeoId} autoplay={false} />
 					}
 				</div>
 
