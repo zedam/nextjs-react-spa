@@ -12,6 +12,7 @@ import { DefaultPlayer as Video } from 'react-html5video'
 import Reveal from 'react-reveal/Reveal'
 import axios from 'axios'
 import NextLink from '../components/blocks/NextLink'
+import Link from 'next/link'
 
 export default class Projects extends Component {
 	constructor(props) {
@@ -145,12 +146,21 @@ export default class Projects extends Component {
 									{this.props.project.director != undefined &&
 										<div className="links-navigation">
 
+
 											{this.props.project.director.title == 'Studio' ?
-												<a href="/studio" className="back-to" onMouseOver={() => (this.fetchDirector(this.props.project.director.id))}>&lt; Back to Studio</a>
+												<Link prefetch href={'/studio'}>
+													<a className="back-to">
+													&lt; Back to {this.props.project.director.title}
+													</a>
+													</Link>
 												:
-												<a href={'/directors/' + this.props.project.director.slug + '/' + this.props.project.director.id}
-												   onMouseOver={() => (this.fetchDirector(this.props.project.director.id))}
-												   className="back-to">&lt; Back to {this.props.project.director.title}</a>
+												<Link prefetch
+													  as={`/directors/${this.props.project.director.slug}/${this.props.project.director.id}`}
+													  href={`/directors?id=${this.props.project.director.id}`}>
+													<a className="back-to">
+														&lt; Back to {this.props.project.director.title}
+													</a>
+												</Link>
 											}
 
 											<NextLink director={this.props.project.director.id} projectId={this.props.project.id}></NextLink>
