@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Blocks from '../components/Blocks'
+import Link from 'next/link'
 import Tags from '../components/Tags'
 import SocialLinks from '../components/SocialLinks'
 import SocialShare from '../components/SocialShare'
@@ -19,7 +20,11 @@ export default class DirectorsItem extends Component {
 
 						<div className="links-navigation">
 
-							<a href="/directors" className="back-to">&lt; Back to Directors</a>
+							<Link href="/directors">
+								<a className="back-to">
+									&lt; Back to Directors
+								</a>
+							</Link>
 
 							<NextDirectorLink content={this.props.content.id}></NextDirectorLink>
 						</div>
