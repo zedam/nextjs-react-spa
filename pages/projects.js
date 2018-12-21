@@ -19,6 +19,7 @@ export default class Projects extends Component {
 		super(props);
 
 		this.state = {
+			showVideo: true,
 			isReady: false,
 			isPlaying: false
 		}
@@ -26,10 +27,18 @@ export default class Projects extends Component {
 
 	updateLink = () => {
 		document.getElementById ('template2').style.opacity = 0;
+		this.setState({
+			showVideo: false
+		});
+
 	}
 
 	componentWillUpdate = () => {
 		setTimeout(() => {
+			this.setState({
+				showVideo: true
+			});
+
 			document.getElementById ('template2').style.opacity = 1;
 		}, 500);
 	}
@@ -134,7 +143,11 @@ export default class Projects extends Component {
 							<BackgroundImage content={this.props.project.image[0]} width="100%" ></BackgroundImage>
 							}
 
-							{this.renderVideo()}
+							{this.state.showVideo &&
+								<React.Fragment>
+									{this.renderVideo()}
+								</React.Fragment>
+							}
 
 						</div>
 
