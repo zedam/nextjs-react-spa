@@ -24,6 +24,17 @@ export default class Projects extends Component {
 		}
 	}
 
+	updateLink = () => {
+		document.getElementById ('template2').style.opacity = 0;
+	}
+
+	componentWillUpdate = () => {
+		setTimeout(() => {
+			document.getElementById ('template2').style.opacity = 1;
+		}, 500);
+	}
+
+
 	/*
     * Begin animation when component is mount
     */
@@ -116,7 +127,7 @@ export default class Projects extends Component {
 					{
 						// If state = true, display content
 						this.state.isReady &&
-					<div key="title" className="template-2">
+					<div key="title" className="template-2" id={"template2"}>
 
 						<div className="header-3__video-container">
 							{this.props.project.image &&
@@ -133,16 +144,6 @@ export default class Projects extends Component {
 							<Reveal effect="fadeInUp">
 								<React.Fragment>
 
-									{/*<video id="video-player_html5_api" className="vjs-tech" preload="auto" autoPlay="">
-										<source src="https://player.vimeo.com/external/204993557.hd.mp4?s=50f996f537eeb601bce5674e1726e9bb2ac501da&profile_id=119"
-												type="video/mp4">
-										</source>
-										<source src="http://player.vimeo.com/video/240758622/config"
-												type="video/mp4">
-										</source>
-										<p className="vjs-no-js"></p>
-									</video>*/}
-
 									{this.props.project.director != undefined &&
 										<div className="links-navigation">
 
@@ -152,7 +153,7 @@ export default class Projects extends Component {
 													<a className="back-to">
 													&lt; Back to {this.props.project.director.title}
 													</a>
-													</Link>
+												</Link>
 												:
 												<Link prefetch
 													  as={`/directors/${this.props.project.director.slug}/${this.props.project.director.id}`}
@@ -163,7 +164,17 @@ export default class Projects extends Component {
 												</Link>
 											}
 
-											<NextLink director={this.props.project.director.id} projectId={this.props.project.id}></NextLink>
+											{this.props.project.nextEntry &&
+											<div onClick={() => this.updateLink ()}>
+												<Link as={`/projects/${this.props.project.nextEntry.slug}/${this.props.project.nextEntry.id}`}
+													  href={`/projects?id=${this.props.project.nextEntry.id}`}>
+
+													<a className="next-to">
+														{this.props.project.nextEntry.title} >
+													</a>
+												</Link>
+											</div>
+											}
 										</div>
 									}
 
