@@ -3,12 +3,21 @@ import Blocks from '../components/Blocks'
 import Link from 'next/link'
 import Tags from '../components/Tags'
 import SocialLinks from '../components/SocialLinks'
-import SocialShare from '../components/SocialShare'
-import NextDirectorLink from '../components/blocks/NextDirectorLink'
 
 import Reveal from 'react-reveal/Reveal'
 
 export default class DirectorsItem extends Component {
+
+	updateLink = () => {
+		document.getElementById ('header3-content').style.opacity = 0;
+	}
+
+	componentWillUpdate = () => {
+		setTimeout(() => {
+			document.getElementById ('header3-content').style.opacity = 1;
+		}, 500);
+	}
+
 	render = () => {
 		// JSX
 		return (
@@ -36,8 +45,15 @@ export default class DirectorsItem extends Component {
 
 							{this.props.content.nextDirector.slug}*/}
 							{this.props.content.nextDirector &&
+							<div onClick={() => this.updateLink ()}>
+								<Link as={`/directors/${this.props.content.nextDirector.slug}/${this.props.content.nextDirector.id}`}
+									  href={`/directors?id=${this.props.content.nextDirector.id}`}>
 
-							<NextDirectorLink content={this.props.content.nextDirector}></NextDirectorLink>
+									<a className="next-to">
+										{this.props.content.nextDirector.title} >
+									</a>
+								</Link>
+							</div>
 							}
 						</div>
 
