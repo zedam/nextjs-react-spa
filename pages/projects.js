@@ -166,7 +166,7 @@ export default class Projects extends Component {
 
 											{this.props.project.nextEntry &&
 											<div onClick={() => this.updateLink ()}>
-												<Link as={`/projects/${this.props.project.nextEntry.slug}/${this.props.project.nextEntry.id}`}
+												<Link prefetch as={`/projects/${this.props.project.nextEntry.slug}/${this.props.project.nextEntry.id}`}
 													  href={`/projects?id=${this.props.project.nextEntry.id}`}>
 
 													<a className="next-to">
