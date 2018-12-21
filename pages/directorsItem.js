@@ -35,22 +35,13 @@ export default class DirectorsItem extends Component {
 								</a>
 							</Link>
 
-							{/*<Link as={`/directors/${this.props.content.nextDirector.slug}/${this.props.content.nextDirector.id}`}
-								  href={`/directors?id=${this.props.content.nextDirector.id}`}>
-
-								<a className="next-to">
-									{this.props.content.nextDirector.title}
-								</a>
-							</Link>
-
-							{this.props.content.nextDirector.slug}*/}
-							{this.props.content.nextDirector &&
+							{this.props.content.nextEntry &&
 							<div onClick={() => this.updateLink ()}>
-								<Link as={`/directors/${this.props.content.nextDirector.slug}/${this.props.content.nextDirector.id}`}
-									  href={`/directors?id=${this.props.content.nextDirector.id}`}>
+								<Link as={`/directors/${this.props.content.nextEntry.slug}/${this.props.content.nextEntry.id}`}
+									  href={`/directors?id=${this.props.content.nextEntry.id}`}>
 
 									<a className="next-to">
-										{this.props.content.nextDirector.title} >
+										{this.props.content.nextEntry.title} >
 									</a>
 								</Link>
 							</div>

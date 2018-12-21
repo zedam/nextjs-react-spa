@@ -1,5 +1,5 @@
 .header-3__container {
-	//@include transition();
+	@include transition();
 	min-height: 100vh;
 	overflow: hidden;
 	position: relative;
