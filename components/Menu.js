@@ -86,7 +86,6 @@ export default class extends Component {
 	}
 
 	hoverFetch = (url) => {
-		console.log (url);
 		fetch(Constant.api_url + 'api/' + url + '.json')
 	}
 	/*

@@ -19,6 +19,7 @@ export default class Projects extends Component {
 		super(props);
 
 		this.state = {
+			showContent: true,
 			showVideo: true,
 			isReady: false,
 			isPlaying: false
@@ -27,20 +28,37 @@ export default class Projects extends Component {
 
 	updateLink = () => {
 		document.getElementById ('template2').style.opacity = 0;
+
 		this.setState({
 			showVideo: false
 		});
 
 	}
 
+	customFunctionCallOverview = (id) => {
+		fetch(Constant.api_url + 'api/' + 'directors/' + id + '.json')
+	}
+
+	customFunctionCall = (id) => {
+		fetch(Constant.api_url + 'api/' + 'projects/' + id + '.json')
+	}
+
 	componentWillUpdate = () => {
+		//document.getElementById ('template2').style.opacity = 0;
+		this.state.showContent = false;
+
+		this.state.showContent = true;
 		setTimeout(() => {
 			this.setState({
 				showVideo: true
 			});
-
+			document.getElementById('template2').classList.add('transition');
 			document.getElementById ('template2').style.opacity = 1;
-		}, 500);
+
+			setTimeout(() => {
+				document.getElementById ('template2').classList.remove('transition');
+			}, 500)
+		}, 500)
 	}
 
 
@@ -68,7 +86,6 @@ export default class Projects extends Component {
 	}
 
 	fetchDirector = (id) => {
-		console.log (id)
 		axios.get(Constant.api_url + `api/directors/${id}.json`)
 	}
 	/*
@@ -163,7 +180,9 @@ export default class Projects extends Component {
 
 											{this.props.project.director.title == 'Studio' ?
 												<Link prefetch href={'/studio'}>
-													<a className="back-to">
+													<a className="back-to"
+													   onMouseOver={() => this.customFunctionCallOverview (this.props.project.director.id)}
+													>
 													&lt; Back to {this.props.project.director.title}
 													</a>
 												</Link>
@@ -171,7 +190,8 @@ export default class Projects extends Component {
 												<Link prefetch
 													  as={`/directors/${this.props.project.director.slug}/${this.props.project.director.id}`}
 													  href={`/directors?id=${this.props.project.director.id}`}>
-													<a className="back-to">
+													<a className="back-to"
+													   onMouseOver={() => this.customFunctionCallOverview (this.props.project.director.id)}>
 														&lt; Back to {this.props.project.director.title}
 													</a>
 												</Link>
@@ -182,7 +202,8 @@ export default class Projects extends Component {
 												<Link prefetch as={`/projects/${this.props.project.nextEntry.slug}/${this.props.project.nextEntry.id}`}
 													  href={`/projects?id=${this.props.project.nextEntry.id}`}>
 
-													<a className="next-to">
+													<a className="next-to"
+														onMouseOver={() => this.customFunctionCall (this.props.project.nextEntry.id)}>
 														{this.props.project.nextEntry.title} >
 													</a>
 												</Link>

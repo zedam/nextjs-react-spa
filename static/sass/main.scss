@@ -62,7 +62,11 @@ body {
 }
 
 .template-1, .template-2 {
-	@include transition();
+
+	&.transition {
+		@include transition();
+	}
+
 	padding-bottom: $margin-mobile;
 
 	@include respond-to(tablet) {

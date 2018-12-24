@@ -3,8 +3,6 @@ import LinkDirectors from "../directors/LinkDirectors"
 import Fade from 'react-reveal/Fade'
 import Constant from '../Constant'
 
-
-
 class MyLink extends React.Component {
 	render () {
 		const { onCustomClick, ...props } = this.props
@@ -22,7 +20,7 @@ class MyLink extends React.Component {
 	}
 }
 
-const customFuntionCall = function (id) {
+const customFunctionCall = function (id) {
 	fetch(Constant.api_url + 'api/' + 'directors/' + id + '.json')
 }
 
@@ -34,7 +32,7 @@ const BlockListDirectors = (props) => (
         		{props.content.typeElement.map((comp, i) => (
 				<Fade bottom delay={i*100} key={i}>
 					<LinkDirectors key={i} content={comp} position={i}>
-						<div  onMouseOver={() => customFuntionCall(comp.id)}>
+						<div  onMouseOver={() => customFunctionCall(comp.id)}>
 							{comp.title}
 						</div>
 					</LinkDirectors>
