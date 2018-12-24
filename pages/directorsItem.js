@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Blocks from '../components/Blocks'
-import Link from 'next/prefetch'
+import Link from 'next/link'
 import Tags from '../components/Tags'
 import SocialLinks from '../components/SocialLinks'
 
@@ -29,7 +29,7 @@ export default class DirectorsItem extends Component {
 
 						<div className="links-navigation">
 
-							<Link href="/directors">
+							<Link prefetch href="/directors">
 								<a className="back-to">
 									&lt; Back to Directors
 								</a>
