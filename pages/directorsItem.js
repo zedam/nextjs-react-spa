@@ -37,7 +37,7 @@ export default class DirectorsItem extends Component {
 
 							{this.props.content.nextEntry &&
 							<div onClick={() => this.updateLink ()}>
-								<Link as={`/directors/${this.props.content.nextEntry.slug}/${this.props.content.nextEntry.id}`}
+								<Link prefetch as={`/directors/${this.props.content.nextEntry.slug}/${this.props.content.nextEntry.id}`}
 									  href={`/directors?id=${this.props.content.nextEntry.id}`}>
 
 									<a className="next-to">
