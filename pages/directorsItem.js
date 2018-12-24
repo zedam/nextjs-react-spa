@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Blocks from '../components/Blocks'
-import Link from 'next/link'
+import Link from 'next/prefetch'
 import Tags from '../components/Tags'
 import SocialLinks from '../components/SocialLinks'
 
