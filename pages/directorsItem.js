@@ -9,12 +9,12 @@ import Reveal from 'react-reveal/Reveal'
 export default class DirectorsItem extends Component {
 
 	updateLink = () => {
-		document.getElementById ('header3-content').style.opacity = 0;
+		document.getElementById ('template-1').style.opacity = 0;
 	}
 
 	componentWillUpdate = () => {
 		setTimeout(() => {
-			document.getElementById ('header3-content').style.opacity = 1;
+			document.getElementById ('template-1').style.opacity = 1;
 		}, 500);
 	}
 
@@ -22,7 +22,7 @@ export default class DirectorsItem extends Component {
 		// JSX
 		return (
 
-			<div key="title" className="template-1">
+			<div key="title" className="template-1" id={'template-1'}>
 
 				<div className="header-3__container" id={"header3-content"} style={{backgroundColor: this.props.content.color.color }}>
 					<div className="header-3__container-content">
