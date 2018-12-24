@@ -34,8 +34,14 @@ app.prepare()
 		});
 
 		server.get('/directors/:slug/:id', (req, res) => {
-			const actualPage = '/directors'
+			const actualPage = '/directorsitempage'
 			const queryParams = { id: req.params.id, slug: req.params.slug }
+			app.render(req, res, actualPage, queryParams)
+		});
+
+		server.get('/directors', (req, res) => {
+			const actualPage = '/directors'
+			const queryParams = {}
 			app.render(req, res, actualPage, queryParams)
 		});
 

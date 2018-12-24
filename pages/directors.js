@@ -58,9 +58,9 @@ export default class Directors extends Component {
 							{this.props.directors &&
 							<DirectorsPage content={this.props.directors}></DirectorsPage>
 							}
-							{this.props.directorsItem &&
+							{/*{this.props.directorsItem &&
 							<DirectorsItem content={this.props.directorsItem}></DirectorsItem>
-							}
+							}*/}
 
 						</div>
 					}
@@ -72,27 +72,14 @@ export default class Directors extends Component {
 
 Directors.getInitialProps = async (context) => {
 	const { id } = context.query;
-	let response
-	if (id == undefined) {
-		const directors = await fetch(Constant.api_url + 'api/pages/directors_page.json')
-		const directorsData = await directors.json()
-		const meta = directorsData
+	let response;
+	const directors = await fetch(Constant.api_url + 'api/pages/directors_page.json');
+	const directorsData = await directors.json();
 
-		response = {
-			directors: directorsData,
-			meta: meta.data[0]
-		}
-	} else {
-		const directors = await fetch(Constant.api_url + `api/directors/${id}.json`)
-		const directorsData = await directors.json()
-		const meta = directorsData
-
-		response = {
-			directorsItem: directorsData,
-			meta: meta
-		}
-	}
+	response = {
+		directors: directorsData,
+		meta: directorsData.data[0]
+	};
 
 	return response
-
-}
+};

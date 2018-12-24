@@ -86,7 +86,6 @@ export default class extends Component {
 	}
 
 	hoverFetch = (url) => {
-		console.log (url);
 		fetch(Constant.api_url + 'api/' + url + '.json')
 	}
 	/*
@@ -111,37 +110,39 @@ export default class extends Component {
 					  onMouseOver={() => this.hoverFetch('pages/directors_page')}
 					  onStateChange={(state) => this.handleStateChange(state)}>
 
-					<Link  href="/about">
+					<Link href="/about">
 						<a className="menu-item">
-							<span onClick={() => this.closeMenu()}  onMouseOver={() => this.hoverFetch('pages/about')}>
-							About
+							<span onClick={() => this.closeMenu()}
+								  onMouseOver={() => this.hoverFetch('pages/about')}>
+								About
 							</span>
 						</a>
 					</Link>
 					<Link  href="/directors" >
 						<a className="menu-item">
-							<span onClick={() => this.closeMenu()}  onMouseOver={() => this.hoverFetch('pages/directors_page')} >
-							Directors
+							<span onClick={() => this.closeMenu()}
+								  onMouseOver={() => this.hoverFetch('pages/directors_page')} >
+								Directors
 							</span>
 						</a>
 					</Link>
 					<Link  href="/studio" >
 						<a className="menu-item">
-							<span onClick={() => this.closeMenu()}   onMouseOver={() => this.hoverFetch('pages/studio')}>
-							Studio
+							<span onClick={() => this.closeMenu()}
+								  onMouseOver={() => this.hoverFetch('pages/studio')}>
+								Studio
 							</span>
 						</a>
 					</Link>
 					<Link prefetch href="/contact" >
 						<a className="menu-item">
-							<span onClick={() => this.closeMenu()}  onMouseOver={() => this.hoverFetch('pages/contact')} >
-							Contact
+							<span onClick={() => this.closeMenu()}
+								  onMouseOver={() => this.hoverFetch('pages/contact')} >
+								Contact
 							</span>
 						</a>
 					</Link>
 				</Menu>
-
-
 			</div>
 		)
 	}
