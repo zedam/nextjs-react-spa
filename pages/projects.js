@@ -14,6 +14,8 @@ import axios from 'axios'
 import NextLink from '../components/blocks/NextLink'
 import Link from 'next/link'
 
+let changedContent = false;
+
 export default class Projects extends Component {
 	constructor(props) {
 		super(props);
@@ -40,25 +42,30 @@ export default class Projects extends Component {
 	}
 
 	customFunctionCall = (id) => {
+		changedContent = true;
 		fetch(Constant.api_url + 'api/' + 'projects/' + id + '.json')
 	}
 
 	componentWillUpdate = () => {
 		//document.getElementById ('template2').style.opacity = 0;
-		this.state.showContent = false;
+		if (changedContent) {
+			this.state.showContent = false;
 
-		this.state.showContent = true;
-		setTimeout(() => {
-			this.setState({
-				showVideo: true
-			});
-			document.getElementById('template2').classList.add('transition');
-			document.getElementById ('template2').style.opacity = 1;
-
+			this.state.showContent = true;
 			setTimeout(() => {
-				document.getElementById ('template2').classList.remove('transition');
-			}, 500)
-		}, 500)
+				this.setState({
+					showVideo: true
+				});
+				document.getElementById('template2').classList.add('transition');
+				document.getElementById ('template2').style.opacity = 1;
+
+				setTimeout(() => {
+					document.getElementById ('template2').classList.remove('transition');
+				}, 500)
+			}, 100)
+
+			changedContent = false;
+		}
 	}
 
 
