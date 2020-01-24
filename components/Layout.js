@@ -62,7 +62,7 @@ class Layout extends React.Component {
                     <link rel="icon" href='/static/images/mobile/favicon_flag.png' />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <Header title={this.props.title} pathname={this.props.pathname} />
+                <Header title={this.props.content.title} pathname={this.props.content.pathname} handle={this.props.content.handle} />
                 {this.props.children}
 
 
@@ -70,10 +70,6 @@ class Layout extends React.Component {
         )
     }
 }
-/*const Layout = (props) => (
-
-
-);*/
 
 
 export default Layout

@@ -13,15 +13,36 @@
 	clear: both;
 	display: inline-block;
 	float: left;
+	position: relative;
 	text-decoration: none;
 
 	@include respond-to(desktop) {
 	//	@include animate-link-underline-left($black);
 	}
 
-	&:hover {
-		@include secondary_font();
+	&:hover, 
+	&.active {
+		.bold {
+			@include secondary_font();
+			opacity: 1;
+		}
+	
+		.normal {
+			opacity: 0;
+		}
+	}
 
+	.bold {
+		@include secondary_font();
+		opacity: 0;
+		transition: opacity 0.1s;
+		transform: translateY(-10px);
+	}
+
+	.normal {
+		position: absolute;
+		left: 0;
+		transition: opacity 0.1s;
 	}
 }
 

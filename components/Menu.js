@@ -60,10 +60,13 @@ const styles = {
 
 export default class extends Component {
   constructor(props) {
-    super(props)
+	super(props)
+	
+	console.log(props.handle);
     this.state = {
-      menuOpen: false,
-      isReady: false,
+		isActive: props.handle,
+		menuOpen: false,
+		isReady: false
     }
   }
 
@@ -107,7 +110,7 @@ export default class extends Component {
 
       <div>
         <a id="home" className="menu__home-logo" href="/" />
-
+	
         <Menu
           burgerButtonClassName={'my-class'} width="100%" bodyClassName="black"
           className={'my-menu '}
@@ -115,37 +118,39 @@ export default class extends Component {
           onMouseOver={() => this.hoverFetch('pages/directors_page')}
           onStateChange={(state) => this.handleStateChange(state)}
         >
-
           <Link href="/about">
-            <a className="menu-item">
-              <span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/about')}>
-							About
-							</span>
+            <a className={"menu-item " + (this.state.isActive == 'about' ? 'active' : '')}>
+              	<span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/about')}>
+					<span className="bold">About</span>
+					<span className="normal">About</span>
+				</span>
             </a>
           </Link>
           <Link href="/directors" >
-            <a className="menu-item">
-              <span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/directors_page')} >
-							Talent
-							</span>
+            <a className={"menu-item " + (this.state.isActive == 'directors_page' ? 'active' : '')}>
+        		<span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/directors_page')} >
+			  		<span className="bold">Talent</span>
+					<span className="normal">Talent</span>
+				</span>
             </a>
           </Link>
           <Link href="/studio" >
-            <a className="menu-item">
+            <a className={"menu-item " + (this.state.isActive == 'studio' ? 'active' : '')}>
               	<span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/studio')}>
-					  Works
+				  	<span className="bold">Works</span>
+					<span className="normal">Works</span>  
 				</span>
             </a>
           </Link>
           <Link prefetch href="/contact" >
-            <a className="menu-item">
-              <span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/contact')} >
-							Contact
-							</span>
+            <a className={"menu-item " + (this.state.isActive == 'contact' ? 'active' : '')}>
+              	<span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/contact')} >
+					<span className="bold">Contact</span>
+					<span className="normal">Contact</span>
+				</span>
             </a>
           </Link>
         </Menu>
-
 
       </div>
     )
