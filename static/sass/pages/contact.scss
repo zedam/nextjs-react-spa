@@ -1,7 +1,6 @@
 .contact__description {
+	@include text_1();
 	margin-top: 20px;
-	font-size: 21px;
-	line-height: 26px;
 
 	@include respond-to(tablet) {
 		display: inline-block;

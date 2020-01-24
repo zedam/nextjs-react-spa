@@ -58,7 +58,7 @@ export default class Studio extends Component {
 					{
 						// If state = true, display content
 						this.state.isReady &&
-						<div key="title" className="template-1">
+						<div key="title" className="template-3">
 							<div className="header-2__container studio" style={{ backgroundColor: this.props.studio.data[0].color.color }}>
 
 								{this.props.studio.data[0].image &&
