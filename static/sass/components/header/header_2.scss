@@ -8,8 +8,8 @@
 	}
 
 	&.full {
+		min-height: 100vh;
 		@include respond-to(tablet) {
-			min-height: 100vh;
 		}
 	}
 
@@ -129,7 +129,7 @@
 	 
 	font-weight: normal;
 	opacity: 0;
-	
+
 	p {
 		@include title_2();
 	}
