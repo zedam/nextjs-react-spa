@@ -1,4 +1,4 @@
-import BackgroundImage from '../BackgroundImage'
+import Image from '../BackgroundImage'
 import Reveal from 'react-reveal/Reveal'
 import ScrollAnimation from 'react-animate-on-scroll'
 
@@ -19,7 +19,7 @@ class BlockImage extends React.Component {
     render () {
         const childElements = this.props.content.images.map(function(item, i){
             return (
-				<BackgroundImage key={i} class={'block-image__item ' + item.position.value} content={item.item[0]} width="100%" ></BackgroundImage>
+				<Image key={i} class={'block-image__item ' + item.position.value} width="100%" content={item.item[0]} ></Image>
 			)
 		});
 		
@@ -32,7 +32,6 @@ class BlockImage extends React.Component {
 				</Reveal>
 
 				<div className="block-image__image-container">
-				
 					<Masonry
 						className={''} // default ''
 						elementType={'div'} // default 'div'
@@ -43,14 +42,7 @@ class BlockImage extends React.Component {
 					>
 						{childElements}
 					</Masonry>
-		{/* 
-					{props.content.image.map((image,i) => (
-
-					<Reveal effect="fadeInUp" key={i} delay={100 * i} >
-						<BackgroundImage class="block-image__item" content={image} width="100%" ></BackgroundImage>
-					</Reveal>
-
-					))} */}
+	
 				</div>
 			</div>
 		);

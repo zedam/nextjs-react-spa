@@ -167,7 +167,7 @@ export default class Projects extends Component {
 
 							<div className="header-3__video-container">
 
-								<Carousel showStatus={false} emulateTouch={true} showThumbs={false} showIndicators={false} useKeyboardArrows autoPlay interval="3000" transitionTime="1050" infiniteLoop>
+								<Carousel showStatus={false} emulateTouch={true} showThumbs={false} showIndicators={false} useKeyboardArrows autoPlay interval={3000} transitionTime={1050} infiniteLoop>
 									{this.props.project.image.map((name, index) => {
 										return (
 											<div key={index} >

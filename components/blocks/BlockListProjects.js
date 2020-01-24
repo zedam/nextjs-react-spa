@@ -7,7 +7,6 @@ import axios from 'axios/index'
 
 import Masonry from 'react-masonry-component'
 
-
 const masonryOptions = {
     transitionDuration: 0
 };
@@ -18,7 +17,6 @@ class BlockListProjects extends React.Component {
 
     constructor(props) {
         super(props)
-
 
         let tags = [];
         let tagSlug = [];
@@ -42,7 +40,6 @@ class BlockListProjects extends React.Component {
     }
 
     componentWillMount = () => {
-        console.log(window.isMobile);
 
         /* for (let i = 0; i < this.props.content.typeElement.length; i++) {
             let image = this.props.content.typeElement[i].image[0]

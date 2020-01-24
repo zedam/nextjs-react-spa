@@ -1,5 +1,6 @@
 .block-image__container {
-
+	position: relative;
+	width: 100%;
 }
 .animated.fadeIn {
 	@include transition(all, .6s, 0s);
@@ -16,7 +17,7 @@
 
 .block-image__item {
 	background-color: $background-video-color;
-	float: left;
+	display: inline-block;
 	padding-bottom: 61%;
 	position: relative;
 	width: 100%;
