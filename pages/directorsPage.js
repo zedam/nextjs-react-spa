@@ -11,6 +11,10 @@ export default class DirectorsPage extends Component {
 				{this.props.content.data[0].blocks &&
 				<Blocks content={this.props.content.data[0].blocks}/>
 				}
+
+				<div id="video">
+					<video  className="link-directors__video"  playsInline autoPlay muted loop></video>
+				</div>
 			</div>
 		)
 	}

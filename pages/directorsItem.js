@@ -91,11 +91,11 @@ export default class DirectorsItem extends Component {
 							</Reveal>
 							}
 
-							{this.props.content.tags &&
+							{/* {this.props.content.tags &&
 							<Reveal effect="fadeInUp">
 								<Tags content={this.props.content.tags}/>
 							</Reveal>
-							}
+							} */}
 
 							{this.props.content.description &&
 							<Reveal effect="fadeInUp">

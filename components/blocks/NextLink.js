@@ -13,9 +13,11 @@ class NextLink extends React.Component {
 	}
 
 	fetchNext = (id) => {
-		if (this.state.nextLink == undefined) {
-			axios.get(Constant.api_url + `api/projects/${id}.json`)
-			this.state.nextLink = true;
+        if (!window.isMobile) {
+			if (this.state.nextLink == undefined) {
+				axios.get(Constant.api_url + `api/projects/${id}.json`)
+				this.state.nextLink = true;
+			}
 		}
 	}
 

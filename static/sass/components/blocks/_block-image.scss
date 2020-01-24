@@ -24,6 +24,26 @@
 	@include respond-to(tablet) {
 		padding-bottom: 33.25%;
 		width: 50%;
+
+		&.portraitSmall {
+			padding-bottom: 33.33%;
+			width: 33.33%;
+		}
+
+		&.portraitBig {
+			padding-bottom: 66.66%;
+			width: 33.33%;
+		}
+
+		&.landscapeSmall {
+			padding-bottom: 16.665%;
+			width: 33.33%;
+		}
+
+		&.landscapeBig {
+			padding-bottom: 33.33%;
+			width: 66.66%;
+		}
 	}
 
 	img {

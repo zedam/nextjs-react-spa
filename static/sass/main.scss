@@ -7,6 +7,7 @@ $green: green;
 @import 'helper/animations/animation-variables';
 @import 'helper/animations/animation-buttons';
 @import 'helper/animations/animation-links';
+@import '../../node_modules/react-responsive-carousel/lib/styles/carousel.css';
 
 
 @import 'components/general';
@@ -32,6 +33,46 @@ $green: green;
 .sass-example {
   color: $green;
 }
+.carousel.carousel-slider {
+
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.slider.animated {
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.carousel .control-prev.control-arrow:before {
+	//border-right: 8px solid $black;
+	border-right: 3px solid $black;
+	border-top: 3px solid $black;
+	border-left: 0;
+	border-bottom: 0;
+	width: 10px;
+	height: 10px;
+	transform: rotate(-135deg);
+}
+.carousel .control-next.control-arrow:before {
+	border-left: 3px solid $black;
+	border-top: 3px solid $black;
+	border-right: 0;
+	border-bottom: 0;
+	width: 10px;
+	height: 10px;
+	transform: rotate(135deg);
+}
+.carousel.carousel-slider .control-arrow:hover {
+	background: rgba(0, 0, 0, 0);
+}
 
 .menu__container {
   background: white;
@@ -49,13 +90,13 @@ $green: green;
 }
 
 body {
-
 	color: $black;
 }
 
 body {
-	font-family: 'Montserrat Regular', sans-serif;
+	font-family: 'NewPanamSkyline-Regular', sans-serif;
 }
+
 
 .footer__container {
 	margin-top: 80px;
@@ -104,4 +145,41 @@ body {
 	font-weight: normal;
 	font-style: normal;
 
+}
+
+$pathNewPanam: '/static/fonts/NewPanamSkyline-';
+@font-face {
+	font-family: 'NewPanamSkyline-Regular';
+	src: url('/static/fonts/NewPanamSkyline-Regular.eot');
+	src: url('/static/fonts/NewPanamSkyline-Regular.eot?#iefix') format('embedded-opentype'),
+	url('/static/fonts/NewPanamSkyline-Regular.woff2') format('woff2'),
+	url('/static/fonts/NewPanamSkyline-Regular.woff') format('woff'),
+	url('/static/fonts/NewPanamSkyline-Regular.ttf') format('truetype'),
+	url('/static/fonts/NewPanamSkyline-Regular.svg#NewPanaemSkyline-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NewPanamSkyline-Bold';
+	src: url('/static/fonts/NewPanamSkyline-Bold.eot');
+	src: url('/static/fonts/NewPanamSkyline-Bold.eot?#iefix') format('embedded-opentype'),
+	url('/static/fonts/NewPanamSkyline-Bold.woff2') format('woff2'),
+	url('/static/fonts/NewPanamSkyline-Bold.woff') format('woff'),
+	url('/static/fonts/NewPanamSkyline-Bold.ttf') format('truetype'),
+	url('/static/fonts/NewPanamSkyline-Bold.svg#NewPanaemSkyline-Bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NewPanamSkyline-Black';
+	src: url('/static/fonts/NewPanamSkyline-Black.eot');
+	src: url('/static/fonts/NewPanamSkyline-Black.eot?#iefix') format('embedded-opentype'),
+	url('/static/fonts/NewPanamSkyline-Black.woff2') format('woff2'),
+	url('/static/fonts/NewPanamSkyline-Black.woff') format('woff'),
+	url('/static/fonts/NewPanamSkyline-Black.ttf') format('truetype'),
+	url('/static/fonts/NewPanamSkyline-Black.svg#NewPanaemSkyline-Black') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }

@@ -1,6 +1,8 @@
 .link-directors__container {
 	max-width: 1000px;
 	padding: 100px 20px 50px;
+	position: relative;
+	z-index: 1;
 
 	@include respond-to(tablet) {
 		padding: 140px 100px;
@@ -15,11 +17,31 @@
 		max-width: 1200px;
 		padding: 140px 100px;
 	}
+
+	.react-reveal {
+		display: inline-block;
+		margin-right: 25px;
+		
+		@include respond-to(tablet) {
+			margin-right: 50px;
+		}
+		
+		@include respond-to(desktop) {
+			margin-right: 70px;
+		}
+
+		&:last-child {
+			.link-directors__separator {
+				display: none;
+			}
+		}
+	}
 }
 
 .link-directors__item-container {
-	@include secondary_font();
 	font-size: 35px;
+	position: relative;
+	display: inline-block;
 
 	@include respond-to(tablet) {
 		font-size: 49px;
@@ -32,11 +54,73 @@
 	@include respond-to(desktop_big) {
 		font-size: 84px;
 	}
+
+	&:hover {
+		z-index: 1;
+
+		.link-directors {
+		
+			&--title {
+				opacity: 1;
+			}
+
+			&--visible {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+#video video {
+	transition: all 0.3s;
+	opacity: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: auto;
+	min-height: 100%;
+	min-width: 100%;
+	height: auto;
+	z-index: 0;
 }
 
 .link-directors {
-	@include animate-link-underline-left($black);
 	float: left;
+	color: $black;
+
+	&--video {
+		opacity: 1;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: auto;
+		min-height: 100%;
+		min-width: 100%;
+		height: auto;
+		z-index: -1;
+	}
+
+	&--visible {
+		color: $black;
+		display: inline-block;
+		left: 0;
+		position: absolute;
+		top: 0;
+	}
+
+	&--title {
+		@include secondary_font();
+		color: $black;
+		display: inline-block;
+		opacity: 0;
+		margin-left: 0;
+		position: relative;
+		transform: translateY(-1px);
+		
+		@include respond-to(tablet) {
+			transform: translateY(-6px);
+		}
+	}
 
 	&:after {
 		height: 3px;
@@ -58,6 +142,9 @@
 	}
 
 	&:hover {
+		transition: all 0.2s;
+		@include secondary_font();
+
 		&:after {
 			width: calc(100% - 4px);
 
@@ -78,6 +165,14 @@
 
 .link-directors__separator {
 	color: $black;
-	float: left;
-	margin: 0 5px;
+	position: absolute;
+	right: -17px;
+	
+	@include respond-to(tablet) {
+		right: -30px;
+	}
+	
+	@include respond-to(desktop) {
+		right: -50px;
+	}
 }

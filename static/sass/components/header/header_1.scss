@@ -92,7 +92,7 @@
 }
 
 .header-1__container-content-title {
-	@include secondary_font();
+	//@include secondary_font();
 	@include transition(all, 0.3s, 0s, $animationEffect);
 	font-size: 35px;
 
@@ -101,11 +101,15 @@
 	}
 
 	@include respond-to (desktop){
-		font-size: 56px;
+		margin: 0;
+		line-height: 69px;
+		font-size: 57px;
 	}
 
-	@include respond-to (desktop_big){
-		font-size: 63px;
+
+	strong {
+		@include secondary_font();
+		font-weight: normal;
 	}
 }
 

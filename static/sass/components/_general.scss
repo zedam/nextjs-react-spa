@@ -47,8 +47,8 @@
 		}
 
 		@include respond-to(desktop) {
-			font-size: 42px;
-			line-height: 42px;
+			font-size: 57px;
+			line-height: 57px;
 		}
 
 		p {
@@ -98,9 +98,9 @@
 	}
 
 	@include respond-to (desktop) {
-		font-size: 21px;
-		line-height: 33px;
-		margin-top: 42px;
+		font-size: 36px;
+		line-height: 42px;
+		margin-top: 50px;
 	}
 }
 

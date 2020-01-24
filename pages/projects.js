@@ -4,7 +4,7 @@ import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
-import BackgroundImage from '../components/BackgroundImage'
+import Image from '../components/BackgroundImage'
 import Vimeo from 'react-vimeo'
 import SocialShare from '../components/SocialShare'
 import Constant from '../components/Constant'
@@ -13,6 +13,7 @@ import Reveal from 'react-reveal/Reveal'
 import axios from 'axios'
 import NextLink from '../components/blocks/NextLink'
 import Link from 'next/link'
+import { Carousel } from 'react-responsive-carousel'
 
 let changedContent = false;
 
@@ -29,7 +30,7 @@ export default class Projects extends Component {
 	}
 
 	updateLink = () => {
-		document.getElementById ('template2').style.opacity = 0;
+		document.getElementById('template2').style.opacity = 0;
 
 		this.setState({
 			showVideo: false
@@ -47,7 +48,6 @@ export default class Projects extends Component {
 	}
 
 	componentWillUpdate = () => {
-		//document.getElementById ('template2').style.opacity = 0;
 		if (changedContent) {
 			this.state.showContent = false;
 
@@ -57,10 +57,10 @@ export default class Projects extends Component {
 					showVideo: true
 				});
 				document.getElementById('template2').classList.add('transition');
-				document.getElementById ('template2').style.opacity = 1;
+				document.getElementById('template2').style.opacity = 1;
 
 				setTimeout(() => {
-					document.getElementById ('template2').classList.remove('transition');
+					document.getElementById('template2').classList.remove('transition');
 				}, 500)
 			}, 100)
 
@@ -74,26 +74,29 @@ export default class Projects extends Component {
     */
 	componentDidMount = () => {
 		//alert(this.props.project.director.contentId)
-		this.setState({isReady: !this.state.isReady})
+		this.setState({ isReady: !this.state.isReady })
 	}
 	/*
     * Transition off trigered by Link component
     */
 	onClickDo = () => {
-		this.setState({isReady: !this.state.isReady})
+		this.setState({ isReady: !this.state.isReady })
 	}
 	/*
     * Transition off trigered by Link component
     */
 	onPlaying = () => {
-		this.setState({isPLaying: true})
+		this.setState({ isPLaying: true })
 	}
 
-    mouseMove = () => {
+	mouseMove = () => {
 	}
 
 	fetchDirector = (id) => {
-		axios.get(Constant.api_url + `api/directors/${id}.json`)
+
+        if (!window.isMobile) {
+			axios.get(Constant.api_url + `api/directors/${id}.json`)
+		}
 	}
 	/*
     * Transition on
@@ -101,7 +104,7 @@ export default class Projects extends Component {
 	isEntering = () => {
 		return {
 			opacity: 1,
-			translateY: spring(0, {stiffness: 120, damping: 17}),
+			translateY: spring(0, { stiffness: 120, damping: 17 }),
 		}
 	}
 
@@ -109,31 +112,30 @@ export default class Projects extends Component {
 		return (
 
 			<div className={'videoPlaying_' + this.state.isPlaying}>
-				{  this.props.project.vimeoUrl ?
+				{this.props.project.vimeoUrl ?
 					<div className="header-3__vimeo-container"
-						 onMouseEnter={() => (this.mouseMove())}
+						onMouseEnter={() => (this.mouseMove())}
 					>
 						<Video loop
-							   controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-							   onCanPlayThrough={() => {
-								   // Do stuff
-							   }}
-							   onPlay={() => {
-								   this.setState({isPlaying: true})
+							controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+							onCanPlayThrough={() => {
+								// Do stuff
+							}}
+							onPlay={() => {
+								this.setState({ isPlaying: true })
 
-								   console.log (this.state);
-								   // Do stuff
-							   }}>
+								// Do stuff
+							}}>
 							<source src={this.props.project.vimeoUrl} type="video/mp4" />
 							{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
 						</Video>
 					</div>
 					:
 					<div>
-					{this.props.project.vimeoId &&
-					<Vimeo videoId={this.props.project.vimeoId}  background={false}
-						   autoplay={false} />
-					}<div></div>
+						{this.props.project.vimeoId &&
+							<Vimeo videoId={this.props.project.vimeoId} background={false}
+								autoplay={false} />
+						}<div></div>
 					</div>
 				}
 			</div>
@@ -149,6 +151,7 @@ export default class Projects extends Component {
 			translateY: 50
 		}
 	}
+
 	render = () => {
 		// JSX
 		return (
@@ -160,90 +163,96 @@ export default class Projects extends Component {
 					{
 						// If state = true, display content
 						this.state.isReady &&
-					<div key="title" className="template-2" id={"template2"}>
+						<div key="title" className="template-2" id={"template2"}>
 
-						<div className="header-3__video-container">
-							{this.props.project.image &&
-							<BackgroundImage content={this.props.project.image[0]} width="100%" ></BackgroundImage>
-							}
+							<div className="header-3__video-container">
 
-							{this.state.showVideo &&
-								<React.Fragment>
-									{this.renderVideo()}
-								</React.Fragment>
-							}
-
-						</div>
-
-
-						<div className="header-1__container-content">
-
-							<Reveal effect="fadeInUp">
-								<React.Fragment>
-
-									{this.props.project.director != undefined &&
-										<div className="links-navigation">
-
-
-											{this.props.project.director.title == 'Studio' ?
-												<Link prefetch href={'/studio'}>
-													<a className="back-to"
-													   onMouseOver={() => this.customFunctionCallOverview (this.props.project.director.id)}
-													>
-													&lt; Back to {this.props.project.director.title}
-													</a>
-												</Link>
-												:
-												<Link prefetch
-													  as={`/directors/${this.props.project.director.slug}/${this.props.project.director.id}`}
-													  href={`/directors?id=${this.props.project.director.id}`}>
-													<a className="back-to"
-													   onMouseOver={() => this.customFunctionCallOverview (this.props.project.director.id)}>
-														&lt; Back to {this.props.project.director.title}
-													</a>
-												</Link>
-											}
-
-											{this.props.project.nextEntry &&
-											<div onClick={() => this.updateLink ()}>
-												<Link prefetch as={`/projects/${this.props.project.nextEntry.slug}/${this.props.project.nextEntry.id}`}
-													  href={`/projects?id=${this.props.project.nextEntry.id}`}>
-
-													<a className="next-to"
-														onMouseOver={() => this.customFunctionCall (this.props.project.nextEntry.id)}>
-														{this.props.project.nextEntry.title} >
-													</a>
-												</Link>
+								<Carousel showStatus={false} emulateTouch={true} showThumbs={false} showIndicators={false} useKeyboardArrows autoPlay interval="3000" transitionTime="1050" infiniteLoop>
+									{this.props.project.image.map((name, index) => {
+										return (
+											<div key={index} >
+												<img />
+												<Image content={name} width="100%" ></Image>
 											</div>
-											}
-										</div>
-									}
+										)
+									})}
+								</Carousel>
+								
+
+								{this.state.showVideo &&
+									<React.Fragment>
+										{this.renderVideo()}
+									</React.Fragment>
+								}
+							</div>
+
+							<div className="header-1__container-content">
+
+								<Reveal effect="fadeInUp">
+									<React.Fragment>
+
+										{this.props.project.director != undefined &&
+											<div className="links-navigation">
+
+												{this.props.project.director.title == 'Studio' ?
+													<Link prefetch href={'/studio'}>
+														<a className="back-to"
+															onMouseOver={() => this.customFunctionCallOverview(this.props.project.director.id)}
+														>
+															&lt; Back to {this.props.project.director.title}
+														</a>
+													</Link>
+													:
+													<Link prefetch
+														as={`/directors/${this.props.project.director.slug}/${this.props.project.director.id}`}
+														href={`/directors?id=${this.props.project.director.id}`}>
+														<a className="back-to"
+															onMouseOver={() => this.customFunctionCallOverview(this.props.project.director.id)}>
+															&lt; Back to {this.props.project.director.title}
+														</a>
+													</Link>
+												}
+
+												{this.props.project.nextEntry &&
+													<div onClick={() => this.updateLink()}>
+														<Link prefetch as={`/projects/${this.props.project.nextEntry.slug}/${this.props.project.nextEntry.id}`}
+															href={`/projects?id=${this.props.project.nextEntry.id}`}>
+
+															<a className="next-to"
+																onMouseOver={() => this.customFunctionCall(this.props.project.nextEntry.id)}>
+																{this.props.project.nextEntry.title} >
+													</a>
+														</Link>
+													</div>
+												}
+											</div>
+										}
 
 
-									{this.props.project.headline &&
-										<h1 className="header-3__container-content-title"
-											dangerouslySetInnerHTML={{__html: this.props.project.headline}}>
-										</h1>
-									}
+										{this.props.project.headline &&
+											<h1 className="header-3__container-content-title"
+												dangerouslySetInnerHTML={{ __html: this.props.project.headline }}>
+											</h1>
+										}
 
-									{this.props.project.description &&
-										<div className="fade-up header-3__container-content-description"
-										   dangerouslySetInnerHTML={{__html: this.props.project.description}}></div>
-									}
+										{this.props.project.description &&
+											<div className="fade-up header-3__container-content-description"
+												dangerouslySetInnerHTML={{ __html: this.props.project.description }}></div>
+										}
 
-									<SocialShare content={this.props.project} />
+										<SocialShare content={this.props.project} />
 
-								</React.Fragment>
-							</Reveal>
+									</React.Fragment>
+								</Reveal>
+							</div>
+
+							{this.props.project.blocks &&
+								<div className="no-blocks">
+									<Blocks content={this.props.project.blocks} />
+								</div>
+							}
+
 						</div>
-
-						{this.props.project.blocks &&
-						<div className="no-blocks">
-						<Blocks content={this.props.project.blocks} />
-						</div>
-						}
-
-					</div>
 					}
 				</Transition>
 			</Layout>

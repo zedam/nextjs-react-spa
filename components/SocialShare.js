@@ -4,7 +4,7 @@ const SocialLinks = (props) => (
     <div className="social-links__container">
 
 		<div className="social-links__title">
-			Share them
+			Share
 		</div>
 
 		<Link href={'https://www.facebook.com/sharer/sharer.php?u=' + window.location.href}>

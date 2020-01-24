@@ -14,9 +14,59 @@
     font-family: 'Montserrat Medium';
 }
 
-@mixin secondary_font () {
-    @include ff_monserrat_medium();
+@mixin ff_panam_regular() {
+    font-family: 'NewPanamSkyline-Regular';
 }
+
+@mixin ff_panam_bold() {
+    font-family: 'NewPanamSkyline-Bold';
+}
+
+@mixin ff_panam_black() {
+    font-family: 'NewPanamSkyline-Black';
+}
+@mixin secondary_font () {
+    @include ff_panam_black();
+}
+
+@mixin title_1 () {
+    @include secondary_font ();
+    font-size: 57px;
+    line-height: 57px;
+}
+
+@mixin title_2 () {
+    @include secondary_font ();
+    font-size: 60px;
+    line-height: 63px;
+    
+    @include respond-to(tablet) {
+        font-size: 83px;
+        line-height: 83px;
+    }
+}
+
+@mixin text_1 () {
+    font-size: 26px;
+    line-height: 36px;
+
+    @include respond-to(tablet) {
+        font-size: 36px;
+        line-height: 46px;
+    }
+}
+
+@mixin text_2 () {
+    @include ff_monserrat_regular();
+    font-size: 22px;
+    line-height: 26px;
+
+    @include respond-to(tablet) {
+        font-size: 42px;
+        line-height: 46px;
+    }
+}
+
 
 @mixin animation($animate...) {
     $max: length($animate);

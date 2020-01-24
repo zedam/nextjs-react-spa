@@ -4,12 +4,13 @@ import { spring } from 'react-motion'
 import Transition from 'react-motion-ui-pack'
 import Layout from '../components/Layout'
 import Constant from '../components/Constant'
-import ScrollAnimation from 'react-animate-on-scroll'
+//import ScrollAnimation from 'react-animate-on-scroll'
 import MediaQuery from 'react-responsive'
 import Blocks from '../components/Blocks'
 import BackgroundImage from '../components/BackgroundImage'
 import { DefaultPlayer as Video } from 'react-html5video'
 import Reveal from 'react-reveal/Reveal'
+
 
 //import 'react-html5video/dist/styles.css';
 
@@ -43,7 +44,6 @@ export default class Homepage extends Component {
     * Transition off
     */
 	isLeaving = () => {
-		console.log ('leaving');
 		return {
 			opacity: 0,
 			translateY: 50

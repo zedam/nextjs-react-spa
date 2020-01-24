@@ -16,7 +16,12 @@
 	text-decoration: none;
 
 	@include respond-to(desktop) {
-		@include animate-link-underline-left($black);
+	//	@include animate-link-underline-left($black);
+	}
+
+	&:hover {
+		@include secondary_font();
+
 	}
 }
 
@@ -81,37 +86,20 @@
 }
 
 .menu__home-logo {
-	background-image: url('/static/images/mobile/bandera_4web.gif');
-	background-image: url('/static/images/mobile/bandera_signature_2colors.gif');
-	background-image: url('/static/images/mobile/bandera_traced.gif');
-	background-image: url('/static/images/mobile/bandera_traced64_33.gif');
+	background-image: url('/static/images/mobile/brut-works-logo.svg');
 	background-size: cover;
-	height: 70px;
-	position: fixed;
-	right: 5px;
-	top: 0;
-	width: 87px;
+	height: 50px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 50px;
 	z-index: 1101;
-/*
-	@include respond-to(tablet) {
-		right: 10px;
-		top: 10px;
-	}
-
-	@include respond-to(desktop) {
-		height: 66px;
-		width: 90px;
-	}*/
 
 	@include respond-to(tablet) {
-		height: 96px;/*
-		right: 10px;
-		top: 5px;*/
-
-		right: 15px;
-		top: 10px;
-
-		width: 130px;
+		height: 90px;
+		right: 25px;
+		top: 20px;
+		width: 91px;
 	}
 }
 
@@ -203,7 +191,7 @@
 }
 
 .menu-item {
-	@include secondary_font();
+	//@include secondary_font();
 	color: $black;
 	font-size: 49px;
 
