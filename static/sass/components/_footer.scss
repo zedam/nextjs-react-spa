@@ -5,7 +5,7 @@
         padding: 20px;
         margin: auto;
 
-        @include respond_to(desktop) {
+        @include respond_to(tablet) {
             max-width: 1600px;
             padding: calc(100vw / 18);
         }
@@ -34,21 +34,21 @@
     }
 
     &__row {
-        @include respond_to(desktop) {
+        @include respond_to(tablet) {
             display: flex;
             justify-content: space-between;
         }
     }
 
     &__cell {
-        @include respond_to(desktop) {
+        @include respond_to(tablet) {
             width: 50%;
         }
 
         + .footer__cell {
             margin-top: calc(100% / 12);
             
-            @include respond_to(desktop) {
+            @include respond_to(tablet) {
                 margin-top: 0;
                 width: 50%;
             }
@@ -62,7 +62,7 @@
         height: 100px;
         width: 100px;
         
-        @include respond_to(desktop) {
+        @include respond_to(tablet) {
             height: 220px;
             width: 220px;
         }
@@ -83,7 +83,7 @@
             @include text_1();
             margin: 0;
 
-            @include respond_to(desktop) {
+            @include respond_to(tablet) {
                 line-height: 36px;
             }
         }
