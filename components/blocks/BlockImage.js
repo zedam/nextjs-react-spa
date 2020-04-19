@@ -32,7 +32,7 @@ class BlockImage extends React.Component {
 				</Reveal>
 
 				<div className="block-image__image-container">
-					<Masonry
+					{/* <Masonry
 						className={''} // default ''
 						elementType={'div'} // default 'div'
 						options={masonryOptions} // default {}
@@ -40,8 +40,8 @@ class BlockImage extends React.Component {
 						updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
 						imagesLoadedOptions={imagesLoadedOptions} // default {}
 					>
+					</Masonry> */}
 						{childElements}
-					</Masonry>
 	
 				</div>
 			</div>

@@ -1,12 +1,17 @@
 .block-full-item__container {
 	@include default_margins();
-	padding: 0;
+	//padding: 0;
 	position: relative;
 
 	@include respond-to(desktop_big) {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 1200px;
+		max-width: calc(1200px + (100% / 6));
+		max-width: 1600px;
+	}
+
+	.react-reveal {
+		position: relative;
 	}
 
 	&:hover {
@@ -55,7 +60,7 @@
 
 .block-full-item__content-container {
 	bottom: 0;
-	color: $black;
+	color: $white;
 	left: 0;
 	position: absolute;
 	right: 0;
@@ -76,8 +81,8 @@
 .block-full-item__content-container-cell {
 	@include transition(all, .6s, 0s, $animationEffect);
 	display: table-cell;	
-	text-align: center;
-	vertical-align: middle;
+	//text-align: center;
+	vertical-align: top;
 
 	a {
 		display: inline-block;
@@ -95,13 +100,29 @@
 
 .block-full-item__content-container-director {
 	@include transition(all, 2.3s, 0s, $animationEffect);
-	font-size: 21px;
-	margin-top: 20px;
-
+	font-size: 28px;
+	margin-top: 5px;
+	display: inline-block;
+	position: relative;
+	margin-left: 20px;
+	
 	@include respond-to(tablet) {
 		@include transform(translateY(10px));
-		margin-top: 24px;
+		font-size: 42px;
+		margin-top: 10px;
+		//margin-top: 24px;
 		opacity: 0;
+	}
+
+	&:after {
+		@include transition(all, 1.3s, 0s, $animationEffect);
+		background: $white;
+		bottom: -2px;
+		content: '';
+		height: 2px;
+		left: 0;
+		position: absolute;
+		width: 100%;
 	}
 }
 
@@ -112,6 +133,8 @@
 	font-weight: normal;
 	padding: 0 20px;
 	position: relative;
+	color: $white;
+	margin-top: 20px;
 
 	@include respond-to(tablet) {
 		opacity: 0;
@@ -123,16 +146,16 @@
 	}
 
 	a {
-		color: $black;
+		color: $white;
 	}
 
 	p {
 		margin: 0;
 	}
 
-	&:after {
+	/* &:after {
 		@include transition(all, 1.3s, 0s, $animationEffect);
-		background: $black;
+		background: $white;
 		bottom: -12px;
 		content: '';
 		height: 3px;
@@ -147,7 +170,7 @@
 			width: 0;
 			//width: 200px;
 		}
-	}
+	} */
 }
 
 .block-full-item__image-container {
@@ -158,7 +181,7 @@
 	&:after {
 		@include transition(all, 1.6s, 0s, $animationEffect);
 		background: rgba(255,255,255,.5);
-		background: rgba(211,210,199,.8);
+		background: rgba(0,0,0,.36);
 		bottom: 0;
 		content: '';
 		left: 0;

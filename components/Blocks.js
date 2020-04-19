@@ -4,6 +4,7 @@ import BlockVideo from './blocks/BlockVideo'
 import BlockList from './blocks/BlockList'
 import BlockTables from './blocks/BlockTables'
 import BlockOneItem from './blocks/BlockOneItem'
+import BlockDoubleItems from './blocks/BlockDoubleItems'
 import BlockListDirectors from './blocks/BlockListDirectors'
 import BlockListProjects from './blocks/BlockListProjects'
 
@@ -29,6 +30,10 @@ const Blocks = (props) => (
 
 				{block.type == 'blockOneItem' &&
 				<BlockOneItem content={block}></BlockOneItem>
+				}
+
+				{block.type == 'blockDoubleItems' &&
+				<BlockDoubleItems content={block}></BlockDoubleItems>
 				}
 
 				{block.type == 'blockListDirectors' &&

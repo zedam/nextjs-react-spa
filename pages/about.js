@@ -73,7 +73,7 @@ export default class About extends Component {
 									}
 
 									{this.props.about.data[0].description &&
-										<div className="fade-up header-2_container-content-description">
+										<div className="fade-up header-2_container-content-description paddingExtra">
 											<Reveal effect="fadeInUpText" duration={1000}>
 
 												{/*{this.props.about.data[0].description}*/}

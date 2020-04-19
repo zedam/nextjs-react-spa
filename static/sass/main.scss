@@ -8,12 +8,15 @@ $green: green;
 @import 'helper/animations/animation-buttons';
 @import 'helper/animations/animation-links';
 @import '../../node_modules/react-responsive-carousel/lib/styles/carousel.css';
+@import '../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 
 @import 'components/general';
 @import 'components/menu';
 @import 'components/social-links';
 @import 'components/tables';
+@import 'components/footer';
 @import 'components/tags';
 @import 'components/header/header_1';
 @import 'components/header/header_2';
@@ -24,6 +27,7 @@ $green: green;
 @import 'components/blocks/block-big-item';
 @import 'components/blocks/block-small-item';
 @import 'components/blocks/block-full-item';
+@import 'components/blocks/block-double-items';
 @import 'components/blocks/block-video';
 @import 'pages/directors/directors';
 @import 'pages/contact';
@@ -42,6 +46,12 @@ $green: green;
 	right: 0;
 	bottom: 0;
 }
+
+.carousel .control-dots .dot {
+	box-shadow: 0 0 0;
+    border: 1px solid black;
+}
+
 .slider.animated {
 	opacity: 1;
 	position: absolute;
@@ -95,11 +105,6 @@ body {
 
 body {
 	font-family: 'NewPanamSkyline-Regular', sans-serif;
-}
-
-
-.footer__container {
-	margin-top: 80px;
 }
 
 .template-1, .template-2 {

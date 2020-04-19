@@ -8,7 +8,9 @@ import axios from 'axios/index'
 import Masonry from 'react-masonry-component'
 
 const masonryOptions = {
-    transitionDuration: 0
+    transitionDuration: 0,
+    columnWidth: '.grid-sizer',
+    itemSelector: '.block-list-projects__item'
 };
 
 const imagesLoadedOptions = { background: '.my-bg-image-el' }
@@ -167,6 +169,7 @@ class BlockListProjects extends React.Component {
                         imagesLoadedOptions={imagesLoadedOptions} 
                     >
                         {childElements}
+                        <div className="grid-sizer"></div>
                     </Masonry>
                 </div>
             </React.Fragment>

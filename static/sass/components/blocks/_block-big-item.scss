@@ -6,7 +6,8 @@
 	@include respond-to(desktop_big) {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 1200px;
+		max-width: 1600px;
+//		max-width: calc(1200px + (100vw / 6));
 	}
 }
 
@@ -19,16 +20,16 @@
 	@include respond-to(tablet) {
 		float: right;
 		padding: 0;
-		width: 60%;
+		width: 50%;
 	}
 
-	@include respond-to(desktop) {
+	/* @include respond-to(desktop) {
 		width: 54%;
 	}
 
 	@include respond-to(desktop_big) {
 		width: 64%;
-	}
+	} */
 
 	img {
 		@include transition(all, 1.6s, 0s, $animationEffect);
@@ -51,18 +52,8 @@
 	@include respond-to(tablet) {
 		box-sizing: border-box;
 		float: left;
-		padding: 0 50px 0 0;
-		width: 40%;
-	}
-
-	@include respond-to(desktop) {
-		padding: 0 60px 0 0;
-		width: 46%;
-	}
-
-	@include respond-to(desktop_big) {
-		padding: 0 60px 0 0;
-		width: 36%;
+		padding: 0 calc(100vw / 18) 0 0;
+		width: 50%;
 	}
 }
 /*

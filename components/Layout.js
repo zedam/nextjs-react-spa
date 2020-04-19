@@ -1,4 +1,5 @@
 import Header from './Header'
+import Footer from './Footer'
 import Head from 'next/head'
 import Constant from './Constant'
 import React, { Component} from 'react';
@@ -65,6 +66,9 @@ class Layout extends React.Component {
                 <Header title={this.props.content.title} pathname={this.props.content.pathname} handle={this.props.content.handle} />
                 {this.props.children}
 
+                {this.props.footer &&
+                <Footer content={this.props.footer}></Footer>
+                }
 
             </React.Fragment>
         )

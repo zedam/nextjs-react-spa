@@ -1,8 +1,33 @@
 .social-links__container {
+	display: table;
 	margin-top: 30px;
+	padding: 0 20px;
+	width: 100%;
 	
-	@include respond-to(tablet) {
-		margin-top: 50px;
+	@include respond-to(tablet) {	
+		display: flex;
+		flex-direction: column;
+		margin-top: calc(100vw / 18);
+		max-width: 1600px;
+		padding: 0 calc(100% / 18);
+		margin: auto;
+	}
+	
+	@include respond-to(desktop) {
+		margin-top: 70px;
+	}
+}
+
+.social-links__container--wrapper {
+	display: table;
+	margin-top: 30px;
+	width: 100%;
+	
+	@include respond-to(tablet) {	
+		margin-top: calc(100vw / 18);
+		max-width: 1600px;
+		//padding: 0 calc(100% / 18);
+		margin: auto;
 	}
 	
 	@include respond-to(desktop) {
@@ -11,21 +36,21 @@
 }
 
 .social-links__title {
+	@include text_1();
 	color: $black;
-	margin-bottom: 10px;
-	@include text_2();
+	margin-right: 30px;
+	margin-bottom: calc(100vw / 24);
 }
 
 .social-links__item {
 	@include animate-link-underline-left($black, false, 3px);
 	color: $black;
-	display: inline-block;
+	display: block;
 	position: relative;
 	margin-right: 30px;
 	margin-bottom: 5px;
 	text-decoration: none;
-
-	@include text_2();
+	@include text_1();
 
 	&:after {
 		bottom: -4px;

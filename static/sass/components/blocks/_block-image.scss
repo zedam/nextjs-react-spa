@@ -23,6 +23,12 @@
 	width: 100%;
 
 	@include respond-to(tablet) {
+		//padding-bottom: 31%;
+		float: left;
+		width: 100%;
+	}
+
+	/* @include respond-to(tablet) {
 		padding-bottom: 33.25%;
 		width: 50%;
 
@@ -45,7 +51,7 @@
 			padding-bottom: 33.33%;
 			width: 66.66%;
 		}
-	}
+	} */
 
 	img {
 		float: left;
@@ -59,3 +65,9 @@
 	text-decoration: underline;
 }
 
+.block-image__image-container {
+	@include respond-to(desktop) {
+		display: grid;
+		grid-template-columns: auto auto;
+	}
+}

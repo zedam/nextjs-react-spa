@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import Blocks from '../components/Blocks'
 import Image from '../components/Image'
 import Reveal from 'react-reveal/Reveal'
+import SocialLinks from '../components/SocialLinks'
 
 export default class Contact extends Component {
 	state = {
@@ -18,6 +19,8 @@ export default class Contact extends Component {
     */
 	componentDidMount = () => {
 		this.setState({isReady: !this.state.isReady})
+
+		console.log(this)
 	}
 	/*
     * Transition off trigered by Link component
@@ -62,7 +65,7 @@ export default class Contact extends Component {
 							<Image content={this.props.contact.data[0].image} width="100%" ></Image>
 							}
 
-							<div className="header-2__container-content">
+							<div className="header-2__container-content contact">
 
 								{this.props.contact.data[0].headline &&
 								<Reveal effect="fadeInUp">
@@ -72,18 +75,27 @@ export default class Contact extends Component {
 								}
 
 								{this.props.contact.data[0].description &&
-								<div className=" contact__description" >
+								<div className="contact__description" >
 
 									<Reveal effect="fadeInUpText" duration={1000}>
 										<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].description}}></div>
 									</Reveal>
+								</div>
+								}
+							</div>
 
+							<div className="header-2__container-content contact">
+								<Reveal effect="fadeInUp">
+									<SocialLinks content={this.props.footer.data[0].social}></SocialLinks>
+								</Reveal>
+
+								{this.props.contact.data[0].descriptionExtra &&
+								<div className="contact__description" >
 									<Reveal effect="fadeInUpText" duration={1000}>
 										<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].descriptionExtra}}></div>
 									</Reveal>
 								</div>
 								}
-
 							</div>
 						</div>
 
@@ -98,7 +110,12 @@ Contact.getInitialProps = async () => {
 	const contact = await fetch(Constant.api_url + 'api/pages/contact.json')
 	const contactData = await contact.json()
 
+
+	const footer = await fetch(Constant.api_url + 'api/globals.json')
+	const footerData = await footer.json()
+
 	return {
+		footer: footerData,
 		contact: contactData
 	}
 }

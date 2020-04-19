@@ -1,3 +1,6 @@
+.header-2__container-wrapper {
+	overflow: hidden;
+}
 .header-2__container {
 	position: relative;
 	//min-height: 100vh;
@@ -53,23 +56,33 @@
 	width: 100%;
 	z-index: 1;
 
+	&.contact {
+		@include respond-to(tablet) {
+			display: flex;
+			justify-content: space-between;
+
+			+.contact {
+				padding-top: calc(100vw / 18);
+
+				.social-links__container, 
+				.contact__description {
+					margin-top: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+
 	.tags-container & {
 		padding: 0 20px 30px;
 
 		@include respond-to(tablet) {
-			padding: 0 80px 50px;
-		}
-
-		@include respond-to(desktop) {
-			padding: 0 80px 70px;
-		}
-
-		@include respond-to(desktop_big) {
-			padding: 0 0 70px;
+			padding: 0 calc(100% / 24) 50px;
 		}
 
 		.tag {
 			display: inline-block;
+			margin-top: calc(100% / 24);
 		}
 
 		.tag-item {
@@ -108,18 +121,13 @@
 	}
 
 	@include respond-to(tablet) {
-		padding: 140px 100px;
-	}
-
-	@include respond-to(desktop) {
-		padding: 140px 100px;
+		padding: 140px calc(100% / 24) 0;
 	}
 
 	@include respond-to(desktop_big) {
 		//max-width: 800px;
-		margin: auto 100px;
-		padding: 140px 0;
-		max-width: 1100px;
+		margin: auto;
+		max-width: 1600px;
 	}
 }
 
@@ -182,6 +190,16 @@
 	} */
 
 	@include text_1();
+
+	&.paddingExtra {
+
+		@include respond-to(desktop) {
+			padding-left: 20%;
+			margin-top: calc(100vw / 12);
+			max-width: calc(550px + 20%);
+		}
+
+	}
 }
 
 .rh5v-Overlay_component,

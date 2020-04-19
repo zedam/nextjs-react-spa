@@ -5,6 +5,17 @@ import Tags from '../components/Tags'
 import router from 'next/router';
 import SocialLinks from '../components/SocialLinks'
 
+import Vimeo from 'react-vimeo'
+
+import { DefaultPlayer as Video } from 'react-html5video'
+import SocialShare from '../components/SocialShare'
+import BackgroundImage from '../components/BackgroundImage'
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
+
+
 import Reveal from 'react-reveal/Reveal'
 import Constant from "../components/Constant";
 
@@ -12,6 +23,15 @@ export default class DirectorsItem extends Component {
 	constructor (props) {
 		super (props);    this.state = {showContent: true};
 		this.state.showContent = true;
+
+		this.state = {
+			currentSlide: 0,
+			autoPlay: true,
+			showContent: true,
+			showVideo: true,
+			isReady: false,
+			isPlaying: false
+		}
 	}
 
 	updateLink = () => {
@@ -41,18 +61,89 @@ export default class DirectorsItem extends Component {
 	customFunctionCallOverview = () => {
 		fetch(Constant.api_url + 'api/pages/directors_page.json')
 	}
+	/*
+    * Transition off trigered by Link component
+    */
+	onPlaying = () => {
+		this.setState({ isPLaying: true })
+	}
+
+	renderVideo = () => {
+		return (
+
+			<div className={'videoPlaying_' + this.state.isPlaying}>
+				{this.props.content.vimeoUrl ?
+					<div className="header-3__vimeo-container"
+						onMouseEnter={() => (this.mouseMove())}
+					>
+						<Video loop
+							controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+							onCanPlayThrough={() => {
+								// Do stuff
+							}}
+							onPlay={() => {
+								this.setState({ isPlaying: true })
+
+								// Do stuff
+							}}>
+							<source src={this.props.content.vimeoUrl} type="video/mp4" />
+							{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
+						</Video>
+					</div>
+					:
+					<div>
+						{this.props.content.vimeoId ?
+						<React.Fragment>
+							<Vimeo videoId={this.props.content.vimeoId} background={false}
+								autoplay={true} />
+								<div></div>
+						</React.Fragment>
+						:
+						<div>
+							{this.props.content.image &&
+								<Carousel 
+									autoPlay={this.state.autoPlay}
+									infiniteLoop={true}>
+									{this.props.content.image.map ((index, item) => (
+										<div key={item} className="header-1__carrousel">
+											<BackgroundImage content={index} width="100%" ></BackgroundImage>
+										</div>
+									))}
+								</Carousel>
+							}
+						</div>
+						}
+					</div>
+				}
+			</div>
+		)
+
+	}
 
 	render = () => {
-		// JSX
+
+
 		return (
 
 			<div key="title" className="template-1" id={'template-1'}>
+				<div className="header-1__container directors">
+
+					
+					{this.state.showVideo &&
+						<React.Fragment>
+							{this.renderVideo()}
+						</React.Fragment>
+					}
+
+					
+				</div>
+
 				{this.state.showContent &&
 				<React.Fragment>
 
 					<div className="header-3__container" id={"header3-content"}
 						 style={{backgroundColor: this.props.content.color.color}}>
-						<div className="header-3__container-content">
+						<div className="header-1__container-content">
 
 							<div className="links-navigation">
 
@@ -79,40 +170,45 @@ export default class DirectorsItem extends Component {
 								}
 							</div>
 
-							{this.props.content.title &&
-							<Reveal effect="fadeInUp">
-								<h1 className="header-3__container-content-title">{this.props.content.title}</h1>
-							</Reveal>
-							}
+							<div className="header-1__container-content-wrapper">
 
-							{this.props.content.subtitle &&
-							<Reveal effect="fadeInUp">
-								<h2 className="header-2__container-content-title">{this.props.content.subtitle}</h2>
-							</Reveal>
-							}
+								{this.props.content.title &&
+								<Reveal effect="fadeInUp">
+									<h1 className="header-3__container-content-title">{this.props.content.title}</h1>
+								</Reveal>
+								}
 
-							{/* {this.props.content.tags &&
-							<Reveal effect="fadeInUp">
-								<Tags content={this.props.content.tags}/>
-							</Reveal>
-							} */}
+								{this.props.content.subtitle &&
+								<Reveal effect="fadeInUp">
+									<h2 className="header-2__container-content-title">{this.props.content.subtitle}</h2>
+								</Reveal>
+								}
 
-							{this.props.content.description &&
-							<Reveal effect="fadeInUp">
-								<div className="fade-up header-3__container-content-description"
-									 dangerouslySetInnerHTML={{__html: this.props.content.description}}></div>
-							</Reveal>
-							}
+								{/* {this.props.content.tags &&
+								<Reveal effect="fadeInUp">
+									<Tags content={this.props.content.tags}/>
+								</Reveal>
+								} */}
 
-							{(this.props.content.facebookLink ||
-								this.props.content.instagramLink ||
-								this.props.content.behanceLink ||
-								this.props.content.vimeoLink ||
-								this.props.content.linkedinLink) &&
-							<Reveal effect="fadeInUp">
-								<SocialLinks content={this.props.content}></SocialLinks>
-							</Reveal>
-							}
+								{this.props.content.description &&
+								<Reveal effect="fadeInUp">
+									<div className="fade-up header-3__container-content-description"
+										dangerouslySetInnerHTML={{__html: this.props.content.description}}></div>
+								</Reveal>
+								}
+
+								{(this.props.content.facebookLink ||
+									this.props.content.instagramLink ||
+									this.props.content.behanceLink ||
+									this.props.content.vimeoLink ||
+									this.props.content.linkedinLink) &&
+								<Reveal effect="fadeInUp">
+									<SocialShare content={this.props.content}></SocialShare>{/* 
+									<SocialLinks content={this.props.content}></SocialLinks> */}
+								</Reveal>
+								}
+
+							</div>
 
 						</div>
 
@@ -121,6 +217,11 @@ export default class DirectorsItem extends Component {
 					{this.props.content.blocks &&
 					<Blocks content={this.props.content.blocks}/>
 					}
+
+
+					<div>
+						<SocialLinks content={this.props.content} entry={this.props.content.followText} />
+					</div>
 				</React.Fragment>
 				}
 			</div>

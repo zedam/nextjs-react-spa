@@ -16,12 +16,14 @@
 	display: table-cell;
 	max-width: 200px;
 	vertical-align: top;
+	@include text_1();
 	width: 50%;
 }
 
 .tables__custom {
 	display: table-cell;
 	padding-left: 10px;
+	@include text_1();
 
 	@include respond-to(tablet) {
 		display: inline-block;

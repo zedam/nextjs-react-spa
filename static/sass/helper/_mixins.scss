@@ -26,7 +26,7 @@
     font-family: 'NewPanamSkyline-Black';
 }
 @mixin secondary_font () {
-    @include ff_panam_black();
+    @include ff_panam_regular();
 }
 
 @mixin title_1 () {
@@ -41,8 +41,8 @@
     line-height: 63px;
     
     @include respond-to(tablet) {
-        font-size: 83px;
-        line-height: 83px;
+        font-size: 90px;
+        line-height: 90px;
     }
 }
 
@@ -51,7 +51,7 @@
     line-height: 34px;
 
     @include respond-to(tablet) {
-        font-size: 36px;
+        font-size: 30px;
         line-height: 46px;
     }
 }
@@ -381,11 +381,16 @@ $easeInOutBack: cubic-bezier(.680, -.550, .265, 1.550);
 	margin-top: $margin-mobile;
 	padding: 0 20px;
 
-	@include respond-to(tablet) {
+	/* @include respond-to(tablet) {
 		margin-top: $margin-tablet;
 		padding: 0 100px;
+    } */
+    
+	@include respond-to(tablet) {
+		margin-top: calc(100vw / 18);
+		padding: 0 calc(100vw / 18);
 	}
-
+/* 
 	@include respond-to(desktop) {
 		margin-top: $margin-desktop;
 		padding: 0 100px;
@@ -399,6 +404,6 @@ $easeInOutBack: cubic-bezier(.680, -.550, .265, 1.550);
 	@include respond-to(desktop_big) {
 		margin-top: $margin-desktop-big;
 		padding: 0 $margin-desktop-big;
-	}
+	} */
 }
 

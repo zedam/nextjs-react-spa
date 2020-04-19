@@ -7,6 +7,7 @@ import Blocks from '../components/Blocks'
 import Image from '../components/BackgroundImage'
 import Vimeo from 'react-vimeo'
 import SocialShare from '../components/SocialShare'
+import SocialLinks from '../components/SocialLinks'
 import Constant from '../components/Constant'
 import { DefaultPlayer as Video } from 'react-html5video'
 import Reveal from 'react-reveal/Reveal'
@@ -163,7 +164,7 @@ export default class Projects extends Component {
 					{
 						// If state = true, display content
 						this.state.isReady &&
-						<div key="title" className="template-2" id={"template2"}>
+						<div key="title" className="header-3__container" id={"template2"}>
 
 							<div className="header-3__video-container">
 
@@ -171,7 +172,7 @@ export default class Projects extends Component {
 									{this.props.project.image.map((name, index) => {
 										return (
 											<div key={index} >
-												<img />
+												{/* <img /> */}
 												<Image content={name} width="100%" ></Image>
 											</div>
 										)
@@ -228,19 +229,21 @@ export default class Projects extends Component {
 											</div>
 										}
 
+										<div className="header-1__container-content-wrapper">
 
-										{this.props.project.headline &&
-											<h1 className="header-3__container-content-title"
-												dangerouslySetInnerHTML={{ __html: this.props.project.headline }}>
-											</h1>
-										}
+											{this.props.project.headline &&
+												<h1 className="header-3__container-content-title"
+													dangerouslySetInnerHTML={{ __html: this.props.project.headline }}>
+												</h1>
+											}
 
-										{this.props.project.description &&
-											<div className="fade-up header-3__container-content-description"
-												dangerouslySetInnerHTML={{ __html: this.props.project.description }}></div>
-										}
+											{this.props.project.description &&
+												<div className="fade-up header-3__container-content-description"
+													dangerouslySetInnerHTML={{ __html: this.props.project.description }}></div>
+											}
 
-										<SocialShare content={this.props.project} />
+											<SocialShare content={this.props.project} />
+										</div>
 
 									</React.Fragment>
 								</Reveal>
@@ -251,6 +254,10 @@ export default class Projects extends Component {
 									<Blocks content={this.props.project.blocks} />
 								</div>
 							}
+
+							<div>
+								<SocialLinks content={this.props.project} entry={this.props.project.followText} />
+							</div>
 
 						</div>
 					}

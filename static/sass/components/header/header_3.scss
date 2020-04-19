@@ -170,6 +170,11 @@
 
 .header-3__container-content-title {
 	@include title_1();
+
+	@include respond-to(desktop) {
+		font-size: 90px;
+		line-height: 90px;
+	}
 }
 
 .header-3__container-content-description {

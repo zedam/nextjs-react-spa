@@ -52,7 +52,8 @@ export default class Homepage extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout content={this.props.homepage.data[0]}>
+			<Layout content={this.props.homepage.data[0]} footer={this.props.footer}>
+				
 				<Transition
 					component={false}
 					enter={this.isEntering()}
@@ -77,8 +78,6 @@ export default class Homepage extends Component {
 										   // Do stuff
    									}}>
 										<source src="static/videos/homepage/DEC18_WEB_VIDEO-Mobile.mp4" type="video/mp4" />
-										{/*<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />*/}
-										{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
 									</Video>
 								</MediaQuery>
 								<MediaQuery query="(min-width: 768px)" >
@@ -89,8 +88,6 @@ export default class Homepage extends Component {
 											   // Do stuff
 										   }}>
 										<source src="static/videos/homepage/DEC18_WEB_VIDEO.mp4" type="video/mp4" />
-										{/*<source src="static/videos/homepage/thebrut_reel.webm" type="video/webm" />*/}
-										{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
 									</Video>
 								</MediaQuery>
 
@@ -125,7 +122,11 @@ Homepage.getInitialProps = async () => {
 	const homepage = await fetch(Constant.api_url + 'api/pages/homepage.json')
 	const homepageData = await homepage.json()
 
+	const footer = await fetch(Constant.api_url + 'api/globals.json')
+	const footerData = await footer.json()
+
 	return {
-		homepage: homepageData
+		homepage: homepageData,
+		footer: footerData
 	}
 }
