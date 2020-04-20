@@ -1,21 +1,13 @@
 .link-directors__container {
-	max-width: 1000px;
 	padding: 100px 20px 50px;
 	position: relative;
 	z-index: 1;
 
 	@include respond-to(tablet) {
-		padding: 140px 100px;
+		padding: 100px calc(100vh / 12) 50px;
 	}
-
 	@include respond-to(desktop) {
-		padding: 140px 100px;
-		max-width: 960px;
-	}
-
-	@include respond-to(desktop_big) {
-		max-width: 1200px;
-		padding: 140px 100px;
+		padding: 100px calc(100vh / 9) 50px;
 	}
 
 	.react-reveal {
