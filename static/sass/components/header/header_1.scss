@@ -132,9 +132,9 @@
 	}
 
 	@include respond-to (desktop){
+		font-size: 80px;
+		line-height: 86px;
 		margin: 0;
-		line-height: 69px;
-		font-size: 57px;
 	}
 
 

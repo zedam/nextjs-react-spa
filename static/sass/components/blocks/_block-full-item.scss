@@ -100,17 +100,16 @@
 
 .block-full-item__content-container-director {
 	@include transition(all, 2.3s, 0s, $animationEffect);
+	display: inline-block;
 	font-size: 28px;
 	margin-top: 5px;
-	display: inline-block;
 	position: relative;
 	margin-left: 20px;
 	
 	@include respond-to(tablet) {
 		@include transform(translateY(10px));
-		font-size: 42px;
-		margin-top: 10px;
-		//margin-top: 24px;
+		font-size: 60px;
+		line-height: 60px;
 		opacity: 0;
 	}
 
@@ -141,7 +140,8 @@
 	}
 
 	@include respond-to(desktop) {
-		font-size: 42px;
+		font-size: 60px;
+		line-height: 60px;
 		//@include animate-link-underline-left($white, true);
 	}
 

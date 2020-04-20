@@ -136,9 +136,7 @@
 
 	@include respond-to(tablet) {
 		height: 86px;
-		/* right: 25px;
-		top: 20px; */
-		width: 87px;
+		width: 86px;
 	}
 	
 	@include respond-to(hover) {
