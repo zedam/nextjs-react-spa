@@ -46,7 +46,7 @@ export default class News extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout content={this.props.news}>
+			<Layout content={this.props.news}  footer={this.props.footer}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}
@@ -99,7 +99,11 @@ News.getInitialProps = async (context) => {
 	const news = await fetch(`${Constant.api_url}api/news/${id}.json`)
 	const newsData = await news.json()
 
+	const footer = await fetch(Constant.api_url + 'api/globals.json')
+	const footerData = await footer.json()
+
 	return {
+		footer: footerData,
 		news: newsData
 	}
 }

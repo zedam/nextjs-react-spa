@@ -110,6 +110,7 @@
 		
 		.bold {
 			@include secondary_font();
+			font-weight: bold;
 			opacity: 0;
 		}
 	}

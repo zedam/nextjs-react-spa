@@ -47,7 +47,7 @@ export default class About extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout content={this.props.about.data[0]}>
+			<Layout content={this.props.about.data[0]} footer={this.props.footer}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}
@@ -103,7 +103,11 @@ About.getInitialProps = async () => {
 	const about = await fetch(Constant.api_url + 'api/pages/about.json')
 	const aboutData = await about.json()
 
+	const footer = await fetch(Constant.api_url + 'api/globals.json')
+	const footerData = await footer.json()
+
 	return {
+		footer: footerData,
 		about: aboutData
 	}
 }

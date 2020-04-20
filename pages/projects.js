@@ -156,7 +156,7 @@ export default class Projects extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout content={this.props.project}>
+			<Layout content={this.props.project} footer={this.props.footer}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}
@@ -272,7 +272,11 @@ Projects.getInitialProps = async (context) => {
 	const project = await fetch(Constant.api_url + `api/projects/${id}.json`)
 	const projectData = await project.json()
 
+	const footer = await fetch(Constant.api_url + 'api/globals.json')
+	const footerData = await footer.json()
+
 	return {
+		footer: footerData,
 		project: projectData
 	}
 }

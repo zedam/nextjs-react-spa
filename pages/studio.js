@@ -49,7 +49,7 @@ export default class Studio extends Component {
 	render = () => {
 		// JSX
 		return (
-			<Layout content={this.props.studio.data[0]}>
+			<Layout content={this.props.studio.data[0]}  footer={this.props.footer}>
 				<Transition
 					component={false}
 					enter={this.isEntering()}
@@ -110,7 +110,11 @@ Studio.getInitialProps = async () => {
 	const studio = await fetch(Constant.api_url + 'api/pages/studio.json')
 	const studioData = await studio.json()
 
+	const footer = await fetch(Constant.api_url + 'api/globals.json')
+	const footerData = await footer.json()
+
 	return {
+		footer: footerData,
 		studio: studioData
 	}
 }
