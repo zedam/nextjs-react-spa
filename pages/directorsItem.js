@@ -128,13 +128,11 @@ export default class DirectorsItem extends Component {
 			<div key="title" className="template-1" id={'template-1'}>
 				<div className="header-1__container directors">
 
-					
 					{this.state.showVideo &&
 						<React.Fragment>
 							{this.renderVideo()}
 						</React.Fragment>
 					}
-
 					
 				</div>
 
@@ -170,7 +168,7 @@ export default class DirectorsItem extends Component {
 								}
 							</div>
 
-							<div className="header-1__container-content-wrapper">
+							<div className="header-1__container-content-wrapper ">
 
 								{this.props.content.title &&
 								<Reveal effect="fadeInUp">

@@ -229,7 +229,7 @@ export default class Projects extends Component {
 											</div>
 										}
 
-										<div className="header-1__container-content-wrapper">
+										<div className="header-1__container-content-wrapper projects">
 
 											{this.props.project.headline &&
 												<h1 className="header-3__container-content-title"
@@ -237,12 +237,16 @@ export default class Projects extends Component {
 												</h1>
 											}
 
-											{this.props.project.description &&
-												<div className="fade-up header-3__container-content-description"
-													dangerouslySetInnerHTML={{ __html: this.props.project.description }}></div>
-											}
+											<div className="header-3__content-wrapper">
 
-											<SocialShare content={this.props.project} />
+												{this.props.project.description &&
+													<div className="fade-up header-3__container-content-description"
+														dangerouslySetInnerHTML={{ __html: this.props.project.description }}></div>
+												}
+
+												<SocialShare content={this.props.project} />
+
+											</div>
 										</div>
 
 									</React.Fragment>

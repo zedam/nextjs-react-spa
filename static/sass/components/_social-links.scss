@@ -33,6 +33,18 @@
 	@include respond-to(desktop) {
 		margin-top: 70px;
 	}
+
+	.projects & {
+
+		@include respond-to(desktop) {
+			display: flex;
+			flex-direction: column;
+			left: -180px;
+			margin-top: 0;
+			position: absolute;
+			top: 0;
+		}
+	}
 }
 
 .social-links__title {
