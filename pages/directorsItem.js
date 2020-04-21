@@ -15,7 +15,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 
-
 import Reveal from 'react-reveal/Reveal'
 import Constant from "../components/Constant";
 
@@ -105,10 +104,15 @@ export default class DirectorsItem extends Component {
 									autoPlay={this.state.autoPlay}
 									infiniteLoop={true}>
 									{this.props.content.image.map ((index, item) => (
-										<div key={item} className="header-1__carrousel">
-											<BackgroundImage content={index} width="100%" ></BackgroundImage>
+										<div>
+
+{item} - 
+										{this.props.content.image[0].mobile}
 										</div>
 									))}
+									{/* <div key={item} className="header-1__carrousel">
+										<BackgroundImage content={index} width="100%" ></BackgroundImage>
+									</div> */}
 								</Carousel>
 							}
 						</div>
