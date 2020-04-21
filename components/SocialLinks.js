@@ -13,7 +13,6 @@ export default class SocialLinks extends Component {
 		return (
 
 			<div className="social-links__container">
-
 				{this.props.entry &&
 				<div className="social-links__title">
 					{this.props.entry}

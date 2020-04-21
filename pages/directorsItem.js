@@ -69,29 +69,13 @@ export default class DirectorsItem extends Component {
 
 	renderVideo = () => {
 
-		console.log(this);
 		return (
-
+			
 			<div className={'videoPlaying_' + this.state.isPlaying}>
-				{this.props.content.vimeoUrl ?
-					<div className="header-3__vimeo-container"
-						onMouseEnter={() => (this.mouseMove())}
-					>
-						<Video loop
-							controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-							onCanPlayThrough={() => {
-								// Do stuff
-							}}
-							onPlay={() => {
-								this.setState({ isPlaying: true })
-
-								// Do stuff
-							}}>
-							<source src={this.props.content.vimeoUrl} type="video/mp4" />
-							{/*<track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
-						</Video>
-					</div>
-					:
+				
+				<div>
+						{console.log(this.props) }
+							</div>
 					<div>
 						{this.props.content.vimeoId ?
 						<React.Fragment>
@@ -119,14 +103,13 @@ export default class DirectorsItem extends Component {
 						</div>
 						}
 					</div>
-				}
+				
 			</div>
 		)
 
 	}
 
 	render = () => {
-
 
 		return (
 

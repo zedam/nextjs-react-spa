@@ -107,11 +107,13 @@ export default class extends Component {
 		// JSX
     return (
 
-      <div>
+      <React.Fragment>
         <a id="home" className="menu__home-logo" href="/" />
 	
         <Menu
-          burgerButtonClassName={'my-class'} width="100%" bodyClassName="black"
+          burgerButtonClassName={'my-class'} 
+          width="100%" 
+          bodyClassName="black"
           className={'my-menu '}
           isOpen={this.state.menuOpen}
           onMouseOver={() => this.hoverFetch('pages/directors_page')}
@@ -119,39 +121,40 @@ export default class extends Component {
         >
           <Link href="/about">
             <a className={"menu-item " + (this.state.isActive == 'about' ? 'active' : '')}>
-              	<span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/about')}>
-					<span className="bold">About</span>
-					<span className="normal">About</span>
-				</span>
+              <span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/about')}>
+                <span className="bold">About</span>
+                <span className="normal">About</span>
+				      </span>
             </a>
           </Link>
+
           <Link href="/directors" >
             <a className={"menu-item " + (this.state.isActive == 'directors_page' ? 'active' : '')}>
-        		<span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/directors_page')} >
-			  		<span className="bold">Talent</span>
-					<span className="normal">Talent</span>
-				</span>
+              <span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/directors_page')} >
+                <span className="bold">Talent</span>
+                <span className="normal">Talent</span>
+              </span>
             </a>
           </Link>
           <Link href="/studio" >
             <a className={"menu-item " + (this.state.isActive == 'studio' ? 'active' : '')}>
-              	<span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/studio')}>
-				  	<span className="bold">Works</span>
-					<span className="normal">Works</span>  
-				</span>
+              <span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/studio')}>
+                <span className="bold">Works</span>
+                <span className="normal">Works</span>  
+              </span>
             </a>
           </Link>
           <Link prefetch href="/contact" >
             <a className={"menu-item " + (this.state.isActive == 'contact' ? 'active' : '')}>
-              	<span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/contact')} >
-					<span className="bold">Contact</span>
-					<span className="normal">Contact</span>
-				</span>
+              <span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/contact')} >
+                <span className="bold">Contact</span>
+                <span className="normal">Contact</span>
+              </span>
             </a>
           </Link>
         </Menu>
 
-      </div>
+      </React.Fragment>
     )
   }
 }
