@@ -84,11 +84,12 @@ export default class DirectorsItem extends Component {
 						{this.props.content.image &&
 							<Carousel 
 								autoPlay={this.state.autoPlay}
-								infiniteLoop={true}>
+								infiniteLoop={true}
+								showStatus={false}
+								showThumbs={false}>
 								{this.props.content.image.map ((index, item) => (
 									<div key={item} className="header-1__carrousel">
 										<BackgroundImage content={index} width="100%" ></BackgroundImage>
-										<img></img>
 									</div>
 								))}
 							</Carousel>
