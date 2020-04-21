@@ -110,8 +110,9 @@ export default class DirectorsItem extends Component {
 									))}
 									{/* <div key={item} className="header-1__carrousel">
 										<BackgroundImage content={index} width="100%" ></BackgroundImage>
-									</div> */}
+									</div> 
 								</Carousel>
+									
 							} */}
 						</div>
 						}
