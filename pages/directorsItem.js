@@ -72,38 +72,32 @@ export default class DirectorsItem extends Component {
 		return (
 			
 			<div className={'videoPlaying_' + this.state.isPlaying}>
-				
-				<div>a
-						{console.log(this.props) }
-							</div>
+				<div>
+					{this.props.content.vimeoId ?
+					<React.Fragment>
+						<Vimeo videoId={this.props.content.vimeoId} background={false}
+							autoplay={true} />
+							<div></div>
+					</React.Fragment>
+					:
 					<div>
-						aabbcc
-						{this.props.content.vimeoId ?
-						<React.Fragment>
-							<Vimeo videoId={this.props.content.vimeoId} background={false}
-								autoplay={true} />
-								<div></div>
-						</React.Fragment>
-						:
-						<div>
-							aaaa--
-							{/* {this.props.content.image &&
-								<Carousel 
-									autoPlay={this.state.autoPlay}
-									infiniteLoop={true}>
-									{this.props.content.image.map ((index, item) => (
-										<div key={index}>aa
-										</div>
-									))}
-									{/* <div key={item} className="header-1__carrousel">
-										<BackgroundImage content={index} width="100%" ></BackgroundImage>
-									</div> 
-								</Carousel>
-									
-							} */}
-						</div>
+						{this.props.content.image &&
+							<Carousel 
+								autoPlay={this.state.autoPlay}
+								infiniteLoop={true}>
+								{this.props.content.image.map ((index, item) => (
+									<div key={index}>aa
+									</div>
+								))}
+								{/* <div key={item} className="header-1__carrousel">
+									<BackgroundImage content={index} width="100%" ></BackgroundImage>
+								</div> 
+							</Carousel>
+								
 						}
 					</div>
+					}
+				</div>
 				
 			</div>
 		)
