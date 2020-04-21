@@ -47,26 +47,71 @@ $green: green;
 	bottom: 0;
 }
 
-.carousel .control-prev.control-arrow:before {
-	//border-right: 8px solid $black;
-	border-right: 3px solid $black;
-	border-top: 3px solid $black;
-	border-left: 0;
-	border-bottom: 0;
-	width: 10px;
-	height: 10px;
-	transform: rotate(-135deg);
+div.carousel .control-prev.control-arrow {
+	height: 20px;
+	position: absolute;
+	left: 20px;
+	top: calc(50% - 10px);
+	width: 20px;
+	opacity: 1;
+
+	&:after,
+	&:before {
+		background: $white;
+		border-radius: 3px;
+		content: '';
+		border: 0;
+		height: 5px;
+		position: absolute;
+		width: 20px;
+		top: 50%;
+		left: 0;
+	}
+
+	&:before {
+		transform: rotate(-45deg);
+		left: 0;
+	}
+
+	&:after {
+		transform: rotate(45deg);
+		top: calc(50% + 12px);
+		left: 4px;
+	}
 }
-.carousel .control-next.control-arrow:before {
-	border-left: 3px solid $black;
-	border-top: 3px solid $black;
-	border-right: 0;
-	border-bottom: 0;
-	width: 10px;
-	height: 10px;
-	transform: rotate(135deg);
+div.carousel .control-next.control-arrow {
+	height: 20px;
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 10px);
+	opacity: 1;
+	width: 20px;
+
+	&:after,
+	&:before {
+		background: $white;
+		border-radius: 3px;
+		content: '';
+		border: 0;
+		height: 5px;
+		position: absolute;
+		width: 20px;
+		top: 50%;
+		right: 20px;
+	}
+
+	&:before {
+		transform: rotate(45deg);
+		right: 0;
+	}
+
+	&:after {
+		transform: rotate(-45deg);
+		top: calc(50% + 12px);
+		right: 4px;
+	}
 }
-.carousel.carousel-slider .control-arrow:hover {
+div.carousel.carousel-slider .control-arrow:hover {
 	background: rgba(0, 0, 0, 0);
 }
 
