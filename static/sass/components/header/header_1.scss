@@ -92,8 +92,8 @@
 	}
 
 	@include respond-to(tablet) {
-		margin-top: calc(100% / 18);
-		padding: 0 calc(100% / 18);
+		margin-top: 67px;
+		padding: 0 67px;
 	}
 	
 	/* 
@@ -132,8 +132,8 @@
 	}
 
 	@include respond-to (desktop){
-		font-size: 80px;
-		line-height: 86px;
+		font-size: 70px;
+		line-height: 75px;
 		margin: 0;
 	}
 

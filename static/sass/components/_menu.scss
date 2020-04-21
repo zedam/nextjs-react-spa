@@ -128,15 +128,15 @@
 	background-size: cover;
 	height: 50px;
     position: fixed;
-    right: 10px;
+    right: 20px;
 	transition: all 0.2s;
-    top: 10px;
+    top: 20px;
     width: 50px;
 	z-index: 1101;
 
 	@include respond-to(tablet) {
-		height: 86px;
-		width: 86px;
+		height: 71px;
+		width: 70px;
 	}
 	
 	@include respond-to(hover) {

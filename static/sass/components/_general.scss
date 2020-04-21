@@ -36,43 +36,14 @@
 		}
 
 		@include respond-to(desktop) {
-			font-size: 60px;
-			line-height: 60px;
+			font-size: 50px;
+			line-height: 50px;
 		}
 
 		p {
 			margin: 0;
 		}
-
-		/* &:after {
-			bottom: -18px;
-			left: 3px;
-			height: 4px;
-
-			@include respond-to(tablet) {
-				bottom: -25px;
-				height: 5px;
-			}
-		} */
 	}
-
-	/* @include respond-to(mobile) {
-		a {
-			&:after {
-				width: 20px;
-			}
-		}
-	}
-
-	@include respond-to(tablet) {
-		&:hover {
-			a {
-				&:after {
-					width: 20px;
-				}
-			}
-		}
-	} */
 }
 
 .general__text {
@@ -81,12 +52,9 @@
 	margin-top: 20px;
 
 	@include respond-to (tablet) {
-		/* font-size: 16px; */
-		/* line-height: 25px */
-		/* margin-top: 42px; */
-		font-size: 30px;
-		line-height: 36px;
-		margin-top: calc(100vw / 24);
+		font-size: 25px;
+		line-height: 32px;
+		margin-top: 10px;
 	}
 }
 

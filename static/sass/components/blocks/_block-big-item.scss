@@ -23,14 +23,6 @@
 		width: 50%;
 	}
 
-	/* @include respond-to(desktop) {
-		width: 54%;
-	}
-
-	@include respond-to(desktop_big) {
-		width: 64%;
-	} */
-
 	img {
 		@include transition(all, 1.6s, 0s, $animationEffect);
 		display: block;
@@ -52,54 +44,7 @@
 	@include respond-to(tablet) {
 		box-sizing: border-box;
 		float: left;
-		padding: 0 calc(100vw / 18) 0 0;
+		padding: 0 67px 0 0;
 		width: 50%;
 	}
 }
-/*
-.block-big-item__title {
-	a {
-		@include animate-link-underline-left($black);
-		color: $black;
-		display: inline-block;
-		font-size: 35px;
-		font-weight: normal;
-		line-height: 35px;
-		text-decoration: none;
-
-		@include respond-to(tablet) {
-			font-size: 35px;
-			line-height: 35px;
-		}
-
-		@include respond-to(desktop) {
-			font-size: 42px;
-			line-height: 42px;
-		}
-
-		p {
-			margin: 0;
-		}
-
-		&:after {
-			bottom: -3px;
-			height: 5px;
-		}
-	}
-}
-
-.block-big-item__subtitle {
-	font-size: 21px;
-	line-height: 33px;
-	margin-top: 17px;
-
-	@include respond-to (tablet) {
-		font-size: 15px;
-		line-height: 25px;
-	}
-
-	@include respond-to (desktop) {
-		font-size: 21px;
-		line-height: 33px;
-	}
-}*/

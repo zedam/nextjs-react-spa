@@ -77,12 +77,12 @@
 		padding: 0 20px 30px;
 
 		@include respond-to(tablet) {
-			padding: 0 calc(100% / 24) 50px;
+			padding: 0 calc(100vw / 24) 50px;
 		}
 
 		.tag {
 			display: inline-block;
-			margin-top: calc(100% / 24);
+			margin-top: calc(100vw / 24);
 		}
 
 		.tag-item {

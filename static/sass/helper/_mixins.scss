@@ -381,29 +381,9 @@ $easeInOutBack: cubic-bezier(.680, -.550, .265, 1.550);
 	margin-top: $margin-mobile;
 	padding: 0 20px;
 
-	/* @include respond-to(tablet) {
-		margin-top: $margin-tablet;
-		padding: 0 100px;
-    } */
-    
 	@include respond-to(tablet) {
-		margin-top: calc(100vw / 18);
-		padding: 0 calc(100vw / 18);
+		margin-top: 67px;
+		padding: 0 67px;
 	}
-/* 
-	@include respond-to(desktop) {
-		margin-top: $margin-desktop;
-		padding: 0 100px;
-	}
-
-	@include respond-to(desktop_big) {
-		margin-top: $margin-desktop-big;
-		padding: $margin-desktop-big $margin-desktop-big 0;
-	}
-
-	@include respond-to(desktop_big) {
-		margin-top: $margin-desktop-big;
-		padding: 0 $margin-desktop-big;
-	} */
 }
 

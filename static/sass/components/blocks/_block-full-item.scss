@@ -108,8 +108,8 @@
 	
 	@include respond-to(tablet) {
 		@include transform(translateY(10px));
-		font-size: 60px;
-		line-height: 60px;
+		font-size: 50px;
+		line-height: 50px;
 		opacity: 0;
 	}
 
@@ -128,21 +128,20 @@
 .block-full-item__content-container-title {
 	@include secondary_font();
 	@include transition(all, 2.3s, 0s, $animationEffect);
+	color: $white;
 	font-size: 28px;
 	font-weight: normal;
+	margin-top: 20px;
 	padding: 0 20px;
 	position: relative;
-	color: $white;
-	margin-top: 20px;
 
 	@include respond-to(tablet) {
 		opacity: 0;
 	}
 
 	@include respond-to(desktop) {
-		font-size: 60px;
-		line-height: 60px;
-		//@include animate-link-underline-left($white, true);
+		font-size: 50px;
+		line-height: 50px;
 	}
 
 	a {

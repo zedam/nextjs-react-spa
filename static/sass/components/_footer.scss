@@ -7,7 +7,7 @@
 
         @include respond_to(tablet) {
             max-width: 1600px;
-            padding: calc(100vw / 18);
+            padding: 67px;
         }
 
         .social-links__container {
@@ -15,7 +15,7 @@
             display: flex;
             flex-direction: column;
             padding: 0;
-            margin-bottom: calc(100vw / 24);
+            margin-bottom: 67px;
         }
 
         .social-links__item {
@@ -46,7 +46,7 @@
         }
 
         + .footer__cell {
-            margin-top: calc(100% / 12);
+            margin-top: 67px;
             
             @include respond_to(tablet) {
                 margin-top: 0;
