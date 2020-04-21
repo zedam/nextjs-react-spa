@@ -60,7 +60,7 @@ class Layout extends React.Component {
 
                     <link type="text/css" rel="stylesheet" href="/static/style.css"></link>
                     <link type="text/css" rel='stylesheet' href='/_next/static/style.css' />
-                    <link rel="icon" href='/static/images/mobile/favicon_flag.png' />
+                    <link rel="icon" href='/static/images/mobile/favicon.svg' />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
                 <Header title={this.props.content.title} pathname={this.props.content.pathname} handle={this.props.content.handle} />

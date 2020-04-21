@@ -62,7 +62,7 @@
 			justify-content: space-between;
 
 			+.contact {
-				padding-top: calc(100vw / 18);
+				padding-top: 67px;
 
 				.social-links__container, 
 				.contact__description {
@@ -77,12 +77,12 @@
 		padding: 0 20px 30px;
 
 		@include respond-to(tablet) {
-			padding: 0 calc(100vw / 24) 50px;
+			padding: 0 67px 50px;
 		}
 
 		.tag {
 			display: inline-block;
-			margin-top: calc(100vw / 24);
+			margin-top: 67px;
 		}
 
 		.tag-item {
