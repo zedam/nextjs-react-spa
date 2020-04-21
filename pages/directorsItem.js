@@ -104,10 +104,7 @@ export default class DirectorsItem extends Component {
 									autoPlay={this.state.autoPlay}
 									infiniteLoop={true}>
 									{this.props.content.image.map ((index, item) => (
-										<div>
-
-{item} - 
-										{this.props.content.image[0].mobile}
+										<div key={index}>aa
 										</div>
 									))}
 									{/* <div key={item} className="header-1__carrousel">
