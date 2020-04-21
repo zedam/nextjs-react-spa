@@ -20,8 +20,7 @@ import Constant from "../components/Constant";
 
 export default class DirectorsItem extends Component {
 	constructor (props) {
-		super (props);    this.state = {showContent: true};
-		this.state.showContent = true;
+		super (props);    
 
 		this.state = {
 			currentSlide: 0,
@@ -31,6 +30,7 @@ export default class DirectorsItem extends Component {
 			isReady: false,
 			isPlaying: false
 		}
+
 	}
 
 	updateLink = () => {
@@ -68,6 +68,8 @@ export default class DirectorsItem extends Component {
 	}
 
 	renderVideo = () => {
+
+		console.log(this);
 		return (
 
 			<div className={'videoPlaying_' + this.state.isPlaying}>

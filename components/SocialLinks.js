@@ -1,47 +1,57 @@
 import Link from 'next/link';
+import React, { Component } from 'react'
 import Reveal from 'react-reveal/Reveal'
 
-const SocialLinks = (props) => (
-    <div className="social-links__container">
 
-		{props.entry &&
-		<div className="social-links__title">
-			{props.entry}
-		</div>
-		}
+export default class SocialLinks extends Component {
+	constructor (props) {
+		super (props);    
+	}
 
-		{props.content.tumblrLink &&
-		<Link href={props.content.tumblrLink}>
-			<a className="social-links__item" target="_blank">Tumblr</a>
-		</Link>
-		}
+	render = () => {
 
-		{props.content.facebookLink &&
-		<Link href={props.content.facebookLink}>
-			<a className="social-links__item" target="_blank">Facebook</a>
-		</Link>
-		}
-		{props.content.instagramLink &&
-		<Link href={props.content.instagramLink}>
-			<a className="social-links__item" target="_blank">Instagram</a>
-		</Link>
-		}
-		{props.content.vimeoLink &&
-		<Link href={props.content.vimeoLink}>
-			<a className="social-links__item" target="_blank">Vimeo</a>
-		</Link>
-		}
-		{props.content.linkedinLink &&
-		<Link href={props.content.linkedinLink}>
-			<a className="social-links__item" target="_blank">Linkedin</a>
-		</Link>
-		}
-		{props.content.behanceLink &&
-		<Link href={props.content.behanceLink}>
-			<a className="social-links__item" target="_blank">Behance</a>
-		</Link>
-		}
-    </div>
-);
+		return (
 
-export default SocialLinks;
+			<div className="social-links__container">
+
+				{this.props.entry &&
+				<div className="social-links__title">
+					{this.props.entry}
+				</div>
+				}
+				{this.props.content.tumblrLink &&
+				<Link href={this.props.content.tumblrLink}>
+					<a className="social-links__item" target="_blank">Tumblr</a>
+				</Link>
+				}
+				{this.props.content.facebookLink &&
+				<Link href={this.props.content.facebookLink}>
+					<a className="social-links__item" target="_blank">Facebook</a>
+				</Link>
+				}
+				{this.props.content.instagramLink &&
+				<Link href={this.props.content.instagramLink}>
+					<a className="social-links__item" target="_blank">Instagram</a>
+				</Link>
+				}
+				{this.props.content.vimeoLink &&
+				<Link href={this.props.content.vimeoLink}>
+					<a className="social-links__item" target="_blank">Vimeo</a>
+				</Link>
+				}
+				{this.props.content.linkedinLink &&
+				<Link href={this.props.content.linkedinLink}>
+					<a className="social-links__item" target="_blank">Linkedin</a>
+				</Link>
+				}
+				{this.props.content.behanceLink &&
+				<Link href={this.props.content.behanceLink}>
+					<a className="social-links__item" target="_blank">Behance</a>
+				</Link>
+				}
+			</div>
+		)
+	}
+
+}
+
