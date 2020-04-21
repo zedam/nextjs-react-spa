@@ -47,6 +47,19 @@
 	}
 }
 
+.carousel.carousel-slider {
+	bottom: 0;
+	left: 0;
+	opacity: 1;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.carousel .control-dots .dot {
+	box-shadow: 0 0 0;
+} 
+
 .header-1__carrousel {
 	//height: 100%; 
 	position: relative;

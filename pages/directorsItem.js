@@ -72,7 +72,7 @@ export default class DirectorsItem extends Component {
 		return (
 			
 			<div className={'videoPlaying_' + this.state.isPlaying}>
-				<div>
+				<React.Fragment>
 					{this.props.content.vimeoId ?
 					<React.Fragment>
 						<Vimeo videoId={this.props.content.vimeoId} background={false}
@@ -80,7 +80,7 @@ export default class DirectorsItem extends Component {
 							<div></div>
 					</React.Fragment>
 					:
-					<div>
+					<React.Fragment>
 						{this.props.content.image &&
 							<Carousel 
 								autoPlay={this.state.autoPlay}
@@ -94,9 +94,9 @@ export default class DirectorsItem extends Component {
 								))}
 							</Carousel>
 						}
-					</div>
+					</React.Fragment>
 					}
-				</div>
+				</React.Fragment>
 				
 			</div>
 		)
