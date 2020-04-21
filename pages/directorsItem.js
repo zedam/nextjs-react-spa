@@ -99,7 +99,8 @@ export default class DirectorsItem extends Component {
 						</React.Fragment>
 						:
 						<div>
-							{this.props.content.image &&
+							aa
+							{/* {this.props.content.image &&
 								<Carousel 
 									autoPlay={this.state.autoPlay}
 									infiniteLoop={true}>
@@ -111,7 +112,7 @@ export default class DirectorsItem extends Component {
 										<BackgroundImage content={index} width="100%" ></BackgroundImage>
 									</div> */}
 								</Carousel>
-							}
+							} */}
 						</div>
 						}
 					</div>
