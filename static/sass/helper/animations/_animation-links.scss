@@ -41,25 +41,25 @@ $base-color-1: #000000;
         top: auto;
 
         @if $inverse {
-            width: 100%;
-        } @else {
             width: 0;
+        } @else {
+            width: 20px;
         }
     }
-
+    
     &:after {
         background-color: $color;
     }
-
+    
     &:hover,
     &.hover {
         text-decoration: none;
-
+        
         &:after {
             @if $inverse {
-                width: 0;
-            } @else {
                 width: 20px;
+            } @else {
+                width: 0;
             }
         }
     }
