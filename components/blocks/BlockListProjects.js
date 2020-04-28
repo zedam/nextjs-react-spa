@@ -41,7 +41,7 @@ class BlockListProjects extends React.Component {
         };
     }
 
-    componentWillMount = () => {
+    componentDidUpdate = () => {
 
         /* for (let i = 0; i < this.props.content.typeElement.length; i++) {
             let image = this.props.content.typeElement[i].image[0]

@@ -48,7 +48,7 @@ export default class Projects extends Component {
 		fetch(Constant.api_url + 'api/' + 'projects/' + id + '.json')
 	}
 
-	componentWillUpdate = () => {
+	componentDidUpdate = () => {
 		if (changedContent) {
 			this.state.showContent = false;
 

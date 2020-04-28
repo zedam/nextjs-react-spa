@@ -5,8 +5,6 @@ import Menu from './Menu'
 export default class extends Component {
     constructor(props) {
         super(props)
-
-
     }
 
     render = () => {

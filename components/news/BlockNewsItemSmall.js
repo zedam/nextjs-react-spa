@@ -14,7 +14,7 @@ class BlockNewsItemSmall extends React.Component {
         }
     }
 
-    componentWillMount = () => {
+    componentDidUpdate = () => {
         let prefetchImage = []
         let image = this.props.content.image[0]
         for (var item in image) {

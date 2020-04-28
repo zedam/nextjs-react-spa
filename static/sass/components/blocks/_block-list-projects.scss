@@ -8,7 +8,7 @@
 }
 
 .grid-sizer {
-	width: calc(100vw / 12);
+	width: calc(100% / 12);
 }
 
 .block-list-projects__item {
@@ -29,28 +29,28 @@
 
 	@include respond-to(tablet) {
 		&.portraitSmall {
-			padding-bottom: calc(100% / 3);
-			width: calc(100% / 3);
+			padding-bottom: 33.33%;
+			width: 33.33%;
 		}
 
 		&.portraitBig {
 			padding-bottom: 66.66%;
-			width: calc(100% / 3);
+			width: 33.33%;
 		}
 
 		&.landscapeSmall {
-			padding-bottom: calc(100% / 6);
-			width: calc(100% / 3);
+			padding-bottom: 16.66%;
+			width: 33.33%;
 		}
 
 		&.landscapeBig {
-			padding-bottom: calc(100% / 3);
+			padding-bottom: 33.33%;
 			width: 66.66%;
 		}
 
 		&.square {
-			padding-bottom: calc(100% / 4);
-			width: calc(100% / 4);
+			padding-bottom: 25%;
+			width: 25%;
 		}
 	}
 

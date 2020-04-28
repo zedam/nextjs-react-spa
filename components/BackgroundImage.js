@@ -15,8 +15,7 @@ const transitionStyles = {
   entering: {opacity: 0},
   entered: {opacity: 1}
 }*/
-
-const duration = 1300
+const duration = 1200
 
 class Image extends React.Component {
   constructor(props) {
@@ -54,7 +53,7 @@ class Image extends React.Component {
     }
 };
 
-Image.componentWillMount = () => {
+Image.componentDidUpdate = () => {
     let isLoaded = false
 
 }
