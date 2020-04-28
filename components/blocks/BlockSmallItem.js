@@ -14,17 +14,6 @@ class BlockSmallItem extends React.Component {
             showLink: false
         }
     }
-
-    componentWillUpdate = () => {
-        let prefetchImage = []
-        let image = this.props.content.image[0]
-        for (var item in image) {
-            prefetchImage[item] = image[item].replace(image['handle'], this.props.content.handle);
-        }
-
-        this.props.content.prefetchImage = prefetchImage
-    }
-
     fetchItem = (item) => {
 
         if (this.state.nextLink == undefined) {
@@ -39,6 +28,7 @@ class BlockSmallItem extends React.Component {
             const countImage = async () => {
                 const prefetchesImage = getPrefetchImage()
                     .then(response => {
+                        this.props.content.prefetchImage = response.data.image[0]
                         this.setState({prefetchImage: true})
                     })
                     .catch(error => {

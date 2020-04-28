@@ -36,7 +36,6 @@ export default class Projects extends Component {
 		this.setState({
 			showVideo: false
 		});
-
 	}
 
 	customFunctionCallOverview = (id) => {

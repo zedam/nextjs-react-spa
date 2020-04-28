@@ -11,29 +11,45 @@ class blockDoubleItems extends React.Component {
     constructor (props) {
         super (props);
 
-        console.log(props);
         this.state = {
             isReady: false,
-            showLink: false
+            showLink: false,
+            showPrefetchImage1: false,
+            showPrefetchImage2: false,
+            prefetchImage1: [],
+            prefetchImage2: []
         }
     }
 
-    componentDidUpdate = () => {
-        /* let prefetchImage = []
-        let image = this.props.content.image[0]
-        for (var item in image) {
-            prefetchImage[item] = image[item].replace(image['handle'], this.props.content.handle);
-        }
-
-        this.props.content.prefetchImage = prefetchImage */
-    }
-
-    fetchItem = (item) => {
+    fetchItem = (item, count) => {
 
         if (this.state.nextLink == undefined) {
-            this.setState({prefetchImage: true})
-            axios.get (Constant.api_url + `api/${item.handle}/${item.id}.json`)
-            this.state.nextLink = true;
+            const getPrefetchImage = async () => {
+                try {
+                    return await axios.get(Constant.api_url + `api/${item.handle}/${item.id}.json`)
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+
+            const countImage = async () => {
+                const prefetchesImage = getPrefetchImage()
+                    .then(response => {
+                        if (count == 1) {
+                            this.props.content.prefetchImage1 = response.data.image[0]
+                            this.setState({showPrefetchImage1: true})
+                        } else {
+                            this.props.content.prefetchImage2 = response.data.image[0]
+                            this.setState({showPrefetchImage2: true})
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+                
+            }
+            
+            countImage();
         }
     }
 
@@ -42,17 +58,17 @@ class blockDoubleItems extends React.Component {
            <div className="block-double-items">
                
                <div className="block-big-item__container">
-               {/*  {this.state.prefetchImage &&
+                {this.state.showPrefetchImage1 &&
                 <div className="hidden">
-                    <Image content={this.props.content.typeElement[0].prefetchImage} width="100%"/>
+                    <Image content={this.props.content.prefetchImage1} width="100%"/>
                 </div>
-                } */}
+                }
 {/* 
                 <Reveal effect="fadeInUp"> */}
                     <div className="block-big-item__image-container">
                             <LinkItem content={this.props.content.typeElement[0]}>
-                                <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[0]))}>
-                                        <BackgroundImage content={this.props.content.typeElement[0].image[0]} width="100%"/>
+                                <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[0], 1))}>
+                                    <BackgroundImage content={this.props.content.typeElement[0].image[0]} width="100%"/>
                                 </a>
                             </LinkItem>
                     </div>
@@ -68,25 +84,20 @@ class blockDoubleItems extends React.Component {
                         </h3>
                     </Reveal>
 
-                    {/* <Reveal effect="fadeInUpText" duration={1000}>
-                        <div className="general__text">
-                            {this.props.content.typeElement[0].subtitle}
-                        </div>
-                    </Reveal> */}
                 </div>
 
             </div>
             
             <div className="block-big-item__container">
-                {/* {this.state.prefetchImage &&
+                {this.state.showPrefetchImage2 &&
                 <div className="hidden">
-                    <Image content={this.props.content.typeElement[1].prefetchImage} width="100%"/>
+                    <Image content={this.props.content.prefetchImage2} width="100%"/>
                 </div>
-                } */}
+                }
 
                 <div className="block-big-item__image-container">
                     <LinkItem content={this.props.content.typeElement[1]}>
-                        <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[1]))}>
+                        <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[1]), 2)}>
                             <Reveal effect="fadeInUp">
                                 <Image content={this.props.content.typeElement[1].image[0]} width="100%"/>
                             </Reveal>
