@@ -168,16 +168,19 @@ export default class Projects extends Component {
 							<div className="header-3__video-container">
 
 								{this.props.project.image.length > 1 && 
-								<Carousel showStatus={false} emulateTouch={true} showThumbs={false} showIndicators={false} useKeyboardArrows autoPlay interval={3000} transitionTime={1050} infiniteLoop>
-									{this.props.project.image.map((name, index) => {
-										return (
-											<React.Fragment key={index} >
-												{/* <img /> */}
-												<Image content={name} width="100%" ></Image>
-											</React.Fragment>
-										)
-									})}
+								
+								<Carousel 
+									autoPlay={this.state.autoPlay}
+									infiniteLoop={true}
+									showStatus={false}
+									showThumbs={false}>
+									{this.props.project.image.map ((name, index) => (
+										<div key={index} className="header-1__carrousel">
+											<Image content={name} width="100%" ></Image>
+										</div>
+									))}
 								</Carousel>
+
 								}
 								{this.props.project.image.length == 1 &&
 									<Image content={this.props.project.image[0]} width="100%" ></Image>
