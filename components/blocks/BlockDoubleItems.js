@@ -48,15 +48,15 @@ class blockDoubleItems extends React.Component {
                 </div>
                 } */}
 
-                <div className="block-big-item__image-container">
-                    <Reveal effect="fadeInUp">
-                        <LinkItem content={this.props.content.typeElement[0]}>
-                            <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[0]))}>
-                                    <BackgroundImage content={this.props.content.typeElement[0].image[0]} width="100%"/>
-                            </a>
-                        </LinkItem>
-                    </Reveal>
-                </div>
+                <Reveal effect="fadeInUp">
+                    <div className="block-big-item__image-container">
+                            <LinkItem content={this.props.content.typeElement[0]}>
+                                <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[0]))}>
+                                        <BackgroundImage content={this.props.content.typeElement[0].image[0]} width="100%"/>
+                                </a>
+                            </LinkItem>
+                    </div>
+                </Reveal>
                 <div className="block-big-item__content-container">
                     <Reveal effect="fadeInUp">
                         <h3 className="general__link-title">
