@@ -107,7 +107,8 @@ export default class DirectorsItem extends Component {
 
 		return (
 
-			<div key="title" className="template-1" id={'template-1'}>
+			<div key="title" className="template-1" id={'template-1'} 
+						 style={{backgroundColor: this.props.content.color.color}}>
 				<div className="header-1__container directors">
 
 					{this.state.showVideo &&
@@ -121,8 +122,7 @@ export default class DirectorsItem extends Component {
 				{this.state.showContent &&
 				<React.Fragment>
 
-					<div className="header-3__container" id={"header3-content"}
-						 style={{backgroundColor: this.props.content.color.color}}>
+					<div className="header-3__container" id={"header3-content"}>
 						<div className="header-1__container-content">
 
 							<div className="links-navigation">
