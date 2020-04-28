@@ -17,9 +17,10 @@ class BlockFullItem extends React.Component {
         }
     }
     
-    componentDidUpdate = () => {
+    componentWillUpdate = () => {
         let prefetchImage = []
         let image = this.props.content.image[0]
+
         for (var item in image) {
             prefetchImage[item] = image[item].replace(image['handle'], this.props.content.handle);
         }
@@ -30,6 +31,7 @@ class BlockFullItem extends React.Component {
     fetchItem = (item) => {
 
         if (this.state.nextLink == undefined) {
+            console.log('a');
             const getPrefetchImage = async () => {
                 try {
                     return await axios.get(Constant.api_url + `api/${item.handle}/${item.id}.json`)

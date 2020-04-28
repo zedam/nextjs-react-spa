@@ -19,7 +19,6 @@ class BlockBigItem extends React.Component {
         let prefetchImage = []
         let image = this.props.content.image[0]
 
-        console.log(image);
         for (var item in image) {
             prefetchImage[item] = image[item].replace(image['handle'], this.props.content.handle);
         }
