@@ -1,9 +1,18 @@
+import React, { Component } from 'react'
 import Link from 'next/link'
 
-const LinkItem = (props) => (
-    <Link as={`/${props.content.handle}/${props.content.slug}/${props.content.id}`} href={`/${props.content.handle}?id=${props.content.id}`}>
-        {props.children}
-    </Link>
-)
+class LinkItem extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    
+    render () {
+        return (
+            <Link as={`/${this.props.content.handle}/${this.props.content.slug}/${this.props.content.id}`} href={`/${this.props.content.handle}?id=${this.props.content.id}`}>
+                {this.props.children}
+            </Link>
+        )
+    }
+}
 
 export default LinkItem;

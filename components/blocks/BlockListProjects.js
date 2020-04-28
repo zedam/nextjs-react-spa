@@ -116,7 +116,6 @@ class BlockListProjects extends React.Component {
         const childElements = this.state.items.map(function(comp, i){
             return (
                 <div key={i}  className={'block-list-projects__item ' + comp.position.value + ' ' + (comp.item.tags.map((tag, j) => ( tag.slug ))) }>
-                    {console.log(comp.item.id)}
                     <div className={'block-list-projects__anim'}  onMouseOver={() => ($this.fetchNext(comp.item.id))}>
                         <LinkItem content={comp.item} position={i}>
                             <a>

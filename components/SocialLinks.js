@@ -8,8 +8,7 @@ export default class SocialLinks extends Component {
 		super (props);    
 	}
 
-	render = () => {
-
+	render () {
 		return (
 
 			<div className="social-links__container">

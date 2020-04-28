@@ -11,9 +11,9 @@ export default class extends Component {
 
     render = () => {
         return (
-            <div>
+            <React.Fragment>
                 <Menu handle={this.props.handle}/>
-            </div>
+            </React.Fragment>
         )
     }
 }
