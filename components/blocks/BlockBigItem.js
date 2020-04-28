@@ -28,9 +28,9 @@ class BlockBigItem extends React.Component {
     fetchItem = (item) => {
 
         if (this.state.nextLink == undefined) {
-            this.setState({prefetchImage: true})
+            /* this.setState({prefetchImage: true})
             axios.get (Constant.api_url + `api/${item.handle}/${item.id}.json`)
-            this.state.nextLink = true;
+            this.state.nextLink = true; */
         }
     }
 
