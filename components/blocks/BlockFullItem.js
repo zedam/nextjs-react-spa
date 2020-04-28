@@ -31,7 +31,6 @@ class BlockFullItem extends React.Component {
     fetchItem = (item) => {
 
         if (this.state.nextLink == undefined) {
-            console.log('a');
             const getPrefetchImage = async () => {
                 try {
                     return await axios.get(Constant.api_url + `api/${item.handle}/${item.id}.json`)
