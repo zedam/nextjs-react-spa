@@ -11,7 +11,7 @@ class NextDirectorLink extends React.Component {
 		document.getElementById ('header3-content').style.opacity = 0;
 	}
 
-	componentDidUpdate = () => {
+	componentWillUpdate = () => {
 		setTimeout(() => {
 			document.getElementById ('header3-content').style.opacity = 1;
 		}, 500);

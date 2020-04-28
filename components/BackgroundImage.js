@@ -53,7 +53,7 @@ class Image extends React.Component {
     }
 };
 
-Image.componentDidUpdate = () => {
+Image.componentWillUpdate = () => {
     let isLoaded = false
 
 }

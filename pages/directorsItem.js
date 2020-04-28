@@ -37,7 +37,7 @@ export default class DirectorsItem extends Component {
 		document.getElementById ('template-1').style.opacity = 0;
 	}
 
-	componentDidUpdate = () => {
+	componentWillUpdate = () => {
 		document.getElementById ('template-1').style.opacity = 0;
 		this.state.showContent = false;
 
