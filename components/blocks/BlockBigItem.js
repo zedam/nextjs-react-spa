@@ -15,9 +15,11 @@ class BlockBigItem extends React.Component {
         }
     }
 
-    componentDidUpdate = () => {
+    componentWillUpdate = () => {
         let prefetchImage = []
         let image = this.props.content.image[0]
+
+        console.log(image);
         for (var item in image) {
             prefetchImage[item] = image[item].replace(image['handle'], this.props.content.handle);
         }
@@ -28,14 +30,31 @@ class BlockBigItem extends React.Component {
     fetchItem = (item) => {
 
         if (this.state.nextLink == undefined) {
-            /* this.setState({prefetchImage: true})
-            axios.get (Constant.api_url + `api/${item.handle}/${item.id}.json`)
-            this.state.nextLink = true; */
+            const getPrefetchImage = async () => {
+                try {
+                    return await axios.get(Constant.api_url + `api/${item.handle}/${item.id}.json`)
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+
+            const countImage = async () => {
+                const prefetchesImage = getPrefetchImage()
+                    .then(response => {
+                        this.setState({prefetchImage: true})
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+                
+            }
+            
+            countImage();
         }
     }
 
-    render() {
-        return (
+	render () {
+		return (
             <div className="block-big-item__container">
                 {this.state.prefetchImage &&
                 <div className="hidden">
