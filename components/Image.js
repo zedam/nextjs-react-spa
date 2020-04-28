@@ -66,7 +66,7 @@ Image.getInitialProps = () => {
         global.window = {}
     }
 };
-Image.componentDidUpdate = () => {
+Image.componentWillUpdate = () => {
     let isLoaded = false
 
 }
