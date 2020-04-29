@@ -11,6 +11,7 @@
         }
 
         .social-links__container {
+            align-items: baseline;
             color: $white;
             display: flex;
             flex-direction: column;

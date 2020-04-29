@@ -5,6 +5,7 @@
 	width: 100%;
 	
 	@include respond-to(tablet) {	
+		align-items: baseline;
 		display: flex;
 		flex-direction: column;
 		margin-top: 67px;
@@ -36,6 +37,7 @@
 	.projects & {
 
 		@include respond-to(desktop) {
+			align-items: baseline;
 			display: flex;
 			flex-direction: column;
 			left: -180px;
@@ -56,7 +58,7 @@
 .social-links__item {
 	@include animate-link-underline-left($black, false, 3px);
 	color: $black;
-	display: block;
+	display: inline-block;
 	position: relative;
 	margin-right: 30px;
 	margin-bottom: 5px;

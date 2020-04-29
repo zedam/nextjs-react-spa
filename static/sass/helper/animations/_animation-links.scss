@@ -43,7 +43,7 @@ $base-color-1: #000000;
         @if $inverse {
             width: 0;
         } @else {
-            width: 20px;
+            width: 100%;
         }
     }
     
@@ -57,7 +57,7 @@ $base-color-1: #000000;
         
         &:after {
             @if $inverse {
-                width: 20px;
+                width: 100%;
             } @else {
                 width: 0;
             }

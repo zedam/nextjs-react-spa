@@ -144,7 +144,8 @@ button {
 
 	&:after {
 		bottom: -3px;
-		left: 14px;
+		left: 12px;
+		width: calc(100% - 12px);
 	}
 }
 
@@ -160,6 +161,7 @@ button {
 	&:after {
 		bottom: -3px;
 		left: 0;
+		width: calc(100% - 12px);
 	}
 }
 
