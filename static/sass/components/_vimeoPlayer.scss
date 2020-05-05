@@ -11,8 +11,10 @@
 }
 
 .rh5v-DefaultPlayer_video {
-	width: 100%;
+	position: absolute;
 	height: 100%;
+	width: 100%;
+    z-index: 2;
 }
 
 .rh5v-DefaultPlayer_controls {

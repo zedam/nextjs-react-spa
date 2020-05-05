@@ -76,7 +76,7 @@ export default class DirectorsItem extends Component {
 			
 			<div className={'videoPlaying_' + this.state.isPlaying}>
 				<React.Fragment>
-					{this.props.content.vimeoId ?
+					{this.props.content.vimeoId || this.props.content.vimeoUrl &&
 					<React.Fragment>
 						{this.props.content.vimeoUrl ?
 							<div className="header-3__vimeo-container"
@@ -105,23 +105,29 @@ export default class DirectorsItem extends Component {
 						}
 
 					</React.Fragment>
-					:
+					}
 					<React.Fragment>
 						{this.props.content.image &&
-							<Carousel 
-								autoPlay={this.state.autoPlay}
-								infiniteLoop={true}
-								showStatus={false}
-								showThumbs={false}>
-								{this.props.content.image.map ((index, item) => (
-									<div key={item} className="header-1__carrousel">
-										<BackgroundImage content={index} width="100%" ></BackgroundImage>
-									</div>
-								))}
-							</Carousel>
+							<React.Fragment>
+								{this.props.content.image.length == 1 ?
+									<BackgroundImage content={this.props.content.image[0]} width="100%" ></BackgroundImage>
+								:
+								<Carousel 
+									autoPlay={this.state.autoPlay}
+									infiniteLoop={true}
+									showStatus={false}
+									showThumbs={false}>
+									{this.props.content.image.map ((index, item) => (
+										<div key={item} className="header-1__carrousel">
+											<BackgroundImage content={index} width="100%" ></BackgroundImage>
+										</div>
+									))}
+								</Carousel>
+								}
+							</React.Fragment>
 						}
 					</React.Fragment>
-					}
+					
 				</React.Fragment>
 				
 			</div>
