@@ -67,6 +67,9 @@ export default class DirectorsItem extends Component {
 		this.setState({ isPLaying: true })
 	}
 
+	mouseMove = () => {
+	}
+
 	renderVideo = () => {
 
 		return (
@@ -75,9 +78,35 @@ export default class DirectorsItem extends Component {
 				<React.Fragment>
 					{this.props.content.vimeoId ?
 					<React.Fragment>
+						{this.props.content.vimeoUrl ?
+							<div className="header-3__vimeo-container"
+								onMouseEnter={() => (this.mouseMove())}
+							>
+								<Video loop
+									controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
+									onCanPlayThrough={() => {
+										// Do stuff
+									}}
+									onPlay={() => {
+										this.setState({ isPlaying: true })
+
+										// Do stuff
+									}}>
+									<source src={this.props.content.vimeoUrl} type="video/mp4" />
+								</Video>
+							</div>
+							:
+							<React.Fragment>
+								{this.props.content.vimeoId &&
+									<Vimeo videoId={this.props.content.vimeoId} background={false}
+										autoplay={false} />
+								}<div></div>
+							</React.Fragment>
+						}{/* 
 						<Vimeo videoId={this.props.content.vimeoId} background={false}
 							autoplay={true} />
-							<div></div>
+							<div></div> */}
+
 					</React.Fragment>
 					:
 					<React.Fragment>
@@ -109,7 +138,7 @@ export default class DirectorsItem extends Component {
 
 			<div key="title" className="template-1" id={'template-1'} 
 						 style={{backgroundColor: this.props.content.color.color}}>
-				<div className="header-1__container directors">
+				<div className="header-3__video-container header-1__container directors">
 
 					{this.state.showVideo &&
 						<React.Fragment>
