@@ -101,7 +101,7 @@ export default class DirectorsItem extends Component {
 									<Vimeo videoId={this.props.content.vimeoId} background={false}
 										autoplay={false} />
 								}<div></div>
-							</div>
+							</React.Fragment>
 						}
 
 					</React.Fragment>
