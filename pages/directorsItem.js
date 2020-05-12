@@ -28,29 +28,29 @@ export default class DirectorsItem extends Component {
 			showContent: true,
 			showVideo: true,
 			isReady: false,
-			isPlaying: false
+			isPlaying: true
 		}
 
 	}
 
 	updateLink = () => {
-		document.getElementById ('template-1').style.opacity = 0;
+		//document.getElementById ('template-1').style.opacity = 0;
 	}
 
 	componentWillUpdate = () => {
-		document.getElementById ('template-1').style.opacity = 0;
+		//document.getElementById ('template-1').style.opacity = 0;
 		this.state.showContent = false;
 
 		this.state.showContent = true;
-		setTimeout(() => {
-			document.getElementById('template-1').classList.add('transition');
+		/* setTimeout(() => {
+			//document.getElementById('template-1').classList.add('transition');
 
 			document.getElementById ('template-1').style.opacity = 1;
 
 			setTimeout(() => {
 				document.getElementById ('template-1').classList.remove('transition');
 			}, 500)
-		}, 500)
+		}, 500) */
 	}
 
 	customFunctionCall = (id) => {
@@ -82,7 +82,7 @@ export default class DirectorsItem extends Component {
 							<div className="header-3__vimeo-container"
 								onMouseEnter={() => (this.mouseMove())}
 							>
-								<Video loop
+								<Video 
 									controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
 									onCanPlayThrough={() => {
 										// Do stuff
@@ -91,7 +91,9 @@ export default class DirectorsItem extends Component {
 										this.setState({ isPlaying: true })
 
 										// Do stuff
-									}}>
+									}} 
+									loop autoPlay playsInline 
+								>
 									<source src={this.props.content.vimeoUrl} type="video/mp4" />
 								</Video>
 							</div>

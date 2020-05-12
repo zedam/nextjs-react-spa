@@ -49,7 +49,11 @@ class Blocks extends React.Component {
 						}
 
 						{block.type == 'blockListProjects' &&
-						<BlockListProjects content={block}></BlockListProjects>
+						<React.Fragment>
+							{block.typeElement.lenght > 0 &&
+								<BlockListProjects content={block}></BlockListProjects>
+							}
+						</React.Fragment>
 						}
 
 						{block.type == 'blockTables' &&
