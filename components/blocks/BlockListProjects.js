@@ -23,19 +23,22 @@ class BlockListProjects extends React.Component {
         let tags = [];
         let tagSlug = [];
 
-        for (let i = 0; i < this.props.content.itemsProjects.length; i++) {
-            const tagsItem = this.props.content.itemsProjects[i].item.tags;
-            for (let j = 0; j < tagsItem.length; j++) {
-                if (tagSlug.indexOf(tagsItem[j].slug) == -1) {
-                    tagSlug.push(tagsItem[j].slug);
-                    tags.push(tagsItem[j]);
+        if (this.props.content.itemsProjects != undefined) {
+
+            for (let i = 0; i < this.props.content.itemsProjects.length; i++) {
+                const tagsItem = this.props.content.itemsProjects[i].item.tags;
+                for (let j = 0; j < tagsItem.length; j++) {
+                    if (tagSlug.indexOf(tagsItem[j].slug) == -1) {
+                        tagSlug.push(tagsItem[j].slug);
+                        tags.push(tagsItem[j]);
+                    }
                 }
             }
         }
 
         this.state = {
             showContent: true,
-            items: props.content.itemsProjects,
+            items: props.content.itemsProjects != undefined ? props.content.itemsProjects : [],
             activeTag: 'All',
             tags: tags
         };
@@ -72,28 +75,32 @@ class BlockListProjects extends React.Component {
             }, 300);
             
         } else {
-            for (let i = 0 ; i < this.props.content.itemsProjects.length; i ++) {
-                const item = this.props.content.itemsProjects[i];
-                const tags = item.item.tags;
+            if ( this.props.content.itemsProjects.length > 0) {
+                
+                for (let i = 0 ; i < this.props.content.itemsProjects.length; i ++) {
+                    const item = this.props.content.itemsProjects[i];
+                    const tags = item.item.tags;
 
-                for (let j = 0 ; j < tags.length; j ++) {
-                    if (tags[j].slug == slug) {
-                        items.push(item);
+                    for (let j = 0 ; j < tags.length; j ++) {
+                        if (tags[j].slug == slug) {
+                            items.push(item);
+                        }
                     }
                 }
+                
+                this.setState({
+                    activeTag: slug,
+                    showContent: false
+                });
+
+                setTimeout(() => {
+
+                this.setState({
+                    items: items
+                });
+                }, 300);
+
             }
-            
-            this.setState({
-                activeTag: slug,
-                showContent: false
-            });
-
-            setTimeout(() => {
-
-            this.setState({
-                items: items
-            });
-            }, 300);
         }
 
         setTimeout(() => {
@@ -113,8 +120,9 @@ class BlockListProjects extends React.Component {
 
         const $this = this;
 
-        const childElements = this.state.items.map(function(comp, i){
+        const childElements =  this.state.items.length > 0 ? this.state.items.map(function(comp, i){
             return (
+
                 <div key={i}  className={'block-list-projects__item ' + comp.position.value + ' ' + (comp.item.tags.map((tag, j) => ( tag.slug ))) }>
                     <div className={'block-list-projects__anim'}  onMouseOver={() => ($this.fetchNext(comp.item.id))}>
                         <LinkItem content={comp.item} position={i}>
@@ -139,7 +147,7 @@ class BlockListProjects extends React.Component {
                     </div>
                 </div>
              );
-         });
+         }) : [];
 
         return (
 
@@ -162,6 +170,7 @@ class BlockListProjects extends React.Component {
                 </div>
 
                 <div className={'masonry-content ' + (this.state.showContent ? 'show': 'hide')}>
+                    {this.state.items.length > 0 &&
                     <Masonry
                         className={''}
                         elementType={'div'} 
@@ -173,6 +182,7 @@ class BlockListProjects extends React.Component {
                         {childElements}
                         <div className="grid-sizer"></div>
                     </Masonry>
+                    }
                 </div>
             </React.Fragment>
         )
