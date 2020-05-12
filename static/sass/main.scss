@@ -137,7 +137,13 @@ body {
 body {
 	font-family: 'NewPanamSkyline-Regular', sans-serif;
 }
-
+.template-1__background {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
 .template-1, .template-2 {
 
 	@include transition();

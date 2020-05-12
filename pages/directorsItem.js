@@ -21,36 +21,53 @@ import Constant from "../components/Constant";
 export default class DirectorsItem extends Component {
 	constructor (props) {
 		super (props);    
+		this.props.content.showColor = true;
 
 		this.state = {
 			currentSlide: 0,
 			autoPlay: true,
 			showContent: true,
+			showBackgroundColor: true,
 			showVideo: true,
 			isReady: false,
-			isPlaying: true
+			isPlaying: true,
+			backgroundColor: this.props.content.color != '' ? this.props.content.color.color : '#ffffff'
 		}
 
 	}
 
 	updateLink = () => {
-		//document.getElementById ('template-1').style.opacity = 0;
+		this.props.content.blocks = [];
+		this.props.content.vimeoId = false;
+		this.props.content.vimeoUrl = false;
+		//this.props.content.color = '';
+		this.props.content.showColor = false;
+		this.state.showBackgroundColor = false;
+		this.state.showVideo = false;
+		document.getElementById ('template-1').style.opacity = 0;
+
+		setTimeout(() => {
+			this.setState({
+				showContent: true,
+				showVideo: true,
+				showBackgroundColor: true
+			});
+		},1000);
+	}
+
+	componentDidUpdate = () => {
 	}
 
 	componentWillUpdate = () => {
-		//document.getElementById ('template-1').style.opacity = 0;
-		this.state.showContent = false;
-
-		this.state.showContent = true;
-		/* setTimeout(() => {
-			//document.getElementById('template-1').classList.add('transition');
-
+		
+		setTimeout(() => {
 			document.getElementById ('template-1').style.opacity = 1;
 
 			setTimeout(() => {
 				document.getElementById ('template-1').classList.remove('transition');
 			}, 500)
-		}, 500) */
+
+		}, 500)
 	}
 
 	customFunctionCall = (id) => {
@@ -141,26 +158,24 @@ export default class DirectorsItem extends Component {
 
 		return (
 
-			<div key="title" className="template-1" id={'template-1'} 
-						 style={{backgroundColor: this.props.content.color.color}}>
+			<div key="title" className="template-1" id={'template-1'} >
+							 {this.state.showBackgroundColor == true &&
+							 <div className="template-1__background"
+							 style={{backgroundColor: this.props.content.color != '' ? this.props.content.color.color : '#FFFFFF' }}></div>
+							 }
 				<div className="header-3__video-container">
-
 					{this.state.showVideo &&
 						<React.Fragment>
 							{this.renderVideo()}
 						</React.Fragment>
 					}
-					
 				</div>
 
 				{this.state.showContent &&
 				<React.Fragment>
-
 					<div className="header-3__container" id={"header3-content"}>
 						<div className="header-1__container-content">
-
 							<div className="links-navigation">
-
 								<Link prefetch href="/directors">
 									<a className="back-to"
 									   onMouseOver={() => this.customFunctionCallOverview ()}>
@@ -217,8 +232,7 @@ export default class DirectorsItem extends Component {
 									this.props.content.vimeoLink ||
 									this.props.content.linkedinLink) &&
 								<Reveal effect="fadeInUp">
-									<SocialShare content={this.props.content}></SocialShare>{/* 
-									<SocialLinks content={this.props.content}></SocialLinks> */}
+									<SocialShare content={this.props.content}></SocialShare>
 								</Reveal>
 								}
 
