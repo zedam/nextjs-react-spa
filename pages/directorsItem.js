@@ -40,22 +40,20 @@ export default class DirectorsItem extends Component {
 		this.props.content.blocks = [];
 		this.props.content.vimeoId = false;
 		this.props.content.vimeoUrl = false;
-		//this.props.content.color = '';
 		this.props.content.showColor = false;
 		this.state.showBackgroundColor = false;
 		this.state.showVideo = false;
 		document.getElementById ('template-1').style.opacity = 0;
+	}
 
-		setTimeout(() => {
+	componentDidUpdate = (prevProps) => {
+		if (this.props.content.id !== prevProps.content.id) {
 			this.setState({
 				showContent: true,
 				showVideo: true,
 				showBackgroundColor: true
 			});
-		},1000);
-	}
-
-	componentDidUpdate = () => {
+		} 
 	}
 
 	componentWillUpdate = () => {

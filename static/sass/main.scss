@@ -146,7 +146,7 @@ body {
 }
 .template-1, .template-2 {
 
-	@include transition();
+	transition: all 0.1s;
 	&.transition {
 	}
 
