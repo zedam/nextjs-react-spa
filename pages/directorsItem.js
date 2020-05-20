@@ -177,7 +177,7 @@ export default class DirectorsItem extends Component {
 								<Link prefetch href="/directors">
 									<a className="back-to"
 									   onMouseOver={() => this.customFunctionCallOverview ()}>
-										&lt; Back to Directors
+										&lt; Talent
 									</a>
 								</Link>
 

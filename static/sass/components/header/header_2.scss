@@ -84,10 +84,10 @@
 		.tag {
 			display: inline-block;
 			margin-top: 10px;
-			
+		/* 	
 			@include respond-to(tablet) {
-				margin-top: 67px;
-			}
+				margin-top: 15px;
+			} */
 		}
 
 		.tag-item {
@@ -173,8 +173,7 @@
 	&.paddingExtra {
 
 		@include respond-to(desktop) {
-			padding-left: 20%;
-			margin-top: calc(100vw / 12);
+			margin-top: 67px;
 			max-width: calc(550px + 20%);
 		}
 
