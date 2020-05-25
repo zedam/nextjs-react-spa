@@ -87,7 +87,7 @@ export default class Homepage extends Component {
 										   onCanPlayThrough={() => {
 											   // Do stuff
 										   }}>
-										<source src="static/videos/homepage/DEC18_WEB_VIDEO.mp4" type="video/mp4" />
+										<source src="static/videos/homepage/WEB_VIDEO_MAY_2020.mp4" type="video/mp4" />
 									</Video>
 								</MediaQuery>
 
