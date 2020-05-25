@@ -33,10 +33,12 @@ export default class DirectorsItem extends Component {
 			isPlaying: true,
 			backgroundColor: this.props.content.color != '' ? this.props.content.color.color : '#ffffff'
 		}
-
 	}
 
 	updateLink = () => {
+		this.setState({
+			showContent: false,
+		});
 		this.props.content.blocks = [];
 		this.props.content.vimeoId = false;
 		this.props.content.vimeoUrl = false;
@@ -57,7 +59,6 @@ export default class DirectorsItem extends Component {
 	}
 
 	componentWillUpdate = () => {
-		
 		setTimeout(() => {
 			document.getElementById ('template-1').style.opacity = 1;
 
