@@ -230,7 +230,9 @@ export default class DirectorsItem extends Component {
 									this.props.content.vimeoLink ||
 									this.props.content.linkedinLink) &&
 								<Reveal effect="fadeInUp">
-									<SocialShare content={this.props.content}></SocialShare>
+
+									<SocialLinks content={this.props.content} entry={this.props.content.followText} />
+									{/* <SocialShare content={this.props.content}></SocialShare> */}
 								</Reveal>
 								}
 
@@ -245,9 +247,9 @@ export default class DirectorsItem extends Component {
 					}
 
 
-					<div>
+					{/* <div>
 						<SocialLinks content={this.props.content} entry={this.props.content.followText} />
-					</div>
+					</div> */}
 				</React.Fragment>
 				}
 			</div>

@@ -29,28 +29,28 @@
 
 	@include respond-to(tablet) {
 		&.portraitSmall {
-			padding-bottom: 33.33%;
-			width: 33.33%;
+			padding-bottom: 33.3333%;
+			width: 33.3333%;
 		}
 
 		&.portraitBig {
-			padding-bottom: 66.66%;
-			width: 33.33%;
+			padding-bottom: 66.6666%;
+			width: 33.3333%;
 		}
 
 		&.landscapeSmall {
-			padding-bottom: 16.66%;
-			width: 33.33%;
+			padding-bottom: 16.6666%;
+			width: 33.3333%;
 		}
 
 		&.landscapeBig {
-			padding-bottom: 33.34%;
-			width: 66.66%;
+			padding-bottom: 33.3333%;
+			width: 66.6666%;
 		}
 
 		&.square {
-			padding-bottom: 25%;
-			width: 25%;
+			padding-bottom: 33.3333%;
+			width: 33.3333%;
 		}
 	}
 

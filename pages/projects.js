@@ -228,7 +228,7 @@ export default class Projects extends Component {
 															<a className="next-to"
 																onMouseOver={() => this.customFunctionCall(this.props.project.nextEntry.id)}>
 																{this.props.project.nextEntry.title} >
-													</a>
+															</a>
 														</Link>
 													</div>
 												}
@@ -252,8 +252,14 @@ export default class Projects extends Component {
 
 												<SocialShare content={this.props.project} />
 
+												{/* <div>
+											<SocialLinks content={this.props.project} entry={this.props.project.followText} />
+										</div> */}
 											</div>
 										</div>
+
+
+
 
 									</React.Fragment>
 								</Reveal>
@@ -264,10 +270,6 @@ export default class Projects extends Component {
 									<Blocks content={this.props.project.blocks} />
 								</div>
 							}
-
-							<div>
-								<SocialLinks content={this.props.project} entry={this.props.project.followText} />
-							</div>
 
 						</div>
 					}

@@ -130,12 +130,13 @@
     position: fixed;
     right: 20px;
 	transition: all 0.2s;
-    top: 20px;
+    top: 19px;
     width: 50px;
 	z-index: 1101;
-
+	
 	@include respond-to(tablet) {
 		height: 71px;
+		top: 20px;
 		width: 70px;
 	}
 	
@@ -170,9 +171,9 @@
 
 .bm-burger-button {
 	height: 23px;
-    left: 16px;
+    left: 20px;
     position: fixed;
-    top: 16px;
+    top: 20px;
 	width: 30px;
 
 	span {

@@ -57,13 +57,20 @@
 	z-index: 1;
 
 	&.contact {
+		padding-bottom: 30px;
+		
 		@include respond-to(tablet) {
 			display: flex;
 			justify-content: space-between;
-
-			+.contact {
+		}
+		
+		+.contact {
+			padding-bottom: 50px;
+			padding-top: 0px;
+	
+			@include respond-to(tablet) {	
 				padding-top: 67px;
-
+				
 				.social-links__container, 
 				.contact__description {
 					margin-top: 0;
@@ -75,7 +82,7 @@
 
 	.tags-container & {
 		padding: 0 20px 30px;
-		margin-top: 67px;
+		margin-top: 0px;
 
 		@include respond-to(tablet) {
 			padding: 0 67px 50px;
@@ -83,11 +90,7 @@
 
 		.tag {
 			display: inline-block;
-			margin-top: 10px;
-		/* 	
-			@include respond-to(tablet) {
-				margin-top: 15px;
-			} */
+			//margin-top: 10px;
 		}
 
 		.tag-item {
@@ -153,7 +156,7 @@
 	.studio & {
 		@include title_1();
 		@include respond-to (tablet) {
-			padding-left: 50%;
+			//padding-left: 50%;
 		}
 	}
 }
@@ -166,7 +169,7 @@
 
 	.studio & {
 		@include respond-to (tablet) {
-			padding-left: 50%;
+			width: 50%;
 		}
 	}
 

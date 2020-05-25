@@ -179,8 +179,9 @@
 
 	&:after {
 		@include transition(all, 1.6s, 0s, $animationEffect);
-		background: rgba(255,255,255,.5);
-		background: rgba(0,0,0,.36);
+		//background: rgba(255,255,255,.5);
+		background: rgba(0,0,0,.26);
+		@include gradient_hover();
 		bottom: 0;
 		content: '';
 		left: 0;

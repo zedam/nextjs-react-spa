@@ -17,22 +17,7 @@
 	@include respond-to(desktop) {
 		margin-top: 70px;
 	}
-}
 
-.social-links__container--wrapper {
-	display: table;
-	margin-top: 30px;
-	width: 100%;
-	
-	@include respond-to(tablet) {	
-		margin-top: 67px;
-		max-width: 1600px;
-		margin: auto;
-	}
-	
-	@include respond-to(desktop) {
-		margin-top: 70px;
-	}
 
 	.projects & {
 
@@ -48,11 +33,40 @@
 	}
 }
 
+.social-links__container--wrapper {
+	display: table;
+	margin-top: 30px;
+	width: 100%;
+	
+	@include respond-to(tablet) {	
+		margin: auto;
+		margin-top: 30px;
+		max-width: 1600px;
+	}
+
+	.footer__cell & {
+		display: flex;
+		align-items: baseline;
+		flex-direction: column;
+	}
+
+	.contact & {
+
+		@include respond-to(tablet) {
+			align-items: baseline;	
+			display: flex;
+			flex-direction: column;
+			margin-top: -380px;
+		}
+	}
+
+}
+
 .social-links__title {
 	@include text_1();
 	color: $black;
 	margin-right: 30px;
-	margin-bottom: calc(100vw / 24);
+	margin-bottom: 30px;
 }
 
 .social-links__item {

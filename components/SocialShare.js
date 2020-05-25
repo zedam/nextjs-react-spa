@@ -8,7 +8,7 @@ export default class SocialShare extends Component {
 
 	render () {
 		return (
-			<div className="social-links__container--wrapper">
+			<div className="social-links__container">
 				<div className="social-links__title">
 					Share:
 				</div>

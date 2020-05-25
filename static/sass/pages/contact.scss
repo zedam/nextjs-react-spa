@@ -8,6 +8,11 @@
 		width: 50%;
 	}
 
+	h2 {
+		@include title_3 ();
+		margin-bottom: 10px;
+	}
+
 	a {
 		@include animate-link-underline-left($black, false, 3px);
 		color: $black;
@@ -18,6 +23,13 @@
 
 	> .react-reveal {
 		display: block;
+
+		+.react-reveal {
+			margin-top: 20px;
+			@include respond-to(desktop) {
+				margin-top: 0;
+			}
+		}
 
 		@include respond-to(desktop) {
 		}

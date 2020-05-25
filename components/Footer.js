@@ -16,7 +16,9 @@ class Footer extends React.Component {
                         <div className="footer__cell">
                             <div className="footer__logo"></div>
                             <SocialLinks content={this.props.content.data[0].social}></SocialLinks>
+                            <div className="footer__copyright">
                             © 2020 BRUT
+                            </div>
                         </div>
 
                         <div className="footer__cell footer__content">

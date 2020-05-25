@@ -69,22 +69,35 @@ export default class Contact extends Component {
 
 								{this.props.contact.data[0].headline &&
 								<Reveal effect="fadeInUp">
-									<h1 className="header-2__container-content-title"
-										dangerouslySetInnerHTML={{__html: this.props.contact.data[0].headline}}></h1>
+									<div className="header-2__container-content-title">
+										<h1 className=""
+											dangerouslySetInnerHTML={{__html: this.props.contact.data[0].headline}}></h1>
+									</div>
+								
 								</Reveal>
 								}
 
-								{this.props.contact.data[0].description &&
 								<div className="contact__description" >
-
-									<Reveal effect="fadeInUpText" duration={1000}>
-										<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].description}}></div>
-									</Reveal>
+									{this.props.contact.data[0].description &&
+										<Reveal effect="fadeInUpText" duration={1000}>
+											<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].description}}></div>
+										</Reveal>
+									}
+									{this.props.contact.data[0].descriptionExtra &&
+										<Reveal effect="fadeInUpText" duration={1000}>
+											<div dangerouslySetInnerHTML={{__html: this.props.contact.data[0].descriptionExtra}}></div>
+										</Reveal>
+									}
 								</div>
-								}
 							</div>
 
 							<div className="header-2__container-content contact">
+							<Reveal effect="fadeInUp">
+									<SocialLinks content={this.props.footer.data[0].social}></SocialLinks>
+								</Reveal>
+								</div>
+
+							{/* <div className="header-2__container-content contact">
 								<Reveal effect="fadeInUp">
 									<SocialLinks content={this.props.footer.data[0].social}></SocialLinks>
 								</Reveal>
@@ -96,7 +109,7 @@ export default class Contact extends Component {
 									</Reveal>
 								</div>
 								}
-							</div>
+							</div> */}
 						</div>
 
 					}
