@@ -67,19 +67,25 @@ export default class Homepage extends Component {
 
 							{this.props.homepage.data[0].image &&
 							<BackgroundImage content={this.props.homepage.data[0].image[0]} width="100%" ></BackgroundImage>
-							}
+						}
 
 							<div className="header-1__video-container">
+								{(this.props.homepage.data[0].videoMobileMp4 || this.props.homepage.data[0].videoMobileWebm) &&
 								<MediaQuery query="(max-width: 767px)" >
 									<Video autoPlay loop muted playsInline
 										controls={[]}
-										poster="http://sourceposter.jpg"
 										onCanPlayThrough={() => {
-										   // Do stuff
-   									}}>
-										<source src="static/videos/homepage/DEC18_WEB_VIDEO-Mobile.mp4" type="video/mp4" />
+											// Do stuff
+										}}>
+										{this.props.homepage.data[0].videoMobileMp4 &&
+										<source src={this.props.homepage.data[0].videoMp4.url} type="video/mp4" />
+										}
+										{this.props.homepage.data[0].videoMobileWebm &&
+										<source src={this.props.homepage.data[0].videoWebm.url} type="video/mp4" />
+										}
 									</Video>
 								</MediaQuery>
+								}
 								<MediaQuery query="(min-width: 768px)" >
 									<Video autoPlay loop muted playsInline
 										   controls={[]}
@@ -87,7 +93,13 @@ export default class Homepage extends Component {
 										   onCanPlayThrough={() => {
 											   // Do stuff
 										   }}>
-										<source src="static/videos/homepage/WEB_VIDEO_MAY_2020.mp4" type="video/mp4" />
+
+										{this.props.homepage.data[0].videoMp4 &&
+										<source src={this.props.homepage.data[0].videoMp4.url} type="video/mp4" />
+										}
+										{this.props.homepage.data[0].videoWebm &&
+										<source src={this.props.homepage.data[0].videoWebm.url} type="video/webm" />
+										}
 									</Video>
 								</MediaQuery>
 
