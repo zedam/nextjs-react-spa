@@ -133,6 +133,15 @@ div.carousel .control-dots .dot {
 .header-1__container-content-wrapper {
 	@include respond-to(desktop) {
 		padding-left: 50%;
+		
+		&.projects { 
+			min-height: 500px;
+		}
+	}
+	
+
+	&.projects { 
+		min-height: 500px;
 	}
 }
 
