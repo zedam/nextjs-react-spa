@@ -70,7 +70,7 @@ export default class Homepage extends Component {
 						}
 
 							<div className="header-1__video-container">
-								{(this.props.homepage.data[0].videoMobileMp4 || this.props.homepage.data[0].videoMobileWebm) &&
+								{(this.props.homepage.data[0].videoMobileMp4 || this.props.homepage.data[0].videoMobileWebm) && (
 								<MediaQuery query="(max-width: 767px)" >
 									<Video autoPlay loop muted playsInline
 										controls={[]}
@@ -78,14 +78,16 @@ export default class Homepage extends Component {
 											// Do stuff
 										}}>
 										{this.props.homepage.data[0].videoMobileMp4 &&
-										<source src={this.props.homepage.data[0].videoMp4.url} type="video/mp4" />
+										<source src={this.props.homepage.data[0].videoMobileMp4.url} type="video/mp4" />
 										}
 										{this.props.homepage.data[0].videoMobileWebm &&
-										<source src={this.props.homepage.data[0].videoWebm.url} type="video/mp4" />
+										<source src={this.props.homepage.data[0].videoMobileWebm.url} type="video/mp4" />
 										}
+										
 									</Video>
 								</MediaQuery>
-								}
+								)}
+								{(this.props.homepage.data[0].videoMp4 || this.props.homepage.data[0].videoWebm) && (
 								<MediaQuery query="(min-width: 768px)" >
 									<Video autoPlay loop muted playsInline
 										   controls={[]}
@@ -102,7 +104,7 @@ export default class Homepage extends Component {
 										}
 									</Video>
 								</MediaQuery>
-
+								)}
 							</div>
 
 						</div>
