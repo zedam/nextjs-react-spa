@@ -4,10 +4,12 @@
 	z-index: 1;
 
 	@include respond-to(tablet) {
-		padding: 100px calc(100vh / 12) 50px;
+		padding: 128px 67px 50px;
 	}
+
 	@include respond-to(desktop) {
-		padding: 100px calc(100vh / 9) 50px;
+		margin: auto;
+		max-width: 1600px;
 	}
 
 	.react-reveal {
