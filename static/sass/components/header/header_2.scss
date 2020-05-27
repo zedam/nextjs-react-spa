@@ -177,7 +177,7 @@
 	&.paddingExtra {
 
 		@include respond-to(desktop) {
-			margin-top: 67px;
+			//margin-top: 67px;
 			max-width: calc(550px + 20%);
 		}
 
