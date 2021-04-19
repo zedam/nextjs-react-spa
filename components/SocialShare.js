@@ -13,9 +13,9 @@ export default class SocialShare extends Component {
 					Share:
 				</div>
 				
-				<Link href={'https://www.instagram.com/?url=http://api.brut.works/images/projects/_blockOneItem_big_desktop_extra_big/frame_Brut.jpg' + window.location.href}>
+				{/* <Link href={'https://www.instagram.com/?url=http://api.brut.works/images/projects/_blockOneItem_big_desktop_extra_big/frame_Brut.jpg' + window.location.href}>
 					<a className="social-links__item" target="_blank">Ins.</a>
-				</Link>
+				</Link> */}
 				
 				<Link href={'https://www.facebook.com/sharer/sharer.php?u=' + window.location.href}>
 					<a className="social-links__item" target="_blank">Fb.</a>

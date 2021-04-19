@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable max-len */
 /* eslint-disable no-tabs */
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import fetch from "isomorphic-unfetch";
 import { spring } from "react-motion";
 import Transition from "react-motion-ui-pack";
@@ -43,6 +43,10 @@ export default class Projects extends Component {
 	customFunctionCallOverview = (id) => {
 		fetch(`${Constant.api_url}api/` + `directors/${id}.json`);
 	};
+
+	updateVideo = () => {
+		alert('a');
+	}
 
 	customFunctionCall = (id) => {
 		changedContent = true;
@@ -91,7 +95,7 @@ export default class Projects extends Component {
 	 * Transition off trigered by Link component
 	 */
 	onPlaying = () => {
-		this.setState({ isPLaying: true });
+		this.setState({ isPlaying: true });
 	};
 
 	mouseMove = () => {};
@@ -114,47 +118,52 @@ export default class Projects extends Component {
 	renderVideo = () => {
 		return (
 			<div className={`videoPlaying_${this.state.isPlaying}`}>
-				{this.props.project.vimeoUrl ? (
-					<div
-						className="header-3__vimeo-container"
-						onMouseEnter={() => this.mouseMove()}
-					>
-						<Video
-							loop
-							controls={[
-								"PlayPause",
-								"Seek",
-								"Time",
-								"Volume",
-								"Fullscreen",
-							]}
-							onCanPlayThrough={() => {
-								// Do stuff
-							}}
-							onPlay={() => {
-								this.setState({ isPlaying: true });
 
-								// Do stuff
-							}}
-						>
-							<source
-								src={this.props.project.vimeoUrl}
-								type="video/mp4"
-							/>
-							{/* <track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
-						</Video>
-					</div>
-				) : (
-					<div>
-						{this.props.project.vimeoId && (
-							<Vimeo
-								videoId={this.props.project.vimeoId}
-								background={false}
-								autoplay={false}
-							/>
+				{this.state.showContent && (
+					<Fragment>
+						{this.props.project.vimeoUrl ? (
+							<div
+								className="header-3__vimeo-container"
+								onMouseEnter={() => this.mouseMove()}
+							>
+								<Video
+									loop
+									controls={[
+										"PlayPause",
+										"Seek",
+										"Time",
+										"Volume",
+										"Fullscreen",
+									]}
+									onCanPlayThrough={() => {
+										// Do stuff
+									}}
+									onPlay={() => {
+										this.setState({ isPlaying: true });
+
+										// Do stuff
+									}}
+								>
+									<source
+										src={this.props.project.vimeoUrl}
+										type="video/mp4"
+									/>
+									{/* <track label="English" kind="subtitles" srcLang="en" src="http://source.vtt" default />*/}
+								</Video>
+							</div>
+						) : (
+							<div>
+								{this.props.project.vimeoId && (
+									<Vimeo
+										videoId={this.props.project.vimeoId}
+										background={false}
+										autoplay={false}
+									/>
+								)}
+								<div />
+							</div>
 						)}
-						<div />
-					</div>
+					</Fragment>
 				)}
 			</div>
 		);
@@ -298,6 +307,7 @@ export default class Projects extends Component {
 																prefetch
 																as={`/projects/${this.props.project.nextEntry.slug}/${this.props.project.nextEntry.id}`}
 																href={`/projects?id=${this.props.project.nextEntry.id}`}
+
 															>
 																<a
 																	className="next-to"
