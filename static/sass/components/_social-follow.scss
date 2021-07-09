@@ -87,7 +87,7 @@
 }
 
 .social-follow__item {
-	@include animate-link-underline-left($black, false, 1px);
+	@include animate-link-underline-left($black, true, 3px);
 	color: $black;
 	display: inline-block;
 	position: relative;

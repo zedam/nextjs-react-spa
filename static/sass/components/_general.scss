@@ -134,7 +134,7 @@ button {
 }
 
 .back-to {
-	@include animate-link-underline-left($black);
+	@include animate-link-underline-left($black, true, 3px);
 	-webkit-appearance: none;
 	color: $black;
 	float: left;
@@ -142,10 +142,16 @@ button {
 	margin-bottom: 30px;
 	text-decoration: none;
 
+	&:hover {
+		&:after {
+			width: calc(100% - 24px);
+		}
+	}
+
 	&:after {
 		bottom: -3px;
-		left: 12px;
-		width: calc(100% - 12px);
+		left: 24px;
+		/*width: calc(100% - 12px);*/
 	}
 }
 
