@@ -22,10 +22,16 @@
         .social-links__item {
             color: $white;
             margin: 0;
+			transition: all 0.3s;
             
             &:after {
                 background-color: $white;
             }
+
+			&:hover {
+				opacity: .6;
+				transform: scale(1.05);
+			}
         }
         
         .social-links__title {
@@ -91,7 +97,7 @@
         }
 
         a {
-            //@include animate-link-underline-left($white, false, 3px);
+            @include animate-link-underline-left($white, true, 3px);
             color: $white;
             display: inline-block;
             text-decoration: none;
