@@ -69,7 +69,7 @@ export default class Contact extends Component {
 
 								{this.props.contact.data[0].headline &&
 								<Reveal effect="fadeInUp">
-									<div className="header-2__container-content-title">
+									<div className="contact__description">
 										<h1 className=""
 											dangerouslySetInnerHTML={{__html: this.props.contact.data[0].headline}}></h1>
 									</div>
@@ -92,10 +92,10 @@ export default class Contact extends Component {
 							</div>
 
 							<div className="header-2__container-content contact">
-							<Reveal effect="fadeInUp">
-									<SocialLinks content={this.props.footer.data[0].social}></SocialLinks>
+								<Reveal effect="fadeInUp">
+									<SocialLinks content={this.props.footer.data[0].social} color={'#000000'}></SocialLinks>
 								</Reveal>
-								</div>
+							</div>
 
 							{/* <div className="header-2__container-content contact">
 								<Reveal effect="fadeInUp">

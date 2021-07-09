@@ -14,7 +14,7 @@
 	}
 
 	a {
-		@include animate-link-underline-left($black, false, 3px);
+		@include animate-link-underline-left($black, false, 1px);
 		color: $black;
 		display: inline-block;
 		margin-bottom: 5px;

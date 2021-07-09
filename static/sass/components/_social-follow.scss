@@ -1,10 +1,10 @@
-.social-links__container {
+.social-follow__container {
 	display: table;
 	margin-top: 30px;
 	padding: 0 20px;
 	width: 100%;
-	
-	@include respond-to(tablet) {	
+
+	@include respond-to(tablet) {
 		align-items: baseline;
 		display: flex;
 		flex-direction: column;
@@ -13,7 +13,7 @@
 		padding: 0 67px;
 		margin: auto;
 	}
-	
+
 	@include respond-to(desktop) {
 		margin-top: 70px;
 	}
@@ -32,7 +32,7 @@
 	}
 }
 
-.social-links__container--layout {
+.social-follow__container--layout {
 	display: flex;
 	width: 120px;
 	justify-content: space-between;
@@ -42,14 +42,14 @@
 	}
 }
 
-.social-links__container--wrapper {
+.social-follow__container--wrapper {
 	display: table;
 	margin-top: 30px;
 	width: 100%;
 
 	@include respond-to(tablet) {
 		margin: auto;
-		margin-top: 30px;
+		margin-top: 100px;
 		max-width: 1600px;
 	}
 
@@ -61,7 +61,7 @@
 
 	.contact & {
 		@include respond-to(tablet) {
-			align-items: baseline;	
+			align-items: baseline;
 			display: flex;
 			flex-direction: column;
 			margin-top: -240px;
@@ -70,15 +70,15 @@
 
 }
 
-.social-links__copyright {
+.social-follow__copyright {
 	font-size: 24px;
 }
-.social-links__title {
+.social-follow__title {
 	@include text_1();
-	font-size: 36px;
+	font-size: 28px;
 	color: $black;
 	margin-right: 30px;
-	margin-bottom: 6px;
+	margin-bottom: 26px;
 
 	.contact & {
 		@include title_3();
@@ -86,8 +86,8 @@
 	}
 }
 
-.social-links__item {
-	//@include animate-link-underline-left($black, false, 3px);
+.social-follow__item {
+	@include animate-link-underline-left($black, false, 1px);
 	color: $black;
 	display: inline-block;
 	position: relative;

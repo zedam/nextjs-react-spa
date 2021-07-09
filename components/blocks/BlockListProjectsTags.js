@@ -15,7 +15,7 @@ const masonryOptions = {
 
 const imagesLoadedOptions = { background: '.my-bg-image-el' }
 
-class BlockListProjects extends React.Component {
+class BlockListProjectsTags extends React.Component {
 
     constructor(props) {
         super(props)
@@ -120,46 +120,12 @@ class BlockListProjects extends React.Component {
 
         const $this = this;
 
-        const childElements =  this.state.items.length > 0 ? this.state.items.map(function(comp, i){
-            return (
-
-                <div key={i}  className={'block-list-projects__item ' + comp.position.value + ' ' + (comp.item.tags.map((tag, j) => ( tag.slug ))) }>
-                    <div className={'block-list-projects__anim'}  onMouseOver={() => ($this.fetchNext(comp.item.id))}>
-                        <LinkItem content={comp.item} position={i}>
-                            <a>
-                                <div className="block-list-projects__info">
-                                    <div className="block-list-projects__table">
-                                        <div className="block-list-projects__cell">
-                                            <h3 className="block-list-projects__title">
-                                                <span
-                                                    dangerouslySetInnerHTML={{__html: comp.item.headline}}>
-                                                </span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {comp.item.image[0] &&
-                                <Image content={comp.item.image[0]} class="block-list-projects__image"></Image>
-                                }
-                            </a>
-                        </LinkItem>
-                    </div>
-                </div>
-             );
-         }) : [];
-
         return (
 
             <React.Fragment>
                 <div className="header-2__container studio tags-container">
                     <div className="header-2__container-content">
-						{this.state.tags.length > 0 &&
-						<div className="tag__title">
-							Filters
-						</div>
-						}
-						{this.state.tags.map((tag, i) => (
+                        {this.state.tags.map((tag, i) => (
                             <div key={i} className="tag">
                                 <div  className={'tag-item ' + (this.state.activeTag == tag.slug ? 'active' : '')} onClick={() => (this.tagClick(tag.slug)) } >
                                     <span className="normal">
@@ -174,24 +140,9 @@ class BlockListProjects extends React.Component {
                     </div>
                 </div>
 
-                <div className={'masonry-content ' + (this.state.showContent ? 'show': 'hide')}>
-                    {this.state.items.length > 0 &&
-                    <Masonry
-                        className={''}
-                        elementType={'div'} 
-                        options={masonryOptions} 
-                        disableImagesLoaded={false} 
-                        updateOnEachImageLoad={false} 
-                        imagesLoadedOptions={imagesLoadedOptions} 
-                    >
-                        {childElements}
-                        <div className="grid-sizer"></div>
-                    </Masonry>
-                    }
-                </div>
             </React.Fragment>
         )
     }
 }
 
-export default BlockListProjects
+export default BlockListProjectsTags

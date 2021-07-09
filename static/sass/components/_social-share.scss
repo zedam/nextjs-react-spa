@@ -1,7 +1,7 @@
-.social-links__container {
+.social-share__container {
 	display: table;
-	margin-top: 30px;
-	padding: 0 20px;
+	margin-top: 40px;
+	padding: 0;
 	width: 100%;
 	
 	@include respond-to(tablet) {	
@@ -10,7 +10,7 @@
 		flex-direction: column;
 		margin-top: 67px;
 		max-width: 1600px;
-		padding: 0 67px;
+		padding: 0;
 		margin: auto;
 	}
 	
@@ -24,7 +24,7 @@
 			align-items: baseline;
 			display: flex;
 			flex-direction: column;
-			left: -180px;
+			left: -230px;
 			margin-top: 0;
 			position: absolute;
 			top: 0;
@@ -32,7 +32,7 @@
 	}
 }
 
-.social-links__container--layout {
+.social-share__container--layout {
 	display: flex;
 	width: 120px;
 	justify-content: space-between;
@@ -42,7 +42,7 @@
 	}
 }
 
-.social-links__container--wrapper {
+.social-share__container--wrapper {
 	display: table;
 	margin-top: 30px;
 	width: 100%;
@@ -70,15 +70,15 @@
 
 }
 
-.social-links__copyright {
+.social-share__copyright {
 	font-size: 24px;
 }
-.social-links__title {
+.social-share__title {
 	@include text_1();
-	font-size: 36px;
+	font-size: 28px;
 	color: $black;
 	margin-right: 30px;
-	margin-bottom: 6px;
+	margin-bottom: 26px;
 
 	.contact & {
 		@include title_3();
@@ -86,7 +86,7 @@
 	}
 }
 
-.social-links__item {
+.social-share__item {
 	//@include animate-link-underline-left($black, false, 3px);
 	color: $black;
 	display: inline-block;

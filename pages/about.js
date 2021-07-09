@@ -62,8 +62,7 @@ export default class About extends Component {
 								<Image content={this.props.about.data[0].image} width="100%" ></Image>
 								}
 
-								<div className="header-2__container-content">
-
+								<div className="header-2__container-content about">
 
 									{this.props.about.data[0].headline &&
 									<Reveal effect="fadeInUp">

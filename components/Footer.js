@@ -15,18 +15,25 @@ class Footer extends React.Component {
                     <div className="footer__row">
                         <div className="footer__cell">
                             <div className="footer__logo"></div>
-                            <SocialLinks content={this.props.content.data[0].social}></SocialLinks>
-                            <div className="footer__copyright">
+                            <SocialLinks content={this.props.content.data[0].social} color={'#FFF'}></SocialLinks>
+                            {/*<div className="footer__copyright">
                             {this.props.content.data[0].footerCopyright}
-                            </div>
+                            </div>*/}
                         </div>
+
+						{this.props.content.data[0].footerText1 &&
+						<div className="footer__cell footer__content">
+							<div className="footer__text fade-up"
+								 dangerouslySetInnerHTML={{ __html: this.props.content.data[0].footerText1 }}>
+							</div>
+						</div>
+						}
 
                         <div className="footer__cell footer__content">
                             {this.props.content.data[0].footerText &&
-                            <div className="footer__text fade-up"
-                                dangerouslySetInnerHTML={{ __html: this.props.content.data[0].footerText }}>
-                                    
-                                </div>
+								<div className="footer__text fade-up"
+									dangerouslySetInnerHTML={{ __html: this.props.content.data[0].footerText }}>
+								</div>
                             }
                         </div>
                     </div>

@@ -8,8 +8,8 @@ export default class SocialShare extends Component {
 
 	render () {
 		return (
-			<div className="social-links__container">
-				<div className="social-links__title">
+			<div className="social-share__container">
+				<div className="social-share__title">
 					Share:
 				</div>
 				
@@ -18,7 +18,7 @@ export default class SocialShare extends Component {
 				</Link> */}
 				
 				<Link href={'https://www.facebook.com/sharer/sharer.php?u=' + window.location.href}>
-					<a className="social-links__item" target="_blank">Fb.</a>
+					<a className="social-share__item" target="_blank">Fb.</a>
 				</Link>
 
 				{/* <Link href={'https://twitter.com/home?status=' + window.location.href}>
@@ -26,7 +26,7 @@ export default class SocialShare extends Component {
 				</Link> */}
 
 				<Link href={'https://www.linkedin.com/shareArticle?mini=true&url=' + window.location.href}>
-					<a className="social-links__item" target="_blank">Lkn.</a>
+					<a className="social-share__item" target="_blank">Lkn.</a>
 				</Link>
 
 				{/* <Link href={'https://plus.google.com/share?url=' + window.location.href}>

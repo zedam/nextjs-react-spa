@@ -172,6 +172,10 @@ button {
 .links-navigation {
 	float: left;
 	width: 100%;
+
+	@include respond-to(tablet) {
+		width: 50%;
+	}
 }
 
 .no-blocks {

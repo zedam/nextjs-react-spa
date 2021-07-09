@@ -296,7 +296,7 @@ export default class Projects extends Component {
 														</Link>
 													)}
 
-													{this.props.project
+													{/*{this.props.project
 														.nextEntry && (
 														<div
 															onClick={() =>
@@ -332,7 +332,7 @@ export default class Projects extends Component {
 																</a>
 															</Link>
 														</div>
-													)}
+													)}*/}
 												</div>
 											)}
 

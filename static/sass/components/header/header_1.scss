@@ -109,7 +109,13 @@ div.carousel .control-dots .dot {
 		margin-top: 67px;
 		padding: 0 67px;
 	}
-	
+
+	&.director {
+		@include respond-to(tablet) {
+			margin-top: 100px;
+			padding: 0 100px;
+		}
+	}
 	/* 
 
 	@include respond-to(tablet) {
@@ -170,10 +176,6 @@ div.carousel .control-dots .dot {
 .rh5v-Overlay_component,
 .rh5v-DefaultPlayer_controls {
 	display: none;
-}
-
-.header-1__container-content {
-
 }
 
 .header-1__secundary-title {

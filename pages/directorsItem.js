@@ -8,7 +8,7 @@ import SocialLinks from '../components/SocialLinks'
 import Vimeo from 'react-vimeo'
 
 import { DefaultPlayer as Video } from 'react-html5video'
-import SocialShare from '../components/SocialShare'
+import SocialFollow from '../components/SocialFollow'
 import BackgroundImage from '../components/BackgroundImage'
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -173,7 +173,7 @@ export default class DirectorsItem extends Component {
 				{this.state.showContent &&
 				<React.Fragment>
 					<div className="header-3__container" id={"header3-content"}>
-						<div className="header-1__container-content">
+						<div className="header-1__container-content director">
 							<div className="links-navigation">
 								<Link prefetch href="/directors">
 									<a className="back-to"
@@ -182,7 +182,7 @@ export default class DirectorsItem extends Component {
 									</a>
 								</Link>
 
-								{this.props.content.nextEntry &&
+								{/*{this.props.content.nextEntry &&
 								<div onClick={() => this.updateLink ()}>
 									<Link prefetch
 										  as={`/directors/${this.props.content.nextEntry.slug}/${this.props.content.nextEntry.id}`}
@@ -195,7 +195,7 @@ export default class DirectorsItem extends Component {
 										</a>
 									</Link>
 								</div>
-								}
+								}*/}
 							</div>
 
 							<div className="header-1__container-content-wrapper ">
@@ -232,8 +232,9 @@ export default class DirectorsItem extends Component {
 									this.props.content.linkedinLink) &&
 								<Reveal effect="fadeInUp">
 
-									<SocialLinks content={this.props.content} entry={this.props.content.followText} />
-									{/* <SocialShare content={this.props.content}></SocialShare> */}
+									{/*<SocialLinks content={this.props.content} entry={this.props.content.followText} />*/}
+									{/* <SocialFollow content={this.props.content}></SocialFollow>*/}
+									 <SocialFollow content={this.props.content}></SocialFollow>
 								</Reveal>
 								}
 
