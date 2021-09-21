@@ -2,6 +2,23 @@
 	overflow: hidden;
 	background: #D9DBDB;
 }
+
+.header-3__container {
+	+ .header-2__container {
+		&.studio.tags-container {
+			@include respond-to(tablet) {
+				overflow: visible;
+				height: 50px;
+
+				.header-2__container-content {
+					position: absolute;
+					bottom: 0;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
 .header-2__container {
 	position: relative;
 	//min-height: 100vh;
@@ -24,18 +41,7 @@
 		}
 	}
 
-	&.studio.tags-container {
-		@include respond-to(tablet) {
-			overflow: visible;
-			height: 50px;
 
-			.header-2__container-content {
-				position: absolute;
-				bottom: 0;
-				margin: 0;
-			}
-		}
-	}
 }
 
 .header-2__video-container {

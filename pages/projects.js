@@ -28,7 +28,8 @@ export default class Projects extends Component {
 			showContent: true,
 			showVideo: true,
 			isReady: false,
-			isPlaying: false,
+			isPlaying: false
+			//backgroundColor: this.props.project.color != '' ? this.props.project.color.color : '#ffffff'
 		};
 	}
 
