@@ -94,7 +94,8 @@ class NextLink extends React.Component {
 		<React.Fragment >
 
 			<a href={this.state.linkUrl}  className="next-to"
-			   onMouseOver={() => this.fetchNext(this.state.linkId)} >
+			   /*onMouseOver={() => this.fetchNext(this.state.linkId)} */
+			>
 				Next Project &gt;
 			</a>
 			{this.state.nextImage &&

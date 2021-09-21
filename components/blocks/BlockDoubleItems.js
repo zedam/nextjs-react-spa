@@ -67,7 +67,7 @@ class blockDoubleItems extends React.Component {
                 <Reveal effect="fadeInUp"> */}
                     <div className="block-big-item__image-container">
                             <LinkItem content={this.props.content.typeElement[0]}>
-                                <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[0], 1))}>
+                                <a {/*onMouseOver={() => (this.fetchItem(this.props.content.typeElement[0], 1))}*/}>
                                     <BackgroundImage content={this.props.content.typeElement[0].image[0]} width="100%"/>
                                 </a>
                             </LinkItem>
@@ -77,7 +77,7 @@ class blockDoubleItems extends React.Component {
                     <Reveal effect="fadeInUp">
                         <h3 className="general__link-title">
                             <LinkItem content={this.props.content.typeElement[0]}>
-                                <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[0]))}>
+                                <a {/*onMouseOver={() => (this.fetchItem(this.props.content.typeElement[0]))}*/}>
                                     <div dangerouslySetInnerHTML={{__html: this.props.content.typeElement[0].headline}}></div>
                                 </a>
                             </LinkItem>
@@ -97,7 +97,7 @@ class blockDoubleItems extends React.Component {
 
                 <div className="block-big-item__image-container">
                     <LinkItem content={this.props.content.typeElement[1]}>
-                        <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[1]), 2)}>
+                        <a {/*onMouseOver={() => (this.fetchItem(this.props.content.typeElement[1]), 2)}*/}>
                             <Reveal effect="fadeInUp">
                                 <Image content={this.props.content.typeElement[1].image[0]} width="100%"/>
                             </Reveal>
@@ -108,7 +108,7 @@ class blockDoubleItems extends React.Component {
                     <Reveal effect="fadeInUp">
                         <h3 className="general__link-title">
                             <LinkItem content={this.props.content.typeElement[1]}>
-                                <a onMouseOver={() => (this.fetchItem(this.props.content.typeElement[1]))}>
+                                <a {/*onMouseOver={() => (this.fetchItem(this.props.content.typeElement[1]))}*/}>
                                     <div dangerouslySetInnerHTML={{__html: this.props.content.typeElement[1].headline}}></div>
                                 </a>
                             </LinkItem>

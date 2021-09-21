@@ -63,7 +63,7 @@ class BlockBigItem extends React.Component {
 
                 <div className="block-big-item__image-container">
                     <LinkItem content={this.props.content}>
-                        <a onMouseOver={() => (this.fetchItem(this.props.content))}>
+                        <a {/*onMouseOver={() => (this.fetchItem(this.props.content))}*/}>
                             <Reveal effect="fadeInUp">
                                 <Image content={this.props.content.image[0]} width="100%"/>
                             </Reveal>
@@ -74,7 +74,7 @@ class BlockBigItem extends React.Component {
                     <Reveal effect="fadeInUp">
                         <h3 className="general__link-title">
                             <LinkItem content={this.props.content}>
-                                <a onMouseOver={() => (this.fetchItem(this.props.content))}>
+                                <a {/*onMouseOver={() => (this.fetchItem(this.props.content))}*/}>
                                     <div dangerouslySetInnerHTML={{__html: this.props.content.headline}}></div>
                                 </a>
                             </LinkItem>

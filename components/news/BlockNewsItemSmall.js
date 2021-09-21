@@ -43,7 +43,8 @@ class BlockNewsItemSmall extends React.Component {
 
     render () {
         return (
-            <div className="block-news-item-small__container"  onMouseOver={() => (this.fetchItem(this.props.content))}>
+            <div className="block-news-item-small__container"
+				 /*onMouseOver={() => (this.fetchItem(this.props.content))}*/>
                 {this.state.prefetchImage &&
                 <div className="hidden">
                     <Image content={this.props.content.prefetchImage} width="100%" />
@@ -56,7 +57,7 @@ class BlockNewsItemSmall extends React.Component {
                 <div className="block-news-item-small__content-container">
                     <h3 className="block-news-item-small__title">
                         <LinkNews content={this.props.content}>
-                            <a onMouseOver={() => (this.fetchItem(this.props.content))}>
+                            <a {/*onMouseOver={() => (this.fetchItem(this.props.content))}*/}>
                                 {this.props.content.title}
                             </a>
                         </LinkNews>
