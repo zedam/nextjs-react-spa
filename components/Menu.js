@@ -116,13 +116,13 @@ export default class extends Component {
           bodyClassName="black"
           className={'my-menu '}
           isOpen={this.state.menuOpen}
-        /*  onMouseOver={() => this.hoverFetch('pages/directors_page')}*/
+          onMouseOver={() => this.hoverFetch('pages/directors_page')}
           onStateChange={(state) => this.handleStateChange(state)}
         >
           <Link href="/about">
             <a>
               <div className={"menu-item " + (this.state.isActive == 'about' ? 'active' : '')}>
-                <span onClick={() => this.closeMenu()} {/*onMouseOver={() => this.hoverFetch('pages/about')}*/}>
+                <span onClick={() => this.closeMenu()} onMouseOver={() => this.hoverFetch('pages/about')}>
                   <span className="bold">About</span>
                   <span className="normal">About</span>
                 </span>

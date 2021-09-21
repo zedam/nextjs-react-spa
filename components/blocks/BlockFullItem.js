@@ -56,7 +56,7 @@ class BlockFullItem extends React.Component {
 
                 <Reveal effect="fadeInUp">
                     <LinkItem content={this.props.content}>
-                        <a {/*onMouseOver={() => (this.fetchItem(this.props.content))}*/}>
+                        <a onMouseOver={() => (this.fetchItem(this.props.content))}>
                             <div className="block-full-item__content-container">
                                 <div className="block-full-item__content-container-table">
                                     <div className="block-full-item__content-container-cell">
