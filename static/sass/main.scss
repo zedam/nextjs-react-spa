@@ -146,6 +146,9 @@ body {
 }
 .template-1, .template-2 {
 
+	&.no-blocks {
+		padding-bottom: 0;
+	}
 	transition: all 0.1s;
 	&.transition {
 	}

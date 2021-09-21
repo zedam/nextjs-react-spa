@@ -157,7 +157,7 @@ export default class DirectorsItem extends Component {
 
 		return (
 
-			<div key="title" className="template-1" id={'template-1'} >
+			<div key="title" className="template-1 no-blocks" id={'template-1'} >
 							 {this.state.showBackgroundColor == true &&
 							 <div className="template-1__background"
 							 style={{backgroundColor: this.props.content.color != '' ? this.props.content.color.color : '#FFFFFF' }}></div>

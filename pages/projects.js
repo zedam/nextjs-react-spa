@@ -240,8 +240,7 @@ export default class Projects extends Component {
 											{this.props.project.director !=
 												undefined && (
 												<div className="links-navigation">
-													{this.props.project.director
-														.title == "Studio" ? (
+													{this.props.project.director.title == "Works" ? (
 														<Link
 															prefetch
 															href={"/studio"}

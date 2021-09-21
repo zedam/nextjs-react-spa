@@ -23,6 +23,19 @@
 			min-height: 100vh;
 		}
 	}
+
+	&.studio.tags-container {
+		@include respond-to(tablet) {
+			overflow: visible;
+			height: 50px;
+
+			.header-2__container-content {
+				position: absolute;
+				bottom: 0;
+				margin: 0;
+			}
+		}
+	}
 }
 
 .header-2__video-container {
@@ -166,6 +179,14 @@
 .header-2__container--description {
 	padding: 0 20px;
 
+	@include respond-to(tablet) {
+		display: inline-block;
+		max-width: 90%;
+		padding-left: 100px;
+		padding-bottom: 0;
+		vertical-align: top;
+	}
+
 	@include respond-to(desktop) {
 		display: inline-block;
 		max-width: 70%;
@@ -174,14 +195,22 @@
 		vertical-align: top;
 	}
 
+	@include respond-to(desktop_1600) {
+		padding-left: calc(50% - 700px)
+	}
+
 	+.tags-container {
 		margin-top: 60px;
 
+		@include respond-to(tablet) {
+			margin-top: 0;
+		}
+
 		@include respond-to(desktop) {
-			max-width: 30%;
-		margin-top: 0;
 			display: inline-block;
-			padding-left: 100px;
+			margin-top: 0;
+			max-width: 30%;
+			padding-left: 40px;
 			padding-bottom: 100px;
 			vertical-align: top;
 
@@ -189,9 +218,13 @@
 				padding: 0;
 			}
 		}
-	}
 
+		@include respond-to(desktop_big) {
+			padding-left: 100px;
+		}
+	}
 }
+
 .header-2__container-content-title {
 	@include secondary_font();
 	@include transition(all, 0.3s, 0s, $animationEffect);

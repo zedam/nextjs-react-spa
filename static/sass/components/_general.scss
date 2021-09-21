@@ -36,8 +36,8 @@
 		}
 
 		@include respond-to(desktop) {
-			font-size: 50px;
-			line-height: 50px;
+			font-size: 55px;
+			line-height: 55px;
 		}
 
 		p {
@@ -55,6 +55,11 @@
 		font-size: 25px;
 		line-height: 32px;
 		margin-top: 10px;
+	}
+	@include respond-to (desktop) {
+		font-size: 27px;
+		line-height: 38px;
+		margin-top: 40px;
 	}
 }
 
@@ -151,7 +156,6 @@ button {
 	&:after {
 		bottom: -3px;
 		left: 24px;
-		/*width: calc(100% - 12px);*/
 	}
 }
 
@@ -185,5 +189,5 @@ button {
 }
 
 .no-blocks {
-	padding-bottom: 50px;
+	//padding-bottom: 50px;
 }
