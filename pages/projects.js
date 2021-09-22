@@ -28,8 +28,8 @@ export default class Projects extends Component {
 			showContent: true,
 			showVideo: true,
 			isReady: false,
-			isPlaying: false
-			//backgroundColor: this.props.project.color != '' ? this.props.project.color.color : '#ffffff'
+			isPlaying: false,
+			backgroundColor: this.props.project.color != '' ? this.props.project.color.color : '#ffffff'
 		};
 	}
 
@@ -181,6 +181,10 @@ export default class Projects extends Component {
 
 	render = () => {
 		// JSX
+
+		const style = {
+			backgroundColor: this.state.backgroundColor
+		};
 		return (
 			<Layout content={this.props.project} footer={this.props.footer}>
 				<Transition
@@ -194,6 +198,7 @@ export default class Projects extends Component {
 							<div
 								key="title"
 								className="header-3__container"
+								style={style}
 								id={"template2"}
 							>
 								<div className="header-3__video-container">
