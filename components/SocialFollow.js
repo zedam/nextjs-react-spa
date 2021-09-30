@@ -58,6 +58,13 @@ export default class SocialFollow extends Component {
 							</a>
 						</Link>
 						}
+						{this.props.content.behanceLink &&
+						<Link href={this.props.content.behanceLink}>
+							<a className="social-follow__item behance" target="_blank">
+								Behance
+							</a>
+						</Link>
+						}
 
 					</div>
 
