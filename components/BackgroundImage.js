@@ -1,21 +1,6 @@
 /*import { Picture } from 'react-responsive-picture';*/
 import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
-import LazyLoad from 'react-lazyload'
-
-/*import { Transition, ReactCSSTransitionGroup } from 'react-transition-group'
-
-
-const defaultStyle = {
-  transition: `opacity ${duration}ms ease-in-out`,
-  opacity: 0
-}
-
-const transitionStyles = {
-  entering: {opacity: 0},
-  entered: {opacity: 1}
-}*/
-const duration = 1200
 
 class Image extends React.Component {
   constructor(props) {
@@ -46,19 +31,4 @@ class Image extends React.Component {
     )
   }
 }
-
-/*Image.getInitialProps = () => {
-    if (typeof window === 'undefined') {
-        global.window = {}
-    }
-};
-
-Image.componentWillUpdate = () => {
-    let isLoaded = false
-
-}
-Image.componentDidMount = () => {
-    let isLoaded = true
-};*/
-
 export default Image

@@ -74,6 +74,19 @@ export default class SocialLinks extends Component {
 							</a>
 						</Link>
 						}
+						{/*{this.props.content.behance &&
+						<Link href={this.props.content.behance}>
+							<a className="social-links__item behance" target="_blank">
+								<svg width="142px" height="142px" viewBox="0 0 142 142" version="1.1">
+									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<g fill="#000000" fill-rule="nonzero">
+											<circle id="background" cx="71" cy="71" r="71"></circle>
+										</g>
+									</g>
+								</svg>
+							</a>
+						</Link>
+						}*/}
 
 					</div>
 
